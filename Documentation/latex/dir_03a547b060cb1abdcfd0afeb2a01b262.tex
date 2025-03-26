@@ -1,0 +1,68 @@
+\doxysection{/\+Users/richardzetterman/\+Documents/\+Real\+Time/\+Assignment1 Directory Reference}
+\hypertarget{dir_03a547b060cb1abdcfd0afeb2a01b262}{}\label{dir_03a547b060cb1abdcfd0afeb2a01b262}\index{/Users/richardzetterman/Documents/RealTime/Assignment1 Directory Reference@{/Users/richardzetterman/Documents/RealTime/Assignment1 Directory Reference}}
+\doxysubsubsection*{Directories}
+\begin{DoxyCompactItemize}
+\item 
+directory \mbox{\hyperlink{dir_43b5ce257dce6271a83b8ad4acef6cdd}{Assignment1\+Lib}}
+\item 
+directory \mbox{\hyperlink{dir_9fe30016b65ab90e88ab0bf4cd01ccc3}{build}}
+\item 
+directory \mbox{\hyperlink{dir_b7c20703eaf0b4b50611177c0648ed37}{src}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C-\/language\+: Arrays/ Vectors
+\begin{DoxyItemize}
+\item There is no vectors only arrays. The array is initialized by the type they contain.
+\end{DoxyItemize}
+
+Bool
+\begin{DoxyItemize}
+\item There is no bool naturally. Could maybe be added with a library or you could return a condition. The value will be 1 if true and 0 if false. ~\newline
+
+\end{DoxyItemize}
+
+Git\+Hub\+: -\/--- Most used -\/--- add commit ==\texorpdfstring{$>$}{>} when youve done changes (not included things from other branches) \hypertarget{README.md_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{push}{push}}\label{README.md_autotoc_md0}
+checkout ==\texorpdfstring{$>$}{>} jump between branches log -\/b ==\texorpdfstring{$>$}{>} branch reset --hard ==\texorpdfstring{$>$}{>} remove all unsaved changes
+
+Lecture\+: Makefiles \begin{DoxyVerb}- Ex: doc.o file
+- % means all
+\end{DoxyVerb}
+
+
+Intro to the CMake build system CMake is designed to be a generator to create various Makefiles. It is very helpful in larger projects.
+
+
+\begin{DoxyItemize}
+\item 3 step workflow (see slides)
+\item Use common line
+\item Understand example on the slide 30!
+\end{DoxyItemize}
+
+Terminal commands\+: \begin{DoxyVerb}gcc filename.c ==> compile the file filename.c
+
+ll  ==> list items in file
+-S  ==> source
+.   ==> this file 
+-B  ==> build
+-gui ==> graphical
+\end{DoxyVerb}
+
+
+VSC cmd + shift + p -\/-\/\texorpdfstring{$>$}{>} Search format doc.
+
+Makefiles Creates instructions for the compiler
+\begin{DoxyEnumerate}
+\item Create file "{}\+CMake\+List.\+txt"{} in working directory.
+\item Define the CMake\+List.\+txt. 
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{OBS! The following will be wrong until 3.}{OBS! The following will be wrong until 3.}}\label{README.md_autotoc_md1}
+In the file add\+: cmake\+\_\+minimum\+\_\+required(VERSION 3.\+20) project(Assignment1 VERSION 1.\+0) \hypertarget{README.md_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{add\+\_\+executable(exec assignment1.\+c test.\+c)}{add\+\_\+executable(exec assignment1.\+c test.\+c)}}\label{README.md_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item Create folder "{}build"{} in the working directory with mkdir in terminal.
+\item Enter the folder "{}build"{}.
+\item Return with cmake, write "{}cmake .."{} in terminal.
+\item Compile it with "{}make"{} in terminal.
+\item Re-\/enter the "{}build"{} folder. Run ./exec 
+\end{DoxyEnumerate}
