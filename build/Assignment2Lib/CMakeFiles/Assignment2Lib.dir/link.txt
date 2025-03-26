@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libAssignment2Lib.a CMakeFiles/Assignment2Lib.dir/cmdproc.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libAssignment2Lib.a
