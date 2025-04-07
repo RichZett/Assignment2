@@ -2,7 +2,7 @@
 /* SETR 23/24, Paulo Pedreiras                          */
 /*	Base code for Unit Testing                          */
 /*  	Simple example of command processor             */
-/*    	for smart sensor node with 3 sensors			*/
+/*    	for smart sensor node with 2 sensors			*/
 /*     													*/
 /*	Code is just for illustrative effects. E.g. error 	*/ 
 /*		codes are "magic numbers" in the middle of the	*/

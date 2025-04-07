@@ -22,8 +22,8 @@ static unsigned char txBufLen = 0;
  */ 
 int cmdProcessor(void)
 {
-	int i;
-	unsigned char sid;
+	int i = 0;
+	// unsigned char sid;
 		
 	/* Detect empty cmd string */
 	if(rxBufLen == 0)
@@ -31,56 +31,66 @@ int cmdProcessor(void)
 	
 	/* Find index of SOF */
 	for(i=0; i < rxBufLen; i++) {
+		printf("Hej %d\n", UARTRxBuffer[i]);
+
 		if(UARTRxBuffer[i] == SOF_SYM) {
 			break;
 		}
 	}
-	
+	printf("rxBufLen: %d\n", rxBufLen);
 	/* If a SOF was found look for commands */
 	if(i < rxBufLen) {
 		
 		switch(UARTRxBuffer[i+1]) { 
-			
-			case 'P':		
-				/* Command "P" detected.							*/
-				/* Follows one DATA byte that specifies the sensor	*/ 
-				/* to read. I assume 't','h','c' for temp., humid. 	*/
-				/* and CO2, resp.									*/   
-		
-				/* Check sensor type */
-				sid = UARTRxBuffer[i+2];
-				if(sid != 't' && sid != 'h' && sid != 'c') {
-					return -2;
-				}
-				
+	
+			case 'H':
+				/* Command "H" dectected.							*/
+				/* Get the humidity from the sensor 				*/
+				printf("We enter case H\n");
 				/* Check checksum */
-				if(!(calcChecksum(&(UARTRxBuffer[i+1]),2))) {
+				if(!(calcChecksum(&(UARTRxBuffer[i]), 1))) {
+					printf("We fucked up\n");
+
 					return -3;
 				}
+				printf("We are still in case H\n");
 				
+			
 				/* Check EOF */
-				if(UARTRxBuffer[i+6] != EOF_SYM) {
+				if(UARTRxBuffer[i + 2] == EOF_SYM) {
+					printf("We fucked up\n");
+
 					return -4;
 				}
-			
+
+				printf("We are still x2 case H\n");
+
+				/* Variable to send the values */
+				// unsigned int h; 
+
 				/* Command is (is it? ... ) valid. Produce answer and terminate */ 
 				txChar('#');
-				txChar('p'); /* p is the reply to P 							*/	
-				txChar('t'); /* t indicate that it is a temperature 			*/
-				txChar('+'); /* This is the sensor reading. You should call a 	*/
-				txChar('2'); /*   function that emulates the reading of a 		*/
-				txChar('1'); /*   sensor value 	*/
-				txChar('1'); /* Checksum is 114 decimal in this case		*/
-				txChar('1'); /*   You should call a funcion that computes 	*/
-				txChar('4'); /*   the checksum for any command 				*/  
+				txChar('h'); 
+				txChar('+'); // Sensor reading, should call a function to do this part
+				txChar('2'); 
+				txChar('1'); 
+				txChar('1'); 
+				txChar('1'); 
+				txChar('3'); 
 				txChar('!');
-				
+
+				printf("txBuflen is: %d\n", txBufLen);
+
 				/* Here you should remove the characters that are part of the 		*/
 				/* command from the RX buffer. I'm just resetting it, which is not 	*/
 				/* a good solution, as a new command could be in progress and		*/
-				/* resetting  will generate errors									*/
-				rxBufLen = 0;	
+				/* resetting  will generate errors		
+											*/
+				resetRxBuffer(); 	
 				
+				return 0; 
+
+			case 'T': 
 				return 0;
 								
 			default:
@@ -108,7 +118,25 @@ int calcChecksum(unsigned char * buf, int nbytes) {
 	
 	/* That is your work to do. In this example I just assume 	*/
 	/* that the checksum is always OK.							*/	
-	return 1;		
+	
+	int checksum = 0; 
+	int i = 0;
+	for(i = nbytes ; buf[i+1] != '!'; i++)
+	{
+		checksum += buf[i];
+		// (buf[i] + checksum) % 256; 
+		printf("%d : ", i);
+		printf("checksum: %d buf: %c\n", checksum%256, buf[i]);
+
+		// if(c != UARTRxBuffer[i])
+		// {
+		// 	return 0; 
+		// }
+		
+	}	
+	printf(" BUFF  %c \n ", buf[i]);
+
+	return checksum == buf[i];		
 }
 
 /*
@@ -146,6 +174,10 @@ int txChar(unsigned char car)
  */
 void resetRxBuffer(void)
 {
+	for(int i = 0; i < rxBufLen; i++)
+	{
+		UARTRxBuffer[i] = 0; 
+	}
 	rxBufLen = 0;		
 	return;
 }
@@ -155,6 +187,10 @@ void resetRxBuffer(void)
  */
 void resetTxBuffer(void)
 {
+	for(int i = 0; i < txBufLen; i++)
+	{
+		UARTTxBuffer[i] = 0; 
+	}
 	txBufLen = 0;		
 	return;
 }
@@ -165,6 +201,8 @@ void resetTxBuffer(void)
 void getTxBuffer(unsigned char * buf, int * len)
 {
 	*len = txBufLen;
+	// *len = 1; 
+	printf("Here is *len: %d\n", *len);
 	if(txBufLen > 0) {
 		memcpy(buf,UARTTxBuffer,*len);
 	}		

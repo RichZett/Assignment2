@@ -9,7 +9,6 @@ add_subdirectory(Assignment2Lib)
 # Generate variables with set of libs and include folders
 # Dependencies are automatically set
 list(APPEND EXTRA_LIBS Assignment2Lib) 
-
 list(APPEND EXTRA_INCLUDES "${CMAKE_SOURCE_DIR}/Assignment2Lib") 
 
 # Set source folder variable and add it in directories
