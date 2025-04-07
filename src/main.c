@@ -1,27 +1,11 @@
-/* ******************************************************/
-/* SETR 23/24, Paulo Pedreiras                          */
-/* 		Sample code for Assignment 2					*/
-/*   	A few tests to the cmdProcessor to illustrate	*/
-/*      how the the tests can be carried out.         	*/
-/*														*/
-/* Note that I'm not using Unity! That is part of your 	*/
-/*		work. 											*/
-/*                                                      */
-/* Compile with: gcc cmdproc.c main.c -o main           */
-/*	Feel free to use flags such as -Wall -Wpedantic ...	*/
-/*	and it is a good idea to create a makefile			*/
-/*                                                      */
-/* ******************************************************/
 #include <stdio.h>
 #include <string.h>
 #include "cmdproc.h"
-
 
 int main(void) 
 {
 	int i;
 	int len;
-	// int err;
 	unsigned char ans[30]; 
 	unsigned char ansTest1[]={'#','h', '+', '2', '1', '1', '1', '3','!'};
 	
@@ -38,10 +22,10 @@ int main(void)
 	
 	/* 1 - send the command */
 	rxChar('#'); // 0
-	rxChar('H'); // 1
+	rxChar('T'); // 1
 	rxChar('1'); // 2
 	rxChar('8'); // 3
-	rxChar(178); // 4
+	rxChar(189); // 4 - H: 177, T: 189
 	rxChar('!'); // 5
 			
 	/* 2 - Process the comand and check the answer */
@@ -56,14 +40,16 @@ int main(void)
 	}	
 	
 	/* You can print the answer to see what is wrong, if necessary */
+	printf("len : %d\n", len);
+
 	printf("\t Received answer:");
-	// printf("%d", len);
+
 	for(i=0; i < len; i++) {
 		printf("%c", ans[i]);
 	}
 	printf("\n\t Expected answer:");
 	i=sizeof(ansTest1);
-	for(i=0; i< len; i++) {
+	for(i=0; i < len; i++) {
 		printf("%c", ansTest1[i]);
 	}
 	printf("\n");
@@ -75,10 +61,10 @@ int main(void)
 	
 	/* 1 - send the command */
 	rxChar('#');
-	rxChar('H');
+	rxChar('C');
 	rxChar('1');
-	rxChar('9');
-	rxChar('6');
+	rxChar('8');
+	rxChar(177);
 	rxChar('!');
 			
 	/* 2 - Process the comand and check the answer */

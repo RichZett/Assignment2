@@ -1,17 +1,3 @@
-/* ******************************************************/
-/* SETR 23/24, Paulo Pedreiras                          */
-/*	Base code for Unit Testing                          */
-/*  	Simple example of command processor             */
-/*    	for smart sensor node with 2 sensors			*/
-/*     													*/
-/*	Code is just for illustrative effects. E.g. error 	*/ 
-/*		codes are "magic numbers" in the middle of the	*/
-/*    	code instead of being (defined) text literals, 	*/
-/* 		sensor data is not properly emulated, missing 	*/
-/* 		commands, Checksum not implemented, ...			*/
-/*														*/
-/* ******************************************************/
-
 #ifndef CMD_PROC_H_
 #define CMD_PROC_H_
 

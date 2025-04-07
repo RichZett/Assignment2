@@ -68,7 +68,7 @@ int cmdProcessor(void)
 				/* Variable to send the values */
 				// unsigned int h; 
 
-				/* Command is (is it? ... ) valid. Produce answer and terminate */ 
+				/* Command  */ 
 				txChar('#');
 				txChar('h'); 
 				txChar('+'); // Sensor reading, should call a function to do this part
@@ -91,13 +91,56 @@ int cmdProcessor(void)
 				return 0; 
 
 			case 'T': 
-				return 0;
+				/* Command "T" dectected.							*/
+				/* Get the humidity from the sensor 				*/
+				printf("We enter case T\n");
+				/* Check checksum */
+				if(!(calcChecksum(&(UARTRxBuffer[i]), 1))) {
+					printf("We fucked up\n");
+
+					return -3;
+				}
+				printf("We are still in case T\n");
+				
+			
+				/* Check EOF */
+				if(UARTRxBuffer[i + 2] == EOF_SYM) {
+					printf("We fucked up\n");
+
+					return -4;
+				}
+
+				printf("We are still x2 case T\n");
+
+				/* Variable to send the values */
+				// unsigned int h; 
+
+				/* Command  */ 
+				txChar('#');
+				txChar('t'); 
+				txChar('+'); // Sensor reading, should call a function to do this part
+				txChar('2'); 
+				txChar('1'); 
+				txChar('1'); 
+				txChar('1'); 
+				txChar('3'); 
+				txChar('!');
+
+				printf("txBuflen is: %d\n", txBufLen);
+
+				/* Here you should remove the characters that are part of the 		*/
+				/* command from the RX buffer. I'm just resetting it, which is not 	*/
+				/* a good solution, as a new command could be in progress and		*/
+				/* resetting  will generate errors		
+											*/
+				resetRxBuffer(); 	
+				
+				return 0; 
 								
 			default:
 				/* If code reaches this place, the command is not recognized */
 				return -2;				
 		}
-		
 		
 	}
 	
@@ -124,16 +167,11 @@ int calcChecksum(unsigned char * buf, int nbytes) {
 	for(i = nbytes ; buf[i+1] != '!'; i++)
 	{
 		checksum += buf[i];
-		// (buf[i] + checksum) % 256; 
 		printf("%d : ", i);
 		printf("checksum: %d buf: %c\n", checksum%256, buf[i]);
-
-		// if(c != UARTRxBuffer[i])
-		// {
-		// 	return 0; 
-		// }
 		
 	}	
+	printf("The checksum is : %d", checksum);
 	printf(" BUFF  %c \n ", buf[i]);
 
 	return checksum == buf[i];		
@@ -201,7 +239,6 @@ void resetTxBuffer(void)
 void getTxBuffer(unsigned char * buf, int * len)
 {
 	*len = txBufLen;
-	// *len = 1; 
 	printf("Here is *len: %d\n", *len);
 	if(txBufLen > 0) {
 		memcpy(buf,UARTTxBuffer,*len);

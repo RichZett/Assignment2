@@ -1,9 +1,12 @@
-# Set the source files that make up the library
-set(Assignment2Lib
- cmdproc.h cmdproc.c
+# Assignment2Lib/CMakeLists.txt
+
+# Define source files
+set(Assignment2Lib_SOURCES
+    cmdproc.c
 )
-# Set the library type (can be static or dynamic )
-set(LIB_TYPE STATIC)
 
 # Create the library
-add_library (Assignment2Lib ${LIB_TYPE} ${Assignment2Lib})
+add_library(Assignment2Lib STATIC ${Assignment2Lib_SOURCES})
+
+# Set the include directories for this library
+target_include_directories(Assignment2Lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
