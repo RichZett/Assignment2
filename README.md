@@ -1,38 +1,22 @@
 # Assignment2
 
-1. Define what is needed in case T and H
-
-    T: 
-
-
-
-    Questions: 
-        * Do I need to store the data since I dont use cmd "L"?
-        
-            I need to store the characters in the rx/tx buffer to be able to send it. After a value is read from the buffer it should get removed and move the rest to the left. 
-
 
 TO DO: 
-
-    * Fix case H
-
-        - Fix the layout of the code OK
-
-    * Implement help functions for the cases
-        
-        + calcChecksum 
-
-        + txChar
-
-        + rxChar
-
-        + resetRxBuffer
-
-        + resetTxBuffer
+    * Start using unity
 
     * Add the tests
+        + Check if checksum works 
         
+        + Make sure code runs if wrong arguments are put in 
+
+        + Check right output for T and H
+
         + Return every possible int value from cmdProcessor()
+
+        + check that resets work as intended 
+
+
+
 
 
 

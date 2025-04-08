@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/runTests.dir/src/tests/test_runner.c.o CMakeFiles/runTests.dir/Unity/src/unity.c.o -o runTests  Assignment2Lib/libAssignment2Lib.a

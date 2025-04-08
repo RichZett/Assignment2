@@ -1,6 +1,9 @@
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/exec.dir
+/Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/runTests.dir
+/Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/test.dir
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/edit_cache.dir
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/rebuild_cache.dir
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/Assignment2Lib/CMakeFiles/Assignment2Lib.dir
+/Users/richardzetterman/Documents/RealTime/Assignment2/build/Assignment2Lib/CMakeFiles/test.dir
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/Assignment2Lib/CMakeFiles/edit_cache.dir
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/Assignment2Lib/CMakeFiles/rebuild_cache.dir

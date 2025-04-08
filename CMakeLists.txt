@@ -29,3 +29,28 @@ target_include_directories(exec PUBLIC ${EXTRA_INCLUDES})
 
 # Set target compile options
 target_compile_options(exec PRIVATE -Wall -Wextra -Wpedantic)
+
+# ======== UNIT TESTS ========
+
+# Add Unity test source
+set(TEST_SRC ${SRC_DIR}/tests/test_runner.c)
+
+# Add test executable
+add_executable(runTests
+    ${TEST_SRC}
+    ${CMAKE_SOURCE_DIR}/Unity/src/unity.c  # Adjust if needed
+)
+
+# Include directories for the test
+target_include_directories(runTests PRIVATE
+    ${SRC_DIR}
+    ${CMAKE_SOURCE_DIR}/Unity/src
+    ${CMAKE_SOURCE_DIR}/Assignment2Lib
+)
+
+# Link any necessary libraries (like Assignment2Lib)
+target_link_libraries(runTests PRIVATE ${EXTRA_LIBS})
+
+# Optionally integrate with CTest
+enable_testing()
+add_test(NAME AllTests COMMAND runTests)

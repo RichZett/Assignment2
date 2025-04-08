@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /Users/richardzetterman/Documents/RealTime/Assignment2/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -130,6 +140,19 @@ exec/fast:
 .PHONY : exec/fast
 
 #=============================================================================
+# Target rules for targets named runTests
+
+# Build rule for target.
+runTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runTests
+.PHONY : runTests
+
+# fast build rule for target.
+runTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
+.PHONY : runTests/fast
+
+#=============================================================================
 # Target rules for targets named Assignment2Lib
 
 # Build rule for target.
@@ -141,6 +164,30 @@ Assignment2Lib: cmake_check_build_system
 Assignment2Lib/fast:
 	$(MAKE) $(MAKESILENT) -f Assignment2Lib/CMakeFiles/Assignment2Lib.dir/build.make Assignment2Lib/CMakeFiles/Assignment2Lib.dir/build
 .PHONY : Assignment2Lib/fast
+
+Unity/src/unity.o: Unity/src/unity.c.o
+.PHONY : Unity/src/unity.o
+
+# target to build an object file
+Unity/src/unity.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/Unity/src/unity.c.o
+.PHONY : Unity/src/unity.c.o
+
+Unity/src/unity.i: Unity/src/unity.c.i
+.PHONY : Unity/src/unity.i
+
+# target to preprocess a source file
+Unity/src/unity.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/Unity/src/unity.c.i
+.PHONY : Unity/src/unity.c.i
+
+Unity/src/unity.s: Unity/src/unity.c.s
+.PHONY : Unity/src/unity.s
+
+# target to generate assembly for a file
+Unity/src/unity.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/Unity/src/unity.c.s
+.PHONY : Unity/src/unity.c.s
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
@@ -166,6 +213,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/tests/test_runner.o: src/tests/test_runner.c.o
+.PHONY : src/tests/test_runner.o
+
+# target to build an object file
+src/tests/test_runner.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/src/tests/test_runner.c.o
+.PHONY : src/tests/test_runner.c.o
+
+src/tests/test_runner.i: src/tests/test_runner.c.i
+.PHONY : src/tests/test_runner.i
+
+# target to preprocess a source file
+src/tests/test_runner.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/src/tests/test_runner.c.i
+.PHONY : src/tests/test_runner.c.i
+
+src/tests/test_runner.s: src/tests/test_runner.c.s
+.PHONY : src/tests/test_runner.s
+
+# target to generate assembly for a file
+src/tests/test_runner.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/src/tests/test_runner.c.s
+.PHONY : src/tests/test_runner.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,11 +245,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... Assignment2Lib"
 	@echo "... exec"
+	@echo "... runTests"
+	@echo "... Unity/src/unity.o"
+	@echo "... Unity/src/unity.i"
+	@echo "... Unity/src/unity.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/tests/test_runner.o"
+	@echo "... src/tests/test_runner.i"
+	@echo "... src/tests/test_runner.s"
 .PHONY : help
 
 

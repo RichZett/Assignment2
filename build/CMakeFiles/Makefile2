@@ -64,11 +64,13 @@ CMAKE_BINARY_DIR = /Users/richardzetterman/Documents/RealTime/Assignment2/build
 
 # The main recursive "all" target.
 all: CMakeFiles/exec.dir/all
+all: CMakeFiles/runTests.dir/all
 all: Assignment2Lib/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/exec.dir/codegen
+codegen: CMakeFiles/runTests.dir/codegen
 codegen: Assignment2Lib/codegen
 .PHONY : codegen
 
@@ -78,6 +80,7 @@ preinstall: Assignment2Lib/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/exec.dir/clean
+clean: CMakeFiles/runTests.dir/clean
 clean: Assignment2Lib/clean
 .PHONY : clean
 
@@ -131,6 +134,38 @@ CMakeFiles/exec.dir/codegen:
 CMakeFiles/exec.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/clean
 .PHONY : CMakeFiles/exec.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/runTests.dir
+
+# All Build rule for target.
+CMakeFiles/runTests.dir/all: Assignment2Lib/CMakeFiles/Assignment2Lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles --progress-num=5,6,7 "Built target runTests"
+.PHONY : CMakeFiles/runTests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/runTests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/runTests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles 0
+.PHONY : CMakeFiles/runTests.dir/rule
+
+# Convenience name for target.
+runTests: CMakeFiles/runTests.dir/rule
+.PHONY : runTests
+
+# codegen rule for target.
+CMakeFiles/runTests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles --progress-num=5,6,7 "Finished codegen for target runTests"
+.PHONY : CMakeFiles/runTests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/runTests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/clean
+.PHONY : CMakeFiles/runTests.dir/clean
 
 #=============================================================================
 # Target rules for target Assignment2Lib/CMakeFiles/Assignment2Lib.dir
