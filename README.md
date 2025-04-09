@@ -2,7 +2,11 @@
 
 
 TO DO: 
-    * Start using unity
+
+Test for eof and sof OK
+what can go wrong-> byte disapear OK 
+
+    * Start using unity OK
 
     * Add the tests
         + Check if checksum works 
@@ -15,7 +19,13 @@ TO DO:
 
         + check that resets work as intended 
 
+    * Remove unnecessary comments in code
 
+Notes:
+
+    memcmp(a,b,n): "Memory compare" 
+                        - Compares string a with string b until n byte/position
+                        - Part of <string.h>
 
 
 

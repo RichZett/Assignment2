@@ -36,6 +36,7 @@ int cmdProcessor(void)
 		if(UARTRxBuffer[i] == SOF_SYM) {
 			break;
 		}
+		
 	}
 	printf("rxBufLen: %d\n", rxBufLen);
 	/* If a SOF was found look for commands */
@@ -55,13 +56,7 @@ int cmdProcessor(void)
 				}
 				printf("We are still in case H\n");
 				
-			
-				/* Check EOF */
-				if(UARTRxBuffer[i + 2] == EOF_SYM) {
-					printf("We fucked up\n");
 
-					return -4;
-				}
 
 				printf("We are still x2 case H\n");
 
@@ -96,20 +91,14 @@ int cmdProcessor(void)
 				printf("We enter case T\n");
 				/* Check checksum */
 				if(!(calcChecksum(&(UARTRxBuffer[i]), 1))) {
-					printf("We fucked up\n");
+					printf("We fucked up the checksum\n");
 
 					return -3;
 				}
 				printf("We are still in case T\n");
 				
 			
-				/* Check EOF */
-				if(UARTRxBuffer[i + 2] == EOF_SYM) {
-					printf("We fucked up\n");
-
-					return -4;
-				}
-
+				
 				printf("We are still x2 case T\n");
 
 				/* Variable to send the values */
@@ -119,9 +108,7 @@ int cmdProcessor(void)
 				txChar('#');
 				txChar('t'); 
 				txChar('+'); // Sensor reading, should call a function to do this part
-				txChar('2'); 
-				txChar('1'); 
-				txChar('1'); 
+				txChar('2');
 				txChar('1'); 
 				txChar('3'); 
 				txChar('!');
@@ -152,30 +139,45 @@ int cmdProcessor(void)
 /* 
  * calcChecksum
  */ 
-int calcChecksum(unsigned char * buf, int nbytes) {
-	/* Here you are supposed to compute the modulo 256 checksum */
-	/* of the first n bytes of buf. Then you should convert the */
-	/* checksum to ascii (3 digitas/chars) and compare each one */
-	/* of these digits/characters to the ones in the RxBuffer,	*/
-	/* positions nbytes, nbytes + 1 and nbytes +2. 				*/
-	
-	/* That is your work to do. In this example I just assume 	*/
-	/* that the checksum is always OK.							*/	
-	
-	int checksum = 0; 
-	int i = 0;
-	for(i = nbytes ; buf[i+1] != '!'; i++)
-	{
-		checksum += buf[i];
-		printf("%d : ", i);
-		printf("checksum: %d buf: %c\n", checksum%256, buf[i]);
-		
-	}	
-	printf("The checksum is : %d", checksum);
-	printf(" BUFF  %c \n ", buf[i]);
 
-	return checksum == buf[i];		
-}
+ int calcChecksum(unsigned char * buf, int nbytes)
+ {
+	 int checksum = 0;
+	 int i = 1; // CMD is at buf[1]
+ 
+	 // Find EOF in buffer
+	 int eof_index = -1;
+	 for (int j = 0; j < UART_RX_SIZE; j++) {
+		 if (buf[j] == EOF_SYM) {
+			 eof_index = j;
+			 break;
+		 }
+	 }
+ 
+	 if (eof_index == -1) {
+		 printf("Checksum parse error: no EOF found\n");
+		 return 0;
+	 }
+ 
+	 // Check at least CMD + 1 data byte + checksum exist
+	 if (eof_index < 4) {
+		 printf("Too short to be a valid frame\n");
+		 return 0;
+	 }
+ 
+	 // Compute checksum from CMD (buf[1]) to DATA[i] (up to CS byte)
+	 for (i = 1; i < eof_index - 1; i++) {
+		 checksum += buf[i];
+	 }
+ 
+	 unsigned char expected = checksum % 256;
+	 unsigned char actual = buf[eof_index - 1]; // CS is before EOF
+ 
+	 printf("Checksum: expected %d, actual %d\n", expected, actual);
+ 
+	 return expected == actual;
+ }
+ 
 
 /*
  * rxChar

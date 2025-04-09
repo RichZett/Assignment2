@@ -21,12 +21,12 @@ int main(void)
 	printf("Test1 - check the answer to a valid Pt command\n");
 	
 	/* 1 - send the command */
-	rxChar('#'); // 0
-	rxChar('T'); // 1
+	rxChar('#'); // 0 SOF (Start of frame)
+	rxChar('T'); // 1 argument -> H or T
 	rxChar('1'); // 2
 	rxChar('8'); // 3
-	rxChar(189); // 4 - H: 177, T: 189
-	rxChar('!'); // 5
+	rxChar(189); // 4 checkSum -> H: 177, T: 189
+	rxChar('!'); // 5 EOF (End of frame)
 			
 	/* 2 - Process the comand and check the answer */
 	

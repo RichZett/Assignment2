@@ -38,7 +38,7 @@ set(TEST_SRC ${SRC_DIR}/tests/test_runner.c)
 # Add test executable
 add_executable(runTests
     ${TEST_SRC}
-    ${CMAKE_SOURCE_DIR}/Unity/src/unity.c  # Adjust if needed
+    ${CMAKE_SOURCE_DIR}/Unity/src/unity.c  
 )
 
 # Include directories for the test
