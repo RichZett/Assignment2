@@ -8,7 +8,7 @@ what can go wrong-> byte disapear OK
 
     * Start using unity OK
 
-    * Add the tests
+    * Add the tests OK
         + Check if checksum works 
         
         + Make sure code runs if wrong arguments are put in 
@@ -19,7 +19,7 @@ what can go wrong-> byte disapear OK
 
         + check that resets work as intended 
 
-    * Remove unnecessary comments in code
+    * Remove unnecessary comments in code 
 
 Notes:
 
