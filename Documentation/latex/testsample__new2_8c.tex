@@ -1,0 +1,110 @@
+\doxysection{Unity/test/expectdata/testsample\+\_\+new2.c File Reference}
+\hypertarget{testsample__new2_8c}{}\label{testsample__new2_8c}\index{Unity/test/expectdata/testsample\_new2.c@{Unity/test/expectdata/testsample\_new2.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}funky.\+h"{}}\newline
+{\ttfamily \#include "{}stanky.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{testsample__new2_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\+\_\+\+TEST}}(Test\+Func,  Test\+Line\+Num)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{testsample__new2_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{testsample__new2_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{testsample__new2_8c_aa4b159947cc5bf6425a8b7b66eeb6ce4}{test\+\_\+\+The\+First\+Thing\+To\+Test}} (void)
+\item 
+void \mbox{\hyperlink{testsample__new2_8c_aeb5cd6534c00bf8b743cbb3c647d4cf7}{test\+\_\+\+The\+Second\+Thing\+To\+Test}} (void)
+\item 
+void \mbox{\hyperlink{testsample__new2_8c_ac2f6560bee4211997791659aec43ddb2}{test\+\_\+\+The\+Third\+Thing\+To\+Test}} (void)
+\item 
+void \mbox{\hyperlink{testsample__new2_8c_a7c0a1fbf5f8f5e677c0504de15e3697b}{test\+\_\+\+The\+Fourth\+Thing\+To\+Test}} (void)
+\item 
+void \mbox{\hyperlink{testsample__new2_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7}{reset\+Test}} (void)
+\item 
+int \mbox{\hyperlink{testsample__new2_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{testsample__new2_8c_af3a9b37ea192d5f498c7d699d65ad530}\index{testsample\_new2.c@{testsample\_new2.c}!RUN\_TEST@{RUN\_TEST}}
+\index{RUN\_TEST@{RUN\_TEST}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{RUN\_TEST}{RUN\_TEST}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_af3a9b37ea192d5f498c7d699d65ad530} 
+\#define RUN\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{Test\+Func}{, }\item[{}]{Test\+Line\+Num}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestName\ =\ \#TestFunc;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestLineNumber\ =\ TestLineNum;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.NumberOfTests++;\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}())\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ setUp();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ TestFunc();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}()\ \&\&\ !\mbox{\hyperlink{unity__internals_8h_af3dee0f42dbe9e1f627ed2b0337d2fbf}{TEST\_IS\_IGNORED}})\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ tearDown();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ UnityConcludeTest();\ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{testsample__new2_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{testsample\_new2.c@{testsample\_new2.c}!main@{main}}
+\index{main@{main}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{testsample__new2_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7}\index{testsample\_new2.c@{testsample\_new2.c}!resetTest@{resetTest}}
+\index{resetTest@{resetTest}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{resetTest()}{resetTest()}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7} 
+void reset\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{testsample__new2_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{testsample\_new2.c@{testsample\_new2.c}!setUp@{setUp}}
+\index{setUp@{setUp}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{testsample__new2_8c_a9909011e5fea0c018842eec4d93d0662}\index{testsample\_new2.c@{testsample\_new2.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{testsample__new2_8c_aa4b159947cc5bf6425a8b7b66eeb6ce4}\index{testsample\_new2.c@{testsample\_new2.c}!test\_TheFirstThingToTest@{test\_TheFirstThingToTest}}
+\index{test\_TheFirstThingToTest@{test\_TheFirstThingToTest}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{test\_TheFirstThingToTest()}{test\_TheFirstThingToTest()}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_aa4b159947cc5bf6425a8b7b66eeb6ce4} 
+void test\+\_\+\+The\+First\+Thing\+To\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{testsample__new2_8c_a7c0a1fbf5f8f5e677c0504de15e3697b}\index{testsample\_new2.c@{testsample\_new2.c}!test\_TheFourthThingToTest@{test\_TheFourthThingToTest}}
+\index{test\_TheFourthThingToTest@{test\_TheFourthThingToTest}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{test\_TheFourthThingToTest()}{test\_TheFourthThingToTest()}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_a7c0a1fbf5f8f5e677c0504de15e3697b} 
+void test\+\_\+\+The\+Fourth\+Thing\+To\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{testsample__new2_8c_aeb5cd6534c00bf8b743cbb3c647d4cf7}\index{testsample\_new2.c@{testsample\_new2.c}!test\_TheSecondThingToTest@{test\_TheSecondThingToTest}}
+\index{test\_TheSecondThingToTest@{test\_TheSecondThingToTest}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{test\_TheSecondThingToTest()}{test\_TheSecondThingToTest()}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_aeb5cd6534c00bf8b743cbb3c647d4cf7} 
+void test\+\_\+\+The\+Second\+Thing\+To\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{testsample__new2_8c_ac2f6560bee4211997791659aec43ddb2}\index{testsample\_new2.c@{testsample\_new2.c}!test\_TheThirdThingToTest@{test\_TheThirdThingToTest}}
+\index{test\_TheThirdThingToTest@{test\_TheThirdThingToTest}!testsample\_new2.c@{testsample\_new2.c}}
+\doxysubsubsection{\texorpdfstring{test\_TheThirdThingToTest()}{test\_TheThirdThingToTest()}}
+{\footnotesize\ttfamily \label{testsample__new2_8c_ac2f6560bee4211997791659aec43ddb2} 
+void test\+\_\+\+The\+Third\+Thing\+To\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

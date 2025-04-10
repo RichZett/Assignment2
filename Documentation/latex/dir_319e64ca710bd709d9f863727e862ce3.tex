@@ -1,0 +1,22 @@
+\doxysection{Unity/extras/memory Directory Reference}
+\hypertarget{dir_319e64ca710bd709d9f863727e862ce3}{}\label{dir_319e64ca710bd709d9f863727e862ce3}\index{Unity/extras/memory Directory Reference@{Unity/extras/memory Directory Reference}}
+\doxysubsubsection*{Directories}
+\begin{DoxyCompactItemize}
+\item 
+directory \mbox{\hyperlink{dir_8c963eca15734817cd982c4735a520ba}{src}}
+\item 
+directory \mbox{\hyperlink{dir_6eeb4545f000fe4a38d0babb7016735d}{test}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This Framework is an optional add-\/on to Unity. By including \doxylink{unity_8h}{unity.\+h} and then \doxylink{unity__memory_8h}{unity\+\_\+memory.\+h}, you have the added ability to track malloc and free calls. This addon requires that the stdlib functions be overridden by its own defines. These defines will still malloc / realloc / free etc, but will also track the calls in order to ensure that you don\textquotesingle{}t have any memory leaks in your programs.
+
+Note that this is only useful in situations where a unit is in charge of both the allocation and deallocation of memory. When it is not symmetric, unit testing can report a number of false failures. A more advanced runtime tool is required to track complete system memory handling.\hypertarget{readme.md_autotoc_md356}{}\doxysubsection{\texorpdfstring{Module API}{Module API}}\label{readme.md_autotoc_md356}
+\hypertarget{readme.md_autotoc_md357}{}\doxysubsubsection{\texorpdfstring{{\ttfamily Unity\+Malloc\+\_\+\+Start\+Test} and {\ttfamily Unity\+Malloc\+\_\+\+End\+Test}}{{\ttfamily Unity\+Malloc\+\_\+\+Start\+Test} and {\ttfamily Unity\+Malloc\+\_\+\+End\+Test}}}\label{readme.md_autotoc_md357}
+These must be called at the beginning and end of each test. For simplicity, they can be added to {\ttfamily set\+Up} and {\ttfamily tear\+Down} in order to do their job. When using the test runner generator scripts, these will be automatically added to the runner whenever \doxylink{unity__memory_8h}{unity\+\_\+memory.\+h} is included.\hypertarget{readme.md_autotoc_md358}{}\doxysubsubsection{\texorpdfstring{{\ttfamily Unity\+Malloc\+\_\+\+Make\+Malloc\+Fail\+After\+Count}}{{\ttfamily Unity\+Malloc\+\_\+\+Make\+Malloc\+Fail\+After\+Count}}}\label{readme.md_autotoc_md358}
+This can be called from the tests themselves. Passing this function a number will force the reference counter to start keeping track of malloc calls. During that test, if the number of malloc calls exceeds the number given, malloc will immediately start returning {\ttfamily NULL}. This allows you to test error conditions. Think of it as a simplified mock.\hypertarget{readme.md_autotoc_md359}{}\doxysubsection{\texorpdfstring{Configuration}{Configuration}}\label{readme.md_autotoc_md359}
+\hypertarget{readme.md_autotoc_md360}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+MALLOC} and {\ttfamily UNITY\+\_\+\+FREE}}{{\ttfamily UNITY\+\_\+\+MALLOC} and {\ttfamily UNITY\+\_\+\+FREE}}}\label{readme.md_autotoc_md360}
+By default, this module tries to use the real stdlib {\ttfamily malloc} and {\ttfamily free} internally. If you would prefer it to use something else, like Free\+RTOS\textquotesingle{}s {\ttfamily pv\+Port\+Malloc} and {\ttfamily pv\+Port\+Free}, then you can use these defines to make it so.\hypertarget{readme.md_autotoc_md361}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+STDLIB\+\_\+\+MALLOC}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+STDLIB\+\_\+\+MALLOC}}}\label{readme.md_autotoc_md361}
+If you would like this library to ignore stdlib or other heap engines completely, and manage the memory on its own, then define this. All memory will be handled internally (and at likely lower overhead). Note that this is not a very featureful memory manager, but is sufficient for most testing purposes.\hypertarget{readme.md_autotoc_md362}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+INTERNAL\+\_\+\+HEAP\+\_\+\+SIZE\+\_\+\+BYTES}}{{\ttfamily UNITY\+\_\+\+INTERNAL\+\_\+\+HEAP\+\_\+\+SIZE\+\_\+\+BYTES}}}\label{readme.md_autotoc_md362}
+When using the built-\/in memory manager (see {\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+STDLIB\+\_\+\+MALLOC}) this define allows you to set the heap size this library will use to manage the memory. 

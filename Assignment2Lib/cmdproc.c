@@ -31,12 +31,9 @@ int cmdProcessor(void)
 	
 	/* Find index of SOF */
 	for(i=0; i < rxBufLen; i++) {
-		printf("Hej %d\n", UARTRxBuffer[i]);
-
 		if(UARTRxBuffer[i] == SOF_SYM) {
 			break;
 		}
-		
 	}
 
 	/* If a SOF was found look for commands */
@@ -54,13 +51,10 @@ int cmdProcessor(void)
 					return -3;
 				}
 
-				/* Variable to send the values */
-				// unsigned int h; 
-
-				/* Command  */ 
+				/* Transmit the data  */ 
 				txChar('#');
 				txChar('h'); 
-				txChar('+'); // Sensor reading, should call a function to do this part
+				txChar('+'); 
 				txChar('2'); 
 				txChar('1'); 
 				txChar('1'); 
@@ -68,41 +62,29 @@ int cmdProcessor(void)
 				txChar('3'); 
 				txChar('!');
 
-				/* Here you should remove the characters that are part of the 		*/
-				/* command from the RX buffer. I'm just resetting it, which is not 	*/
-				/* a good solution, as a new command could be in progress and		*/
-				/* resetting  will generate errors		
-											*/
+			
 				resetRxBuffer(); 	
 				
 				return 0; 
 
 			case 'T': 
 				/* Command "T" dectected.							*/
-				/* Get the humidity from the sensor 				*/
+				/* Get the temperature from the sensor 				*/
 
 				/* Check checksum */
 				if(!(calcChecksum(&(UARTRxBuffer[i]), 1))) {
 					return -3;
 				}
 				
-				/* Variable to send the values */
-				// unsigned int h; 
 
-				/* Command  */ 
+				/* Transmit the data  */ 
 				txChar('#');
 				txChar('t'); 
-				txChar('+'); // Sensor reading, should call a function to do this part
-				txChar('2');
+				txChar('+'); 
 				txChar('1'); 
 				txChar('3'); 
 				txChar('!');
-
-				/* Here you should remove the characters that are part of the 		*/
-				/* command from the RX buffer. I'm just resetting it, which is not 	*/
-				/* a good solution, as a new command could be in progress and		*/
-				/* resetting  will generate errors		
-											*/
+				
 				resetRxBuffer(); 	
 				
 				return 0; 
@@ -119,10 +101,10 @@ int cmdProcessor(void)
 
 }
 
+
 /* 
  * calcChecksum
  */ 
-
  int calcChecksum(unsigned char * buf, int nbytes)
  {
 	 int checksum = 0;

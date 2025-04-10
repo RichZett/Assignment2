@@ -1,0 +1,848 @@
+\doxysection{Unity/test/tests/test\+\_\+unity\+\_\+doubles.c File Reference}
+\hypertarget{test__unity__doubles_8c}{}\label{test__unity__doubles_8c}\index{Unity/test/tests/test\_unity\_doubles.c@{Unity/test/tests/test\_unity\_doubles.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}self\+\_\+assessment\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__unity__doubles_8c_a20aa6a97fd99eae615758650d209421b}{TEST\+\_\+\+INSTANCES}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ac3645fd29cbd9007340974093a3b44e0}{test\+Doubles\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6aa10c36ad960cd768eb97c90c3b0860}{test\+Doubles\+Not\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a8afbd7a9072b6c08e50c5d81bb3c7d97}{test\+Doubles\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a4f6eaec22571fb2503c3aedf088b92c8}{test\+Doubles\+Not\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_afd3527a9252318bde9d261417525f76c}{test\+Doubles\+Not\+Equal\+Negative1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ac8d222623446eb2ef5130ee0a829e2ea}{test\+Doubles\+Not\+Equal\+Negative2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a41cbbac3a6d46289c429ae9f220fed69}{test\+Doubles\+Not\+Equal\+Actual\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a30002d5f330f7394dfe87b1f13c94982}{test\+Doubles\+Not\+Equal\+Expected\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aa81ec3c1dad412d29340aac61f2bfebf}{test\+Doubles\+Equal\+Both\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a71f5b4fcef5df5e14c0121c2c8edbe00}{test\+Doubles\+Not\+Equal\+Inf\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a296af5256163c2e30e97f8196ebbd7f4}{test\+Doubles\+Not\+Equal\+Na\+NInf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ab3e2cab6c73645ac64ac7317b54eb95d}{test\+Doubles\+Not\+Equal\+Actual\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a85f780a33f342d9c39312edb605961bc}{test\+Doubles\+Not\+Equal\+Expected\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a070de06ec9b6096f7ed6086775b4aa02}{test\+Doubles\+Equal\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aa3bc843de15f68d61eed70dccd101f1a}{test\+Doubles\+Not\+Equal\+Plus\+Minus\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a90adec769a2ec8123ad5f8306a3ce5f6}{test\+Doubles\+Greater\+Than}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_af32b891eed913fc3416983eebd1bfe43}{test\+Doubles\+Greater\+Than\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_acbe385172666a140e59a46553cd9f029}{test\+Doubles\+Not\+Greater\+Than}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_abc8e4fb7cfcc2018bb0cb39f493c64b6}{test\+Doubles\+Not\+Greater\+Than\+Nan\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a8475c1c269adf2d96cc526a552ec7f8e}{test\+Doubles\+Not\+Greater\+Than\+Nan\+Threshold}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a777aef54f8ea74ae2b1a03efdfceb8a0}{test\+Doubles\+Not\+Greater\+Than\+Nan\+Both}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a90520023a8f4dcb45cd5ef970ecca1d1}{test\+Doubles\+Not\+Greater\+Than\+Inf\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a94eb223750b28a8cb78c6175cd758f60}{test\+Doubles\+Not\+Greater\+Than\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a9d6e9d466be7b4af83bd5b9b6b69353f}{test\+Doubles\+Not\+Greater\+Than\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aa316dbf68dec4349dc5d5c1ece045ae6}{test\+Doubles\+Not\+Greater\+Than\+Both\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a80e3b8f649047f1e7f4d67ea2c9fecbf}{test\+Doubles\+Greater\+Or\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a542f4b8cf513a0e75ef5c064087933fc}{test\+Doubles\+Greater\+Or\+Equal\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a90613c6217f683db1769ed3a97c39d9c}{test\+Doubles\+Not\+Greater\+Or\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_af9cbaebcbb9694d4e14330bb3c8cc30f}{test\+Doubles\+Not\+Greater\+Or\+Equal\+Nan\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a2faad3c1ea178ef9cac19a677cdae8af}{test\+Doubles\+Not\+Greater\+Or\+Equal\+Nan\+Threshold}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aad8989e002f792acab3d576f15a7d464}{test\+Doubles\+Greater\+Or\+Equal\+Nan\+Both}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a1b7381e3df7cf4d27b077eaebf784ffc}{test\+Doubles\+Not\+Greater\+Or\+Equal\+Inf\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a93c74ecbeee1cbcff029766dfcbf6128}{test\+Doubles\+Not\+Greater\+Or\+Equal\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a8ced318bd04c125978eededd8b9ef8ed}{test\+Doubles\+Greater\+Or\+Equal\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a00313b138a5177c3003b62c719a6dd27}{test\+Doubles\+Greater\+Or\+Equal\+Both\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a393eb0880cb82abdf0f2d204729e0fbb}{test\+Doubles\+Less\+Than}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a7d41eddeef9d6cf64cf6d90a0d038502}{test\+Doubles\+Less\+Than\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aa12823ceb61c1e83f04a7f79a2fe192a}{test\+Doubles\+Not\+Less\+Than}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ae87bafd67b1740a93737f5cea919ca6e}{test\+Doubles\+Not\+Less\+Than\+Nan\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aba4aae144e377566659ef139e7359a16}{test\+Doubles\+Not\+Less\+Than\+Nan\+Threshold}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a75fd0b6de65d88c4d556a8a399d53966}{test\+Doubles\+Not\+Less\+Than\+Nan\+Both}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ad507bd02fbdac6ad6ea120425dca01c9}{test\+Doubles\+Not\+Less\+Than\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a75a6d7539ed3a3ee768aedfb73fd1b3f}{test\+Doubles\+Not\+Less\+Than\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_af7127ae1b61735261f8aebf594016978}{test\+Doubles\+Not\+Less\+Than\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ad130c73bc7f8651e37f42a0717714e52}{test\+Doubles\+Not\+Less\+Than\+Both\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ae49c48b86d2a563f4185204eaa226490}{test\+Doubles\+Less\+Or\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a890a1e41ad0da938792bbfcc184763b6}{test\+Doubles\+Less\+Or\+Equal\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a618909b91346721855c4516c6e533604}{test\+Doubles\+Not\+Less\+Or\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6df538ca5c74513026e38a3e9127ff18}{test\+Doubles\+Not\+Less\+Or\+Equal\+Nan\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aff84bb6f416ceae3a8d0992a206b8df7}{test\+Doubles\+Not\+Less\+Or\+Equal\+Nan\+Threshold}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ac2ea365309157633f399a6e87a197400}{test\+Doubles\+Less\+Or\+Equal\+Nan\+Both}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aae6ba2480fd80de1aa187dc089d323ac}{test\+Doubles\+Not\+Less\+Or\+Equal\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a831b8bbc384716ad41dfd6fe02c27bc5}{test\+Doubles\+Not\+Less\+Or\+Equal\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a542576d196ddc0ffd0f55b4cc36c3df0}{test\+Doubles\+Less\+Or\+Equal\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a9e7847ff0a3f9bd6960079635f81e871}{test\+Doubles\+Less\+Or\+Equal\+Both\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_afae59609c3d3a2a7242bc20b921bbb40}{test\+Double\+Is\+Pos\+Inf1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6654d3e323bef44b68b0054797e76ac2}{test\+Double\+Is\+Pos\+Inf2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a1097eba64afd6ddad5a9a00707a6f93a}{test\+Double\+Is\+Neg\+Inf1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a815567942de43cdaf400a62d74b2b2f4}{test\+Double\+Is\+Neg\+Inf2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ab437d4548ce01b3b03f9fd6b39d47eb2}{test\+Double\+Is\+Not\+Pos\+Inf1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a23a0fe1edd6d0c20717a77defbd9378c}{test\+Double\+Is\+Not\+Pos\+Inf2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a53e1a4d9ab7eb4084dfba51364da69a1}{test\+Double\+Is\+Not\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a908dc6c034e1c4482f53b436a1d9e9d5}{test\+Double\+Is\+Nan1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aaf42205a426e14fe74f7801ea08e4c81}{test\+Double\+Is\+Nan2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a0a9db330e4dd88f7665630e4e9d6d152}{test\+Double\+Is\+Not\+Nan1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_abcc144ab8b22518cffa3da0c2ff2f3ee}{test\+Double\+Is\+Not\+Nan2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_abfe1840dfc1adeeec5098d34b1f8ddcd}{test\+Double\+Inf\+Is\+Not\+Nan}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aa1ba516058ae4a7a15d71a035bdf02c1}{test\+Double\+Nan\+Is\+Not\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a403eee4cb01fdfd49db5c6241d364da3}{test\+Double\+Is\+Determinate1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a4070088c139cc92c3f9b92d7142109c7}{test\+Double\+Is\+Determinate2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ac757effceab215653d2a83075c43c923}{test\+Double\+Is\+Not\+Determinate1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a43b166bf7e0054ca2d5cd6277f5dc7ea}{test\+Double\+Is\+Not\+Determinate2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aa3f311bd9f64074da177a1fbee25f83e}{test\+Double\+Trait\+Fails\+On\+Invalid\+Trait}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_aad23fb6a3ae30c3463435fb98c5ce4b7}{test\+Equal\+Double\+Arrays}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ac567264cdfe98e41e5a51b5962452973}{test\+Not\+Equal\+Double\+Arrays\+Expected\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6e4926910ab51a97870a777ea851df69}{test\+Not\+Equal\+Double\+Arrays\+Actual\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ac162fb1e2a0dad39efd05fa4fb6acfb0}{test\+Not\+Equal\+Double\+Arrays1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ac5517cd5d7d4d8f3a1888867bf76cff3}{test\+Not\+Equal\+Double\+Arrays2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a07955a1f99db8d39cd7cc75ab66f73b8}{test\+Not\+Equal\+Double\+Arrays3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a42dec0def8c0332cf94f3629cd6f4c9b}{test\+Not\+Equal\+Double\+Arrays\+Negative1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_ac7a059561322fcaccab350291a9895bd}{test\+Not\+Equal\+Double\+Arrays\+Negative2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6c79dabdb47c84d5b81c1e1344d33638}{test\+Not\+Equal\+Double\+Arrays\+Negative3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a867208d7c7f069ccade8bd193a98537a}{test\+Equal\+Double\+Arrays\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a210441565f537222d22877afc20c1f23}{test\+Equal\+Double\+Arrays\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_afdfed0da5333b861b58e94d72b6c0555}{test\+Not\+Equal\+Double\+Arrays\+Length\+Zero}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a14b56709077254267fed853920cc9c66}{test\+Double\+Arrays\+Within}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a919dca1e818b593d74d14649267f880a}{test\+Double\+Arrays\+Within\+Unusual\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a56216d2cbec498cd9ff1b89a8282b8eb}{test\+Equal\+Double\+Each\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a75e986065c440eb072ed61e04607a9a1}{test\+Not\+Equal\+Double\+Each\+Equal\+Actual\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6e4a25457f23bfd600fc54982e2cfe7f}{test\+Not\+Equal\+Double\+Each\+Equal1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_adda920485b8a3e16f0f7515f5a2589d7}{test\+Not\+Equal\+Double\+Each\+Equal2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a4d96ffaa1322c362e96fe8334b54e893}{test\+Not\+Equal\+Double\+Each\+Equal3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a7b9f400a8933b2c8db147915d3dd6afb}{test\+Not\+Equal\+Double\+Each\+Equal\+Negative1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6d7cdb8907a4df538f337849842ba0ff}{test\+Not\+Equal\+Double\+Each\+Equal\+Negative2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a3b57676b15781ed7748819587a1cab93}{test\+Not\+Equal\+Double\+Each\+Equal\+Negative3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6a441b3fcca7f435cf5271030139c078}{test\+Equal\+Double\+Each\+Equal\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6a0e8e27381e66037aff75203d253ffc}{test\+Equal\+Double\+Each\+Equal\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a44abd46bd6f7f35ba220d2f307736ca6}{test\+Not\+Equal\+Double\+Each\+Equal\+Length\+Zero}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6d1ba79cece03fbfaa39dd9092fc8399}{test\+Double\+Printing}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a6ce7546116ef994b04dde9bda4035249}{test\+Double\+Printing\+Round\+Ties\+To\+Even}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__doubles_8c_a22d1dd1dd346b949fe4f35bb9aa42048}{test\+Double\+Printing\+Infinity\+And\+NaN}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test__unity__doubles_8c_a20aa6a97fd99eae615758650d209421b}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!TEST\_INSTANCES@{TEST\_INSTANCES}}
+\index{TEST\_INSTANCES@{TEST\_INSTANCES}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_INSTANCES}{TEST\_INSTANCES}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a20aa6a97fd99eae615758650d209421b} 
+\#define TEST\+\_\+\+INSTANCES}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__unity__doubles_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!setUp@{setUp}}
+\index{setUp@{setUp}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a9909011e5fea0c018842eec4d93d0662}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a14b56709077254267fed853920cc9c66}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleArraysWithin@{testDoubleArraysWithin}}
+\index{testDoubleArraysWithin@{testDoubleArraysWithin}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleArraysWithin()}{testDoubleArraysWithin()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a14b56709077254267fed853920cc9c66} 
+void test\+Double\+Arrays\+Within (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a919dca1e818b593d74d14649267f880a}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleArraysWithinUnusualDelta@{testDoubleArraysWithinUnusualDelta}}
+\index{testDoubleArraysWithinUnusualDelta@{testDoubleArraysWithinUnusualDelta}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleArraysWithinUnusualDelta()}{testDoubleArraysWithinUnusualDelta()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a919dca1e818b593d74d14649267f880a} 
+void test\+Double\+Arrays\+Within\+Unusual\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_abfe1840dfc1adeeec5098d34b1f8ddcd}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleInfIsNotNan@{testDoubleInfIsNotNan}}
+\index{testDoubleInfIsNotNan@{testDoubleInfIsNotNan}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleInfIsNotNan()}{testDoubleInfIsNotNan()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_abfe1840dfc1adeeec5098d34b1f8ddcd} 
+void test\+Double\+Inf\+Is\+Not\+Nan (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a403eee4cb01fdfd49db5c6241d364da3}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsDeterminate1@{testDoubleIsDeterminate1}}
+\index{testDoubleIsDeterminate1@{testDoubleIsDeterminate1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsDeterminate1()}{testDoubleIsDeterminate1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a403eee4cb01fdfd49db5c6241d364da3} 
+void test\+Double\+Is\+Determinate1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a4070088c139cc92c3f9b92d7142109c7}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsDeterminate2@{testDoubleIsDeterminate2}}
+\index{testDoubleIsDeterminate2@{testDoubleIsDeterminate2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsDeterminate2()}{testDoubleIsDeterminate2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a4070088c139cc92c3f9b92d7142109c7} 
+void test\+Double\+Is\+Determinate2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a908dc6c034e1c4482f53b436a1d9e9d5}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNan1@{testDoubleIsNan1}}
+\index{testDoubleIsNan1@{testDoubleIsNan1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNan1()}{testDoubleIsNan1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a908dc6c034e1c4482f53b436a1d9e9d5} 
+void test\+Double\+Is\+Nan1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aaf42205a426e14fe74f7801ea08e4c81}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNan2@{testDoubleIsNan2}}
+\index{testDoubleIsNan2@{testDoubleIsNan2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNan2()}{testDoubleIsNan2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aaf42205a426e14fe74f7801ea08e4c81} 
+void test\+Double\+Is\+Nan2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a1097eba64afd6ddad5a9a00707a6f93a}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNegInf1@{testDoubleIsNegInf1}}
+\index{testDoubleIsNegInf1@{testDoubleIsNegInf1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNegInf1()}{testDoubleIsNegInf1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a1097eba64afd6ddad5a9a00707a6f93a} 
+void test\+Double\+Is\+Neg\+Inf1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a815567942de43cdaf400a62d74b2b2f4}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNegInf2@{testDoubleIsNegInf2}}
+\index{testDoubleIsNegInf2@{testDoubleIsNegInf2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNegInf2()}{testDoubleIsNegInf2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a815567942de43cdaf400a62d74b2b2f4} 
+void test\+Double\+Is\+Neg\+Inf2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ac757effceab215653d2a83075c43c923}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNotDeterminate1@{testDoubleIsNotDeterminate1}}
+\index{testDoubleIsNotDeterminate1@{testDoubleIsNotDeterminate1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNotDeterminate1()}{testDoubleIsNotDeterminate1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ac757effceab215653d2a83075c43c923} 
+void test\+Double\+Is\+Not\+Determinate1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a43b166bf7e0054ca2d5cd6277f5dc7ea}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNotDeterminate2@{testDoubleIsNotDeterminate2}}
+\index{testDoubleIsNotDeterminate2@{testDoubleIsNotDeterminate2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNotDeterminate2()}{testDoubleIsNotDeterminate2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a43b166bf7e0054ca2d5cd6277f5dc7ea} 
+void test\+Double\+Is\+Not\+Determinate2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a0a9db330e4dd88f7665630e4e9d6d152}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNotNan1@{testDoubleIsNotNan1}}
+\index{testDoubleIsNotNan1@{testDoubleIsNotNan1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNotNan1()}{testDoubleIsNotNan1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a0a9db330e4dd88f7665630e4e9d6d152} 
+void test\+Double\+Is\+Not\+Nan1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_abcc144ab8b22518cffa3da0c2ff2f3ee}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNotNan2@{testDoubleIsNotNan2}}
+\index{testDoubleIsNotNan2@{testDoubleIsNotNan2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNotNan2()}{testDoubleIsNotNan2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_abcc144ab8b22518cffa3da0c2ff2f3ee} 
+void test\+Double\+Is\+Not\+Nan2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a53e1a4d9ab7eb4084dfba51364da69a1}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNotNegInf@{testDoubleIsNotNegInf}}
+\index{testDoubleIsNotNegInf@{testDoubleIsNotNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNotNegInf()}{testDoubleIsNotNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a53e1a4d9ab7eb4084dfba51364da69a1} 
+void test\+Double\+Is\+Not\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ab437d4548ce01b3b03f9fd6b39d47eb2}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNotPosInf1@{testDoubleIsNotPosInf1}}
+\index{testDoubleIsNotPosInf1@{testDoubleIsNotPosInf1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNotPosInf1()}{testDoubleIsNotPosInf1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ab437d4548ce01b3b03f9fd6b39d47eb2} 
+void test\+Double\+Is\+Not\+Pos\+Inf1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a23a0fe1edd6d0c20717a77defbd9378c}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsNotPosInf2@{testDoubleIsNotPosInf2}}
+\index{testDoubleIsNotPosInf2@{testDoubleIsNotPosInf2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsNotPosInf2()}{testDoubleIsNotPosInf2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a23a0fe1edd6d0c20717a77defbd9378c} 
+void test\+Double\+Is\+Not\+Pos\+Inf2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_afae59609c3d3a2a7242bc20b921bbb40}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsPosInf1@{testDoubleIsPosInf1}}
+\index{testDoubleIsPosInf1@{testDoubleIsPosInf1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsPosInf1()}{testDoubleIsPosInf1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_afae59609c3d3a2a7242bc20b921bbb40} 
+void test\+Double\+Is\+Pos\+Inf1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6654d3e323bef44b68b0054797e76ac2}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleIsPosInf2@{testDoubleIsPosInf2}}
+\index{testDoubleIsPosInf2@{testDoubleIsPosInf2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleIsPosInf2()}{testDoubleIsPosInf2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6654d3e323bef44b68b0054797e76ac2} 
+void test\+Double\+Is\+Pos\+Inf2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aa1ba516058ae4a7a15d71a035bdf02c1}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleNanIsNotInf@{testDoubleNanIsNotInf}}
+\index{testDoubleNanIsNotInf@{testDoubleNanIsNotInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleNanIsNotInf()}{testDoubleNanIsNotInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aa1ba516058ae4a7a15d71a035bdf02c1} 
+void test\+Double\+Nan\+Is\+Not\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6d1ba79cece03fbfaa39dd9092fc8399}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublePrinting@{testDoublePrinting}}
+\index{testDoublePrinting@{testDoublePrinting}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublePrinting()}{testDoublePrinting()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6d1ba79cece03fbfaa39dd9092fc8399} 
+void test\+Double\+Printing (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a22d1dd1dd346b949fe4f35bb9aa42048}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublePrintingInfinityAndNaN@{testDoublePrintingInfinityAndNaN}}
+\index{testDoublePrintingInfinityAndNaN@{testDoublePrintingInfinityAndNaN}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublePrintingInfinityAndNaN()}{testDoublePrintingInfinityAndNaN()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a22d1dd1dd346b949fe4f35bb9aa42048} 
+void test\+Double\+Printing\+Infinity\+And\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6ce7546116ef994b04dde9bda4035249}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublePrintingRoundTiesToEven@{testDoublePrintingRoundTiesToEven}}
+\index{testDoublePrintingRoundTiesToEven@{testDoublePrintingRoundTiesToEven}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublePrintingRoundTiesToEven()}{testDoublePrintingRoundTiesToEven()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6ce7546116ef994b04dde9bda4035249} 
+void test\+Double\+Printing\+Round\+Ties\+To\+Even (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a8afbd7a9072b6c08e50c5d81bb3c7d97}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesEqual@{testDoublesEqual}}
+\index{testDoublesEqual@{testDoublesEqual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesEqual()}{testDoublesEqual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a8afbd7a9072b6c08e50c5d81bb3c7d97} 
+void test\+Doubles\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a070de06ec9b6096f7ed6086775b4aa02}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesEqualBothInf@{testDoublesEqualBothInf}}
+\index{testDoublesEqualBothInf@{testDoublesEqualBothInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesEqualBothInf()}{testDoublesEqualBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a070de06ec9b6096f7ed6086775b4aa02} 
+void test\+Doubles\+Equal\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aa81ec3c1dad412d29340aac61f2bfebf}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesEqualBothNaN@{testDoublesEqualBothNaN}}
+\index{testDoublesEqualBothNaN@{testDoublesEqualBothNaN}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesEqualBothNaN()}{testDoublesEqualBothNaN()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aa81ec3c1dad412d29340aac61f2bfebf} 
+void test\+Doubles\+Equal\+Both\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a80e3b8f649047f1e7f4d67ea2c9fecbf}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesGreaterOrEqual@{testDoublesGreaterOrEqual}}
+\index{testDoublesGreaterOrEqual@{testDoublesGreaterOrEqual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesGreaterOrEqual()}{testDoublesGreaterOrEqual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a80e3b8f649047f1e7f4d67ea2c9fecbf} 
+void test\+Doubles\+Greater\+Or\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a8ced318bd04c125978eededd8b9ef8ed}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesGreaterOrEqualBothInf@{testDoublesGreaterOrEqualBothInf}}
+\index{testDoublesGreaterOrEqualBothInf@{testDoublesGreaterOrEqualBothInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesGreaterOrEqualBothInf()}{testDoublesGreaterOrEqualBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a8ced318bd04c125978eededd8b9ef8ed} 
+void test\+Doubles\+Greater\+Or\+Equal\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a00313b138a5177c3003b62c719a6dd27}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesGreaterOrEqualBothNegInf@{testDoublesGreaterOrEqualBothNegInf}}
+\index{testDoublesGreaterOrEqualBothNegInf@{testDoublesGreaterOrEqualBothNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesGreaterOrEqualBothNegInf()}{testDoublesGreaterOrEqualBothNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a00313b138a5177c3003b62c719a6dd27} 
+void test\+Doubles\+Greater\+Or\+Equal\+Both\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a542f4b8cf513a0e75ef5c064087933fc}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesGreaterOrEqualInf@{testDoublesGreaterOrEqualInf}}
+\index{testDoublesGreaterOrEqualInf@{testDoublesGreaterOrEqualInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesGreaterOrEqualInf()}{testDoublesGreaterOrEqualInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a542f4b8cf513a0e75ef5c064087933fc} 
+void test\+Doubles\+Greater\+Or\+Equal\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aad8989e002f792acab3d576f15a7d464}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesGreaterOrEqualNanBoth@{testDoublesGreaterOrEqualNanBoth}}
+\index{testDoublesGreaterOrEqualNanBoth@{testDoublesGreaterOrEqualNanBoth}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesGreaterOrEqualNanBoth()}{testDoublesGreaterOrEqualNanBoth()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aad8989e002f792acab3d576f15a7d464} 
+void test\+Doubles\+Greater\+Or\+Equal\+Nan\+Both (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a90adec769a2ec8123ad5f8306a3ce5f6}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesGreaterThan@{testDoublesGreaterThan}}
+\index{testDoublesGreaterThan@{testDoublesGreaterThan}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesGreaterThan()}{testDoublesGreaterThan()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a90adec769a2ec8123ad5f8306a3ce5f6} 
+void test\+Doubles\+Greater\+Than (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_af32b891eed913fc3416983eebd1bfe43}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesGreaterThanInf@{testDoublesGreaterThanInf}}
+\index{testDoublesGreaterThanInf@{testDoublesGreaterThanInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesGreaterThanInf()}{testDoublesGreaterThanInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_af32b891eed913fc3416983eebd1bfe43} 
+void test\+Doubles\+Greater\+Than\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ae49c48b86d2a563f4185204eaa226490}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesLessOrEqual@{testDoublesLessOrEqual}}
+\index{testDoublesLessOrEqual@{testDoublesLessOrEqual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesLessOrEqual()}{testDoublesLessOrEqual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ae49c48b86d2a563f4185204eaa226490} 
+void test\+Doubles\+Less\+Or\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a542576d196ddc0ffd0f55b4cc36c3df0}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesLessOrEqualBothInf@{testDoublesLessOrEqualBothInf}}
+\index{testDoublesLessOrEqualBothInf@{testDoublesLessOrEqualBothInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesLessOrEqualBothInf()}{testDoublesLessOrEqualBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a542576d196ddc0ffd0f55b4cc36c3df0} 
+void test\+Doubles\+Less\+Or\+Equal\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a9e7847ff0a3f9bd6960079635f81e871}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesLessOrEqualBothNegInf@{testDoublesLessOrEqualBothNegInf}}
+\index{testDoublesLessOrEqualBothNegInf@{testDoublesLessOrEqualBothNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesLessOrEqualBothNegInf()}{testDoublesLessOrEqualBothNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a9e7847ff0a3f9bd6960079635f81e871} 
+void test\+Doubles\+Less\+Or\+Equal\+Both\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a890a1e41ad0da938792bbfcc184763b6}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesLessOrEqualInf@{testDoublesLessOrEqualInf}}
+\index{testDoublesLessOrEqualInf@{testDoublesLessOrEqualInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesLessOrEqualInf()}{testDoublesLessOrEqualInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a890a1e41ad0da938792bbfcc184763b6} 
+void test\+Doubles\+Less\+Or\+Equal\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ac2ea365309157633f399a6e87a197400}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesLessOrEqualNanBoth@{testDoublesLessOrEqualNanBoth}}
+\index{testDoublesLessOrEqualNanBoth@{testDoublesLessOrEqualNanBoth}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesLessOrEqualNanBoth()}{testDoublesLessOrEqualNanBoth()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ac2ea365309157633f399a6e87a197400} 
+void test\+Doubles\+Less\+Or\+Equal\+Nan\+Both (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a393eb0880cb82abdf0f2d204729e0fbb}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesLessThan@{testDoublesLessThan}}
+\index{testDoublesLessThan@{testDoublesLessThan}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesLessThan()}{testDoublesLessThan()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a393eb0880cb82abdf0f2d204729e0fbb} 
+void test\+Doubles\+Less\+Than (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a7d41eddeef9d6cf64cf6d90a0d038502}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesLessThanInf@{testDoublesLessThanInf}}
+\index{testDoublesLessThanInf@{testDoublesLessThanInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesLessThanInf()}{testDoublesLessThanInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a7d41eddeef9d6cf64cf6d90a0d038502} 
+void test\+Doubles\+Less\+Than\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a4f6eaec22571fb2503c3aedf088b92c8}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqual@{testDoublesNotEqual}}
+\index{testDoublesNotEqual@{testDoublesNotEqual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqual()}{testDoublesNotEqual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a4f6eaec22571fb2503c3aedf088b92c8} 
+void test\+Doubles\+Not\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ab3e2cab6c73645ac64ac7317b54eb95d}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualActualInf@{testDoublesNotEqualActualInf}}
+\index{testDoublesNotEqualActualInf@{testDoublesNotEqualActualInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualActualInf()}{testDoublesNotEqualActualInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ab3e2cab6c73645ac64ac7317b54eb95d} 
+void test\+Doubles\+Not\+Equal\+Actual\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a41cbbac3a6d46289c429ae9f220fed69}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualActualNaN@{testDoublesNotEqualActualNaN}}
+\index{testDoublesNotEqualActualNaN@{testDoublesNotEqualActualNaN}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualActualNaN()}{testDoublesNotEqualActualNaN()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a41cbbac3a6d46289c429ae9f220fed69} 
+void test\+Doubles\+Not\+Equal\+Actual\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a85f780a33f342d9c39312edb605961bc}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualExpectedInf@{testDoublesNotEqualExpectedInf}}
+\index{testDoublesNotEqualExpectedInf@{testDoublesNotEqualExpectedInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualExpectedInf()}{testDoublesNotEqualExpectedInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a85f780a33f342d9c39312edb605961bc} 
+void test\+Doubles\+Not\+Equal\+Expected\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a30002d5f330f7394dfe87b1f13c94982}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualExpectedNaN@{testDoublesNotEqualExpectedNaN}}
+\index{testDoublesNotEqualExpectedNaN@{testDoublesNotEqualExpectedNaN}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualExpectedNaN()}{testDoublesNotEqualExpectedNaN()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a30002d5f330f7394dfe87b1f13c94982} 
+void test\+Doubles\+Not\+Equal\+Expected\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a71f5b4fcef5df5e14c0121c2c8edbe00}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualInfNaN@{testDoublesNotEqualInfNaN}}
+\index{testDoublesNotEqualInfNaN@{testDoublesNotEqualInfNaN}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualInfNaN()}{testDoublesNotEqualInfNaN()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a71f5b4fcef5df5e14c0121c2c8edbe00} 
+void test\+Doubles\+Not\+Equal\+Inf\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a296af5256163c2e30e97f8196ebbd7f4}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualNaNInf@{testDoublesNotEqualNaNInf}}
+\index{testDoublesNotEqualNaNInf@{testDoublesNotEqualNaNInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualNaNInf()}{testDoublesNotEqualNaNInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a296af5256163c2e30e97f8196ebbd7f4} 
+void test\+Doubles\+Not\+Equal\+Na\+NInf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_afd3527a9252318bde9d261417525f76c}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualNegative1@{testDoublesNotEqualNegative1}}
+\index{testDoublesNotEqualNegative1@{testDoublesNotEqualNegative1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualNegative1()}{testDoublesNotEqualNegative1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_afd3527a9252318bde9d261417525f76c} 
+void test\+Doubles\+Not\+Equal\+Negative1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ac8d222623446eb2ef5130ee0a829e2ea}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualNegative2@{testDoublesNotEqualNegative2}}
+\index{testDoublesNotEqualNegative2@{testDoublesNotEqualNegative2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualNegative2()}{testDoublesNotEqualNegative2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ac8d222623446eb2ef5130ee0a829e2ea} 
+void test\+Doubles\+Not\+Equal\+Negative2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aa3bc843de15f68d61eed70dccd101f1a}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotEqualPlusMinusInf@{testDoublesNotEqualPlusMinusInf}}
+\index{testDoublesNotEqualPlusMinusInf@{testDoublesNotEqualPlusMinusInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotEqualPlusMinusInf()}{testDoublesNotEqualPlusMinusInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aa3bc843de15f68d61eed70dccd101f1a} 
+void test\+Doubles\+Not\+Equal\+Plus\+Minus\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a90613c6217f683db1769ed3a97c39d9c}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterOrEqual@{testDoublesNotGreaterOrEqual}}
+\index{testDoublesNotGreaterOrEqual@{testDoublesNotGreaterOrEqual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterOrEqual()}{testDoublesNotGreaterOrEqual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a90613c6217f683db1769ed3a97c39d9c} 
+void test\+Doubles\+Not\+Greater\+Or\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a1b7381e3df7cf4d27b077eaebf784ffc}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterOrEqualInfActual@{testDoublesNotGreaterOrEqualInfActual}}
+\index{testDoublesNotGreaterOrEqualInfActual@{testDoublesNotGreaterOrEqualInfActual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterOrEqualInfActual()}{testDoublesNotGreaterOrEqualInfActual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a1b7381e3df7cf4d27b077eaebf784ffc} 
+void test\+Doubles\+Not\+Greater\+Or\+Equal\+Inf\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_af9cbaebcbb9694d4e14330bb3c8cc30f}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterOrEqualNanActual@{testDoublesNotGreaterOrEqualNanActual}}
+\index{testDoublesNotGreaterOrEqualNanActual@{testDoublesNotGreaterOrEqualNanActual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterOrEqualNanActual()}{testDoublesNotGreaterOrEqualNanActual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_af9cbaebcbb9694d4e14330bb3c8cc30f} 
+void test\+Doubles\+Not\+Greater\+Or\+Equal\+Nan\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a2faad3c1ea178ef9cac19a677cdae8af}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterOrEqualNanThreshold@{testDoublesNotGreaterOrEqualNanThreshold}}
+\index{testDoublesNotGreaterOrEqualNanThreshold@{testDoublesNotGreaterOrEqualNanThreshold}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterOrEqualNanThreshold()}{testDoublesNotGreaterOrEqualNanThreshold()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a2faad3c1ea178ef9cac19a677cdae8af} 
+void test\+Doubles\+Not\+Greater\+Or\+Equal\+Nan\+Threshold (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a93c74ecbeee1cbcff029766dfcbf6128}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterOrEqualNegInf@{testDoublesNotGreaterOrEqualNegInf}}
+\index{testDoublesNotGreaterOrEqualNegInf@{testDoublesNotGreaterOrEqualNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterOrEqualNegInf()}{testDoublesNotGreaterOrEqualNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a93c74ecbeee1cbcff029766dfcbf6128} 
+void test\+Doubles\+Not\+Greater\+Or\+Equal\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_acbe385172666a140e59a46553cd9f029}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterThan@{testDoublesNotGreaterThan}}
+\index{testDoublesNotGreaterThan@{testDoublesNotGreaterThan}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterThan()}{testDoublesNotGreaterThan()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_acbe385172666a140e59a46553cd9f029} 
+void test\+Doubles\+Not\+Greater\+Than (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a9d6e9d466be7b4af83bd5b9b6b69353f}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterThanBothInf@{testDoublesNotGreaterThanBothInf}}
+\index{testDoublesNotGreaterThanBothInf@{testDoublesNotGreaterThanBothInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterThanBothInf()}{testDoublesNotGreaterThanBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a9d6e9d466be7b4af83bd5b9b6b69353f} 
+void test\+Doubles\+Not\+Greater\+Than\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aa316dbf68dec4349dc5d5c1ece045ae6}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterThanBothNegInf@{testDoublesNotGreaterThanBothNegInf}}
+\index{testDoublesNotGreaterThanBothNegInf@{testDoublesNotGreaterThanBothNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterThanBothNegInf()}{testDoublesNotGreaterThanBothNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aa316dbf68dec4349dc5d5c1ece045ae6} 
+void test\+Doubles\+Not\+Greater\+Than\+Both\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a90520023a8f4dcb45cd5ef970ecca1d1}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterThanInfActual@{testDoublesNotGreaterThanInfActual}}
+\index{testDoublesNotGreaterThanInfActual@{testDoublesNotGreaterThanInfActual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterThanInfActual()}{testDoublesNotGreaterThanInfActual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a90520023a8f4dcb45cd5ef970ecca1d1} 
+void test\+Doubles\+Not\+Greater\+Than\+Inf\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_abc8e4fb7cfcc2018bb0cb39f493c64b6}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterThanNanActual@{testDoublesNotGreaterThanNanActual}}
+\index{testDoublesNotGreaterThanNanActual@{testDoublesNotGreaterThanNanActual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterThanNanActual()}{testDoublesNotGreaterThanNanActual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_abc8e4fb7cfcc2018bb0cb39f493c64b6} 
+void test\+Doubles\+Not\+Greater\+Than\+Nan\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a777aef54f8ea74ae2b1a03efdfceb8a0}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterThanNanBoth@{testDoublesNotGreaterThanNanBoth}}
+\index{testDoublesNotGreaterThanNanBoth@{testDoublesNotGreaterThanNanBoth}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterThanNanBoth()}{testDoublesNotGreaterThanNanBoth()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a777aef54f8ea74ae2b1a03efdfceb8a0} 
+void test\+Doubles\+Not\+Greater\+Than\+Nan\+Both (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a8475c1c269adf2d96cc526a552ec7f8e}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterThanNanThreshold@{testDoublesNotGreaterThanNanThreshold}}
+\index{testDoublesNotGreaterThanNanThreshold@{testDoublesNotGreaterThanNanThreshold}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterThanNanThreshold()}{testDoublesNotGreaterThanNanThreshold()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a8475c1c269adf2d96cc526a552ec7f8e} 
+void test\+Doubles\+Not\+Greater\+Than\+Nan\+Threshold (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a94eb223750b28a8cb78c6175cd758f60}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotGreaterThanNegInf@{testDoublesNotGreaterThanNegInf}}
+\index{testDoublesNotGreaterThanNegInf@{testDoublesNotGreaterThanNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotGreaterThanNegInf()}{testDoublesNotGreaterThanNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a94eb223750b28a8cb78c6175cd758f60} 
+void test\+Doubles\+Not\+Greater\+Than\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a618909b91346721855c4516c6e533604}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessOrEqual@{testDoublesNotLessOrEqual}}
+\index{testDoublesNotLessOrEqual@{testDoublesNotLessOrEqual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessOrEqual()}{testDoublesNotLessOrEqual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a618909b91346721855c4516c6e533604} 
+void test\+Doubles\+Not\+Less\+Or\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aae6ba2480fd80de1aa187dc089d323ac}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessOrEqualInf@{testDoublesNotLessOrEqualInf}}
+\index{testDoublesNotLessOrEqualInf@{testDoublesNotLessOrEqualInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessOrEqualInf()}{testDoublesNotLessOrEqualInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aae6ba2480fd80de1aa187dc089d323ac} 
+void test\+Doubles\+Not\+Less\+Or\+Equal\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6df538ca5c74513026e38a3e9127ff18}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessOrEqualNanActual@{testDoublesNotLessOrEqualNanActual}}
+\index{testDoublesNotLessOrEqualNanActual@{testDoublesNotLessOrEqualNanActual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessOrEqualNanActual()}{testDoublesNotLessOrEqualNanActual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6df538ca5c74513026e38a3e9127ff18} 
+void test\+Doubles\+Not\+Less\+Or\+Equal\+Nan\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aff84bb6f416ceae3a8d0992a206b8df7}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessOrEqualNanThreshold@{testDoublesNotLessOrEqualNanThreshold}}
+\index{testDoublesNotLessOrEqualNanThreshold@{testDoublesNotLessOrEqualNanThreshold}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessOrEqualNanThreshold()}{testDoublesNotLessOrEqualNanThreshold()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aff84bb6f416ceae3a8d0992a206b8df7} 
+void test\+Doubles\+Not\+Less\+Or\+Equal\+Nan\+Threshold (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a831b8bbc384716ad41dfd6fe02c27bc5}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessOrEqualNegInf@{testDoublesNotLessOrEqualNegInf}}
+\index{testDoublesNotLessOrEqualNegInf@{testDoublesNotLessOrEqualNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessOrEqualNegInf()}{testDoublesNotLessOrEqualNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a831b8bbc384716ad41dfd6fe02c27bc5} 
+void test\+Doubles\+Not\+Less\+Or\+Equal\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aa12823ceb61c1e83f04a7f79a2fe192a}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessThan@{testDoublesNotLessThan}}
+\index{testDoublesNotLessThan@{testDoublesNotLessThan}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessThan()}{testDoublesNotLessThan()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aa12823ceb61c1e83f04a7f79a2fe192a} 
+void test\+Doubles\+Not\+Less\+Than (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_af7127ae1b61735261f8aebf594016978}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessThanBothInf@{testDoublesNotLessThanBothInf}}
+\index{testDoublesNotLessThanBothInf@{testDoublesNotLessThanBothInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessThanBothInf()}{testDoublesNotLessThanBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_af7127ae1b61735261f8aebf594016978} 
+void test\+Doubles\+Not\+Less\+Than\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ad130c73bc7f8651e37f42a0717714e52}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessThanBothNegInf@{testDoublesNotLessThanBothNegInf}}
+\index{testDoublesNotLessThanBothNegInf@{testDoublesNotLessThanBothNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessThanBothNegInf()}{testDoublesNotLessThanBothNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ad130c73bc7f8651e37f42a0717714e52} 
+void test\+Doubles\+Not\+Less\+Than\+Both\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ad507bd02fbdac6ad6ea120425dca01c9}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessThanInf@{testDoublesNotLessThanInf}}
+\index{testDoublesNotLessThanInf@{testDoublesNotLessThanInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessThanInf()}{testDoublesNotLessThanInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ad507bd02fbdac6ad6ea120425dca01c9} 
+void test\+Doubles\+Not\+Less\+Than\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ae87bafd67b1740a93737f5cea919ca6e}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessThanNanActual@{testDoublesNotLessThanNanActual}}
+\index{testDoublesNotLessThanNanActual@{testDoublesNotLessThanNanActual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessThanNanActual()}{testDoublesNotLessThanNanActual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ae87bafd67b1740a93737f5cea919ca6e} 
+void test\+Doubles\+Not\+Less\+Than\+Nan\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a75fd0b6de65d88c4d556a8a399d53966}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessThanNanBoth@{testDoublesNotLessThanNanBoth}}
+\index{testDoublesNotLessThanNanBoth@{testDoublesNotLessThanNanBoth}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessThanNanBoth()}{testDoublesNotLessThanNanBoth()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a75fd0b6de65d88c4d556a8a399d53966} 
+void test\+Doubles\+Not\+Less\+Than\+Nan\+Both (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aba4aae144e377566659ef139e7359a16}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessThanNanThreshold@{testDoublesNotLessThanNanThreshold}}
+\index{testDoublesNotLessThanNanThreshold@{testDoublesNotLessThanNanThreshold}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessThanNanThreshold()}{testDoublesNotLessThanNanThreshold()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aba4aae144e377566659ef139e7359a16} 
+void test\+Doubles\+Not\+Less\+Than\+Nan\+Threshold (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a75a6d7539ed3a3ee768aedfb73fd1b3f}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotLessThanNegInf@{testDoublesNotLessThanNegInf}}
+\index{testDoublesNotLessThanNegInf@{testDoublesNotLessThanNegInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotLessThanNegInf()}{testDoublesNotLessThanNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a75a6d7539ed3a3ee768aedfb73fd1b3f} 
+void test\+Doubles\+Not\+Less\+Than\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6aa10c36ad960cd768eb97c90c3b0860}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesNotWithinDelta@{testDoublesNotWithinDelta}}
+\index{testDoublesNotWithinDelta@{testDoublesNotWithinDelta}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesNotWithinDelta()}{testDoublesNotWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6aa10c36ad960cd768eb97c90c3b0860} 
+void test\+Doubles\+Not\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ac3645fd29cbd9007340974093a3b44e0}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoublesWithinDelta@{testDoublesWithinDelta}}
+\index{testDoublesWithinDelta@{testDoublesWithinDelta}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoublesWithinDelta()}{testDoublesWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ac3645fd29cbd9007340974093a3b44e0} 
+void test\+Doubles\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aa3f311bd9f64074da177a1fbee25f83e}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testDoubleTraitFailsOnInvalidTrait@{testDoubleTraitFailsOnInvalidTrait}}
+\index{testDoubleTraitFailsOnInvalidTrait@{testDoubleTraitFailsOnInvalidTrait}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testDoubleTraitFailsOnInvalidTrait()}{testDoubleTraitFailsOnInvalidTrait()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aa3f311bd9f64074da177a1fbee25f83e} 
+void test\+Double\+Trait\+Fails\+On\+Invalid\+Trait (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_aad23fb6a3ae30c3463435fb98c5ce4b7}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testEqualDoubleArrays@{testEqualDoubleArrays}}
+\index{testEqualDoubleArrays@{testEqualDoubleArrays}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testEqualDoubleArrays()}{testEqualDoubleArrays()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_aad23fb6a3ae30c3463435fb98c5ce4b7} 
+void test\+Equal\+Double\+Arrays (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a210441565f537222d22877afc20c1f23}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testEqualDoubleArraysInf@{testEqualDoubleArraysInf}}
+\index{testEqualDoubleArraysInf@{testEqualDoubleArraysInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testEqualDoubleArraysInf()}{testEqualDoubleArraysInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a210441565f537222d22877afc20c1f23} 
+void test\+Equal\+Double\+Arrays\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a867208d7c7f069ccade8bd193a98537a}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testEqualDoubleArraysNaN@{testEqualDoubleArraysNaN}}
+\index{testEqualDoubleArraysNaN@{testEqualDoubleArraysNaN}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testEqualDoubleArraysNaN()}{testEqualDoubleArraysNaN()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a867208d7c7f069ccade8bd193a98537a} 
+void test\+Equal\+Double\+Arrays\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a56216d2cbec498cd9ff1b89a8282b8eb}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testEqualDoubleEachEqual@{testEqualDoubleEachEqual}}
+\index{testEqualDoubleEachEqual@{testEqualDoubleEachEqual}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testEqualDoubleEachEqual()}{testEqualDoubleEachEqual()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a56216d2cbec498cd9ff1b89a8282b8eb} 
+void test\+Equal\+Double\+Each\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6a0e8e27381e66037aff75203d253ffc}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testEqualDoubleEachEqualInf@{testEqualDoubleEachEqualInf}}
+\index{testEqualDoubleEachEqualInf@{testEqualDoubleEachEqualInf}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testEqualDoubleEachEqualInf()}{testEqualDoubleEachEqualInf()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6a0e8e27381e66037aff75203d253ffc} 
+void test\+Equal\+Double\+Each\+Equal\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6a441b3fcca7f435cf5271030139c078}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testEqualDoubleEachEqualNaN@{testEqualDoubleEachEqualNaN}}
+\index{testEqualDoubleEachEqualNaN@{testEqualDoubleEachEqualNaN}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testEqualDoubleEachEqualNaN()}{testEqualDoubleEachEqualNaN()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6a441b3fcca7f435cf5271030139c078} 
+void test\+Equal\+Double\+Each\+Equal\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ac162fb1e2a0dad39efd05fa4fb6acfb0}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArrays1@{testNotEqualDoubleArrays1}}
+\index{testNotEqualDoubleArrays1@{testNotEqualDoubleArrays1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArrays1()}{testNotEqualDoubleArrays1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ac162fb1e2a0dad39efd05fa4fb6acfb0} 
+void test\+Not\+Equal\+Double\+Arrays1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ac5517cd5d7d4d8f3a1888867bf76cff3}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArrays2@{testNotEqualDoubleArrays2}}
+\index{testNotEqualDoubleArrays2@{testNotEqualDoubleArrays2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArrays2()}{testNotEqualDoubleArrays2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ac5517cd5d7d4d8f3a1888867bf76cff3} 
+void test\+Not\+Equal\+Double\+Arrays2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a07955a1f99db8d39cd7cc75ab66f73b8}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArrays3@{testNotEqualDoubleArrays3}}
+\index{testNotEqualDoubleArrays3@{testNotEqualDoubleArrays3}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArrays3()}{testNotEqualDoubleArrays3()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a07955a1f99db8d39cd7cc75ab66f73b8} 
+void test\+Not\+Equal\+Double\+Arrays3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6e4926910ab51a97870a777ea851df69}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArraysActualNull@{testNotEqualDoubleArraysActualNull}}
+\index{testNotEqualDoubleArraysActualNull@{testNotEqualDoubleArraysActualNull}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArraysActualNull()}{testNotEqualDoubleArraysActualNull()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6e4926910ab51a97870a777ea851df69} 
+void test\+Not\+Equal\+Double\+Arrays\+Actual\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ac567264cdfe98e41e5a51b5962452973}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArraysExpectedNull@{testNotEqualDoubleArraysExpectedNull}}
+\index{testNotEqualDoubleArraysExpectedNull@{testNotEqualDoubleArraysExpectedNull}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArraysExpectedNull()}{testNotEqualDoubleArraysExpectedNull()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ac567264cdfe98e41e5a51b5962452973} 
+void test\+Not\+Equal\+Double\+Arrays\+Expected\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_afdfed0da5333b861b58e94d72b6c0555}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArraysLengthZero@{testNotEqualDoubleArraysLengthZero}}
+\index{testNotEqualDoubleArraysLengthZero@{testNotEqualDoubleArraysLengthZero}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArraysLengthZero()}{testNotEqualDoubleArraysLengthZero()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_afdfed0da5333b861b58e94d72b6c0555} 
+void test\+Not\+Equal\+Double\+Arrays\+Length\+Zero (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a42dec0def8c0332cf94f3629cd6f4c9b}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArraysNegative1@{testNotEqualDoubleArraysNegative1}}
+\index{testNotEqualDoubleArraysNegative1@{testNotEqualDoubleArraysNegative1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArraysNegative1()}{testNotEqualDoubleArraysNegative1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a42dec0def8c0332cf94f3629cd6f4c9b} 
+void test\+Not\+Equal\+Double\+Arrays\+Negative1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_ac7a059561322fcaccab350291a9895bd}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArraysNegative2@{testNotEqualDoubleArraysNegative2}}
+\index{testNotEqualDoubleArraysNegative2@{testNotEqualDoubleArraysNegative2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArraysNegative2()}{testNotEqualDoubleArraysNegative2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_ac7a059561322fcaccab350291a9895bd} 
+void test\+Not\+Equal\+Double\+Arrays\+Negative2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6c79dabdb47c84d5b81c1e1344d33638}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleArraysNegative3@{testNotEqualDoubleArraysNegative3}}
+\index{testNotEqualDoubleArraysNegative3@{testNotEqualDoubleArraysNegative3}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleArraysNegative3()}{testNotEqualDoubleArraysNegative3()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6c79dabdb47c84d5b81c1e1344d33638} 
+void test\+Not\+Equal\+Double\+Arrays\+Negative3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6e4a25457f23bfd600fc54982e2cfe7f}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleEachEqual1@{testNotEqualDoubleEachEqual1}}
+\index{testNotEqualDoubleEachEqual1@{testNotEqualDoubleEachEqual1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleEachEqual1()}{testNotEqualDoubleEachEqual1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6e4a25457f23bfd600fc54982e2cfe7f} 
+void test\+Not\+Equal\+Double\+Each\+Equal1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_adda920485b8a3e16f0f7515f5a2589d7}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleEachEqual2@{testNotEqualDoubleEachEqual2}}
+\index{testNotEqualDoubleEachEqual2@{testNotEqualDoubleEachEqual2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleEachEqual2()}{testNotEqualDoubleEachEqual2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_adda920485b8a3e16f0f7515f5a2589d7} 
+void test\+Not\+Equal\+Double\+Each\+Equal2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a4d96ffaa1322c362e96fe8334b54e893}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleEachEqual3@{testNotEqualDoubleEachEqual3}}
+\index{testNotEqualDoubleEachEqual3@{testNotEqualDoubleEachEqual3}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleEachEqual3()}{testNotEqualDoubleEachEqual3()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a4d96ffaa1322c362e96fe8334b54e893} 
+void test\+Not\+Equal\+Double\+Each\+Equal3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a75e986065c440eb072ed61e04607a9a1}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleEachEqualActualNull@{testNotEqualDoubleEachEqualActualNull}}
+\index{testNotEqualDoubleEachEqualActualNull@{testNotEqualDoubleEachEqualActualNull}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleEachEqualActualNull()}{testNotEqualDoubleEachEqualActualNull()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a75e986065c440eb072ed61e04607a9a1} 
+void test\+Not\+Equal\+Double\+Each\+Equal\+Actual\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a44abd46bd6f7f35ba220d2f307736ca6}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleEachEqualLengthZero@{testNotEqualDoubleEachEqualLengthZero}}
+\index{testNotEqualDoubleEachEqualLengthZero@{testNotEqualDoubleEachEqualLengthZero}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleEachEqualLengthZero()}{testNotEqualDoubleEachEqualLengthZero()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a44abd46bd6f7f35ba220d2f307736ca6} 
+void test\+Not\+Equal\+Double\+Each\+Equal\+Length\+Zero (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a7b9f400a8933b2c8db147915d3dd6afb}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleEachEqualNegative1@{testNotEqualDoubleEachEqualNegative1}}
+\index{testNotEqualDoubleEachEqualNegative1@{testNotEqualDoubleEachEqualNegative1}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleEachEqualNegative1()}{testNotEqualDoubleEachEqualNegative1()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a7b9f400a8933b2c8db147915d3dd6afb} 
+void test\+Not\+Equal\+Double\+Each\+Equal\+Negative1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a6d7cdb8907a4df538f337849842ba0ff}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleEachEqualNegative2@{testNotEqualDoubleEachEqualNegative2}}
+\index{testNotEqualDoubleEachEqualNegative2@{testNotEqualDoubleEachEqualNegative2}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleEachEqualNegative2()}{testNotEqualDoubleEachEqualNegative2()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a6d7cdb8907a4df538f337849842ba0ff} 
+void test\+Not\+Equal\+Double\+Each\+Equal\+Negative2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__doubles_8c_a3b57676b15781ed7748819587a1cab93}\index{test\_unity\_doubles.c@{test\_unity\_doubles.c}!testNotEqualDoubleEachEqualNegative3@{testNotEqualDoubleEachEqualNegative3}}
+\index{testNotEqualDoubleEachEqualNegative3@{testNotEqualDoubleEachEqualNegative3}!test\_unity\_doubles.c@{test\_unity\_doubles.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualDoubleEachEqualNegative3()}{testNotEqualDoubleEachEqualNegative3()}}
+{\footnotesize\ttfamily \label{test__unity__doubles_8c_a3b57676b15781ed7748819587a1cab93} 
+void test\+Not\+Equal\+Double\+Each\+Equal\+Negative3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+

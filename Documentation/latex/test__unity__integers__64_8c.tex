@@ -1,0 +1,480 @@
+\doxysection{Unity/test/tests/test\+\_\+unity\+\_\+integers\+\_\+64.c File Reference}
+\hypertarget{test__unity__integers__64_8c}{}\label{test__unity__integers__64_8c}\index{Unity/test/tests/test\_unity\_integers\_64.c@{Unity/test/tests/test\_unity\_integers\_64.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}self\+\_\+assessment\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__unity__integers__64_8c_a20aa6a97fd99eae615758650d209421b}{TEST\+\_\+\+INSTANCES}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a3d7fc4846bf1615373cfa7ba7d1ebc9d}{test\+Int64\+Array\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a728cc3eec4e08703b3a6f2926f51c3ba}{test\+Int64\+Array\+Within\+Delta\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a475c68bebd993856d1fbd15dbb8b609c}{test\+Int64\+Array\+Not\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a4fa8a44e6f7cfd74c10a9ce5166f0134}{test\+Int64\+Array\+Not\+Within\+Delta\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a23b05636e4a8bcc8066d036b96792bc9}{test\+Int64\+Array\+Within\+Delta\+Pointless}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ad9a1d8ed54a97fa2a00a31246c784128}{test\+Int64\+Array\+Within\+Delta\+Pointless\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ace86330b56acb3cc2ad58e770676fbf9}{test\+Int64\+Array\+Within\+Delta\+Expected\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ad5e271dd984ac1344a1e26c0e01feb2a}{test\+Int64\+Array\+Within\+Delta\+Expected\+Null\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a0a8b4f503984218e431d1f9718ac9da2}{test\+Int64\+Array\+Within\+Delta\+Actual\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a791ccb04a3b2276e41f1da7857649e71}{test\+Int64\+Array\+Within\+Delta\+Actual\+Null\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_aecc71efb8e78f45c3ce959881fddab91}{test\+Int64\+Array\+Within\+Delta\+Same\+Pointer}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_aa6caf9bd52a589dc242c2aea00601e19}{test\+Int64\+Array\+Within\+Delta\+Same\+Pointer\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a91d0d1cb6f8b37f7165ce5253f35619e}{test\+UInt64\+Array\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a945789942bfe1ed52d6e9a1124ff1b4c}{test\+UInt64\+Array\+Within\+Delta\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a576dfe912894d7a0045773457a6099aa}{test\+UInt64\+Array\+Not\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ab58a3d32573110ce1bd8725bc9a0a4c6}{test\+UInt64\+Array\+Not\+Within\+Delta\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a2ab15fc2d6c38846c6d4aea8f12f7c5b}{test\+UInt64\+Array\+Within\+Delta\+Pointless}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a63c81cbd74aadc37d2402f6cc83a6d6d}{test\+UInt64\+Array\+Within\+Delta\+Pointless\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a87c314177fbf65c27b91857a588972ae}{test\+UInt64\+Array\+Within\+Delta\+Expected\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a68f9b04231aa026ced56c9b49c13571e}{test\+UInt64\+Array\+Within\+Delta\+Expected\+Null\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a7033e4ccc05e40fe9c33ba5cad382191}{test\+UInt64\+Array\+Within\+Delta\+Actual\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_af3487ed2114b7f12ea45a592b310a05a}{test\+UInt64\+Array\+Within\+Delta\+Actual\+Null\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a6242f0270056bcb831645805335269ae}{test\+UInt64\+Array\+Within\+Delta\+Same\+Pointer}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a454968de649141c3adad58fc5a8c4b7e}{test\+UInt64\+Array\+Within\+Delta\+Same\+Pointer\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_abebde9177b90fd7ace1cba01a363650a}{test\+HEX64\+Array\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_afc45eabc70d1dd0c15418f0abbe2ae94}{test\+HEX64\+Array\+Within\+Delta\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a51aa118de78bcbedade314fd84ccae81}{test\+HEX64\+Array\+Not\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a3cfde02fee3285bc92e6d634563d7a05}{test\+HEX64\+Array\+Not\+Within\+Delta\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a0e3115e481dd2e00192999c4b62f57f2}{test\+HEX64\+Array\+Within\+Delta\+Pointless}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a957d80227bce7f62a48e0f6ca467986b}{test\+HEX64\+Array\+Within\+Delta\+Pointless\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ac7b131b8556b7468c9e81bab30f4356f}{test\+HEX64\+Array\+Within\+Delta\+Expected\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_af72568a2f46c92ca084404ad35693964}{test\+HEX64\+Array\+Within\+Delta\+Expected\+Null\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a60a6d56c8500679e0e9a507806c81017}{test\+HEX64\+Array\+Within\+Delta\+Actual\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a15d4e4f09ec6858c833ac1cfb2e29ddf}{test\+HEX64\+Array\+Within\+Delta\+Actual\+Null\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a281bdb69b965541fee1571574c7259fb}{test\+HEX64\+Array\+Within\+Delta\+Same\+Pointer}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a09ee31a2d87d956f57b4c8d6bf70989e}{test\+HEX64\+Array\+Within\+Delta\+Same\+Pointer\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_af375f5e32cbd772dfe3811c075cec41b}{test\+Equal\+Hex64s}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_aa2d68f0a45300a39e1b0d3798d090c5a}{test\+Equal\+Uint64s}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ae404ac19bb523ff4fd548dc0d37fb7b2}{test\+Equal\+Int64s}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a1d37ded17f165535a3a988494337473c}{test\+Not\+Equal\+Hex64s}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a35d6280b297e19f5018bd056e5336c9c}{test\+Not\+Equal\+Uint64s}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a6fb41174ba828410a4e502818f8b21c6}{test\+Not\+Equal\+Int64s}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a3d503f613771b0d445a2d39146b5fddd}{test\+Not\+Equal\+Hex64s\+If\+Signed}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a99c88f76afd0a332330270de072e8529}{test\+HEX64s\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_aee59922c087caf59302811b8c114c057}{test\+HEX32s\+Within\+Delta\+Should\+Ignore\+Sign}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a86d3578e026d8826ea65876c2213e8ad}{test\+HEX64s\+Not\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a326f2160fa1aa44b62c88b08dd710843}{test\+HEX64s\+Not\+Within\+Delta\+Even\+Though\+ASigned\+Int\+Would\+Pass}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a3ed847de4633bca2faaa1e1856ff04eb}{test\+UINT64s\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ac6cdd3500686de21a315e087e21484d2}{test\+UINT64s\+Not\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a7285c549e5b7a46c304b652b000a0031}{test\+UINT64s\+Not\+Within\+Delta\+Even\+Though\+ASigned\+Int\+Would\+Pass}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ae91216af36c6b7e2687ead7f132769b4}{test\+INT64s\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_ab62bb4693904b6f2ad2b0f4190ffab13}{test\+INT64s\+Not\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_a26ac225cce4c911a6aff931c6c4e228f}{test\+INT64s\+Not\+Within\+Delta\+And\+Difference\+Overflows}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_afba7837028d2205da3e7219ae10ed9fc}{test\+Print\+Numbers\+Int64}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__integers__64_8c_abff28e89df865f759d0fcdff03960076}{test\+Print\+Numbers\+UInt64}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test__unity__integers__64_8c_a20aa6a97fd99eae615758650d209421b}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!TEST\_INSTANCES@{TEST\_INSTANCES}}
+\index{TEST\_INSTANCES@{TEST\_INSTANCES}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_INSTANCES}{TEST\_INSTANCES}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a20aa6a97fd99eae615758650d209421b} 
+\#define TEST\+\_\+\+INSTANCES}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__unity__integers__64_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!setUp@{setUp}}
+\index{setUp@{setUp}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a9909011e5fea0c018842eec4d93d0662}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_af375f5e32cbd772dfe3811c075cec41b}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testEqualHex64s@{testEqualHex64s}}
+\index{testEqualHex64s@{testEqualHex64s}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testEqualHex64s()}{testEqualHex64s()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_af375f5e32cbd772dfe3811c075cec41b} 
+void test\+Equal\+Hex64s (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ae404ac19bb523ff4fd548dc0d37fb7b2}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testEqualInt64s@{testEqualInt64s}}
+\index{testEqualInt64s@{testEqualInt64s}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testEqualInt64s()}{testEqualInt64s()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ae404ac19bb523ff4fd548dc0d37fb7b2} 
+void test\+Equal\+Int64s (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_aa2d68f0a45300a39e1b0d3798d090c5a}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testEqualUint64s@{testEqualUint64s}}
+\index{testEqualUint64s@{testEqualUint64s}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testEqualUint64s()}{testEqualUint64s()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_aa2d68f0a45300a39e1b0d3798d090c5a} 
+void test\+Equal\+Uint64s (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_aee59922c087caf59302811b8c114c057}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX32sWithinDeltaShouldIgnoreSign@{testHEX32sWithinDeltaShouldIgnoreSign}}
+\index{testHEX32sWithinDeltaShouldIgnoreSign@{testHEX32sWithinDeltaShouldIgnoreSign}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX32sWithinDeltaShouldIgnoreSign()}{testHEX32sWithinDeltaShouldIgnoreSign()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_aee59922c087caf59302811b8c114c057} 
+void test\+HEX32s\+Within\+Delta\+Should\+Ignore\+Sign (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a51aa118de78bcbedade314fd84ccae81}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayNotWithinDelta@{testHEX64ArrayNotWithinDelta}}
+\index{testHEX64ArrayNotWithinDelta@{testHEX64ArrayNotWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayNotWithinDelta()}{testHEX64ArrayNotWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a51aa118de78bcbedade314fd84ccae81} 
+void test\+HEX64\+Array\+Not\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a3cfde02fee3285bc92e6d634563d7a05}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayNotWithinDeltaAndMessage@{testHEX64ArrayNotWithinDeltaAndMessage}}
+\index{testHEX64ArrayNotWithinDeltaAndMessage@{testHEX64ArrayNotWithinDeltaAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayNotWithinDeltaAndMessage()}{testHEX64ArrayNotWithinDeltaAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a3cfde02fee3285bc92e6d634563d7a05} 
+void test\+HEX64\+Array\+Not\+Within\+Delta\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_abebde9177b90fd7ace1cba01a363650a}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDelta@{testHEX64ArrayWithinDelta}}
+\index{testHEX64ArrayWithinDelta@{testHEX64ArrayWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDelta()}{testHEX64ArrayWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_abebde9177b90fd7ace1cba01a363650a} 
+void test\+HEX64\+Array\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a60a6d56c8500679e0e9a507806c81017}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaActualNull@{testHEX64ArrayWithinDeltaActualNull}}
+\index{testHEX64ArrayWithinDeltaActualNull@{testHEX64ArrayWithinDeltaActualNull}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaActualNull()}{testHEX64ArrayWithinDeltaActualNull()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a60a6d56c8500679e0e9a507806c81017} 
+void test\+HEX64\+Array\+Within\+Delta\+Actual\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a15d4e4f09ec6858c833ac1cfb2e29ddf}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaActualNullAndMessage@{testHEX64ArrayWithinDeltaActualNullAndMessage}}
+\index{testHEX64ArrayWithinDeltaActualNullAndMessage@{testHEX64ArrayWithinDeltaActualNullAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaActualNullAndMessage()}{testHEX64ArrayWithinDeltaActualNullAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a15d4e4f09ec6858c833ac1cfb2e29ddf} 
+void test\+HEX64\+Array\+Within\+Delta\+Actual\+Null\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_afc45eabc70d1dd0c15418f0abbe2ae94}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaAndMessage@{testHEX64ArrayWithinDeltaAndMessage}}
+\index{testHEX64ArrayWithinDeltaAndMessage@{testHEX64ArrayWithinDeltaAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaAndMessage()}{testHEX64ArrayWithinDeltaAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_afc45eabc70d1dd0c15418f0abbe2ae94} 
+void test\+HEX64\+Array\+Within\+Delta\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ac7b131b8556b7468c9e81bab30f4356f}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaExpectedNull@{testHEX64ArrayWithinDeltaExpectedNull}}
+\index{testHEX64ArrayWithinDeltaExpectedNull@{testHEX64ArrayWithinDeltaExpectedNull}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaExpectedNull()}{testHEX64ArrayWithinDeltaExpectedNull()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ac7b131b8556b7468c9e81bab30f4356f} 
+void test\+HEX64\+Array\+Within\+Delta\+Expected\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_af72568a2f46c92ca084404ad35693964}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaExpectedNullAndMessage@{testHEX64ArrayWithinDeltaExpectedNullAndMessage}}
+\index{testHEX64ArrayWithinDeltaExpectedNullAndMessage@{testHEX64ArrayWithinDeltaExpectedNullAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaExpectedNullAndMessage()}{testHEX64ArrayWithinDeltaExpectedNullAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_af72568a2f46c92ca084404ad35693964} 
+void test\+HEX64\+Array\+Within\+Delta\+Expected\+Null\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a0e3115e481dd2e00192999c4b62f57f2}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaPointless@{testHEX64ArrayWithinDeltaPointless}}
+\index{testHEX64ArrayWithinDeltaPointless@{testHEX64ArrayWithinDeltaPointless}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaPointless()}{testHEX64ArrayWithinDeltaPointless()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a0e3115e481dd2e00192999c4b62f57f2} 
+void test\+HEX64\+Array\+Within\+Delta\+Pointless (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a957d80227bce7f62a48e0f6ca467986b}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaPointlessAndMessage@{testHEX64ArrayWithinDeltaPointlessAndMessage}}
+\index{testHEX64ArrayWithinDeltaPointlessAndMessage@{testHEX64ArrayWithinDeltaPointlessAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaPointlessAndMessage()}{testHEX64ArrayWithinDeltaPointlessAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a957d80227bce7f62a48e0f6ca467986b} 
+void test\+HEX64\+Array\+Within\+Delta\+Pointless\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a281bdb69b965541fee1571574c7259fb}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaSamePointer@{testHEX64ArrayWithinDeltaSamePointer}}
+\index{testHEX64ArrayWithinDeltaSamePointer@{testHEX64ArrayWithinDeltaSamePointer}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaSamePointer()}{testHEX64ArrayWithinDeltaSamePointer()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a281bdb69b965541fee1571574c7259fb} 
+void test\+HEX64\+Array\+Within\+Delta\+Same\+Pointer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a09ee31a2d87d956f57b4c8d6bf70989e}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64ArrayWithinDeltaSamePointerAndMessage@{testHEX64ArrayWithinDeltaSamePointerAndMessage}}
+\index{testHEX64ArrayWithinDeltaSamePointerAndMessage@{testHEX64ArrayWithinDeltaSamePointerAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64ArrayWithinDeltaSamePointerAndMessage()}{testHEX64ArrayWithinDeltaSamePointerAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a09ee31a2d87d956f57b4c8d6bf70989e} 
+void test\+HEX64\+Array\+Within\+Delta\+Same\+Pointer\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a86d3578e026d8826ea65876c2213e8ad}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64sNotWithinDelta@{testHEX64sNotWithinDelta}}
+\index{testHEX64sNotWithinDelta@{testHEX64sNotWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64sNotWithinDelta()}{testHEX64sNotWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a86d3578e026d8826ea65876c2213e8ad} 
+void test\+HEX64s\+Not\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a326f2160fa1aa44b62c88b08dd710843}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64sNotWithinDeltaEvenThoughASignedIntWouldPass@{testHEX64sNotWithinDeltaEvenThoughASignedIntWouldPass}}
+\index{testHEX64sNotWithinDeltaEvenThoughASignedIntWouldPass@{testHEX64sNotWithinDeltaEvenThoughASignedIntWouldPass}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64sNotWithinDeltaEvenThoughASignedIntWouldPass()}{testHEX64sNotWithinDeltaEvenThoughASignedIntWouldPass()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a326f2160fa1aa44b62c88b08dd710843} 
+void test\+HEX64s\+Not\+Within\+Delta\+Even\+Though\+ASigned\+Int\+Would\+Pass (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a99c88f76afd0a332330270de072e8529}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testHEX64sWithinDelta@{testHEX64sWithinDelta}}
+\index{testHEX64sWithinDelta@{testHEX64sWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testHEX64sWithinDelta()}{testHEX64sWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a99c88f76afd0a332330270de072e8529} 
+void test\+HEX64s\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a475c68bebd993856d1fbd15dbb8b609c}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayNotWithinDelta@{testInt64ArrayNotWithinDelta}}
+\index{testInt64ArrayNotWithinDelta@{testInt64ArrayNotWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayNotWithinDelta()}{testInt64ArrayNotWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a475c68bebd993856d1fbd15dbb8b609c} 
+void test\+Int64\+Array\+Not\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a4fa8a44e6f7cfd74c10a9ce5166f0134}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayNotWithinDeltaAndMessage@{testInt64ArrayNotWithinDeltaAndMessage}}
+\index{testInt64ArrayNotWithinDeltaAndMessage@{testInt64ArrayNotWithinDeltaAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayNotWithinDeltaAndMessage()}{testInt64ArrayNotWithinDeltaAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a4fa8a44e6f7cfd74c10a9ce5166f0134} 
+void test\+Int64\+Array\+Not\+Within\+Delta\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a3d7fc4846bf1615373cfa7ba7d1ebc9d}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDelta@{testInt64ArrayWithinDelta}}
+\index{testInt64ArrayWithinDelta@{testInt64ArrayWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDelta()}{testInt64ArrayWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a3d7fc4846bf1615373cfa7ba7d1ebc9d} 
+void test\+Int64\+Array\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a0a8b4f503984218e431d1f9718ac9da2}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaActualNull@{testInt64ArrayWithinDeltaActualNull}}
+\index{testInt64ArrayWithinDeltaActualNull@{testInt64ArrayWithinDeltaActualNull}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaActualNull()}{testInt64ArrayWithinDeltaActualNull()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a0a8b4f503984218e431d1f9718ac9da2} 
+void test\+Int64\+Array\+Within\+Delta\+Actual\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a791ccb04a3b2276e41f1da7857649e71}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaActualNullAndMessage@{testInt64ArrayWithinDeltaActualNullAndMessage}}
+\index{testInt64ArrayWithinDeltaActualNullAndMessage@{testInt64ArrayWithinDeltaActualNullAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaActualNullAndMessage()}{testInt64ArrayWithinDeltaActualNullAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a791ccb04a3b2276e41f1da7857649e71} 
+void test\+Int64\+Array\+Within\+Delta\+Actual\+Null\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a728cc3eec4e08703b3a6f2926f51c3ba}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaAndMessage@{testInt64ArrayWithinDeltaAndMessage}}
+\index{testInt64ArrayWithinDeltaAndMessage@{testInt64ArrayWithinDeltaAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaAndMessage()}{testInt64ArrayWithinDeltaAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a728cc3eec4e08703b3a6f2926f51c3ba} 
+void test\+Int64\+Array\+Within\+Delta\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ace86330b56acb3cc2ad58e770676fbf9}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaExpectedNull@{testInt64ArrayWithinDeltaExpectedNull}}
+\index{testInt64ArrayWithinDeltaExpectedNull@{testInt64ArrayWithinDeltaExpectedNull}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaExpectedNull()}{testInt64ArrayWithinDeltaExpectedNull()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ace86330b56acb3cc2ad58e770676fbf9} 
+void test\+Int64\+Array\+Within\+Delta\+Expected\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ad5e271dd984ac1344a1e26c0e01feb2a}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaExpectedNullAndMessage@{testInt64ArrayWithinDeltaExpectedNullAndMessage}}
+\index{testInt64ArrayWithinDeltaExpectedNullAndMessage@{testInt64ArrayWithinDeltaExpectedNullAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaExpectedNullAndMessage()}{testInt64ArrayWithinDeltaExpectedNullAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ad5e271dd984ac1344a1e26c0e01feb2a} 
+void test\+Int64\+Array\+Within\+Delta\+Expected\+Null\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a23b05636e4a8bcc8066d036b96792bc9}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaPointless@{testInt64ArrayWithinDeltaPointless}}
+\index{testInt64ArrayWithinDeltaPointless@{testInt64ArrayWithinDeltaPointless}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaPointless()}{testInt64ArrayWithinDeltaPointless()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a23b05636e4a8bcc8066d036b96792bc9} 
+void test\+Int64\+Array\+Within\+Delta\+Pointless (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ad9a1d8ed54a97fa2a00a31246c784128}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaPointlessAndMessage@{testInt64ArrayWithinDeltaPointlessAndMessage}}
+\index{testInt64ArrayWithinDeltaPointlessAndMessage@{testInt64ArrayWithinDeltaPointlessAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaPointlessAndMessage()}{testInt64ArrayWithinDeltaPointlessAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ad9a1d8ed54a97fa2a00a31246c784128} 
+void test\+Int64\+Array\+Within\+Delta\+Pointless\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_aecc71efb8e78f45c3ce959881fddab91}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaSamePointer@{testInt64ArrayWithinDeltaSamePointer}}
+\index{testInt64ArrayWithinDeltaSamePointer@{testInt64ArrayWithinDeltaSamePointer}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaSamePointer()}{testInt64ArrayWithinDeltaSamePointer()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_aecc71efb8e78f45c3ce959881fddab91} 
+void test\+Int64\+Array\+Within\+Delta\+Same\+Pointer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_aa6caf9bd52a589dc242c2aea00601e19}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testInt64ArrayWithinDeltaSamePointerAndMessage@{testInt64ArrayWithinDeltaSamePointerAndMessage}}
+\index{testInt64ArrayWithinDeltaSamePointerAndMessage@{testInt64ArrayWithinDeltaSamePointerAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testInt64ArrayWithinDeltaSamePointerAndMessage()}{testInt64ArrayWithinDeltaSamePointerAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_aa6caf9bd52a589dc242c2aea00601e19} 
+void test\+Int64\+Array\+Within\+Delta\+Same\+Pointer\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ab62bb4693904b6f2ad2b0f4190ffab13}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testINT64sNotWithinDelta@{testINT64sNotWithinDelta}}
+\index{testINT64sNotWithinDelta@{testINT64sNotWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testINT64sNotWithinDelta()}{testINT64sNotWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ab62bb4693904b6f2ad2b0f4190ffab13} 
+void test\+INT64s\+Not\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a26ac225cce4c911a6aff931c6c4e228f}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testINT64sNotWithinDeltaAndDifferenceOverflows@{testINT64sNotWithinDeltaAndDifferenceOverflows}}
+\index{testINT64sNotWithinDeltaAndDifferenceOverflows@{testINT64sNotWithinDeltaAndDifferenceOverflows}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testINT64sNotWithinDeltaAndDifferenceOverflows()}{testINT64sNotWithinDeltaAndDifferenceOverflows()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a26ac225cce4c911a6aff931c6c4e228f} 
+void test\+INT64s\+Not\+Within\+Delta\+And\+Difference\+Overflows (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ae91216af36c6b7e2687ead7f132769b4}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testINT64sWithinDelta@{testINT64sWithinDelta}}
+\index{testINT64sWithinDelta@{testINT64sWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testINT64sWithinDelta()}{testINT64sWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ae91216af36c6b7e2687ead7f132769b4} 
+void test\+INT64s\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a1d37ded17f165535a3a988494337473c}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testNotEqualHex64s@{testNotEqualHex64s}}
+\index{testNotEqualHex64s@{testNotEqualHex64s}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualHex64s()}{testNotEqualHex64s()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a1d37ded17f165535a3a988494337473c} 
+void test\+Not\+Equal\+Hex64s (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a3d503f613771b0d445a2d39146b5fddd}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testNotEqualHex64sIfSigned@{testNotEqualHex64sIfSigned}}
+\index{testNotEqualHex64sIfSigned@{testNotEqualHex64sIfSigned}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualHex64sIfSigned()}{testNotEqualHex64sIfSigned()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a3d503f613771b0d445a2d39146b5fddd} 
+void test\+Not\+Equal\+Hex64s\+If\+Signed (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a6fb41174ba828410a4e502818f8b21c6}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testNotEqualInt64s@{testNotEqualInt64s}}
+\index{testNotEqualInt64s@{testNotEqualInt64s}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualInt64s()}{testNotEqualInt64s()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a6fb41174ba828410a4e502818f8b21c6} 
+void test\+Not\+Equal\+Int64s (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a35d6280b297e19f5018bd056e5336c9c}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testNotEqualUint64s@{testNotEqualUint64s}}
+\index{testNotEqualUint64s@{testNotEqualUint64s}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualUint64s()}{testNotEqualUint64s()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a35d6280b297e19f5018bd056e5336c9c} 
+void test\+Not\+Equal\+Uint64s (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_afba7837028d2205da3e7219ae10ed9fc}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testPrintNumbersInt64@{testPrintNumbersInt64}}
+\index{testPrintNumbersInt64@{testPrintNumbersInt64}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testPrintNumbersInt64()}{testPrintNumbersInt64()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_afba7837028d2205da3e7219ae10ed9fc} 
+void test\+Print\+Numbers\+Int64 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_abff28e89df865f759d0fcdff03960076}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testPrintNumbersUInt64@{testPrintNumbersUInt64}}
+\index{testPrintNumbersUInt64@{testPrintNumbersUInt64}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testPrintNumbersUInt64()}{testPrintNumbersUInt64()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_abff28e89df865f759d0fcdff03960076} 
+void test\+Print\+Numbers\+UInt64 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a576dfe912894d7a0045773457a6099aa}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayNotWithinDelta@{testUInt64ArrayNotWithinDelta}}
+\index{testUInt64ArrayNotWithinDelta@{testUInt64ArrayNotWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayNotWithinDelta()}{testUInt64ArrayNotWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a576dfe912894d7a0045773457a6099aa} 
+void test\+UInt64\+Array\+Not\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ab58a3d32573110ce1bd8725bc9a0a4c6}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayNotWithinDeltaAndMessage@{testUInt64ArrayNotWithinDeltaAndMessage}}
+\index{testUInt64ArrayNotWithinDeltaAndMessage@{testUInt64ArrayNotWithinDeltaAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayNotWithinDeltaAndMessage()}{testUInt64ArrayNotWithinDeltaAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ab58a3d32573110ce1bd8725bc9a0a4c6} 
+void test\+UInt64\+Array\+Not\+Within\+Delta\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a91d0d1cb6f8b37f7165ce5253f35619e}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDelta@{testUInt64ArrayWithinDelta}}
+\index{testUInt64ArrayWithinDelta@{testUInt64ArrayWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDelta()}{testUInt64ArrayWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a91d0d1cb6f8b37f7165ce5253f35619e} 
+void test\+UInt64\+Array\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a7033e4ccc05e40fe9c33ba5cad382191}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaActualNull@{testUInt64ArrayWithinDeltaActualNull}}
+\index{testUInt64ArrayWithinDeltaActualNull@{testUInt64ArrayWithinDeltaActualNull}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaActualNull()}{testUInt64ArrayWithinDeltaActualNull()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a7033e4ccc05e40fe9c33ba5cad382191} 
+void test\+UInt64\+Array\+Within\+Delta\+Actual\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_af3487ed2114b7f12ea45a592b310a05a}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaActualNullAndMessage@{testUInt64ArrayWithinDeltaActualNullAndMessage}}
+\index{testUInt64ArrayWithinDeltaActualNullAndMessage@{testUInt64ArrayWithinDeltaActualNullAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaActualNullAndMessage()}{testUInt64ArrayWithinDeltaActualNullAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_af3487ed2114b7f12ea45a592b310a05a} 
+void test\+UInt64\+Array\+Within\+Delta\+Actual\+Null\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a945789942bfe1ed52d6e9a1124ff1b4c}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaAndMessage@{testUInt64ArrayWithinDeltaAndMessage}}
+\index{testUInt64ArrayWithinDeltaAndMessage@{testUInt64ArrayWithinDeltaAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaAndMessage()}{testUInt64ArrayWithinDeltaAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a945789942bfe1ed52d6e9a1124ff1b4c} 
+void test\+UInt64\+Array\+Within\+Delta\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a87c314177fbf65c27b91857a588972ae}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaExpectedNull@{testUInt64ArrayWithinDeltaExpectedNull}}
+\index{testUInt64ArrayWithinDeltaExpectedNull@{testUInt64ArrayWithinDeltaExpectedNull}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaExpectedNull()}{testUInt64ArrayWithinDeltaExpectedNull()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a87c314177fbf65c27b91857a588972ae} 
+void test\+UInt64\+Array\+Within\+Delta\+Expected\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a68f9b04231aa026ced56c9b49c13571e}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaExpectedNullAndMessage@{testUInt64ArrayWithinDeltaExpectedNullAndMessage}}
+\index{testUInt64ArrayWithinDeltaExpectedNullAndMessage@{testUInt64ArrayWithinDeltaExpectedNullAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaExpectedNullAndMessage()}{testUInt64ArrayWithinDeltaExpectedNullAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a68f9b04231aa026ced56c9b49c13571e} 
+void test\+UInt64\+Array\+Within\+Delta\+Expected\+Null\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a2ab15fc2d6c38846c6d4aea8f12f7c5b}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaPointless@{testUInt64ArrayWithinDeltaPointless}}
+\index{testUInt64ArrayWithinDeltaPointless@{testUInt64ArrayWithinDeltaPointless}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaPointless()}{testUInt64ArrayWithinDeltaPointless()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a2ab15fc2d6c38846c6d4aea8f12f7c5b} 
+void test\+UInt64\+Array\+Within\+Delta\+Pointless (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a63c81cbd74aadc37d2402f6cc83a6d6d}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaPointlessAndMessage@{testUInt64ArrayWithinDeltaPointlessAndMessage}}
+\index{testUInt64ArrayWithinDeltaPointlessAndMessage@{testUInt64ArrayWithinDeltaPointlessAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaPointlessAndMessage()}{testUInt64ArrayWithinDeltaPointlessAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a63c81cbd74aadc37d2402f6cc83a6d6d} 
+void test\+UInt64\+Array\+Within\+Delta\+Pointless\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a6242f0270056bcb831645805335269ae}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaSamePointer@{testUInt64ArrayWithinDeltaSamePointer}}
+\index{testUInt64ArrayWithinDeltaSamePointer@{testUInt64ArrayWithinDeltaSamePointer}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaSamePointer()}{testUInt64ArrayWithinDeltaSamePointer()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a6242f0270056bcb831645805335269ae} 
+void test\+UInt64\+Array\+Within\+Delta\+Same\+Pointer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a454968de649141c3adad58fc5a8c4b7e}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUInt64ArrayWithinDeltaSamePointerAndMessage@{testUInt64ArrayWithinDeltaSamePointerAndMessage}}
+\index{testUInt64ArrayWithinDeltaSamePointerAndMessage@{testUInt64ArrayWithinDeltaSamePointerAndMessage}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUInt64ArrayWithinDeltaSamePointerAndMessage()}{testUInt64ArrayWithinDeltaSamePointerAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a454968de649141c3adad58fc5a8c4b7e} 
+void test\+UInt64\+Array\+Within\+Delta\+Same\+Pointer\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_ac6cdd3500686de21a315e087e21484d2}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUINT64sNotWithinDelta@{testUINT64sNotWithinDelta}}
+\index{testUINT64sNotWithinDelta@{testUINT64sNotWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUINT64sNotWithinDelta()}{testUINT64sNotWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_ac6cdd3500686de21a315e087e21484d2} 
+void test\+UINT64s\+Not\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a7285c549e5b7a46c304b652b000a0031}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUINT64sNotWithinDeltaEvenThoughASignedIntWouldPass@{testUINT64sNotWithinDeltaEvenThoughASignedIntWouldPass}}
+\index{testUINT64sNotWithinDeltaEvenThoughASignedIntWouldPass@{testUINT64sNotWithinDeltaEvenThoughASignedIntWouldPass}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUINT64sNotWithinDeltaEvenThoughASignedIntWouldPass()}{testUINT64sNotWithinDeltaEvenThoughASignedIntWouldPass()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a7285c549e5b7a46c304b652b000a0031} 
+void test\+UINT64s\+Not\+Within\+Delta\+Even\+Though\+ASigned\+Int\+Would\+Pass (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__integers__64_8c_a3ed847de4633bca2faaa1e1856ff04eb}\index{test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}!testUINT64sWithinDelta@{testUINT64sWithinDelta}}
+\index{testUINT64sWithinDelta@{testUINT64sWithinDelta}!test\_unity\_integers\_64.c@{test\_unity\_integers\_64.c}}
+\doxysubsubsection{\texorpdfstring{testUINT64sWithinDelta()}{testUINT64sWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__integers__64_8c_a3ed847de4633bca2faaa1e1856ff04eb} 
+void test\+UINT64s\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+

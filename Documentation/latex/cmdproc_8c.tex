@@ -1,0 +1,105 @@
+\doxysection{Assignment2\+Lib/cmdproc.c File Reference}
+\hypertarget{cmdproc_8c}{}\label{cmdproc_8c}\index{Assignment2Lib/cmdproc.c@{Assignment2Lib/cmdproc.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}cmdproc.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{cmdproc_8c_afbdfe0465dfd34a5f244fe41fa27c12a}{cmd\+Processor}} (void)
+\begin{DoxyCompactList}\small\item\em This function processes the chars in the Rx\+Buffer and looks for commands. Returns\+: ~\newline
+ 0\+: if a valid command was found and executed ~\newline
+ -\/1\+: if empty string or incomplete command found ~\newline
+ -\/2\+: if an invalid command was found ~\newline
+ -\/3\+: if a CS error is detected (command not executed) ~\newline
+ -\/4\+: if string format is wrong. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmdproc_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}{calc\+Checksum}} (unsigned char \texorpdfstring{$\ast$}{*}buf, int nbytes)
+\begin{DoxyCompactList}\small\item\em This function controlls that the sensor is send the correct data by computing the checksum of a given number of chars. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmdproc_8c_a67ae8a79a708a3c5471668bddbd16400}{rx\+Char}} (unsigned char car)
+\begin{DoxyCompactList}\small\item\em This function adds a char to the Rx\+Buffer, i.\+e creates the reception of commands. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmdproc_8c_abdb4363f0662688850bbcdfb59ce4566}{tx\+Char}} (unsigned char car)
+\begin{DoxyCompactList}\small\item\em This function adds a char to the Tx\+Buffer, i.\+e creates the transmission of answers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmdproc_8c_a918f38a7eecdd03671d28a3a07f94856}{reset\+Rx\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em This function resets the Rx\+Buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmdproc_8c_abd91ad9b5887f4769f45823899583bab}{reset\+Tx\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em This function resets the Tx\+Buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmdproc_8c_a8beeddde9a644610c72724be856db6dd}{get\+Tx\+Buffer}} (unsigned char \texorpdfstring{$\ast$}{*}buf, int \texorpdfstring{$\ast$}{*}len)
+\begin{DoxyCompactList}\small\item\em This function receives the data that would be sent by the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{cmdproc_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}\index{cmdproc.c@{cmdproc.c}!calcChecksum@{calcChecksum}}
+\index{calcChecksum@{calcChecksum}!cmdproc.c@{cmdproc.c}}
+\doxysubsubsection{\texorpdfstring{calcChecksum()}{calcChecksum()}}
+{\footnotesize\ttfamily \label{cmdproc_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1} 
+int calc\+Checksum (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{int}]{nbytes}{}\end{DoxyParamCaption})}
+
+
+
+This function controlls that the sensor is send the correct data by computing the checksum of a given number of chars. 
+
+\Hypertarget{cmdproc_8c_afbdfe0465dfd34a5f244fe41fa27c12a}\index{cmdproc.c@{cmdproc.c}!cmdProcessor@{cmdProcessor}}
+\index{cmdProcessor@{cmdProcessor}!cmdproc.c@{cmdproc.c}}
+\doxysubsubsection{\texorpdfstring{cmdProcessor()}{cmdProcessor()}}
+{\footnotesize\ttfamily \label{cmdproc_8c_afbdfe0465dfd34a5f244fe41fa27c12a} 
+int cmd\+Processor (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function processes the chars in the Rx\+Buffer and looks for commands. Returns\+: ~\newline
+ 0\+: if a valid command was found and executed ~\newline
+ -\/1\+: if empty string or incomplete command found ~\newline
+ -\/2\+: if an invalid command was found ~\newline
+ -\/3\+: if a CS error is detected (command not executed) ~\newline
+ -\/4\+: if string format is wrong. 
+
+\Hypertarget{cmdproc_8c_a8beeddde9a644610c72724be856db6dd}\index{cmdproc.c@{cmdproc.c}!getTxBuffer@{getTxBuffer}}
+\index{getTxBuffer@{getTxBuffer}!cmdproc.c@{cmdproc.c}}
+\doxysubsubsection{\texorpdfstring{getTxBuffer()}{getTxBuffer()}}
+{\footnotesize\ttfamily \label{cmdproc_8c_a8beeddde9a644610c72724be856db6dd} 
+void get\+Tx\+Buffer (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{len}{}\end{DoxyParamCaption})}
+
+
+
+This function receives the data that would be sent by the sensor. 
+
+\Hypertarget{cmdproc_8c_a918f38a7eecdd03671d28a3a07f94856}\index{cmdproc.c@{cmdproc.c}!resetRxBuffer@{resetRxBuffer}}
+\index{resetRxBuffer@{resetRxBuffer}!cmdproc.c@{cmdproc.c}}
+\doxysubsubsection{\texorpdfstring{resetRxBuffer()}{resetRxBuffer()}}
+{\footnotesize\ttfamily \label{cmdproc_8c_a918f38a7eecdd03671d28a3a07f94856} 
+void reset\+Rx\+Buffer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function resets the Rx\+Buffer. 
+
+\Hypertarget{cmdproc_8c_abd91ad9b5887f4769f45823899583bab}\index{cmdproc.c@{cmdproc.c}!resetTxBuffer@{resetTxBuffer}}
+\index{resetTxBuffer@{resetTxBuffer}!cmdproc.c@{cmdproc.c}}
+\doxysubsubsection{\texorpdfstring{resetTxBuffer()}{resetTxBuffer()}}
+{\footnotesize\ttfamily \label{cmdproc_8c_abd91ad9b5887f4769f45823899583bab} 
+void reset\+Tx\+Buffer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function resets the Tx\+Buffer. 
+
+\Hypertarget{cmdproc_8c_a67ae8a79a708a3c5471668bddbd16400}\index{cmdproc.c@{cmdproc.c}!rxChar@{rxChar}}
+\index{rxChar@{rxChar}!cmdproc.c@{cmdproc.c}}
+\doxysubsubsection{\texorpdfstring{rxChar()}{rxChar()}}
+{\footnotesize\ttfamily \label{cmdproc_8c_a67ae8a79a708a3c5471668bddbd16400} 
+int rx\+Char (\begin{DoxyParamCaption}\item[{unsigned char}]{car}{}\end{DoxyParamCaption})}
+
+
+
+This function adds a char to the Rx\+Buffer, i.\+e creates the reception of commands. 
+
+\Hypertarget{cmdproc_8c_abdb4363f0662688850bbcdfb59ce4566}\index{cmdproc.c@{cmdproc.c}!txChar@{txChar}}
+\index{txChar@{txChar}!cmdproc.c@{cmdproc.c}}
+\doxysubsubsection{\texorpdfstring{txChar()}{txChar()}}
+{\footnotesize\ttfamily \label{cmdproc_8c_abdb4363f0662688850bbcdfb59ce4566} 
+int tx\+Char (\begin{DoxyParamCaption}\item[{unsigned char}]{car}{}\end{DoxyParamCaption})}
+
+
+
+This function adds a char to the Tx\+Buffer, i.\+e creates the transmission of answers. 
+

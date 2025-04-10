@@ -1,0 +1,117 @@
+\doxysection{Unity/examples/example\+\_\+4/test/test\+\_\+runners/\+Test\+Production\+Code\+\_\+\+Runner.c File Reference}
+\hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c}{}\label{example__4_2test_2test__runners_2_test_production_code___runner_8c}\index{Unity/examples/example\_4/test/test\_runners/TestProductionCode\_Runner.c@{Unity/examples/example\_4/test/test\_runners/TestProductionCode\_Runner.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}Production\+Code.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\+\_\+\+TEST}}(Test\+Func,  Test\+Line\+Num)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_a456db30f72bd3d195f6186e354d48d52}{test\+\_\+\+Find\+Function\+\_\+\+Which\+Is\+Broken\+\_\+\+Should\+Return\+Zero\+If\+Item\+Is\+Not\+In\+List\+\_\+\+Which\+Works\+Even\+In\+Our\+Broken\+Code}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_aefb77df5c263e7f0d0983c5adb2fee34}{test\+\_\+\+Find\+Function\+\_\+\+Which\+Is\+Broken\+\_\+\+Should\+Return\+The\+Index\+For\+Items\+In\+List\+\_\+\+Which\+Will\+Fail\+Because\+Our\+Function\+Under\+Test\+Is\+Broken}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_aa785dc87e720eb7802a3d95f1cb32496}{test\+\_\+\+Function\+Which\+Returns\+Local\+Variable\+\_\+\+Should\+Return\+The\+Current\+Counter\+Value}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_a7e3355b3a7e19feff586380e64271aa5}{test\+\_\+\+Function\+Which\+Returns\+Local\+Variable\+\_\+\+Should\+Return\+The\+Current\+Counter\+Value\+Again}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_acd3888c1cd44175194b4d27a5b0aed2e}{test\+\_\+\+Function\+Which\+Returns\+Local\+Variable\+\_\+\+Should\+Return\+Current\+Counter\+\_\+\+But\+Fails\+Because\+This\+Test\+Is\+Actually\+Flawed}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7}{reset\+Test}} (void)
+\item 
+int \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code___runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!RUN\_TEST@{RUN\_TEST}}
+\index{RUN\_TEST@{RUN\_TEST}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{RUN\_TEST}{RUN\_TEST}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_af3a9b37ea192d5f498c7d699d65ad530} 
+\#define RUN\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{Test\+Func}{, }\item[{}]{Test\+Line\+Num}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestName\ =\ \#TestFunc;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestLineNumber\ =\ TestLineNum;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.NumberOfTests++;\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}())\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ setUp();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ TestFunc();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}())\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ tearDown();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ UnityConcludeTest();\ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!main@{main}}
+\index{main@{main}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!resetTest@{resetTest}}
+\index{resetTest@{resetTest}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{resetTest()}{resetTest()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7} 
+void reset\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!setUp@{setUp}}
+\index{setUp@{setUp}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_a9909011e5fea0c018842eec4d93d0662}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_aefb77df5c263e7f0d0983c5adb2fee34}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!test\_FindFunction\_WhichIsBroken\_ShouldReturnTheIndexForItemsInList\_WhichWillFailBecauseOurFunctionUnderTestIsBroken@{test\_FindFunction\_WhichIsBroken\_ShouldReturnTheIndexForItemsInList\_WhichWillFailBecauseOurFunctionUnderTestIsBroken}}
+\index{test\_FindFunction\_WhichIsBroken\_ShouldReturnTheIndexForItemsInList\_WhichWillFailBecauseOurFunctionUnderTestIsBroken@{test\_FindFunction\_WhichIsBroken\_ShouldReturnTheIndexForItemsInList\_WhichWillFailBecauseOurFunctionUnderTestIsBroken}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_FindFunction\_WhichIsBroken\_ShouldReturnTheIndexForItemsInList\_WhichWillFailBecauseOurFunctionUnderTestIsBroken()}{test\_FindFunction\_WhichIsBroken\_ShouldReturnTheIndexForItemsInList\_WhichWillFailBecauseOurFunctionUnderTestIsBroken()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_aefb77df5c263e7f0d0983c5adb2fee34} 
+void test\+\_\+\+Find\+Function\+\_\+\+Which\+Is\+Broken\+\_\+\+Should\+Return\+The\+Index\+For\+Items\+In\+List\+\_\+\+Which\+Will\+Fail\+Because\+Our\+Function\+Under\+Test\+Is\+Broken (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_a456db30f72bd3d195f6186e354d48d52}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!test\_FindFunction\_WhichIsBroken\_ShouldReturnZeroIfItemIsNotInList\_WhichWorksEvenInOurBrokenCode@{test\_FindFunction\_WhichIsBroken\_ShouldReturnZeroIfItemIsNotInList\_WhichWorksEvenInOurBrokenCode}}
+\index{test\_FindFunction\_WhichIsBroken\_ShouldReturnZeroIfItemIsNotInList\_WhichWorksEvenInOurBrokenCode@{test\_FindFunction\_WhichIsBroken\_ShouldReturnZeroIfItemIsNotInList\_WhichWorksEvenInOurBrokenCode}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_FindFunction\_WhichIsBroken\_ShouldReturnZeroIfItemIsNotInList\_WhichWorksEvenInOurBrokenCode()}{test\_FindFunction\_WhichIsBroken\_ShouldReturnZeroIfItemIsNotInList\_WhichWorksEvenInOurBrokenCode()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_a456db30f72bd3d195f6186e354d48d52} 
+void test\+\_\+\+Find\+Function\+\_\+\+Which\+Is\+Broken\+\_\+\+Should\+Return\+Zero\+If\+Item\+Is\+Not\+In\+List\+\_\+\+Which\+Works\+Even\+In\+Our\+Broken\+Code (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_acd3888c1cd44175194b4d27a5b0aed2e}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!test\_FunctionWhichReturnsLocalVariable\_ShouldReturnCurrentCounter\_ButFailsBecauseThisTestIsActuallyFlawed@{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnCurrentCounter\_ButFailsBecauseThisTestIsActuallyFlawed}}
+\index{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnCurrentCounter\_ButFailsBecauseThisTestIsActuallyFlawed@{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnCurrentCounter\_ButFailsBecauseThisTestIsActuallyFlawed}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnCurrentCounter\_ButFailsBecauseThisTestIsActuallyFlawed()}{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnCurrentCounter\_ButFailsBecauseThisTestIsActuallyFlawed()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_acd3888c1cd44175194b4d27a5b0aed2e} 
+void test\+\_\+\+Function\+Which\+Returns\+Local\+Variable\+\_\+\+Should\+Return\+Current\+Counter\+\_\+\+But\+Fails\+Because\+This\+Test\+Is\+Actually\+Flawed (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_aa785dc87e720eb7802a3d95f1cb32496}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValue@{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValue}}
+\index{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValue@{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValue}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValue()}{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValue()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_aa785dc87e720eb7802a3d95f1cb32496} 
+void test\+\_\+\+Function\+Which\+Returns\+Local\+Variable\+\_\+\+Should\+Return\+The\+Current\+Counter\+Value (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code___runner_8c_a7e3355b3a7e19feff586380e64271aa5}\index{TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}!test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValueAgain@{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValueAgain}}
+\index{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValueAgain@{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValueAgain}!TestProductionCode\_Runner.c@{TestProductionCode\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValueAgain()}{test\_FunctionWhichReturnsLocalVariable\_ShouldReturnTheCurrentCounterValueAgain()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code___runner_8c_a7e3355b3a7e19feff586380e64271aa5} 
+void test\+\_\+\+Function\+Which\+Returns\+Local\+Variable\+\_\+\+Should\+Return\+The\+Current\+Counter\+Value\+Again (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

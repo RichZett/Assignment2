@@ -1,0 +1,313 @@
+\doxysection{Unity/test/tests/test\+\_\+unity\+\_\+parameterized.c File Reference}
+\hypertarget{test__unity__parameterized_8c}{}\label{test__unity__parameterized_8c}\index{Unity/test/tests/test\_unity\_parameterized.c@{Unity/test/tests/test\_unity\_parameterized.c}}
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+for\+\_\+test.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__unity__parameterized_8c_a85bc005380b1bef3aa55f24f75c2297a}{EXPECT\+\_\+\+ABORT\+\_\+\+BEGIN}}
+\item 
+\#define \mbox{\hyperlink{test__unity__parameterized_8c_a80f860c4c602808fbfff8f3867acb480}{VERIFY\+\_\+\+FAILS\+\_\+\+END}}
+\item 
+\#define \mbox{\hyperlink{test__unity__parameterized_8c_ab17bbadc271482ac2b25ebaf9f11bfca}{VERIFY\+\_\+\+IGNORES\+\_\+\+END}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a08a0cd52d73781ede109f0c6da276031}{putchar\+Spy}} (int \mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}})
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a443aedca98e174d6fc80f6f4e1e35b62}{flush\+Spy}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a0f08bc53b5978d3892a36f98df005b37}{suite\+Set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_ae0b206429a346943294739ed2b29b55f}{test\+\_\+\+These\+Should\+All\+Pass}} (int Num)
+\item 
+\mbox{\hyperlink{test__unity__parameterized_8c_a177eac5f568a901c82e4593acc60b50c}{TEST\+\_\+\+CASE}} ((99)+1 -\/(1))
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_ae9fd8c5ebd3639888abbd2fcd2ef71a1}{test\+\_\+\+These\+Are\+Every\+Other}} (int Num)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a8cce3f456d3e1a58fe25ceb749619618}{test\+\_\+\+Normal\+Passes\+Still\+Work}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a85f0adef059abbeda5fb4e4f55e1c639}{test\+\_\+\+Normal\+Fails\+Still\+Work}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a874000410055b72718d1a66d70d79c05}{test\+\_\+\+Strings\+Are\+Preserved}} (unsigned index, const char \texorpdfstring{$\ast$}{*}str)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_ab034abc002856d361d017fc7ca772799}{test\+\_\+\+Chars\+Are\+Preserved}} (unsigned index, char \mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}})
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a7c2c1e7559a1885854cb20d95acc817a}{test\+\_\+\+Single\+Range}} (unsigned value)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a1f1b0d1b185075ed3afc52178eb2d6bd}{test\+\_\+\+Two\+Ranges}} (unsigned first, unsigned second)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a0c0417b8f65d232118530c0bf04c249a}{test\+\_\+\+Single\+Exclusive\+Range}} (unsigned value)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a37226962bdb3fa4e02d1e1b8528ffe8f}{test\+\_\+\+Both\+Inclusive\+And\+Exclusive\+Range}} (unsigned first, unsigned second)
+\item 
+\mbox{\hyperlink{test__unity__parameterized_8c_a8474e3dcd0cfbe9c7df69fd7aebc5dba}{TEST\+\_\+\+CASE}} (0, TEST\+\_\+\+CASE(1)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a38f979cf28d76d04a373496e8fa47bb5}{test\+\_\+\+Single\+Matix}} (unsigned value)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a1db8dad08e50ab78674087e2e2361c1e}{test\+\_\+\+Two\+Matrices}} (unsigned first, signed second)
+\item 
+void \mbox{\hyperlink{test__unity__parameterized_8c_a463386d8b1940a93a6da3dd119453d6a}{test\+\_\+\+Strings\+And\+Numbers\+Matrices}} (const char \texorpdfstring{$\ast$}{*}str, float number)
+\item 
+\mbox{\hyperlink{test__unity__parameterized_8c_af8c2391ecc71d5c3ff958bc0146af935}{TEST\+\_\+\+MATRIX}} (\mbox{[}\mbox{\hyperlink{types__for__test_8h_a2e983501643275d44fb83537b3090809aca5528c86ab6f398979a03e811731e42}{ENUM\+\_\+A}}, \mbox{\hyperlink{types__for__test_8h_a2e983501643275d44fb83537b3090809ad81e57f88e872de9148e7fa0092061f1}{ENUM\+\_\+4}}, \mbox{\hyperlink{types__for__test_8h_a2e983501643275d44fb83537b3090809a61957766178c4a982fd791b7e4b14661}{ENUM\+\_\+C}}\mbox{]}, \mbox{[}test\+\_\+arr\mbox{[}0\mbox{]}, 7.\+8\mbox{\hyperlink{unity_8c_af900396d7b72ff2a7002e8befe8cf8f1}{f}}, test\+\_\+arr\mbox{[}2\mbox{]}\mbox{]}, \mbox{[}\textquotesingle{}a\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{unity_8c_af900396d7b72ff2a7002e8befe8cf8f1}{f}}\textquotesingle{}, \textquotesingle{}\mbox{[}\textquotesingle{}, \textquotesingle{}\mbox{]}\textquotesingle{}, \textquotesingle{}\textbackslash{}\textquotesingle{}\textquotesingle{}, \textquotesingle{}"{}\textquotesingle{}\mbox{]}, ) void test\+\_\+\+Enum\+Char\+And\+Array\+Matrices(\mbox{\hyperlink{types__for__test_8h_a2e983501643275d44fb83537b3090809}{test\+\_\+enum\+\_\+t}} e
+\item 
+\mbox{\hyperlink{test__unity__parameterized_8c_a26f62e52b3964801a1af2331e530c9f7}{TEST\+\_\+\+ASSERT\+\_\+\+EQUAL\+\_\+\+INT}} (exp\+\_\+enum\mbox{[}enum\+\_\+idx\mbox{]}, e)
+\item 
+\mbox{\hyperlink{test__unity__parameterized_8c_a4c1d7e19d2392fff7dd7463a62e15b1e}{TEST\+\_\+\+ASSERT\+\_\+\+EQUAL\+\_\+\+FLOAT}} (\mbox{\hyperlink{test__unity__parameterized_8c_a908b9a200e1369663b5961c48940dc7a}{exp\+\_\+float}}\mbox{[}float\+\_\+idx\mbox{]}, \mbox{\hyperlink{test__unity__parameterized_8c_a7f72c6c4ce2ae87fa6fe5f6f22cd9d67}{n}})
+\item 
+\mbox{\hyperlink{test__unity__parameterized_8c_ae3508245376f666de73265e310dc356f}{TEST\+\_\+\+ASSERT\+\_\+\+EQUAL\+\_\+\+CHAR}} (exp\+\_\+char\mbox{[}char\+\_\+idx\mbox{]}, \mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}})
+\item 
+\mbox{\hyperlink{test__unity__parameterized_8c_ad4e2d4127a89d2ba93a6fffcd41e1507}{if}} (char\+\_\+idx==0.\+0f)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{test__unity__parameterized_8c_a7f72c6c4ce2ae87fa6fe5f6f22cd9d67}{n}}
+\item 
+float char \mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}}
+\item 
+float \mbox{\hyperlink{test__unity__parameterized_8c_a908b9a200e1369663b5961c48940dc7a}{exp\+\_\+float}} \mbox{[}3\mbox{]} = \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test__unity__parameterized_8c_a85bc005380b1bef3aa55f24f75c2297a}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!EXPECT\_ABORT\_BEGIN@{EXPECT\_ABORT\_BEGIN}}
+\index{EXPECT\_ABORT\_BEGIN@{EXPECT\_ABORT\_BEGIN}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_ABORT\_BEGIN}{EXPECT\_ABORT\_BEGIN}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a85bc005380b1bef3aa55f24f75c2297a} 
+\#define EXPECT\+\_\+\+ABORT\+\_\+\+BEGIN}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}())\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{}
+
+\end{DoxyCode}
+\Hypertarget{test__unity__parameterized_8c_a80f860c4c602808fbfff8f3867acb480}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!VERIFY\_FAILS\_END@{VERIFY\_FAILS\_END}}
+\index{VERIFY\_FAILS\_END@{VERIFY\_FAILS\_END}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{VERIFY\_FAILS\_END}{VERIFY\_FAILS\_END}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a80f860c4c602808fbfff8f3867acb480} 
+\#define VERIFY\+\_\+\+FAILS\+\_\+\+END}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestFailed\ =\ (\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestFailed\ !=\ 0)\ ?\ 0\ :\ 1;\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestFailed\ ==\ 1)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ SetToOneMeanWeAlreadyCheckedThisGuy\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UnityPrintNumberUnsigned(\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestLineNumber);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UNITY\_OUTPUT\_CHAR(\textcolor{charliteral}{':'});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UnityPrint(\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestName);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UnityPrint(\textcolor{stringliteral}{"{}:FAIL:\ [[[[\ Test\ Should\ Have\ Failed\ But\ Did\ Not\ ]]]]"{}});\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UNITY\_OUTPUT\_CHAR(\textcolor{charliteral}{'\(\backslash\)n'});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{test__unity__parameterized_8c_ab17bbadc271482ac2b25ebaf9f11bfca}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!VERIFY\_IGNORES\_END@{VERIFY\_IGNORES\_END}}
+\index{VERIFY\_IGNORES\_END@{VERIFY\_IGNORES\_END}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{VERIFY\_IGNORES\_END}{VERIFY\_IGNORES\_END}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_ab17bbadc271482ac2b25ebaf9f11bfca} 
+\#define VERIFY\+\_\+\+IGNORES\+\_\+\+END}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestFailed\ =\ (\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestIgnored\ !=\ 0)\ ?\ 0\ :\ 1;\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestIgnored\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestFailed\ ==\ 1)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ SetToOneMeanWeAlreadyCheckedThisGuy\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UnityPrintNumberUnsigned(\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestLineNumber);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UNITY\_OUTPUT\_CHAR(\textcolor{charliteral}{':'});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UnityPrint(\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestName);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UnityPrint(\textcolor{stringliteral}{"{}:FAIL:\ [[[[\ Test\ Should\ Have\ Ignored\ But\ Did\ Not\ ]]]]"{}});\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ UNITY\_OUTPUT\_CHAR(\textcolor{charliteral}{'\(\backslash\)n'});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__unity__parameterized_8c_a443aedca98e174d6fc80f6f4e1e35b62}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!flushSpy@{flushSpy}}
+\index{flushSpy@{flushSpy}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{flushSpy()}{flushSpy()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a443aedca98e174d6fc80f6f4e1e35b62} 
+void flush\+Spy (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_ad4e2d4127a89d2ba93a6fffcd41e1507}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!if@{if}}
+\index{if@{if}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_ad4e2d4127a89d2ba93a6fffcd41e1507} 
+if (\begin{DoxyParamCaption}\item[{char\+\_\+idx}]{}{ = {\ttfamily =~0.0f}}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a08a0cd52d73781ede109f0c6da276031}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!putcharSpy@{putcharSpy}}
+\index{putcharSpy@{putcharSpy}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{putcharSpy()}{putcharSpy()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a08a0cd52d73781ede109f0c6da276031} 
+void putchar\+Spy (\begin{DoxyParamCaption}\item[{int}]{c}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!setUp@{setUp}}
+\index{setUp@{setUp}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a0f08bc53b5978d3892a36f98df005b37}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!suiteSetUp@{suiteSetUp}}
+\index{suiteSetUp@{suiteSetUp}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{suiteSetUp()}{suiteSetUp()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a0f08bc53b5978d3892a36f98df005b37} 
+void suite\+Set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a9909011e5fea0c018842eec4d93d0662}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_ae3508245376f666de73265e310dc356f}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!TEST\_ASSERT\_EQUAL\_CHAR@{TEST\_ASSERT\_EQUAL\_CHAR}}
+\index{TEST\_ASSERT\_EQUAL\_CHAR@{TEST\_ASSERT\_EQUAL\_CHAR}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_ASSERT\_EQUAL\_CHAR()}{TEST\_ASSERT\_EQUAL\_CHAR()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_ae3508245376f666de73265e310dc356f} 
+TEST\+\_\+\+ASSERT\+\_\+\+EQUAL\+\_\+\+CHAR (\begin{DoxyParamCaption}\item[{exp\+\_\+char}]{}{\mbox{[}char\+\_\+idx\mbox{]}, }\item[{\mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a4c1d7e19d2392fff7dd7463a62e15b1e}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!TEST\_ASSERT\_EQUAL\_FLOAT@{TEST\_ASSERT\_EQUAL\_FLOAT}}
+\index{TEST\_ASSERT\_EQUAL\_FLOAT@{TEST\_ASSERT\_EQUAL\_FLOAT}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_ASSERT\_EQUAL\_FLOAT()}{TEST\_ASSERT\_EQUAL\_FLOAT()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a4c1d7e19d2392fff7dd7463a62e15b1e} 
+TEST\+\_\+\+ASSERT\+\_\+\+EQUAL\+\_\+\+FLOAT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{test__unity__parameterized_8c_a908b9a200e1369663b5961c48940dc7a}{exp\+\_\+float}}}]{}{\mbox{[}float\+\_\+idx\mbox{]}, }\item[{\mbox{\hyperlink{test__unity__parameterized_8c_a7f72c6c4ce2ae87fa6fe5f6f22cd9d67}{n}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a26f62e52b3964801a1af2331e530c9f7}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!TEST\_ASSERT\_EQUAL\_INT@{TEST\_ASSERT\_EQUAL\_INT}}
+\index{TEST\_ASSERT\_EQUAL\_INT@{TEST\_ASSERT\_EQUAL\_INT}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_ASSERT\_EQUAL\_INT()}{TEST\_ASSERT\_EQUAL\_INT()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a26f62e52b3964801a1af2331e530c9f7} 
+TEST\+\_\+\+ASSERT\+\_\+\+EQUAL\+\_\+\+INT (\begin{DoxyParamCaption}\item[{exp\+\_\+enum}]{}{\mbox{[}enum\+\_\+idx\mbox{]}, }\item[{e}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a37226962bdb3fa4e02d1e1b8528ffe8f}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_BothInclusiveAndExclusiveRange@{test\_BothInclusiveAndExclusiveRange}}
+\index{test\_BothInclusiveAndExclusiveRange@{test\_BothInclusiveAndExclusiveRange}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_BothInclusiveAndExclusiveRange()}{test\_BothInclusiveAndExclusiveRange()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a37226962bdb3fa4e02d1e1b8528ffe8f} 
+void test\+\_\+\+Both\+Inclusive\+And\+Exclusive\+Range (\begin{DoxyParamCaption}\item[{unsigned}]{first}{, }\item[{unsigned}]{second}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a177eac5f568a901c82e4593acc60b50c}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a177eac5f568a901c82e4593acc60b50c} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{(99)+1 -\/(1)}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a8474e3dcd0cfbe9c7df69fd7aebc5dba}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a8474e3dcd0cfbe9c7df69fd7aebc5dba} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{0}]{}{, }\item[{TEST\+\_\+\+CASE(}]{1}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_ab034abc002856d361d017fc7ca772799}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_CharsArePreserved@{test\_CharsArePreserved}}
+\index{test\_CharsArePreserved@{test\_CharsArePreserved}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_CharsArePreserved()}{test\_CharsArePreserved()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_ab034abc002856d361d017fc7ca772799} 
+void test\+\_\+\+Chars\+Are\+Preserved (\begin{DoxyParamCaption}\item[{unsigned}]{index}{, }\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_af8c2391ecc71d5c3ff958bc0146af935}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!TEST\_MATRIX@{TEST\_MATRIX}}
+\index{TEST\_MATRIX@{TEST\_MATRIX}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_MATRIX()}{TEST\_MATRIX()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_af8c2391ecc71d5c3ff958bc0146af935} 
+TEST\+\_\+\+MATRIX (\begin{DoxyParamCaption}\item[{7.}]{8f}{, }\item[{test\+\_\+arr\mbox{]}}]{}{\mbox{[}2\mbox{]}, }\item[{\mbox{[}\textquotesingle{}a\textquotesingle{}, \textquotesingle{}f\textquotesingle{}, \textquotesingle{}\mbox{[}\textquotesingle{}, \textquotesingle{}\mbox{]} \textquotesingle{}}]{}{, }\item[{\textquotesingle{}\textbackslash{}\textquotesingle{}\textquotesingle{}}]{}{, }\item[{\textquotesingle{}"{}\textquotesingle{}\mbox{]}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a85f0adef059abbeda5fb4e4f55e1c639}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_NormalFailsStillWork@{test\_NormalFailsStillWork}}
+\index{test\_NormalFailsStillWork@{test\_NormalFailsStillWork}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_NormalFailsStillWork()}{test\_NormalFailsStillWork()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a85f0adef059abbeda5fb4e4f55e1c639} 
+void test\+\_\+\+Normal\+Fails\+Still\+Work (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a8cce3f456d3e1a58fe25ceb749619618}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_NormalPassesStillWork@{test\_NormalPassesStillWork}}
+\index{test\_NormalPassesStillWork@{test\_NormalPassesStillWork}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_NormalPassesStillWork()}{test\_NormalPassesStillWork()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a8cce3f456d3e1a58fe25ceb749619618} 
+void test\+\_\+\+Normal\+Passes\+Still\+Work (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a0c0417b8f65d232118530c0bf04c249a}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_SingleExclusiveRange@{test\_SingleExclusiveRange}}
+\index{test\_SingleExclusiveRange@{test\_SingleExclusiveRange}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_SingleExclusiveRange()}{test\_SingleExclusiveRange()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a0c0417b8f65d232118530c0bf04c249a} 
+void test\+\_\+\+Single\+Exclusive\+Range (\begin{DoxyParamCaption}\item[{unsigned}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a38f979cf28d76d04a373496e8fa47bb5}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_SingleMatix@{test\_SingleMatix}}
+\index{test\_SingleMatix@{test\_SingleMatix}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_SingleMatix()}{test\_SingleMatix()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a38f979cf28d76d04a373496e8fa47bb5} 
+void test\+\_\+\+Single\+Matix (\begin{DoxyParamCaption}\item[{unsigned}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a7c2c1e7559a1885854cb20d95acc817a}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_SingleRange@{test\_SingleRange}}
+\index{test\_SingleRange@{test\_SingleRange}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_SingleRange()}{test\_SingleRange()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a7c2c1e7559a1885854cb20d95acc817a} 
+void test\+\_\+\+Single\+Range (\begin{DoxyParamCaption}\item[{unsigned}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a463386d8b1940a93a6da3dd119453d6a}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_StringsAndNumbersMatrices@{test\_StringsAndNumbersMatrices}}
+\index{test\_StringsAndNumbersMatrices@{test\_StringsAndNumbersMatrices}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_StringsAndNumbersMatrices()}{test\_StringsAndNumbersMatrices()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a463386d8b1940a93a6da3dd119453d6a} 
+void test\+\_\+\+Strings\+And\+Numbers\+Matrices (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{float}]{number}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a874000410055b72718d1a66d70d79c05}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_StringsArePreserved@{test\_StringsArePreserved}}
+\index{test\_StringsArePreserved@{test\_StringsArePreserved}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_StringsArePreserved()}{test\_StringsArePreserved()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a874000410055b72718d1a66d70d79c05} 
+void test\+\_\+\+Strings\+Are\+Preserved (\begin{DoxyParamCaption}\item[{unsigned}]{index}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_ae9fd8c5ebd3639888abbd2fcd2ef71a1}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_TheseAreEveryOther@{test\_TheseAreEveryOther}}
+\index{test\_TheseAreEveryOther@{test\_TheseAreEveryOther}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_TheseAreEveryOther()}{test\_TheseAreEveryOther()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_ae9fd8c5ebd3639888abbd2fcd2ef71a1} 
+void test\+\_\+\+These\+Are\+Every\+Other (\begin{DoxyParamCaption}\item[{int}]{Num}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_ae0b206429a346943294739ed2b29b55f}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_TheseShouldAllPass@{test\_TheseShouldAllPass}}
+\index{test\_TheseShouldAllPass@{test\_TheseShouldAllPass}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_TheseShouldAllPass()}{test\_TheseShouldAllPass()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_ae0b206429a346943294739ed2b29b55f} 
+void test\+\_\+\+These\+Should\+All\+Pass (\begin{DoxyParamCaption}\item[{int}]{Num}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a1db8dad08e50ab78674087e2e2361c1e}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_TwoMatrices@{test\_TwoMatrices}}
+\index{test\_TwoMatrices@{test\_TwoMatrices}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_TwoMatrices()}{test\_TwoMatrices()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a1db8dad08e50ab78674087e2e2361c1e} 
+void test\+\_\+\+Two\+Matrices (\begin{DoxyParamCaption}\item[{unsigned}]{first}{, }\item[{signed}]{second}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__parameterized_8c_a1f1b0d1b185075ed3afc52178eb2d6bd}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!test\_TwoRanges@{test\_TwoRanges}}
+\index{test\_TwoRanges@{test\_TwoRanges}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{test\_TwoRanges()}{test\_TwoRanges()}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a1f1b0d1b185075ed3afc52178eb2d6bd} 
+void test\+\_\+\+Two\+Ranges (\begin{DoxyParamCaption}\item[{unsigned}]{first}{, }\item[{unsigned}]{second}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!c@{c}}
+\index{c@{c}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de} 
+float char c}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ enum\_idx\ =\ 0}
+
+\end{DoxyCode}
+\Hypertarget{test__unity__parameterized_8c_a908b9a200e1369663b5961c48940dc7a}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!exp\_float@{exp\_float}}
+\index{exp\_float@{exp\_float}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{exp\_float}{exp\_float}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a908b9a200e1369663b5961c48940dc7a} 
+exp\+\_\+float\mbox{[}2\mbox{]} = \{0\}}
+
+\Hypertarget{test__unity__parameterized_8c_a7f72c6c4ce2ae87fa6fe5f6f22cd9d67}\index{test\_unity\_parameterized.c@{test\_unity\_parameterized.c}!n@{n}}
+\index{n@{n}!test\_unity\_parameterized.c@{test\_unity\_parameterized.c}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily \label{test__unity__parameterized_8c_a7f72c6c4ce2ae87fa6fe5f6f22cd9d67} 
+float n}
+

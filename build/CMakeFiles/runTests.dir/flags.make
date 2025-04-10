@@ -6,7 +6,7 @@ C_DEFINES =
 
 C_INCLUDES = -I/Users/richardzetterman/Documents/RealTime/Assignment2/src -I/Users/richardzetterman/Documents/RealTime/Assignment2/Unity/src -I/Users/richardzetterman/Documents/RealTime/Assignment2/Assignment2Lib
 
-C_FLAGSarm64 =  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
+C_FLAGSarm64 =  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wall -Wextra -Wpedantic
 
-C_FLAGS =  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
+C_FLAGS =  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wall -Wextra -Wpedantic
 

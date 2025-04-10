@@ -19,7 +19,11 @@ what can go wrong-> byte disapear OK
 
         + check that resets work as intended 
 
-    * Remove unnecessary comments in code 
+    * Remove unnecessary comments in code OK
+
+    * Remove unnecessary code in CMake OK 
+
+    * Implement documentation
 
 Notes:
 

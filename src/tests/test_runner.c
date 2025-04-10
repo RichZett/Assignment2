@@ -5,15 +5,22 @@ void setUp(void) {}
 
 void tearDown(void) {}
 
-/* Test - Check if the rx buffer is empty */
+/**
+ * @test Checks if cmdProcessor correctly detects an empty RxBuffer
+ */
 void test_isEmpty(void)
 {
     TEST_ASSERT_EQUAL_INT(-1, cmdProcessor());
 }
-/* Check checksum works as intended */
+
+
+/** 
+ * @test Checks that the temperature command 'T' is correctly processed and correct response is transmitted.
+ */
+
 void test_cmdT_valid(void)
 {
-    unsigned char expected[] = {'#','t', '+', '2', '1', '3','!'};
+    unsigned char expected[] = {'#','t', '+', '1', '3','!'};
     unsigned char result[30];
     int len;
 
@@ -32,7 +39,9 @@ void test_cmdT_valid(void)
 
     TEST_ASSERT_EQUAL_UINT8_ARRAY(expected, result, len);
 }
-
+/** 
+ * @test Checks that the humidity command 'H' is correctly processed and correct response is transmitted.
+ */
 void test_cmdH_valid(void)
 {
     unsigned char expected[] = {'#','h', '+', '2', '1', '1', '1', '3','!'};
@@ -55,7 +64,9 @@ void test_cmdH_valid(void)
     TEST_ASSERT_EQUAL_UINT8_ARRAY(expected, result, len);
 }
 
-/* Check if wrong case - inputs are handled correctly */
+/** 
+ * @test Checks that a wrong command 'C' is correctly processed, returning -2.
+ */
 void test_invalidCase(void)
 {
     resetTxBuffer();
@@ -72,7 +83,9 @@ void test_invalidCase(void)
 }
 
 
-/* === Check resets work as intended === */
+/**
+ * @test Checks that the RxBuffer gets cleared as intended and properly. 
+ */
 void test_resetRxBuffer_valid(void)
 {
     resetRxBuffer(); 
@@ -89,7 +102,9 @@ void test_resetRxBuffer_valid(void)
 
     TEST_ASSERT_EQUAL_INT(-1, cmdProcessor());
 }
-
+/**
+ * @test Checks that the TxBuffer gets cleared as intended and properly. 
+ */
 void test_resetTxBuffer_valid(void)
 {
     unsigned char result[30];
@@ -116,10 +131,9 @@ void test_resetTxBuffer_valid(void)
     TEST_ASSERT_EQUAL(0, len);
 }
 
-
-/* === Test to check SOF === */
-
-/* Check that SOF is correct ( = # )*/
+/**
+ * @test Check cmdProcessor behaves as expected if no SOF is given in the input. 
+ */
 void test_SOF_missing(void)
 {
     resetRxBuffer();
@@ -135,8 +149,10 @@ void test_SOF_missing(void)
     // No SOF is detected -> cmdProcessor return -4 and stops/ don't acknowledge the data transfer
     TEST_ASSERT_EQUAL_INT(-4, cmdProcessor());
 }
-/* === Test to check EOF ===*/
 
+/**
+ * @test Check cmdProcessor behaves as expected if no EOF is given in the input. 
+ */
 void test_EOF_missing(void)
 {
     resetRxBuffer();
@@ -154,6 +170,9 @@ void test_EOF_missing(void)
 
 }
 
+/**
+ * @test Checks that cmdProcessor() works correctly when there is data after EOF.
+ */
 void test_EOF_overflow(void)
 {
     resetRxBuffer();
@@ -179,10 +198,9 @@ void test_EOF_overflow(void)
     TEST_ASSERT_EQUAL_INT(-1, cmdProcessor());
 }
 
-
-/* === Checking the length of the frame === */
-
-/* Too short frame */
+/**
+ * @test Checks that cmdProcessor() handles too short frames correctly.
+ */
 void test_frame_too_short(void)
 {
     resetRxBuffer();
@@ -198,7 +216,9 @@ void test_frame_too_short(void)
     TEST_ASSERT_EQUAL_INT(-3, cmdProcessor());
 }
 
-/* Too long frame */
+/** 
+ * @test Checks that cmdProcessor works for longer frames.
+ */
 void test_frame_too_long(void)
 {
     resetRxBuffer();
@@ -218,7 +238,9 @@ void test_frame_too_long(void)
     TEST_ASSERT_EQUAL_INT(0, cmdProcessor());
 }
 
-
+/**
+ * @brief Main function of the program is to run different types of tests.
+ */
 int main(void) {
     UNITY_BEGIN();
 

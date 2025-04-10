@@ -1,0 +1,59 @@
+\doxysection{unity\+\_\+fixture\+\_\+internals.\+h}
+\hypertarget{unity__fixture__internals_8h_source}{}\label{unity__fixture__internals_8h_source}\index{Unity/extras/fixture/src/unity\_fixture\_internals.h@{Unity/extras/fixture/src/unity\_fixture\_internals.h}}
+\mbox{\hyperlink{unity__fixture__internals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ =========================================================================}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Unity\ -\/\ A\ Test\ Framework\ for\ C}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ \ ThrowTheSwitch.org}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ Copyright\ (c)\ 2007-\/25\ Mike\ Karlesky,\ Mark\ VanderVoord,\ \&\ Greg\ Williams}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ SPDX-\/License-\/Identifier:\ MIT}}
+\DoxyCodeLine{00006\ \textcolor{comment}{=========================================================================\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ UNITY\_FIXTURE\_INTERNALS\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ UNITY\_FIXTURE\_INTERNALS\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t}{UNITY\_FIXTURE\_T}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t_ae5650e8bb94e0d9c75913a112277e445}{Verbose}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t_aed37ee2d3eafe33c4c4957cfe2e095d9}{Silent}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t_a57f14ac499743b713b1c8c21148556ef}{DryRun}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t_aaa9feba9c4991248a4107098e40813ac}{RepeatCount}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t_a98e6483802e9ba8c55cd10f9eec36cb3}{NameFilter}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t_a1b304137950b5d16a9255d649a72687c}{Name}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t_a9480a05bc2d571c0fe5f8a7872082af1}{GroupFilter}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t_a0edf0c715ad09d883c40fd9605741128}{Group}};}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{extern}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_u_n_i_t_y___f_i_x_t_u_r_e___t}{UNITY\_FIXTURE\_T}}\ \mbox{\hyperlink{unity__fixture_8c_a7bb0ff1b1e2f4e56979878609016c11e}{UnityFixture}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unity__fixture__internals_8h_aa3c739140f3ffd8f39779be4e6598774}{unityfunction}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unity__fixture__internals_8h_a5d76db431eacd889a636a2a49e2d6077}{UnityTestRunner}}(\mbox{\hyperlink{unity__fixture__internals_8h_aa3c739140f3ffd8f39779be4e6598774}{unityfunction}}*\ setup,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{unity__fixture__internals_8h_aa3c739140f3ffd8f39779be4e6598774}{unityfunction}}*\ testBody,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{unity__fixture__internals_8h_aa3c739140f3ffd8f39779be4e6598774}{unityfunction}}*\ teardown,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ printableName,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ group,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ line);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unity__fixture__internals_8h_a0979b54fd6b64e3d44c2adc91fe2c80e}{UnityIgnoreTest}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ printableName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ group,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{unity__fixture__internals_8h_a898356b51b63100ec321e05d2e5f2d55}{UnityGetCommandLineOptions}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ argv[]);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unity__fixture__internals_8h_a1ae5ed8b684e16585dd4bd0cb07f51eb}{UnityConcludeFixtureTest}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unity__fixture__internals_8h_ac29ad7cc4430309e0abfdfda6ad34635}{UnityPointer\_Set}}(\textcolor{keywordtype}{void}**\ pointer,\ \textcolor{keywordtype}{void}*\ newValue,\ \mbox{\hyperlink{unity__internals_8h_a5c76dbcaafb6db2a52336cf5d4835290}{UNITY\_LINE\_TYPE}}\ line);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unity__fixture__internals_8h_a378369455928df4fd5101722645953c6}{UnityPointer\_UndoAllSets}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unity__fixture__internals_8h_a799ef3abbb7aeb75b7f8faaf870dee5e}{UnityPointer\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ UNITY\_MAX\_POINTERS}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ UNITY\_MAX\_POINTERS\ 5}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00050\ \}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ UNITY\_FIXTURE\_INTERNALS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

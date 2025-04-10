@@ -1,0 +1,36 @@
+\doxysection{cmdproc.\+h}
+\hypertarget{cmdproc_8h_source}{}\label{cmdproc_8h_source}\index{Assignment2Lib/cmdproc.h@{Assignment2Lib/cmdproc.h}}
+\mbox{\hyperlink{cmdproc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CMD\_PROC\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CMD\_PROC\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ Some\ defines\ */}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ Other\ defines\ should\ be\ return\ codes\ of\ the\ functions\ */}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ E.g.\ \#define\ CMD\_EMPTY\_STRING\ -\/1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ UART\_RX\_SIZE\ 20\ \ \ \ \ }\textcolor{comment}{/*\ Maximum\ size\ of\ the\ RX\ buffer\ */}\textcolor{preprocessor}{\ }}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ UART\_TX\_SIZE\ 20\ \ \ \ \ }\textcolor{comment}{/*\ Maximum\ size\ of\ the\ TX\ buffer\ */}\textcolor{preprocessor}{\ }}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SOF\_SYM\ '\#'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Start\ of\ Frame\ Symbol\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ EOF\_SYM\ '!'\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ End\ of\ Frame\ Symbol\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Function\ prototypes\ */}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{cmdproc_8h_afbdfe0465dfd34a5f244fe41fa27c12a}{cmdProcessor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{cmdproc_8h_a67ae8a79a708a3c5471668bddbd16400}{rxChar}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ car);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{cmdproc_8h_abdb4363f0662688850bbcdfb59ce4566}{txChar}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ car);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cmdproc_8h_a918f38a7eecdd03671d28a3a07f94856}{resetRxBuffer}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cmdproc_8h_abd91ad9b5887f4769f45823899583bab}{resetTxBuffer}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cmdproc_8h_a8beeddde9a644610c72724be856db6dd}{getTxBuffer}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\ buf,\ \textcolor{keywordtype}{int}\ *\ len);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{cmdproc_8h_a2a0e03d8d8ff0f0459f7623ffd6d39b1}{calcChecksum}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\ buf,\ \textcolor{keywordtype}{int}\ nbytes);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

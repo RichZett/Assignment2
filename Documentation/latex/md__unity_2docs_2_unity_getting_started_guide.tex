@@ -1,0 +1,172 @@
+\chapter{Unity -\/ Getting Started}
+\hypertarget{md__unity_2docs_2_unity_getting_started_guide}{}\label{md__unity_2docs_2_unity_getting_started_guide}\index{Unity -\/ Getting Started@{Unity -\/ Getting Started}}
+\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md302}%
+\Hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md302}%
+\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md303}{}\doxysection{\texorpdfstring{Welcome}{Welcome}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md303}
+Congratulations. You\textquotesingle{}re now the proud owner of your very own pile of bits! What are you going to do with all these ones and zeros? This document should be able to help you decide just that.
+
+Unity is a unit test framework. The goal has been to keep it small and functional. The core Unity test framework is three files\+: a single C file and a couple header files. These team up to provide functions and macros to make testing easier.
+
+Unity was designed to be cross-\/platform. It works hard to stick with C standards while still providing support for the many embedded C compilers that bend the rules. Unity has been used with many compilers, including GCC, IAR, Clang, Green Hills, Microchip, and MS Visual Studio. It\textquotesingle{}s not much work to get it to work with a new target.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md304}{}\doxysubsection{\texorpdfstring{Overview of the Documents}{Overview of the Documents}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md304}
+\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md305}{}\doxysubsubsection{\texorpdfstring{Unity Assertions reference}{Unity Assertions reference}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md305}
+This document will guide you through all the assertion options provided by Unity. This is going to be your unit testing bread and butter. You\textquotesingle{}ll spend more time with assertions than any other part of Unity.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md306}{}\doxysubsubsection{\texorpdfstring{Unity Assertions Cheat Sheet}{Unity Assertions Cheat Sheet}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md306}
+This document contains an abridged summary of the assertions described in the previous document. It\textquotesingle{}s perfect for printing and referencing while you familiarize yourself with Unity\textquotesingle{}s options.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md307}{}\doxysubsubsection{\texorpdfstring{Unity Configuration Guide}{Unity Configuration Guide}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md307}
+This document is the one to reference when you are going to use Unity with a new target or compiler. It\textquotesingle{}ll guide you through the configuration options and will help you customize your testing experience to meet your needs.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md308}{}\doxysubsubsection{\texorpdfstring{Unity Helper Scripts}{Unity Helper Scripts}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md308}
+This document describes the helper scripts that are available for simplifying your testing workflow. It describes the collection of optional Ruby scripts included in the auto directory of your Unity installation. Neither Ruby nor these scripts are necessary for using Unity. They are provided as a convenience for those who wish to use them.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md309}{}\doxysubsubsection{\texorpdfstring{Unity License}{Unity License}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md309}
+What\textquotesingle{}s an open source project without a license file? This brief document describes the terms you\textquotesingle{}re agreeing to when you use this software. Basically, we want it to be useful to you in whatever context you want to use it, but please don\textquotesingle{}t blame us if you run into problems.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md310}{}\doxysubsection{\texorpdfstring{Overview of the Folders}{Overview of the Folders}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md310}
+If you have obtained Unity through Github or something similar, you might be surprised by just how much stuff you suddenly have staring you in the face. Don\textquotesingle{}t worry, Unity itself is very small. The rest of it is just there to make your life easier. You can ignore it or use it at your convenience. Here\textquotesingle{}s an overview of everything in the project.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily src} -\/ This is the code you care about! This folder contains a C file and two header files. These three files {\itshape are} Unity.
+\item {\ttfamily docs} -\/ You\textquotesingle{}re reading this document, so it\textquotesingle{}s possible you have found your way into this folder already. This is where all the handy documentation can be found.
+\item {\ttfamily examples} -\/ This contains a few examples of using Unity.
+\item {\ttfamily extras} -\/ These are optional add ons to Unity that are not part of the core project. If you\textquotesingle{}ve reached us through James Grenning\textquotesingle{}s book, you\textquotesingle{}re going to want to look here.
+\item {\ttfamily test} -\/ This is how Unity and its scripts are all tested. If you\textquotesingle{}re just using Unity, you\textquotesingle{}ll likely never need to go in here. If you are the lucky team member who gets to port Unity to a new toolchain, this is a good place to verify everything is configured properly.
+\item {\ttfamily auto} -\/ Here you will find helpful Ruby scripts for simplifying your test workflow. They are purely optional and are not required to make use of Unity.
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md311}{}\doxysection{\texorpdfstring{How to Create A Test File}{How to Create A Test File}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md311}
+Test files are C files. Most often you will create a single test file for each C module that you want to test. The test file should include \doxylink{unity_8h}{unity.\+h} and the header for your C module to be tested.
+
+Next, a test file will include a {\ttfamily \doxylink{test__runner_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up()}} and {\ttfamily \doxylink{test__runner_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down()}} function. The set\+Up function can contain anything you would like to run before each test. The tear\+Down function can contain anything you would like to run after each test. Both functions accept no arguments and return nothing. You may leave either or both of these blank if you have no need for them.
+
+If you\textquotesingle{}re using Ceedling or the test runner generator script, you may leave these off completely. Not sure? Give it a try. If your compiler complains that it can\textquotesingle{}t find set\+Up or tear\+Down when it links, you\textquotesingle{}ll know you need to at least include an empty function for these.
+
+The majority of the file will be a series of test functions. Test functions follow the convention of starting with the word "{}test\+\_\+"{} or "{}spec\+\_\+"{}. You don\textquotesingle{}t HAVE to name them this way, but it makes it clear what functions are tests for other developers. Also, the automated scripts that come with Unity or Ceedling will default to looking for test functions to be prefixed this way. Test functions take no arguments and return nothing. All test accounting is handled internally in Unity.
+
+Finally, at the bottom of your test file, you will write a {\ttfamily \doxylink{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}} function. This function will call {\ttfamily \doxylink{unity__internals_8h_aaad15a5d10e50a412d0a6851d0e5091a}{UNITY\+\_\+\+BEGIN()}}, then {\ttfamily RUN\+\_\+\+TEST} for each test, and finally {\ttfamily \doxylink{unity__internals_8h_aa519129d3af737eb796fc91720fae26a}{UNITY\+\_\+\+END()}}. This is what will actually trigger each of those test functions to run, so it is important that each function gets its own {\ttfamily RUN\+\_\+\+TEST} call.
+
+Remembering to add each test to the main function can get to be tedious. If you enjoy using helper scripts in your build process, you might consider making use of our handy \href{../auto/generate_test_runner.rb}{\texttt{ generate\+\_\+test\+\_\+runner.\+rb}} script. This will create the main function and all the calls for you, assuming that you have followed the suggested naming conventions. In this case, there is no need for you to include the main function in your test file at all.
+
+When you\textquotesingle{}re done, your test file will look something like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unity_8h}{unity.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}file\_to\_test.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{test__runner_8c_a95c834d6178047ce9e1bce7cbfea2836}{setUp}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ set\ stuff\ up\ here}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{test__runner_8c_a9909011e5fea0c018842eec4d93d0662}{tearDown}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ clean\ stuff\ up\ here}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_function\_should\_doBlahAndBlah(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//test\ stuff}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_function\_should\_doAlsoDoBlah(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//more\ test\ stuff}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ not\ needed\ when\ using\ generate\_test\_runner.rb}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{unity__internals_8h_aaad15a5d10e50a412d0a6851d0e5091a}{UNITY\_BEGIN}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{example__1_2test_2test__runners_2_test_production_code2___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\_TEST}}(test\_function\_should\_doBlahAndBlah);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{example__1_2test_2test__runners_2_test_production_code2___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\_TEST}}(test\_function\_should\_doAlsoDoBlah);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{unity__internals_8h_aa519129d3af737eb796fc91720fae26a}{UNITY\_END}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+It\textquotesingle{}s possible that you will need more customization than this, eventually. For that sort of thing, you\textquotesingle{}re going to want to look at the configuration guide. This should be enough to get you going, though.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md312}{}\doxysubsection{\texorpdfstring{Running Test Functions}{Running Test Functions}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md312}
+When writing your own {\ttfamily \doxylink{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}} functions, for a test-\/runner. There are two ways to execute the test.
+
+The classic variant
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ c}
+\DoxyCodeLine{RUN\_TEST(func,\ linenum)}
+
+\end{DoxyCode}
+
+
+Or its simpler replacement that starts at the beginning of the function.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ c}
+\DoxyCodeLine{RUN\_TEST(func)}
+
+\end{DoxyCode}
+
+
+These macros perform the necessary setup before the test is called and handles clean-\/up and result tabulation afterwards.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md313}{}\doxysubsection{\texorpdfstring{Ignoring Test Functions}{Ignoring Test Functions}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md313}
+There are times when a test is incomplete or not valid for some reason. At these times, TEST\+\_\+\+IGNORE can be called. Control will immediately be returned to the caller of the test, and no failures will be returned. This is useful when your test runners are automatically generated.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ c}
+\DoxyCodeLine{TEST\_IGNORE()}
+
+\end{DoxyCode}
+
+
+Ignore this test and return immediately
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{unity_8h_aca1a170cd0581bacd7c918574f6838de}{TEST\_IGNORE\_MESSAGE}}\ (message)}
+
+\end{DoxyCode}
+
+
+Ignore this test and return immediately. Output a message stating why the test was ignored.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md314}{}\doxysubsection{\texorpdfstring{Aborting Tests}{Aborting Tests}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md314}
+There are times when a test will contain an infinite loop on error conditions, or there may be reason to escape from the test early without executing the rest of the test. A pair of macros support this functionality in Unity. The first {\ttfamily TEST\+\_\+\+PROTECT} sets up the feature, and handles emergency abort cases. {\ttfamily TEST\+\_\+\+ABORT} can then be used at any time within the tests to return to the last {\ttfamily TEST\+\_\+\+PROTECT} call.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}()}
+
+\end{DoxyCode}
+
+
+Setup and Catch macro
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{unity__internals_8h_a35ff53d9ad3c4ec9d611fdf04319a23b}{TEST\_ABORT}}()}
+
+\end{DoxyCode}
+
+
+Abort Test macro
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}())}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ MyTest();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+If My\+Test calls {\ttfamily TEST\+\_\+\+ABORT}, program control will immediately return to {\ttfamily TEST\+\_\+\+PROTECT} with a return value of zero.\hypertarget{md__unity_2docs_2_unity_getting_started_guide_autotoc_md315}{}\doxysection{\texorpdfstring{How to Build and Run A Test File}{How to Build and Run A Test File}}\label{md__unity_2docs_2_unity_getting_started_guide_autotoc_md315}
+This is the single biggest challenge to picking up a new unit testing framework, at least in a language like C or C++. These languages are REALLY good at getting you "{}close to the metal"{} (why is the phrase metal? Wouldn\textquotesingle{}t it be more accurate to say "{}close to the silicon"{}?). While this feature is usually a good thing, it can make testing more challenging.
+
+You have two really good options for toolchains. Depending on where you\textquotesingle{}re coming from, it might surprise you that neither of these options is running the unit tests on your hardware. There are many reasons for this, but here\textquotesingle{}s a short version\+:
+
+
+\begin{DoxyItemize}
+\item On hardware, you have too many constraints (processing power, memory, etc),
+\item On hardware, you don\textquotesingle{}t have complete control over all registers,
+\item On hardware, unit testing is more challenging,
+\item Unit testing isn\textquotesingle{}t System testing. Keep them separate.
+\end{DoxyItemize}
+
+Instead of running your tests on your actual hardware, most developers choose to develop them as native applications (using gcc or MSVC for example) or as applications running on a simulator. Either is a good option. Native apps have the advantages of being faster and easier to set up. Simulator apps have the advantage of working with the same compiler as your target application. The options for configuring these are discussed in the configuration guide.
+
+To get either to work, you might need to make a few changes to the file containing your register set (discussed later).
+
+In either case, a test is built by linking unity, the test file, and the C file(s) being tested. These files create an executable which can be run as the test set for that module. Then, this process is repeated for the next test file. This flexibility of separating tests into individual executables allows us to much more thoroughly unit test our system and it keeps all the test code out of our final release!
+
+{\itshape Find The Latest of This And More at \href{https://throwtheswitch.org}{\texttt{ Throw\+The\+Switch.\+org}}} 

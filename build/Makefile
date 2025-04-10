@@ -127,19 +127,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named exec
-
-# Build rule for target.
-exec: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exec
-.PHONY : exec
-
-# fast build rule for target.
-exec/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/build
-.PHONY : exec/fast
-
-#=============================================================================
 # Target rules for targets named runTests
 
 # Build rule for target.
@@ -189,30 +176,6 @@ Unity/src/unity.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/Unity/src/unity.c.s
 .PHONY : Unity/src/unity.c.s
 
-src/main.o: src/main.c.o
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/src/main.c.o
-.PHONY : src/main.c.o
-
-src/main.i: src/main.c.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/src/main.c.i
-.PHONY : src/main.c.i
-
-src/main.s: src/main.c.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/src/main.c.s
-.PHONY : src/main.c.s
-
 src/tests/test_runner.o: src/tests/test_runner.c.o
 .PHONY : src/tests/test_runner.o
 
@@ -247,14 +210,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... Assignment2Lib"
-	@echo "... exec"
 	@echo "... runTests"
 	@echo "... Unity/src/unity.o"
 	@echo "... Unity/src/unity.i"
 	@echo "... Unity/src/unity.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 	@echo "... src/tests/test_runner.o"
 	@echo "... src/tests/test_runner.i"
 	@echo "... src/tests/test_runner.s"

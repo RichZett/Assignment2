@@ -1,0 +1,280 @@
+\doxysection{Unity/test/tests/test\+\_\+unity\+\_\+core.c File Reference}
+\hypertarget{test__unity__core_8c}{}\label{test__unity__core_8c}\index{Unity/test/tests/test\_unity\_core.c@{Unity/test/tests/test\_unity\_core.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}self\+\_\+assessment\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__unity__core_8c_a20aa6a97fd99eae615758650d209421b}{TEST\+\_\+\+INSTANCES}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_af4cc93226d7d2c86281cd788088c03d6}{test\+Unity\+Size\+Initialization\+Reminder}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a8770e300c6573a2b91126a865f786aa9}{test\+Pass\+Should\+End\+Immediately\+With\+Pass}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a4d17e6b9a5d8899a29ea889d0fbe762e}{test\+Pass\+Should\+End\+Immediately\+With\+Pass\+And\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a39f5306ec4a1c9f4e7784da07a4a4b8f}{test\+Message\+Should\+Display\+Message\+Without\+Ending\+And\+Go\+On\+To\+Pass}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a25437e2d3077410d4b4d1db340128316}{test\+Message\+Should\+Display\+Message\+Without\+Ending\+And\+Go\+On\+To\+Fail}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a825ed2ca916bf2f607222a0a81db1157}{test\+True}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a9c359ad62a8e2936c816f2755d01d759}{test\+False}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a57f1a965b964395402ee89dca74403c5}{test\+Single\+Statement}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_aa6e1cd3613ab3500d0c826d2adee4bac}{test\+Previous\+Pass}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a245e0b2b475202e2a948ad461e0f9cd8}{test\+Not\+Vanilla}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a238f9eebb9120129f57b8f8898aea7f9}{test\+Not\+True}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_ae546047723c6318eb88e525ed2bfbec8}{test\+Not\+False}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a188918b86426f781a1d2541479149ea7}{test\+Not\+Unless}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a6f14efee6811d1f906ca38aff33741f1}{test\+Not\+Not\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_ab82787bd92d59ebe7ccde3f4ee6b6a00}{test\+Fail}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_afb370aa6fe2b4e12649e1076b11f9fd9}{test\+Is\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a2879db6abe993cef1927e76d6ac1eb96}{test\+Is\+Null\+Should\+Fail\+If\+Not}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a0b2343630cb143496098164c54c8eaf8}{test\+Not\+Null\+Should\+Fail\+If\+NULL}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a511445d5da475c36e643f84c6562be82}{test\+Is\+Empty}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a1ef44252d91c33a36cdb0efbbbbd3d92}{test\+Is\+Empty\+Should\+Fail\+If\+Not}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a5af23e616022242cf7b6bd8d79b4f55b}{test\+Not\+Empty\+Should\+Fail\+If\+Empty}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a6a0d27804f032ab7a2a0dab8a5fe9eae}{test\+Ignore}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_adc8246936dd4cf5855a40448510f08d3}{test\+Ignore\+Message}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_aca7bf1e771f4ae4301abed8e6af5076f}{test\+Protection}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a26346de37f65722725ed4962e7c40311}{test\+Ignored\+And\+Then\+Fail\+In\+Tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a8750c4813af96ce00261e44ff3da639a}{test\+Failure\+Count\+Increments\+And\+Is\+Returned\+At\+End}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a93da395c6fee8ba212c66c8e77d84ec5}{test\+That\+Details\+Can\+Be\+Handle\+One\+Detail}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a310528939bf4e318caed30063c3766d4}{test\+That\+Details\+Can\+Handle\+Test\+Fail}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_a09016e63ac00a9cacd86100dd4aa3901}{test\+That\+Details\+Can\+Be\+Handle\+Two\+Details}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__core_8c_acc6f0861903e22a7208b2ba3a2550fa2}{test\+That\+Details\+Can\+Be\+Handle\+Single\+Detail\+Clearing\+Two\+Details}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test__unity__core_8c_a20aa6a97fd99eae615758650d209421b}\index{test\_unity\_core.c@{test\_unity\_core.c}!TEST\_INSTANCES@{TEST\_INSTANCES}}
+\index{TEST\_INSTANCES@{TEST\_INSTANCES}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_INSTANCES}{TEST\_INSTANCES}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a20aa6a97fd99eae615758650d209421b} 
+\#define TEST\+\_\+\+INSTANCES}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__unity__core_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{test\_unity\_core.c@{test\_unity\_core.c}!setUp@{setUp}}
+\index{setUp@{setUp}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a9909011e5fea0c018842eec4d93d0662}\index{test\_unity\_core.c@{test\_unity\_core.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_ab82787bd92d59ebe7ccde3f4ee6b6a00}\index{test\_unity\_core.c@{test\_unity\_core.c}!testFail@{testFail}}
+\index{testFail@{testFail}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testFail()}{testFail()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_ab82787bd92d59ebe7ccde3f4ee6b6a00} 
+void test\+Fail (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a8750c4813af96ce00261e44ff3da639a}\index{test\_unity\_core.c@{test\_unity\_core.c}!testFailureCountIncrementsAndIsReturnedAtEnd@{testFailureCountIncrementsAndIsReturnedAtEnd}}
+\index{testFailureCountIncrementsAndIsReturnedAtEnd@{testFailureCountIncrementsAndIsReturnedAtEnd}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testFailureCountIncrementsAndIsReturnedAtEnd()}{testFailureCountIncrementsAndIsReturnedAtEnd()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a8750c4813af96ce00261e44ff3da639a} 
+void test\+Failure\+Count\+Increments\+And\+Is\+Returned\+At\+End (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a9c359ad62a8e2936c816f2755d01d759}\index{test\_unity\_core.c@{test\_unity\_core.c}!testFalse@{testFalse}}
+\index{testFalse@{testFalse}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testFalse()}{testFalse()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a9c359ad62a8e2936c816f2755d01d759} 
+void test\+False (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a6a0d27804f032ab7a2a0dab8a5fe9eae}\index{test\_unity\_core.c@{test\_unity\_core.c}!testIgnore@{testIgnore}}
+\index{testIgnore@{testIgnore}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testIgnore()}{testIgnore()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a6a0d27804f032ab7a2a0dab8a5fe9eae} 
+void test\+Ignore (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a26346de37f65722725ed4962e7c40311}\index{test\_unity\_core.c@{test\_unity\_core.c}!testIgnoredAndThenFailInTearDown@{testIgnoredAndThenFailInTearDown}}
+\index{testIgnoredAndThenFailInTearDown@{testIgnoredAndThenFailInTearDown}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testIgnoredAndThenFailInTearDown()}{testIgnoredAndThenFailInTearDown()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a26346de37f65722725ed4962e7c40311} 
+void test\+Ignored\+And\+Then\+Fail\+In\+Tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_adc8246936dd4cf5855a40448510f08d3}\index{test\_unity\_core.c@{test\_unity\_core.c}!testIgnoreMessage@{testIgnoreMessage}}
+\index{testIgnoreMessage@{testIgnoreMessage}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testIgnoreMessage()}{testIgnoreMessage()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_adc8246936dd4cf5855a40448510f08d3} 
+void test\+Ignore\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a511445d5da475c36e643f84c6562be82}\index{test\_unity\_core.c@{test\_unity\_core.c}!testIsEmpty@{testIsEmpty}}
+\index{testIsEmpty@{testIsEmpty}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testIsEmpty()}{testIsEmpty()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a511445d5da475c36e643f84c6562be82} 
+void test\+Is\+Empty (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a1ef44252d91c33a36cdb0efbbbbd3d92}\index{test\_unity\_core.c@{test\_unity\_core.c}!testIsEmptyShouldFailIfNot@{testIsEmptyShouldFailIfNot}}
+\index{testIsEmptyShouldFailIfNot@{testIsEmptyShouldFailIfNot}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testIsEmptyShouldFailIfNot()}{testIsEmptyShouldFailIfNot()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a1ef44252d91c33a36cdb0efbbbbd3d92} 
+void test\+Is\+Empty\+Should\+Fail\+If\+Not (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_afb370aa6fe2b4e12649e1076b11f9fd9}\index{test\_unity\_core.c@{test\_unity\_core.c}!testIsNull@{testIsNull}}
+\index{testIsNull@{testIsNull}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testIsNull()}{testIsNull()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_afb370aa6fe2b4e12649e1076b11f9fd9} 
+void test\+Is\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a2879db6abe993cef1927e76d6ac1eb96}\index{test\_unity\_core.c@{test\_unity\_core.c}!testIsNullShouldFailIfNot@{testIsNullShouldFailIfNot}}
+\index{testIsNullShouldFailIfNot@{testIsNullShouldFailIfNot}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testIsNullShouldFailIfNot()}{testIsNullShouldFailIfNot()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a2879db6abe993cef1927e76d6ac1eb96} 
+void test\+Is\+Null\+Should\+Fail\+If\+Not (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a25437e2d3077410d4b4d1db340128316}\index{test\_unity\_core.c@{test\_unity\_core.c}!testMessageShouldDisplayMessageWithoutEndingAndGoOnToFail@{testMessageShouldDisplayMessageWithoutEndingAndGoOnToFail}}
+\index{testMessageShouldDisplayMessageWithoutEndingAndGoOnToFail@{testMessageShouldDisplayMessageWithoutEndingAndGoOnToFail}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testMessageShouldDisplayMessageWithoutEndingAndGoOnToFail()}{testMessageShouldDisplayMessageWithoutEndingAndGoOnToFail()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a25437e2d3077410d4b4d1db340128316} 
+void test\+Message\+Should\+Display\+Message\+Without\+Ending\+And\+Go\+On\+To\+Fail (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a39f5306ec4a1c9f4e7784da07a4a4b8f}\index{test\_unity\_core.c@{test\_unity\_core.c}!testMessageShouldDisplayMessageWithoutEndingAndGoOnToPass@{testMessageShouldDisplayMessageWithoutEndingAndGoOnToPass}}
+\index{testMessageShouldDisplayMessageWithoutEndingAndGoOnToPass@{testMessageShouldDisplayMessageWithoutEndingAndGoOnToPass}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testMessageShouldDisplayMessageWithoutEndingAndGoOnToPass()}{testMessageShouldDisplayMessageWithoutEndingAndGoOnToPass()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a39f5306ec4a1c9f4e7784da07a4a4b8f} 
+void test\+Message\+Should\+Display\+Message\+Without\+Ending\+And\+Go\+On\+To\+Pass (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a5af23e616022242cf7b6bd8d79b4f55b}\index{test\_unity\_core.c@{test\_unity\_core.c}!testNotEmptyShouldFailIfEmpty@{testNotEmptyShouldFailIfEmpty}}
+\index{testNotEmptyShouldFailIfEmpty@{testNotEmptyShouldFailIfEmpty}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testNotEmptyShouldFailIfEmpty()}{testNotEmptyShouldFailIfEmpty()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a5af23e616022242cf7b6bd8d79b4f55b} 
+void test\+Not\+Empty\+Should\+Fail\+If\+Empty (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_ae546047723c6318eb88e525ed2bfbec8}\index{test\_unity\_core.c@{test\_unity\_core.c}!testNotFalse@{testNotFalse}}
+\index{testNotFalse@{testNotFalse}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testNotFalse()}{testNotFalse()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_ae546047723c6318eb88e525ed2bfbec8} 
+void test\+Not\+False (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a6f14efee6811d1f906ca38aff33741f1}\index{test\_unity\_core.c@{test\_unity\_core.c}!testNotNotEqual@{testNotNotEqual}}
+\index{testNotNotEqual@{testNotNotEqual}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testNotNotEqual()}{testNotNotEqual()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a6f14efee6811d1f906ca38aff33741f1} 
+void test\+Not\+Not\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a0b2343630cb143496098164c54c8eaf8}\index{test\_unity\_core.c@{test\_unity\_core.c}!testNotNullShouldFailIfNULL@{testNotNullShouldFailIfNULL}}
+\index{testNotNullShouldFailIfNULL@{testNotNullShouldFailIfNULL}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testNotNullShouldFailIfNULL()}{testNotNullShouldFailIfNULL()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a0b2343630cb143496098164c54c8eaf8} 
+void test\+Not\+Null\+Should\+Fail\+If\+NULL (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a238f9eebb9120129f57b8f8898aea7f9}\index{test\_unity\_core.c@{test\_unity\_core.c}!testNotTrue@{testNotTrue}}
+\index{testNotTrue@{testNotTrue}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testNotTrue()}{testNotTrue()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a238f9eebb9120129f57b8f8898aea7f9} 
+void test\+Not\+True (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a188918b86426f781a1d2541479149ea7}\index{test\_unity\_core.c@{test\_unity\_core.c}!testNotUnless@{testNotUnless}}
+\index{testNotUnless@{testNotUnless}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testNotUnless()}{testNotUnless()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a188918b86426f781a1d2541479149ea7} 
+void test\+Not\+Unless (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a245e0b2b475202e2a948ad461e0f9cd8}\index{test\_unity\_core.c@{test\_unity\_core.c}!testNotVanilla@{testNotVanilla}}
+\index{testNotVanilla@{testNotVanilla}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testNotVanilla()}{testNotVanilla()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a245e0b2b475202e2a948ad461e0f9cd8} 
+void test\+Not\+Vanilla (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a8770e300c6573a2b91126a865f786aa9}\index{test\_unity\_core.c@{test\_unity\_core.c}!testPassShouldEndImmediatelyWithPass@{testPassShouldEndImmediatelyWithPass}}
+\index{testPassShouldEndImmediatelyWithPass@{testPassShouldEndImmediatelyWithPass}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testPassShouldEndImmediatelyWithPass()}{testPassShouldEndImmediatelyWithPass()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a8770e300c6573a2b91126a865f786aa9} 
+void test\+Pass\+Should\+End\+Immediately\+With\+Pass (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a4d17e6b9a5d8899a29ea889d0fbe762e}\index{test\_unity\_core.c@{test\_unity\_core.c}!testPassShouldEndImmediatelyWithPassAndMessage@{testPassShouldEndImmediatelyWithPassAndMessage}}
+\index{testPassShouldEndImmediatelyWithPassAndMessage@{testPassShouldEndImmediatelyWithPassAndMessage}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testPassShouldEndImmediatelyWithPassAndMessage()}{testPassShouldEndImmediatelyWithPassAndMessage()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a4d17e6b9a5d8899a29ea889d0fbe762e} 
+void test\+Pass\+Should\+End\+Immediately\+With\+Pass\+And\+Message (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_aa6e1cd3613ab3500d0c826d2adee4bac}\index{test\_unity\_core.c@{test\_unity\_core.c}!testPreviousPass@{testPreviousPass}}
+\index{testPreviousPass@{testPreviousPass}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testPreviousPass()}{testPreviousPass()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_aa6e1cd3613ab3500d0c826d2adee4bac} 
+void test\+Previous\+Pass (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_aca7bf1e771f4ae4301abed8e6af5076f}\index{test\_unity\_core.c@{test\_unity\_core.c}!testProtection@{testProtection}}
+\index{testProtection@{testProtection}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testProtection()}{testProtection()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_aca7bf1e771f4ae4301abed8e6af5076f} 
+void test\+Protection (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a57f1a965b964395402ee89dca74403c5}\index{test\_unity\_core.c@{test\_unity\_core.c}!testSingleStatement@{testSingleStatement}}
+\index{testSingleStatement@{testSingleStatement}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testSingleStatement()}{testSingleStatement()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a57f1a965b964395402ee89dca74403c5} 
+void test\+Single\+Statement (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a93da395c6fee8ba212c66c8e77d84ec5}\index{test\_unity\_core.c@{test\_unity\_core.c}!testThatDetailsCanBeHandleOneDetail@{testThatDetailsCanBeHandleOneDetail}}
+\index{testThatDetailsCanBeHandleOneDetail@{testThatDetailsCanBeHandleOneDetail}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testThatDetailsCanBeHandleOneDetail()}{testThatDetailsCanBeHandleOneDetail()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a93da395c6fee8ba212c66c8e77d84ec5} 
+void test\+That\+Details\+Can\+Be\+Handle\+One\+Detail (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_acc6f0861903e22a7208b2ba3a2550fa2}\index{test\_unity\_core.c@{test\_unity\_core.c}!testThatDetailsCanBeHandleSingleDetailClearingTwoDetails@{testThatDetailsCanBeHandleSingleDetailClearingTwoDetails}}
+\index{testThatDetailsCanBeHandleSingleDetailClearingTwoDetails@{testThatDetailsCanBeHandleSingleDetailClearingTwoDetails}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testThatDetailsCanBeHandleSingleDetailClearingTwoDetails()}{testThatDetailsCanBeHandleSingleDetailClearingTwoDetails()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_acc6f0861903e22a7208b2ba3a2550fa2} 
+void test\+That\+Details\+Can\+Be\+Handle\+Single\+Detail\+Clearing\+Two\+Details (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a09016e63ac00a9cacd86100dd4aa3901}\index{test\_unity\_core.c@{test\_unity\_core.c}!testThatDetailsCanBeHandleTwoDetails@{testThatDetailsCanBeHandleTwoDetails}}
+\index{testThatDetailsCanBeHandleTwoDetails@{testThatDetailsCanBeHandleTwoDetails}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testThatDetailsCanBeHandleTwoDetails()}{testThatDetailsCanBeHandleTwoDetails()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a09016e63ac00a9cacd86100dd4aa3901} 
+void test\+That\+Details\+Can\+Be\+Handle\+Two\+Details (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a310528939bf4e318caed30063c3766d4}\index{test\_unity\_core.c@{test\_unity\_core.c}!testThatDetailsCanHandleTestFail@{testThatDetailsCanHandleTestFail}}
+\index{testThatDetailsCanHandleTestFail@{testThatDetailsCanHandleTestFail}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testThatDetailsCanHandleTestFail()}{testThatDetailsCanHandleTestFail()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a310528939bf4e318caed30063c3766d4} 
+void test\+That\+Details\+Can\+Handle\+Test\+Fail (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_a825ed2ca916bf2f607222a0a81db1157}\index{test\_unity\_core.c@{test\_unity\_core.c}!testTrue@{testTrue}}
+\index{testTrue@{testTrue}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testTrue()}{testTrue()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_a825ed2ca916bf2f607222a0a81db1157} 
+void test\+True (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__core_8c_af4cc93226d7d2c86281cd788088c03d6}\index{test\_unity\_core.c@{test\_unity\_core.c}!testUnitySizeInitializationReminder@{testUnitySizeInitializationReminder}}
+\index{testUnitySizeInitializationReminder@{testUnitySizeInitializationReminder}!test\_unity\_core.c@{test\_unity\_core.c}}
+\doxysubsubsection{\texorpdfstring{testUnitySizeInitializationReminder()}{testUnitySizeInitializationReminder()}}
+{\footnotesize\ttfamily \label{test__unity__core_8c_af4cc93226d7d2c86281cd788088c03d6} 
+void test\+Unity\+Size\+Initialization\+Reminder (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+

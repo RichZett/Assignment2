@@ -1,0 +1,101 @@
+\doxysection{Unity/examples/example\+\_\+4/test/test\+\_\+runners/\+Test\+Production\+Code2\+\_\+\+Runner.c File Reference}
+\hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c}{}\label{example__4_2test_2test__runners_2_test_production_code2___runner_8c}\index{Unity/examples/example\_4/test/test\_runners/TestProductionCode2\_Runner.c@{Unity/examples/example\_4/test/test\_runners/TestProductionCode2\_Runner.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}Production\+Code2.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code2___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\+\_\+\+TEST}}(Test\+Func,  Test\+Line\+Num)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a65541f73460fe081dd6dfc3be9767a7d}{test\+\_\+\+Ignored\+Test}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code2___runner_8c_ad80aaa9b02b40532fa33ed7313010081}{test\+\_\+\+Another\+Ignored\+Test}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code2___runner_8c_ad7b328b8360b0f1672df66b25ba34a0d}{test\+\_\+\+This\+Function\+Has\+Not\+Been\+Tested\+\_\+\+Needs\+To\+Be\+Implemented}} (void)
+\item 
+void \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code2___runner_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7}{reset\+Test}} (void)
+\item 
+int \mbox{\hyperlink{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}\index{TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}!RUN\_TEST@{RUN\_TEST}}
+\index{RUN\_TEST@{RUN\_TEST}!TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{RUN\_TEST}{RUN\_TEST}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code2___runner_8c_af3a9b37ea192d5f498c7d699d65ad530} 
+\#define RUN\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{Test\+Func}{, }\item[{}]{Test\+Line\+Num}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestName\ =\ \#TestFunc;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestLineNumber\ =\ TestLineNum;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.NumberOfTests++;\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}())\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ setUp();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ TestFunc();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}())\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ tearDown();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ UnityConcludeTest();\ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}!main@{main}}
+\index{main@{main}!TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7}\index{TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}!resetTest@{resetTest}}
+\index{resetTest@{resetTest}!TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{resetTest()}{resetTest()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code2___runner_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7} 
+void reset\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}!setUp@{setUp}}
+\index{setUp@{setUp}!TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a9909011e5fea0c018842eec4d93d0662}\index{TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c_ad80aaa9b02b40532fa33ed7313010081}\index{TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}!test\_AnotherIgnoredTest@{test\_AnotherIgnoredTest}}
+\index{test\_AnotherIgnoredTest@{test\_AnotherIgnoredTest}!TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_AnotherIgnoredTest()}{test\_AnotherIgnoredTest()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code2___runner_8c_ad80aaa9b02b40532fa33ed7313010081} 
+void test\+\_\+\+Another\+Ignored\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a65541f73460fe081dd6dfc3be9767a7d}\index{TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}!test\_IgnoredTest@{test\_IgnoredTest}}
+\index{test\_IgnoredTest@{test\_IgnoredTest}!TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_IgnoredTest()}{test\_IgnoredTest()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code2___runner_8c_a65541f73460fe081dd6dfc3be9767a7d} 
+void test\+\_\+\+Ignored\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{example__4_2test_2test__runners_2_test_production_code2___runner_8c_ad7b328b8360b0f1672df66b25ba34a0d}\index{TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}!test\_ThisFunctionHasNotBeenTested\_NeedsToBeImplemented@{test\_ThisFunctionHasNotBeenTested\_NeedsToBeImplemented}}
+\index{test\_ThisFunctionHasNotBeenTested\_NeedsToBeImplemented@{test\_ThisFunctionHasNotBeenTested\_NeedsToBeImplemented}!TestProductionCode2\_Runner.c@{TestProductionCode2\_Runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_ThisFunctionHasNotBeenTested\_NeedsToBeImplemented()}{test\_ThisFunctionHasNotBeenTested\_NeedsToBeImplemented()}}
+{\footnotesize\ttfamily \label{example__4_2test_2test__runners_2_test_production_code2___runner_8c_ad7b328b8360b0f1672df66b25ba34a0d} 
+void test\+\_\+\+This\+Function\+Has\+Not\+Been\+Tested\+\_\+\+Needs\+To\+Be\+Implemented (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

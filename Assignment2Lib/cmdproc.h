@@ -11,53 +11,47 @@
 
 /* Function prototypes */
 
-/* ************************************************************ */
-/* Processes the chars in the RX buffer looking for commands 	*/
-/* Returns:                                                     */
-/*  	 0: if a valid command was found and executed           */
-/* 		-1: if empty string or incomplete command found         */
-/* 		-2: if an invalid command was found                     */
-/* 		-3: if a CS error is detected (command not executed)    */
-/* 		-4: if string format is wrong                           */
-/* ************************************************************ */
+/**
+ *  @brief  This function processes the chars in the RxBuffer and looks for commands. 
+ *          Returns:                                                     
+ *        	 0: if a valid command was found and executed           
+ *   		-1: if empty string or incomplete command found         
+ *   		-2: if an invalid command was found                     
+ *   		-3: if a CS error is detected (command not executed)    
+ *   		-4: if string format is wrong                   
+ */
 int cmdProcessor(void);
 
-/* ******************************** */
-/* Adds a char to the RX buffer 	*/
-/* I.e., the reception of commands 	*/
-/* Returns: 				        */
-/*  	 0: if success 		        */
-/* 		-1: if buffer full	 	    */
-/* ******************************** */
+
+/**
+ *  @brief This function adds a char to the RxBuffer, i.e creates the reception of commands. 
+ */
 int rxChar(unsigned char car);
 
-/* ************************************ */
-/* Adds a char to the TX buffer 		*/
-/* I.e., the tranmsisison of answers 	*/
-/* Returns: 				        	*/
-/*  	 0: if success 		        	*/
-/* 		-1: if buffer full	 	    	*/
-/* ************************************ */
+
+/**
+ *  @brief This function adds a char to the TxBuffer, i.e creates the transmission of answers.
+ */
 int txChar(unsigned char car);
 
-/* ************************* */
-/* Resets the RX buffer		 */  
-/* ************************* */
+/**
+ *  @brief This function resets the RxBuffer. 
+ */
 void resetRxBuffer(void);
 
-/* ************************* */
-/* Resets the TX buffer		 */  
-/* ************************* */
+/**
+ *  @brief This function resets the TxBuffer. 
+ */
 void resetTxBuffer(void);
 
-/* ************************************************ */
-/* Return the data that would be sent by the sensor */  
-/* ************************************************ */
+/**
+ *  @brief This function receives the data that would be sent by the sensor. 
+ */
 void getTxBuffer(unsigned char * buf, int * len);
 
-/* ************************************************ */
-/* Computes the checksum of a given number of chars */
-/* ************************************************ */ 
+/**
+ *  @brief This function controlls that the sensor is send the correct data by computing the checksum of a given number of chars. 
+ */
 int calcChecksum(unsigned char * buf, int nbytes);
 
 #endif

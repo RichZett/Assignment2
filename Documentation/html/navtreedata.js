@@ -25,12 +25,12 @@
 var NAVTREE =
 [
   [ "Assignment 2", "index.html", [
+    [ "Test List", "test.html", null ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -39,7 +39,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_c_make_c_compiler_id_8c.html"
+"cmdproc_8c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

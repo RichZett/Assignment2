@@ -1,0 +1,103 @@
+\doxysection{Unity/test/expectdata/testsample\+\_\+mock\+\_\+cmd.c File Reference}
+\hypertarget{testsample__mock__cmd_8c}{}\label{testsample__mock__cmd_8c}\index{Unity/test/expectdata/testsample\_mock\_cmd.c@{Unity/test/expectdata/testsample\_mock\_cmd.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}cmock.\+h"{}}\newline
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}CException.\+h"{}}\newline
+{\ttfamily \#include "{}funky.\+h"{}}\newline
+{\ttfamily \#include "{}Mockstanky.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{testsample__mock__cmd_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\+\_\+\+TEST}}(Test\+Func,  Test\+Line\+Num)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{testsample__mock__cmd_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{testsample__mock__cmd_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{testsample__mock__cmd_8c_aa4b159947cc5bf6425a8b7b66eeb6ce4}{test\+\_\+\+The\+First\+Thing\+To\+Test}} (void)
+\item 
+void \mbox{\hyperlink{testsample__mock__cmd_8c_aeb5cd6534c00bf8b743cbb3c647d4cf7}{test\+\_\+\+The\+Second\+Thing\+To\+Test}} (void)
+\item 
+void \mbox{\hyperlink{testsample__mock__cmd_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7}{reset\+Test}} (void)
+\item 
+int \mbox{\hyperlink{testsample__mock__cmd_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{testsample__mock__cmd_8c_af3a9b37ea192d5f498c7d699d65ad530}\index{testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}!RUN\_TEST@{RUN\_TEST}}
+\index{RUN\_TEST@{RUN\_TEST}!testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{RUN\_TEST}{RUN\_TEST}}
+{\footnotesize\ttfamily \label{testsample__mock__cmd_8c_af3a9b37ea192d5f498c7d699d65ad530} 
+\#define RUN\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{Test\+Func}{, }\item[{}]{Test\+Line\+Num}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestName\ =\ \#TestFunc;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestLineNumber\ =\ TestLineNum;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.NumberOfTests++;\ \(\backslash\)}
+\DoxyCodeLine{\ \ CMock\_Init();\ \(\backslash\)}
+\DoxyCodeLine{\ \ UNITY\_CLR\_DETAILS();\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}())\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{_c_exception_8h_a22368ec67c1c48cc2348245f47a02aef}{CEXCEPTION\_T}}\ e;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{_c_exception_8h_a7a2b8ccf41cff483bac8e86ac7feff9b}{Try}}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ setUp();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ TestFunc();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \mbox{\hyperlink{_c_exception_8h_aee81f32af726d78c19a8acf63ad7bd43}{Catch}}(e)\ \{\ \mbox{\hyperlink{unity_8h_aa4cab77aa7fecea995723dec175e3b2d}{TEST\_ASSERT\_EQUAL\_HEX32\_MESSAGE}}(\mbox{\hyperlink{_c_exception_8h_a790b697272763115c044058484e6d4c9}{CEXCEPTION\_NONE}},\ e,\ \textcolor{stringliteral}{"{}Unhandled\ Exception!"{}});\ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (\mbox{\hyperlink{unity__internals_8h_a61d21043921ebc1c2ee49543fc100f9a}{TEST\_PROTECT}}()\ \&\&\ !\mbox{\hyperlink{unity__internals_8h_af3dee0f42dbe9e1f627ed2b0337d2fbf}{TEST\_IS\_IGNORED}})\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ tearDown();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CMock\_Verify();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ CMock\_Destroy();\ \(\backslash\)}
+\DoxyCodeLine{\ \ UnityConcludeTest();\ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{testsample__mock__cmd_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}!main@{main}}
+\index{main@{main}!testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{testsample__mock__cmd_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{testsample__mock__cmd_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7}\index{testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}!resetTest@{resetTest}}
+\index{resetTest@{resetTest}!testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{resetTest()}{resetTest()}}
+{\footnotesize\ttfamily \label{testsample__mock__cmd_8c_afb3a9b98e779c4f69e72aca5aa9fa1d7} 
+void reset\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{testsample__mock__cmd_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}!setUp@{setUp}}
+\index{setUp@{setUp}!testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{testsample__mock__cmd_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{testsample__mock__cmd_8c_a9909011e5fea0c018842eec4d93d0662}\index{testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{testsample__mock__cmd_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{testsample__mock__cmd_8c_aa4b159947cc5bf6425a8b7b66eeb6ce4}\index{testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}!test\_TheFirstThingToTest@{test\_TheFirstThingToTest}}
+\index{test\_TheFirstThingToTest@{test\_TheFirstThingToTest}!testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{test\_TheFirstThingToTest()}{test\_TheFirstThingToTest()}}
+{\footnotesize\ttfamily \label{testsample__mock__cmd_8c_aa4b159947cc5bf6425a8b7b66eeb6ce4} 
+void test\+\_\+\+The\+First\+Thing\+To\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{testsample__mock__cmd_8c_aeb5cd6534c00bf8b743cbb3c647d4cf7}\index{testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}!test\_TheSecondThingToTest@{test\_TheSecondThingToTest}}
+\index{test\_TheSecondThingToTest@{test\_TheSecondThingToTest}!testsample\_mock\_cmd.c@{testsample\_mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{test\_TheSecondThingToTest()}{test\_TheSecondThingToTest()}}
+{\footnotesize\ttfamily \label{testsample__mock__cmd_8c_aeb5cd6534c00bf8b743cbb3c647d4cf7} 
+void test\+\_\+\+The\+Second\+Thing\+To\+Test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

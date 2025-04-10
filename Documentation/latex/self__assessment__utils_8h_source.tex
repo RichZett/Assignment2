@@ -1,0 +1,157 @@
+\doxysection{self\+\_\+assessment\+\_\+utils.\+h}
+\hypertarget{self__assessment__utils_8h_source}{}\label{self__assessment__utils_8h_source}\index{Unity/test/tests/self\_assessment\_utils.h@{Unity/test/tests/self\_assessment\_utils.h}}
+\mbox{\hyperlink{self__assessment__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ =========================================================================}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Unity\ -\/\ A\ Test\ Framework\ for\ C}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ \ ThrowTheSwitch.org}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ Copyright\ (c)\ 2007-\/25\ Mike\ Karlesky,\ Mark\ VanderVoord,\ \&\ Greg\ Williams}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ SPDX-\/License-\/Identifier:\ MIT}}
+\DoxyCodeLine{00006\ \textcolor{comment}{=========================================================================\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ TEST\_INSTANCES}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ Dividing\ by\ these\ constants\ produces\ +/-\/\ infinity.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ The\ rationale\ is\ given\ in\ UnityAssertFloatIsInf's\ body.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ UNITY\_EXCLUDE\_FLOAT}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{unity__internals_8h_ac4a36d11e8a7b250f2413ebb22e3092c}{UNITY\_FLOAT}}\ f\_zero\ =\ 0.0f;}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ UNITY\_EXCLUDE\_DOUBLE}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{unity__internals_8h_ac3bdb18f38e23a4343af34a7f4e0d4a0}{UNITY\_DOUBLE}}\ d\_zero\ =\ 0.0;}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ Macros\ for\ Catching\ An\ Expected\ Failure\ or\ Ignore\ */}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ EXPECT\_ABORT\_BEGIN\ \(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ startPutcharSpy();\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ if\ (TEST\_PROTECT())\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \{}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VERIFY\_FAILS\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ endPutcharSpy();\ }\textcolor{comment}{/*\ start/end\ Spy\ to\ suppress\ output\ of\ failure\ message\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ Unity.CurrentTestFailed\ =\ (Unity.CurrentTestFailed\ ==\ 1)\ ?\ 0\ :\ 1;\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ if\ (Unity.CurrentTestFailed\ ==\ 1)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \ \ SetToOneMeanWeAlreadyCheckedThisGuy\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ UnityPrintNumberUnsigned(Unity.CurrentTestLineNumber);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \ \ \ \ UNITY\_OUTPUT\_CHAR(':');\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \ \ \ \ UnityPrint(Unity.CurrentTestName);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\ \ \ \ \ \ UnityPrint("{}:FAIL:\ [[[[\ Test\ Should\ Have\ Failed\ But\ Did\ Not\ ]]]]"{});\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ \ \ UNITY\_OUTPUT\_CHAR('\(\backslash\)n');\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ VERIFY\_IGNORES\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ endPutcharSpy();\ }\textcolor{comment}{/*\ start/end\ Spy\ to\ suppress\ output\ of\ ignore\ message\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ Unity.CurrentTestFailed\ =\ (Unity.CurrentTestIgnored\ ==\ 1)\ ?\ 0\ :\ 1;\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ Unity.CurrentTestIgnored\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ if\ (Unity.CurrentTestFailed\ ==\ 1)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \ \ SetToOneMeanWeAlreadyCheckedThisGuy\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \ \ UnityPrintNumberUnsigned(Unity.CurrentTestLineNumber);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \ \ UNITY\_OUTPUT\_CHAR(':');\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ UnityPrint(Unity.CurrentTestName);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \ \ UnityPrint("{}:FAIL:\ [[[[\ Test\ Should\ Have\ Ignored\ But\ Did\ Not\ ]]]]"{});\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \ \ UNITY\_OUTPUT\_CHAR('\(\backslash\)n');\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Tricky\ series\ of\ macros\ to\ set\ USING\_OUTPUT\_SPY\ */}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ USING\_SPY\_AS(a)\ \ \ \ \ \ \ \ \ \ \ EXPAND\_AND\_USE\_2ND(ASSIGN\_VALUE(a),\ 0)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ ASSIGN\_VALUE(a)\ \ \ \ \ \ \ \ \ \ \ VAL\_\#\#a}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ VAL\_putcharSpy\ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ EXPAND\_AND\_USE\_2ND(a,\ b)\ \ SECOND\_PARAM(a,\ b,\ throwaway)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ SECOND\_PARAM(a,\ b,\ ...)\ \ \ b}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#if\ USING\_SPY\_AS(UNITY\_OUTPUT\_CHAR)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \#define\ USING\_OUTPUT\_SPY\ }\textcolor{comment}{/*\ true\ only\ if\ UNITY\_OUTPUT\_CHAR\ =\ putcharSpy\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#ifdef\ USING\_OUTPUT\_SPY}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ SPY\_BUFFER\_MAX\ 40}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ putcharSpyBuffer[SPY\_BUFFER\_MAX];}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \textcolor{keyword}{static}\ \mbox{\hyperlink{unity__internals_8h_ab5186738706785ae0189b382e45911d9}{UNITY\_COUNTER\_TYPE}}\ indexSpyBuffer;}
+\DoxyCodeLine{00073\ \textcolor{keyword}{static}\ \mbox{\hyperlink{unity__internals_8h_ab5186738706785ae0189b382e45911d9}{UNITY\_COUNTER\_TYPE}}\ putcharSpyEnabled;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ startPutcharSpy(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ indexSpyBuffer\ =\ 0;}
+\DoxyCodeLine{00078\ \ \ \ \ putcharSpyEnabled\ =\ 1;}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ endPutcharSpy(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ putcharSpyEnabled\ =\ 0;}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{char}*\ getBufferPutcharSpy(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#ifdef\ USING\_OUTPUT\_SPY}}
+\DoxyCodeLine{00089\ \ \ \ \ putcharSpyBuffer[indexSpyBuffer]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{return}\ putcharSpyBuffer;}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00094\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_runner_generator_8c_a08a0cd52d73781ede109f0c6da276031}{putcharSpy}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}})}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#ifdef\ USING\_OUTPUT\_SPY}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (putcharSpyEnabled)}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indexSpyBuffer\ <\ SPY\_BUFFER\_MAX\ -\/\ 1)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ putcharSpyBuffer[indexSpyBuffer++]\ =\ (char)\mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}};}
+\DoxyCodeLine{00103\ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ putchar((\textcolor{keywordtype}{char})\mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}});}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00106\ \ \ \ \ (void)\mbox{\hyperlink{test__unity__parameterized_8c_a2fc627b56c26c54e1e919c187689f0de}{c}};}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{/*\ This\ is\ for\ counting\ the\ calls\ to\ the\ flushSpy\ */}}
+\DoxyCodeLine{00111\ \textcolor{keyword}{static}\ \mbox{\hyperlink{unity__internals_8h_ab5186738706785ae0189b382e45911d9}{UNITY\_COUNTER\_TYPE}}\ flushSpyEnabled;}
+\DoxyCodeLine{00112\ \textcolor{keyword}{static}\ \mbox{\hyperlink{unity__internals_8h_ab5186738706785ae0189b382e45911d9}{UNITY\_COUNTER\_TYPE}}\ flushSpyCalls\ =\ 0;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ startFlushSpy(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ flushSpyCalls\ =\ 0;}
+\DoxyCodeLine{00117\ \ \ \ \ flushSpyEnabled\ =\ 1;}
+\DoxyCodeLine{00118\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ endFlushSpy(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00121\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ flushSpyCalls\ =\ 0;}
+\DoxyCodeLine{00123\ \ \ \ \ flushSpyEnabled\ =\ 0;}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \mbox{\hyperlink{unity__internals_8h_ab5186738706785ae0189b382e45911d9}{UNITY\_COUNTER\_TYPE}}\ getFlushSpyCalls(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{return}\ flushSpyCalls;}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_runner_generator_8c_a443aedca98e174d6fc80f6f4e1e35b62}{flushSpy}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (flushSpyEnabled)\{\ flushSpyCalls++;\ \}}
+\DoxyCodeLine{00134\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ TEST\_ASSERT\_EQUAL\_PRINT\_NUMBERS(expected,\ actual)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ startPutcharSpy();\ UnityPrintNumber((actual));\ endPutcharSpy();\ \(\backslash\)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ TEST\_ASSERT\_EQUAL\_STRING((expected),\ getBufferPutcharSpy());\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ TEST\_ASSERT\_EQUAL\_PRINT\_UNSIGNED\_NUMBERS(expected,\ actual)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ startPutcharSpy();\ UnityPrintNumberUnsigned((actual));\ endPutcharSpy();\ \(\backslash\)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ TEST\_ASSERT\_EQUAL\_STRING((expected),\ getBufferPutcharSpy());\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ TEST\_ASSERT\_EQUAL\_PRINT\_FLOATING(expected,\ actual)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ startPutcharSpy();\ UnityPrintFloat((actual));\ endPutcharSpy();\ \ \(\backslash\)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ TEST\_ASSERT\_EQUAL\_STRING((expected),\ getBufferPutcharSpy());\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

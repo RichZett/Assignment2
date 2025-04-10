@@ -1,0 +1,228 @@
+\chapter{Contributing to a Throw\+The\+Switch.\+org Project}
+\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g}{}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g}\index{Contributing to a ThrowTheSwitch.org Project@{Contributing to a ThrowTheSwitch.org Project}}
+\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md13}%
+\Hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md13}%
+
+
+👍🎉 {\itshape First off, thanks for taking the time to contribute!} 🎉👍
+
+The following is a set of guidelines for contributing to any of Throw\+The\+Switch.\+org\textquotesingle{}s projects or the website itself, hosted at throwtheswitch.\+org or Throw\+The\+Switch\textquotesingle{}s organization on Git\+Hub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md14}{}\doxysubsection{\texorpdfstring{Table Of Contents}{Table Of Contents}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Code of Conduct
+\item Asking Questions
+\item Opening an Issue
+\item Feature Requests
+\item Triaging Issues
+\item Submitting Pull Requests
+\item Writing Commit Messages
+\item Code Review
+\item Coding Style
+\item Certificate of Origin
+\item Credits
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md15}{}\doxysection{\texorpdfstring{\+:book\+: Code of Conduct}{\+:book\+: Code of Conduct}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md15}
+Please review our \doxysectlink{md__unity_2docs_2_c_o_d_e___o_f___c_o_n_d_u_c_t}{Code of Conduct}{0}. It is in effect at all times. We expect it to be honored by everyone who contributes to this project. Be a Good Human!\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md16}{}\doxysection{\texorpdfstring{\+:bulb\+: Asking Questions}{\+:bulb\+: Asking Questions}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md16}
+\begin{quote}
+{\bfseries{Note\+:}} Please don\textquotesingle{}t file an issue to ask a question. We have an official forum where the community chimes in with helpful advice if you have questions. \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item \href{https://throwtheswitch.org/forums}{\texttt{ Throw\+The\+Switch Forums}}
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md17}{}\doxysubsection{\texorpdfstring{What should I know before I get started?}{What should I know before I get started?}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md17}
+Throw\+The\+Switch hosts a number of open source projects --- Ceedling is the entrypoint for many users. Ceedling is actually built upon the foundation of Unity Test (a flexible C testing framework) and CMock (a mocking tool for C) and it coordinates many other open source and proprietary tools. Please do your best to focus your ideas and questions at the correct tool. We\textquotesingle{}ll do our best to help you find your way, but there will be times where we\textquotesingle{}ll have to direct your attention to another subtool.
+
+Here are some of the main projects hosted by Throw\+The\+Switch.\+org\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://www.github.com/throwtheswitch/ceedling}{\texttt{ Ceedling}} -- Build coordinator for testing C applications, especially embedded C (and optionally your release build too!)
+\item \href{https://www.github.com/throwtheswitch/cmock}{\texttt{ CMock}} -- Mocking tool for automatically creating stubs, mocks, and skeletons in C
+\item \href{https://www.github.com/throwtheswitch/unity}{\texttt{ Unity}} -- Unit Testing framework for C, specially embedded C.
+\item \href{https://www.github.com/throwtheswitch/madsciencelabdocker}{\texttt{ Mad\+Science\+Lab\+Docker}} -- Docker image giving you a shortcut to getting running with Ceedling
+\item \href{https://www.github.com/throwtheswitch/cexception}{\texttt{ CException}} -- An exception framework for using simple exceptions in C.
+\end{DoxyItemize}
+
+There are many more, but this list should be a good starting point.\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md18}{}\doxysection{\texorpdfstring{\+:inbox\+\_\+tray\+: Opening an Issue}{\+:inbox\+\_\+tray\+: Opening an Issue}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md18}
+Before \href{https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue}{\texttt{ creating an issue}}, check if you are using the latest version of the project. If you are not up-\/to-\/date, see if updating fixes your issue first.\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md19}{}\doxysubsection{\texorpdfstring{\+:beetle\+: Bug Reports and Other Issues}{\+:beetle\+: Bug Reports and Other Issues}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md19}
+A great way to contribute to the project is to send a detailed issue when you encounter a problem. We always appreciate a well-\/written, thorough bug report. \+:v\+:
+
+In short, since you are most likely a developer, {\bfseries{provide a ticket that you would like to receive}}.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Review the documentation}} before opening a new issue.
+\item {\bfseries{Do not open a duplicate issue!}} Search through existing issues to see if your issue has previously been reported. If your issue exists, comment with any additional information you have. You may simply note "{}\+I have this problem too"{}, which helps prioritize the most common problems and requests.
+\item {\bfseries{Prefer using \href{https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/}{\texttt{ reactions}}}}, not comments, if you simply want to "{}+1"{} an existing issue.
+\item {\bfseries{Fully complete the provided issue template.}} The bug report template requests all the information we need to quickly and efficiently address your issue. Be clear, concise, and descriptive. Provide as much information as you can, including steps to reproduce, stack traces, compiler errors, library versions, OS versions, and screenshots (if applicable).
+\item {\bfseries{Use \href{https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax}{\texttt{ Git\+Hub-\/flavored Markdown}}.}} Especially put code blocks and console outputs in backticks (\`{}\`{}\`{}). This improves readability.
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md20}{}\doxysection{\texorpdfstring{\+:seedling\+: Feature Requests}{\+:seedling\+: Feature Requests}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md20}
+Feature requests are welcome! We don\textquotesingle{}t have all the answers and we truly love the collaborative experience of building software together! That being said, we cannot guarantee your request will be accepted. We want to avoid \href{https://en.wikipedia.org/wiki/Feature_creep}{\texttt{ feature creep}}. Your idea may be great, but also out-\/of-\/scope for the project. If accepted, we\textquotesingle{}ll do our best to tackle it in a timely manner, but cannot make any commitments regarding the timeline for implementation and release. However, you are welcome to submit a pull request to help!
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Please don\textquotesingle{}t open a duplicate feature request.}} Search for existing feature requests first. If you find your feature (or one very similar) previously requested, comment on that issue.
+\item {\bfseries{Fully complete the provided issue template.}} The feature request template asks for all necessary information for us to begin a productive conversation.
+\item Be precise about the proposed outcome of the feature and how it relates to existing features. Include implementation details if possible.
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md21}{}\doxysection{\texorpdfstring{\+:mag\+: Triaging Issues}{\+:mag\+: Triaging Issues}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md21}
+You can triage issues which may include reproducing bug reports or asking for additional information, such as version numbers or reproduction instructions. Any help you can provide to quickly resolve an issue is very much appreciated!\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md22}{}\doxysection{\texorpdfstring{\+:repeat\+: Submitting Pull Requests}{\+:repeat\+: Submitting Pull Requests}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md22}
+We {\bfseries{love}} pull requests! Before \href{https://help.github.com/en/github/getting-started-with-github/fork-a-repo}{\texttt{ forking the repo}} and \href{https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests}{\texttt{ creating a pull request}} for non-\/trivial changes, it is usually best to first open an issue to discuss the changes, or discuss your intended approach for solving the problem in the comments for an existing issue.
+
+For most contributions, after your first pull request is accepted and merged, you will be \href{https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository}{\texttt{ invited to the project}} and given {\bfseries{push access}}. \+:tada\+:
+
+{\itshape Note\+: All contributions will be licensed under the project\textquotesingle{}s license.}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Smaller is better.}} Submit {\bfseries{one}} pull request per bug fix or feature. A pull request should contain isolated changes pertaining to a single bug fix or feature implementation. {\bfseries{Do not}} refactor or reformat code that is unrelated to your change. It is better to {\bfseries{submit many small pull requests}} rather than a single large one. Enormous pull requests will take enormous amounts of time to review, or may be rejected altogether.
+\item {\bfseries{Coordinate bigger changes.}} For large and non-\/trivial changes, open an issue to discuss a strategy with the maintainers. Otherwise, you risk doing a lot of work for nothing!
+\item {\bfseries{Prioritize understanding over cleverness.}} Write code clearly and concisely. Remember that source code usually gets written once and read often. Ensure the code is clear to the reader. The purpose and logic should be obvious to a reasonably skilled developer, otherwise you should add a comment that explains it.
+\item {\bfseries{Follow existing coding style and conventions.}} Keep your code consistent with the style, formatting, and conventions in the rest of the code base. When possible, these will be enforced with a linter. Consistency makes it easier to review and modify in the future.
+\item {\bfseries{Include test coverage.}} Add unit tests when possible. Follow existing patterns for implementing tests.
+\item {\bfseries{Update the example project}} if one exists to exercise any new functionality you have added.
+\item {\bfseries{Add documentation.}} Document your changes with code doc comments or in existing guides.
+\item {\bfseries{Update the CHANGELOG}} for all enhancements and bug fixes. Include the corresponding issue number if one exists, and your Git\+Hub username. (example\+: "{}-\/ Fixed crash in profile view. \#123 @jessesquires"{})
+\item {\bfseries{Use the repo\textquotesingle{}s default branch.}} Branch from and \href{https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork}{\texttt{ submit your pull request}} to the repo\textquotesingle{}s default branch. Usually this is {\ttfamily main}, but it could be {\ttfamily dev}, {\ttfamily develop}, or {\ttfamily master}.
+\item {\bfseries{\href{https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-on-github}{\texttt{ Resolve any merge conflicts}}}} that occur.
+\item {\bfseries{Promptly address any CI failures}}. If your pull request fails to build or pass tests, please push another commit to fix it.
+\item When writing comments, use properly constructed sentences, including punctuation.
+\item Use spaces, not tabs.
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md23}{}\doxysection{\texorpdfstring{\+:memo\+: Writing Commit Messages}{\+:memo\+: Writing Commit Messages}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md23}
+Please \href{https://chris.beams.io/posts/git-commit/}{\texttt{ write a great commit message}}.
+
+
+\begin{DoxyEnumerate}
+\item Separate subject from body with a blank line
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Limit the subject line to 50 characters
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Capitalize the subject line
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Do not end the subject line with a period
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Wrap the body at {\itshape about} 72 characters
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Use the body to explain {\bfseries{why}}, {\itshape not what and how} (the code shows that!)
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item If applicable, prefix the title with the relevant component name or emoji (see below. examples\+: "{}\mbox{[}\+Docs\mbox{]} Fix typo"{}, "{}\mbox{[}\+Profile\mbox{]} Fix missing avatar"{})
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{:palm\_tree:\ Summary\ of\ Amazing\ Feature\ Here}
+\DoxyCodeLine{}
+\DoxyCodeLine{Add\ a\ more\ detailed\ explanation\ here,\ if\ necessary.\ Possibly\ give\ }
+\DoxyCodeLine{some\ background\ about\ the\ issue\ being\ fixed,\ etc.\ The\ body\ of\ the\ }
+\DoxyCodeLine{commit\ message\ can\ be\ several\ paragraphs.\ Further\ paragraphs\ come\ }
+\DoxyCodeLine{after\ blank\ lines\ and\ please\ do\ proper\ word-\/wrap.}
+\DoxyCodeLine{}
+\DoxyCodeLine{Wrap\ it\ to\ about\ 72\ characters\ or\ so.\ In\ some\ contexts,\ }
+\DoxyCodeLine{the\ first\ line\ is\ treated\ as\ the\ subject\ of\ the\ commit\ and\ the\ }
+\DoxyCodeLine{rest\ of\ the\ text\ as\ the\ body.\ The\ blank\ line\ separating\ the\ summary\ }
+\DoxyCodeLine{from\ the\ body\ is\ critical\ (unless\ you\ omit\ the\ body\ entirely);\ }
+\DoxyCodeLine{various\ tools\ like\ \`{}log`,\ \`{}shortlog`\ and\ \`{}rebase`\ can\ get\ confused\ }
+\DoxyCodeLine{if\ you\ run\ the\ two\ together.}
+\DoxyCodeLine{}
+\DoxyCodeLine{Explain\ the\ problem\ that\ this\ commit\ is\ solving.\ Focus\ on\ why\ you}
+\DoxyCodeLine{are\ making\ this\ change\ as\ opposed\ to\ how\ or\ what.\ The\ code\ explains\ }
+\DoxyCodeLine{how\ or\ what.\ Reviewers\ and\ your\ future\ self\ can\ read\ the\ patch,\ }
+\DoxyCodeLine{but\ might\ not\ understand\ why\ a\ particular\ solution\ was\ implemented.}
+\DoxyCodeLine{Are\ there\ side\ effects\ or\ other\ unintuitive\ consequences\ of\ this}
+\DoxyCodeLine{change?\ Here's\ the\ place\ to\ explain\ them.}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ -\/\ Bullet\ points\ are\ awesome,\ too}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ -\/\ A\ hyphen\ should\ be\ used\ for\ the\ bullet,\ preceded}
+\DoxyCodeLine{\ \ \ by\ a\ single\ space,\ with\ blank\ lines\ in\ between}
+\DoxyCodeLine{}
+\DoxyCodeLine{Note\ the\ fixed\ or\ relevant\ GitHub\ issues\ at\ the\ end:}
+\DoxyCodeLine{}
+\DoxyCodeLine{Resolves:\ \#123}
+\DoxyCodeLine{See\ also:\ \#456,\ \#789}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md24}{}\doxysection{\texorpdfstring{\+:heart\+: Who Loves Emoji?}{\+:heart\+: Who Loves Emoji?}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md24}
+Commit comments, Issues, Feature Requests... they can all use a little sprucing up, right? Consider using the following emoji for a mix of function and \+:sparkles\+: dazzle!
+
+
+\begin{DoxyItemize}
+\item actions
+\begin{DoxyItemize}
+\item \+:seedling\+: {\ttfamily \+:seedling\+:} (or other plants) when growing new features. Choose your fav! \+:cactus\+: \+:herb\+: \+:evergreen\+\_\+tree\+: \+:palm\+\_\+tree\+: \+:deciduous\+\_\+tree\+: \+:blossom\+:
+\item \+:art\+: {\ttfamily \+:art\+:} when improving the format/structure of the code
+\item \+:racehorse\+: {\ttfamily \+:racehorse\+:} when improving performance
+\item \+:non-\/potable\+\_\+water\+: {\ttfamily \+:non-\/potable\+\_\+water\+:} when plugging memory leaks
+\item \+:memo\+: {\ttfamily \+:memo\+:} when writing docs
+\item \+:bug\+: {\ttfamily \+:bug\+:} (or other insects) when fixing a bug. Maybe \+:beetle\+: \+:ant\+: or \+:honeybee\+: ?
+\item \+:fire\+: {\ttfamily \+:fire\+:} when removing code or files
+\item \+:green\+\_\+heart\+: {\ttfamily \+:green\+\_\+heart\+:} when fixing the CI build
+\item \+:white\+\_\+check\+\_\+mark\+: {\ttfamily \+:white\+\_\+check\+\_\+mark\+:} when adding tests
+\item \+:lock\+: {\ttfamily \+:lock\+:} when dealing with security
+\item \+:arrow\+\_\+up\+: {\ttfamily \+:arrow\+\_\+up\+:} when upgrading dependencies
+\item \+:arrow\+\_\+down\+: {\ttfamily \+:arrow\+\_\+down\+:} when downgrading dependencies
+\item \+:shirt\+: {\ttfamily \+:shirt\+:} when removing linter warnings
+\end{DoxyItemize}
+\item platforms
+\begin{DoxyItemize}
+\item \+:penguin\+: {\ttfamily \+:penguin\+:} when fixing something on Linux
+\item \+:apple\+: {\ttfamily \+:apple\+:} when fixing something on mac\+OS
+\item \+:checkered\+\_\+flag\+: {\ttfamily \+:checkered\+\_\+flag\+:} when fixing something on Windows
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md25}{}\doxysection{\texorpdfstring{\+:white\+\_\+check\+\_\+mark\+: Code Review}{\+:white\+\_\+check\+\_\+mark\+: Code Review}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md25}
+
+\begin{DoxyItemize}
+\item {\bfseries{Review the code, not the author.}} Look for and suggest improvements without disparaging or insulting the author. Provide actionable feedback and explain your reasoning.
+\item {\bfseries{You are not your code.}} When your code is critiqued, questioned, or constructively criticized, remember that you are not your code. Do not take code review personally.
+\item {\bfseries{Always do your best.}} No one writes bugs on purpose. Do your best, and learn from your mistakes.
+\item Kindly note any violations to the guidelines specified in this document.
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md26}{}\doxysection{\texorpdfstring{\+:violin\+: Coding Style}{\+:violin\+: Coding Style}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md26}
+Consistency is the most important. Following the existing style, formatting, and naming conventions of the file you are modifying and of the overall project. Failure to do so will result in a prolonged review process that has to focus on updating the superficial aspects of your code, rather than improving its functionality and performance.
+
+For example, if all private properties are prefixed with an underscore {\ttfamily \+\_\+}, then new ones you add should be prefixed in the same way. Or, if methods are named using camelcase, like {\ttfamily this\+Is\+My\+New\+Method}, then do not diverge from that by writing {\ttfamily this\+\_\+is\+\_\+my\+\_\+new\+\_\+method}. You get the idea. If in doubt, please ask or search the codebase for something similar.
+
+When possible, style and format will be enforced with a linter.\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md27}{}\doxysubsection{\texorpdfstring{C Styleguide}{C Styleguide}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md27}
+C code is linted with \href{https://astyle.sourceforge.net/}{\texttt{ AStyle}}.\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md28}{}\doxysubsection{\texorpdfstring{Ruby Styleguide}{Ruby Styleguide}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md28}
+Ruby code is linted with \href{https://github.com/rubocop/rubocop}{\texttt{ Rubocop}}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md29}{}\doxysection{\texorpdfstring{\+:medal\+\_\+sports\+: Certificate of Origin}{\+:medal\+\_\+sports\+: Certificate of Origin}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md29}
+{\itshape Developer\textquotesingle{}s Certificate of Origin 1.\+1}
+
+By making a contribution to this project, I certify that\+:
+
+\begin{quote}
+
+\begin{DoxyEnumerate}
+\item The contribution was created in whole or in part by me and I have the right to submit it under the open source license indicated in the file; or
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item The contribution is based upon previous work that, to the best of my knowledge, is covered under an appropriate open source license and I have the right under that license to submit that work with modifications, whether created in whole or in part by me, under the same open source license (unless I am permitted to submit under a different license), as indicated in the file; or
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item The contribution was provided directly to me by some other person who certified (1), (2) or (3) and I have not modified it.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item I understand and agree that this project and the contribution are public and that a record of the contribution (including all personal information I submit with it, including my sign-\/off) is maintained indefinitely and may be redistributed consistent with this project or the open source license(s) involved. 
+\end{DoxyEnumerate}\end{quote}
+\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md30}{}\doxysection{\texorpdfstring{\href{https://en.wikipedia.org/wiki/Van_Halen\#Contract_riders}{\texttt{ No Brown M\&M\textquotesingle{}s}}}{\href{https://en.wikipedia.org/wiki/Van_Halen\#Contract_riders}{\texttt{ No Brown M\&M\textquotesingle{}s}}}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md30}
+If you are reading this, bravo dear user and (hopefully) contributor for making it this far! You are awesome. \+:100\+:
+
+To confirm that you have read this guide and are following it as best as possible, {\bfseries{include this emoji at the top}} of your issue or pull request\+: \+:pineapple\+: {\ttfamily \+:pineapple\+:}\hypertarget{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md31}{}\doxysection{\texorpdfstring{\+:pray\+: Credits}{\+:pray\+: Credits}}\label{md__unity_2docs_2_c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md31}
+Written by \href{https://github.com/jessesquires}{\texttt{ @jessesquires}}. Lovingly adapted to Throw\+The\+Switch.\+org by \href{https://github.com/mvandervoord}{\texttt{ @mvandervoord}}.
+
+{\bfseries{Please feel free to adopt this guide in your own projects. Fork it wholesale or remix it for your needs.}}
+
+{\itshape Many of the ideas and prose for the statements in this document were based on or inspired by work from the following communities\+:}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/Alamofire/Alamofire/blob/master/CONTRIBUTING.md}{\texttt{ Alamofire}}
+\item \href{https://github.com/CocoaPods/CocoaPods/blob/master/CONTRIBUTING.md}{\texttt{ Cocoa\+Pods}}
+\item \href{https://github.com/moby/moby/blob/master/CONTRIBUTING.md}{\texttt{ Docker}}
+\item \href{https://elinux.org/Developer_Certificate_Of_Origin}{\texttt{ Linux}}
+\end{DoxyItemize}
+
+{\itshape We commend them for their efforts to facilitate collaboration in their projects.} 

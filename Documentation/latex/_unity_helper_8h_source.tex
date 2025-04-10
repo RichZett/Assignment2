@@ -1,0 +1,25 @@
+\doxysection{Unity\+Helper.\+h}
+\hypertarget{_unity_helper_8h_source}{}\label{_unity_helper_8h_source}\index{Unity/examples/example\_3/helper/UnityHelper.h@{Unity/examples/example\_3/helper/UnityHelper.h}}
+\mbox{\hyperlink{_unity_helper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ =========================================================================}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Unity\ -\/\ A\ Test\ Framework\ for\ C}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ \ ThrowTheSwitch.org}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ Copyright\ (c)\ 2007-\/25\ Mike\ Karlesky,\ Mark\ VanderVoord,\ \&\ Greg\ Williams}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ SPDX-\/License-\/Identifier:\ MIT}}
+\DoxyCodeLine{00006\ \textcolor{comment}{=========================================================================\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ \_TESTHELPER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_TESTHELPER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Types.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_unity_helper_8h_a3a03336c76d85e5d21de18b32a63710d}{AssertEqualExampleStruct}}(\textcolor{keyword}{const}\ EXAMPLE\_STRUCT\_T\ expected,\ \textcolor{keyword}{const}\ EXAMPLE\_STRUCT\_T\ actual,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ line);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ UNITY\_TEST\_ASSERT\_EQUAL\_EXAMPLE\_STRUCT\_T(expected,\ actual,\ line,\ message)\ AssertEqualExampleStruct(expected,\ actual,\ line);}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ TEST\_ASSERT\_EQUAL\_EXAMPLE\_STRUCT\_T(expected,\ actual)\ UNITY\_TEST\_ASSERT\_EQUAL\_EXAMPLE\_STRUCT\_T(expected,\ actual,\ \_\_LINE\_\_,\ NULL);}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_TESTHELPER\_H}}
+
+\end{DoxyCode}

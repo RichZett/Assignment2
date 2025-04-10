@@ -1,0 +1,154 @@
+\doxysection{Unity/extras/memory/test/unity\+\_\+memory\+\_\+\+Test\+Runner.c File Reference}
+\hypertarget{unity__memory___test_runner_8c}{}\label{unity__memory___test_runner_8c}\index{Unity/extras/memory/test/unity\_memory\_TestRunner.c@{Unity/extras/memory/test/unity\_memory\_TestRunner.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}unity\+\_\+memory.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a194bf24860d0513739e68b789ecee70b}{test\+\_\+\+Force\+Malloc\+Fail}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a6ad60363a22026d78bbf7dc0a52b42a8}{test\+\_\+\+Realloc\+Smaller\+Is\+Unchanged}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_acd7a0a8f8afd958cfe79f141282a01a9}{test\+\_\+\+Realloc\+Same\+Is\+Unchanged}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a37912f7b86ff1c1db7366d7409a7d4be}{test\+\_\+\+Realloc\+Larger\+Needed}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a8ea8b658db3a465600f849bd677d29ab}{test\+\_\+\+Realloc\+Null\+Pointer\+Is\+Like\+Malloc}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a175400115830efff962bcd676180f45b}{test\+\_\+\+Realloc\+Size\+Zero\+Frees\+Mem\+And\+Returns\+Null\+Pointer}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a70eaa3270b790236d437d69093a635a7}{test\+\_\+\+Calloc\+Fills\+With\+Zero}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a1938a9566c771b259e184b904d2f6e34}{test\+\_\+\+Free\+NULLSafety}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a3289e9aee70105b50c32edec9898a9a3}{test\+\_\+\+Detects\+Leak}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_af555242449b3827a8fecfcfb665cda98}{test\+\_\+\+Buffer\+Overrun\+Found\+During\+Free}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_aec11c3ad3e06b187d0c9450df994d56d}{test\+\_\+\+Buffer\+Overrun\+Found\+During\+Realloc}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_ae6724f64521a62c555f4770b98518ba7}{test\+\_\+\+Buffer\+Guard\+Write\+Found\+During\+Free}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a5271e9c2ecb7cbede7696bf148301f71}{test\+\_\+\+Buffer\+Guard\+Write\+Found\+During\+Realloc}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a3f179eecfbe68c3114df6548339bf8ab}{test\+\_\+\+Malloc\+Past\+Buffer\+Fails}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a19eb9c2c61072731e233ce1c748b18ee}{test\+\_\+\+Calloc\+Past\+Buffer\+Fails}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a9c1bd5a736aa1537bc01397702f1f933}{test\+\_\+\+Malloc\+Then\+Realloc\+Grows\+Memory\+In\+Place}} (void)
+\item 
+void \mbox{\hyperlink{unity__memory___test_runner_8c_a1967c601bca75959a66c3748ace2e01d}{test\+\_\+\+Realloc\+Fail\+Does\+Not\+Free\+Mem}} (void)
+\item 
+int \mbox{\hyperlink{unity__memory___test_runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{unity__memory___test_runner_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!main@{main}}
+\index{main@{main}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{unity__memory___test_runner_8c_ae6724f64521a62c555f4770b98518ba7}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_BufferGuardWriteFoundDuringFree@{test\_BufferGuardWriteFoundDuringFree}}
+\index{test\_BufferGuardWriteFoundDuringFree@{test\_BufferGuardWriteFoundDuringFree}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_BufferGuardWriteFoundDuringFree()}{test\_BufferGuardWriteFoundDuringFree()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_ae6724f64521a62c555f4770b98518ba7} 
+void test\+\_\+\+Buffer\+Guard\+Write\+Found\+During\+Free (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a5271e9c2ecb7cbede7696bf148301f71}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_BufferGuardWriteFoundDuringRealloc@{test\_BufferGuardWriteFoundDuringRealloc}}
+\index{test\_BufferGuardWriteFoundDuringRealloc@{test\_BufferGuardWriteFoundDuringRealloc}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_BufferGuardWriteFoundDuringRealloc()}{test\_BufferGuardWriteFoundDuringRealloc()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a5271e9c2ecb7cbede7696bf148301f71} 
+void test\+\_\+\+Buffer\+Guard\+Write\+Found\+During\+Realloc (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_af555242449b3827a8fecfcfb665cda98}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_BufferOverrunFoundDuringFree@{test\_BufferOverrunFoundDuringFree}}
+\index{test\_BufferOverrunFoundDuringFree@{test\_BufferOverrunFoundDuringFree}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_BufferOverrunFoundDuringFree()}{test\_BufferOverrunFoundDuringFree()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_af555242449b3827a8fecfcfb665cda98} 
+void test\+\_\+\+Buffer\+Overrun\+Found\+During\+Free (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_aec11c3ad3e06b187d0c9450df994d56d}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_BufferOverrunFoundDuringRealloc@{test\_BufferOverrunFoundDuringRealloc}}
+\index{test\_BufferOverrunFoundDuringRealloc@{test\_BufferOverrunFoundDuringRealloc}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_BufferOverrunFoundDuringRealloc()}{test\_BufferOverrunFoundDuringRealloc()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_aec11c3ad3e06b187d0c9450df994d56d} 
+void test\+\_\+\+Buffer\+Overrun\+Found\+During\+Realloc (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a70eaa3270b790236d437d69093a635a7}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_CallocFillsWithZero@{test\_CallocFillsWithZero}}
+\index{test\_CallocFillsWithZero@{test\_CallocFillsWithZero}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_CallocFillsWithZero()}{test\_CallocFillsWithZero()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a70eaa3270b790236d437d69093a635a7} 
+void test\+\_\+\+Calloc\+Fills\+With\+Zero (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a19eb9c2c61072731e233ce1c748b18ee}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_CallocPastBufferFails@{test\_CallocPastBufferFails}}
+\index{test\_CallocPastBufferFails@{test\_CallocPastBufferFails}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_CallocPastBufferFails()}{test\_CallocPastBufferFails()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a19eb9c2c61072731e233ce1c748b18ee} 
+void test\+\_\+\+Calloc\+Past\+Buffer\+Fails (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a3289e9aee70105b50c32edec9898a9a3}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_DetectsLeak@{test\_DetectsLeak}}
+\index{test\_DetectsLeak@{test\_DetectsLeak}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_DetectsLeak()}{test\_DetectsLeak()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a3289e9aee70105b50c32edec9898a9a3} 
+void test\+\_\+\+Detects\+Leak (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a194bf24860d0513739e68b789ecee70b}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_ForceMallocFail@{test\_ForceMallocFail}}
+\index{test\_ForceMallocFail@{test\_ForceMallocFail}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_ForceMallocFail()}{test\_ForceMallocFail()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a194bf24860d0513739e68b789ecee70b} 
+void test\+\_\+\+Force\+Malloc\+Fail (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a1938a9566c771b259e184b904d2f6e34}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_FreeNULLSafety@{test\_FreeNULLSafety}}
+\index{test\_FreeNULLSafety@{test\_FreeNULLSafety}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_FreeNULLSafety()}{test\_FreeNULLSafety()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a1938a9566c771b259e184b904d2f6e34} 
+void test\+\_\+\+Free\+NULLSafety (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a3f179eecfbe68c3114df6548339bf8ab}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_MallocPastBufferFails@{test\_MallocPastBufferFails}}
+\index{test\_MallocPastBufferFails@{test\_MallocPastBufferFails}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_MallocPastBufferFails()}{test\_MallocPastBufferFails()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a3f179eecfbe68c3114df6548339bf8ab} 
+void test\+\_\+\+Malloc\+Past\+Buffer\+Fails (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a9c1bd5a736aa1537bc01397702f1f933}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_MallocThenReallocGrowsMemoryInPlace@{test\_MallocThenReallocGrowsMemoryInPlace}}
+\index{test\_MallocThenReallocGrowsMemoryInPlace@{test\_MallocThenReallocGrowsMemoryInPlace}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_MallocThenReallocGrowsMemoryInPlace()}{test\_MallocThenReallocGrowsMemoryInPlace()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a9c1bd5a736aa1537bc01397702f1f933} 
+void test\+\_\+\+Malloc\+Then\+Realloc\+Grows\+Memory\+In\+Place (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a1967c601bca75959a66c3748ace2e01d}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_ReallocFailDoesNotFreeMem@{test\_ReallocFailDoesNotFreeMem}}
+\index{test\_ReallocFailDoesNotFreeMem@{test\_ReallocFailDoesNotFreeMem}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_ReallocFailDoesNotFreeMem()}{test\_ReallocFailDoesNotFreeMem()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a1967c601bca75959a66c3748ace2e01d} 
+void test\+\_\+\+Realloc\+Fail\+Does\+Not\+Free\+Mem (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a37912f7b86ff1c1db7366d7409a7d4be}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_ReallocLargerNeeded@{test\_ReallocLargerNeeded}}
+\index{test\_ReallocLargerNeeded@{test\_ReallocLargerNeeded}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_ReallocLargerNeeded()}{test\_ReallocLargerNeeded()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a37912f7b86ff1c1db7366d7409a7d4be} 
+void test\+\_\+\+Realloc\+Larger\+Needed (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a8ea8b658db3a465600f849bd677d29ab}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_ReallocNullPointerIsLikeMalloc@{test\_ReallocNullPointerIsLikeMalloc}}
+\index{test\_ReallocNullPointerIsLikeMalloc@{test\_ReallocNullPointerIsLikeMalloc}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_ReallocNullPointerIsLikeMalloc()}{test\_ReallocNullPointerIsLikeMalloc()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a8ea8b658db3a465600f849bd677d29ab} 
+void test\+\_\+\+Realloc\+Null\+Pointer\+Is\+Like\+Malloc (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_acd7a0a8f8afd958cfe79f141282a01a9}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_ReallocSameIsUnchanged@{test\_ReallocSameIsUnchanged}}
+\index{test\_ReallocSameIsUnchanged@{test\_ReallocSameIsUnchanged}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_ReallocSameIsUnchanged()}{test\_ReallocSameIsUnchanged()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_acd7a0a8f8afd958cfe79f141282a01a9} 
+void test\+\_\+\+Realloc\+Same\+Is\+Unchanged (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a175400115830efff962bcd676180f45b}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_ReallocSizeZeroFreesMemAndReturnsNullPointer@{test\_ReallocSizeZeroFreesMemAndReturnsNullPointer}}
+\index{test\_ReallocSizeZeroFreesMemAndReturnsNullPointer@{test\_ReallocSizeZeroFreesMemAndReturnsNullPointer}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_ReallocSizeZeroFreesMemAndReturnsNullPointer()}{test\_ReallocSizeZeroFreesMemAndReturnsNullPointer()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a175400115830efff962bcd676180f45b} 
+void test\+\_\+\+Realloc\+Size\+Zero\+Frees\+Mem\+And\+Returns\+Null\+Pointer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{unity__memory___test_runner_8c_a6ad60363a22026d78bbf7dc0a52b42a8}\index{unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}!test\_ReallocSmallerIsUnchanged@{test\_ReallocSmallerIsUnchanged}}
+\index{test\_ReallocSmallerIsUnchanged@{test\_ReallocSmallerIsUnchanged}!unity\_memory\_TestRunner.c@{unity\_memory\_TestRunner.c}}
+\doxysubsubsection{\texorpdfstring{test\_ReallocSmallerIsUnchanged()}{test\_ReallocSmallerIsUnchanged()}}
+{\footnotesize\ttfamily \label{unity__memory___test_runner_8c_a6ad60363a22026d78bbf7dc0a52b42a8} 
+void test\+\_\+\+Realloc\+Smaller\+Is\+Unchanged (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

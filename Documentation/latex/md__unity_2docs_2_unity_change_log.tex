@@ -1,0 +1,117 @@
+\chapter{Unity Test -\/ Change Log}
+\hypertarget{md__unity_2docs_2_unity_change_log}{}\label{md__unity_2docs_2_unity_change_log}\index{Unity Test -\/ Change Log@{Unity Test -\/ Change Log}}
+\label{md__unity_2docs_2_unity_change_log_autotoc_md232}%
+\Hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md232}%
+\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md233}{}\doxysection{\texorpdfstring{A Note}{A Note}}\label{md__unity_2docs_2_unity_change_log_autotoc_md233}
+This document captures significant features and fixes to the Unity project core source files and scripts. More detail can be found in the history on Github.
+
+This project is now tracking changes in more detail. Previous releases get less detailed as we move back in histroy.
+
+Prior to 2012, the project was hosted on Source\+Forge.\+net Prior to 2008, the project was an internal project and not released to the public.\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md234}{}\doxysection{\texorpdfstring{Log}{Log}}\label{md__unity_2docs_2_unity_change_log_autotoc_md234}
+\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md235}{}\doxysubsection{\texorpdfstring{Unity 2.\+6.\+1 (Jan 2025)}{Unity 2.\+6.\+1 (Jan 2025)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md235}
+New Features\+:
+
+
+\begin{DoxyItemize}
+\item Add {\ttfamily -\/n} comand line option as strict matcher again
+\end{DoxyItemize}
+
+Significant Bugfixes\+:
+
+
+\begin{DoxyItemize}
+\item Protect against problems when mis-\/matched command line options selected
+\end{DoxyItemize}
+
+Other\+:
+
+
+\begin{DoxyItemize}
+\item Protect against Conversion warnings in gcc
+\item Remove Redundant line-\/casts
+\item Make more internal functions static
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md236}{}\doxysubsection{\texorpdfstring{Unity 2.\+6.\+0 (Mar 2024)}{Unity 2.\+6.\+0 (Mar 2024)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md236}
+New Features\+:
+
+
+\begin{DoxyItemize}
+\item Fill out missing variations of arrays, within, etc.
+\item Add {\ttfamily TEST\+\_\+\+PRINTF()}
+\item Add {\ttfamily \doxylink{test__unity__parameterized_demo_8c_a66dfd8ff7fb8ba4e42c5258b96753e46}{TEST\+\_\+\+MATRIX()}} and {\ttfamily \doxylink{test__unity__parameterized_demo_8c_a17336e6a08dd02a52aca6261e4f63bf5}{TEST\+\_\+\+RANGE()}} options and documentation
+\item Add support for searching {\ttfamily \doxylink{unity_8h_a63d1c420702f922234759bbbb08b4750}{TEST\+\_\+\+SOURCE\+\_\+\+FILE()}} for determining test dependencies
+\item Add Unity BDD plugin
+\item Add {\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+EXEC\+\_\+\+TIME} option to report test times
+\item Allow user to override test abort underlying mechanism
+\item Add {\ttfamily NOT\+\_\+\+EQUAL\texorpdfstring{$\ast$}{*}} and {\ttfamily NOT\+\_\+\+WITHIN\texorpdfstring{$\ast$}{*}} checks for floats and doubles
+\end{DoxyItemize}
+
+Significant Bugfixes\+:
+
+
+\begin{DoxyItemize}
+\item More portable validation of NaN and Infinity. Added {\ttfamily UNITY\+\_\+\+IS\+\_\+\+NAN} and {\ttfamily UNITY\+\_\+\+IS\+\_\+\+INF} options
+\item Add {\ttfamily UNITY\+\_\+\+PROGMEM} configuration option
+\item Fix overflow detection of hex values when using arrays
+\item Fix scripts broken by Ruby standard changes
+\end{DoxyItemize}
+
+Other\+:
+
+
+\begin{DoxyItemize}
+\item Avoid pointer comparison when one is null to avoid compiler warnings
+\item Significant improvements to documentation
+\item Updates to match latest Ruby style specification
+\item Meson, CMake, Platform\+IO builds
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md237}{}\doxysubsection{\texorpdfstring{Unity 2.\+5.\+2 (January 2021)}{Unity 2.\+5.\+2 (January 2021)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md237}
+
+\begin{DoxyItemize}
+\item improvements to RUN\+\_\+\+TEST macro and generated RUN\+\_\+\+TEST
+\item Fix {\ttfamily UNITY\+\_\+\+TEST\+\_\+\+ASSERT\+\_\+\+BIT(\+S)\+\_\+\+HIGH}
+\item Cleaner handling of details tracking by CMock
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md238}{}\doxysubsection{\texorpdfstring{Unity 2.\+5.\+1 (May 2020)}{Unity 2.\+5.\+1 (May 2020)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md238}
+Mostly a bugfix and stability release. Bonus Features\+:
+
+
+\begin{DoxyItemize}
+\item Optional TEST\+\_\+\+PRINTF macro
+\item Improve self-\/testing procedures.
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md239}{}\doxysubsection{\texorpdfstring{Unity 2.\+5.\+0 (October 2019)}{Unity 2.\+5.\+0 (October 2019)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md239}
+It\textquotesingle{}s been a LONG time since the last release of Unity. Finally, here it is! There are too many updates to list here, so some highlights\+:
+
+
+\begin{DoxyItemize}
+\item more standards compliant (without giving up on supporting ALL compilers, no matter how quirky)
+\item many more specialized assertions for better test feedback
+\item more examples for integrating into your world
+\item many many bugfixes and tweaks
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md240}{}\doxysubsection{\texorpdfstring{Unity 2.\+4.\+3 (November 2017)}{Unity 2.\+4.\+3 (November 2017)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md240}
+
+\begin{DoxyItemize}
+\item Allow \doxylink{unity_8h_a0f08bc53b5978d3892a36f98df005b37}{suite\+Set\+Up()} and \doxylink{unity_8h_a3eac1f0f22f9093d82efeed457a1b1d3}{suite\+Tear\+Down()} to be povided as normal C functions
+\item Fix \& Expand Greater Than / Less Than assertions for integers
+\item Built-\/in option to colorize test results
+\item Documentation updates
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md241}{}\doxysubsection{\texorpdfstring{Unity 2.\+4.\+2 (September 2017)}{Unity 2.\+4.\+2 (September 2017)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md241}
+
+\begin{DoxyItemize}
+\item Fixed bug in UNTY\+\_\+\+TEST\+\_\+\+ASSERT\+\_\+\+EACH\+\_\+\+EQUAL\+\_\+\texorpdfstring{$\ast$}{*}
+\item Added TEST\+\_\+\+ASSERT\+\_\+\+GREATER\+\_\+\+THAN and TEST\+\_\+\+ASSERT\+\_\+\+LESS\+\_\+\+THAN
+\item Updated Module Generator to stop changing names when no style given
+\item Cleanup to custom float printing for accuracy
+\item Cleanup incorrect line numbers are partial name matching
+\item Reduce warnings from using popular function names as variable names
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md242}{}\doxysubsection{\texorpdfstring{Unity 2.\+4.\+1 (April 2017)}{Unity 2.\+4.\+1 (April 2017)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md242}
+
+\begin{DoxyItemize}
+\item test runner generator can inject defines as well as headers
+\item added a built-\/in floating point print routine instead of relying on printf
+\item updated to new coding and naming standard
+\item updated documentation to be markdown instead of pdf
+\item fixed many many little bugs, most of which were supplied by the community (you people are awesome!)
+\item coding standard actually enforced in CI
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_change_log_autotoc_md243}{}\doxysubsection{\texorpdfstring{Unity 2.\+4.\+0 (October, 2016)}{Unity 2.\+4.\+0 (October, 2016)}}\label{md__unity_2docs_2_unity_change_log_autotoc_md243}
+
+\begin{DoxyItemize}
+\item port from Source\+Forge and numerous bugfixes 
+\end{DoxyItemize}

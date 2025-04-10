@@ -1,0 +1,479 @@
+\chapter{Unity Configuration Guide}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide}{}\label{md__unity_2docs_2_unity_configuration_guide}\index{Unity Configuration Guide@{Unity Configuration Guide}}
+\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md244}%
+\Hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md244}%
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md245}{}\doxysection{\texorpdfstring{C Standards, Compilers and Microcontrollers}{C Standards, Compilers and Microcontrollers}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md245}
+The embedded software world contains its challenges. Compilers support different revisions of the C Standard. They ignore requirements in places, sometimes to make the language more usable in some special regard. Sometimes it\textquotesingle{}s to simplify their support. Sometimes it\textquotesingle{}s due to specific quirks of the microcontroller they are targeting. Simulators add another dimension to this menagerie.
+
+Unity is designed to run on almost anything that is targeted by a C compiler. It would be awesome if this could be done with zero configuration. While there are some targets that come close to this dream, it is sadly not universal. It is likely that you are going to need at least a couple of the configuration options described in this document.
+
+All of Unity\textquotesingle{}s configuration options are {\ttfamily \#defines}. Most of these are simple definitions. A couple are macros with arguments. They live inside the \doxylink{unity__internals_8h}{unity\+\_\+internals.\+h} header file. We don\textquotesingle{}t necessarily recommend opening that file unless you really need to. That file is proof that a cross-\/platform library is challenging to build. From a more positive perspective, it is also proof that a great deal of complexity can be centralized primarily to one place to provide a more consistent and simple experience elsewhere.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md246}{}\doxysubsection{\texorpdfstring{Using These Options}{Using These Options}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md246}
+It doesn\textquotesingle{}t matter if you\textquotesingle{}re using a target-\/specific compiler and a simulator or a native compiler. In either case, you\textquotesingle{}ve got a couple choices for configuring these options\+:
+
+
+\begin{DoxyEnumerate}
+\item Because these options are specified via C defines, you can pass most of these options to your compiler through command line compiler flags. Even if you\textquotesingle{}re using an embedded target that forces you to use their overbearing IDE for all configuration, there will be a place somewhere in your project to configure defines for your compiler.
+\item You can create a custom {\ttfamily \doxylink{unity__config_8h}{unity\+\_\+config.\+h}} configuration file (present in your toolchain\textquotesingle{}s search paths). In this file, you will list definitions and macros specific to your target. All you must do is define {\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+CONFIG\+\_\+H} and Unity will rely on {\ttfamily \doxylink{unity__config_8h}{unity\+\_\+config.\+h}} for any further definitions it may need.
+\end{DoxyEnumerate}
+
+Unfortunately, it doesn\textquotesingle{}t usually work well to just \#define these things in the test itself. These defines need to take effect where ever \doxylink{unity_8h}{unity.\+h} is included. This would be test test, the test runner (if you\textquotesingle{}re generating one), and from \doxylink{unity_8c}{unity.\+c} when it\textquotesingle{}s compiled.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md247}{}\doxysection{\texorpdfstring{The Options}{The Options}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md247}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md248}{}\doxysubsection{\texorpdfstring{Integer Types}{Integer Types}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md248}
+If you\textquotesingle{}ve been a C developer for long, you probably already know that C\textquotesingle{}s concept of an integer varies from target to target. The C Standard has rules about the {\ttfamily int} matching the register size of the target microprocessor. It has rules about the {\ttfamily int} and how its size relates to other integer types. An {\ttfamily int} on one target might be 16 bits while on another target it might be 64. There are more specific types in compilers compliant with C99 or later, but that\textquotesingle{}s certainly not every compiler you are likely to encounter. Therefore, Unity has a number of features for helping to adjust itself to match your required integer sizes. It starts off by trying to do it automatically.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md249}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+STDINT\+\_\+H}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+STDINT\+\_\+H}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md249}
+The first thing that Unity does to guess your types is check {\ttfamily stdint.\+h}. This file includes defines like {\ttfamily UINT\+\_\+\+MAX} that Unity can use to learn a lot about your system. It\textquotesingle{}s possible you don\textquotesingle{}t want it to do this (um. why not?) or (more likely) it\textquotesingle{}s possible that your system doesn\textquotesingle{}t support {\ttfamily stdint.\+h}. If that\textquotesingle{}s the case, you\textquotesingle{}re going to want to define this. That way, Unity will know to skip the inclusion of this file and you won\textquotesingle{}t be left with a compiler error.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_EXCLUDE\_STDINT\_H}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md250}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+LIMITS\+\_\+H}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+LIMITS\+\_\+H}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md250}
+The second attempt to guess your types is to check {\ttfamily limits.\+h}. Some compilers that don\textquotesingle{}t support {\ttfamily stdint.\+h} could include {\ttfamily limits.\+h} instead. If you don\textquotesingle{}t want Unity to check this file either, define this to make it skip the inclusion.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_EXCLUDE\_LIMITS\_H}}
+
+\end{DoxyCode}
+
+
+If you\textquotesingle{}ve disabled both of the automatic options above, you\textquotesingle{}re going to have to do the configuration yourself. Don\textquotesingle{}t worry. Even this isn\textquotesingle{}t too bad... there are just a handful of defines that you are going to specify if you don\textquotesingle{}t like the defaults.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md251}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+INT\+\_\+\+WIDTH}}{{\ttfamily UNITY\+\_\+\+INT\+\_\+\+WIDTH}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md251}
+Define this to be the number of bits an {\ttfamily int} takes up on your system. The default, if not autodetected, is 32 bits.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_INT\_WIDTH\ 16}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md252}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+LONG\+\_\+\+WIDTH}}{{\ttfamily UNITY\+\_\+\+LONG\+\_\+\+WIDTH}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md252}
+Define this to be the number of bits a {\ttfamily long} takes up on your system. The default, if not autodetected, is 32 bits. This is used to figure out what kind of 64-\/bit support your system can handle. Does it need to specify a {\ttfamily long} or a {\ttfamily long long} to get a 64-\/bit value. On 16-\/bit systems, this option is going to be ignored.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_LONG\_WIDTH\ 16}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md253}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+POINTER\+\_\+\+WIDTH}}{{\ttfamily UNITY\+\_\+\+POINTER\+\_\+\+WIDTH}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md253}
+Define this to be the number of bits a pointer takes up on your system. The default, if not autodetected, is 32-\/bits. If you\textquotesingle{}re getting ugly compiler warnings about casting from pointers, this is the one to look at.
+
+{\itshape Hint\+:} In order to support exotic processors (for example TI C55x with a pointer width of 23-\/bit), choose the next power of two (in this case 32-\/bit).
+
+{\itshape Supported values\+:} 16, 32 and 64
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Choose\ on\ of\ these\ \#defines\ to\ set\ your\ pointer\ width\ (if\ not\ autodetected)}}
+\DoxyCodeLine{\textcolor{comment}{//\#define\ UNITY\_POINTER\_WIDTH\ 16}}
+\DoxyCodeLine{\textcolor{comment}{//\#define\ UNITY\_POINTER\_WIDTH\ 32}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_POINTER\_WIDTH\ 64\ }\textcolor{comment}{//\ Set\ UNITY\_POINTER\_WIDTH\ to\ 64-\/bit}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md254}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+COMPARE\+\_\+\+PTRS\+\_\+\+ON\+\_\+\+ZERO\+\_\+\+ARRAY}}{{\ttfamily UNITY\+\_\+\+COMPARE\+\_\+\+PTRS\+\_\+\+ON\+\_\+\+ZERO\+\_\+\+ARRAY}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md254}
+Define this to make all array assertions compare pointers instead of contents when a length of zero is specified. When not enabled, defining a length of zero will always result in a failure and a message warning the user that they have tried to compare empty arrays.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md255}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+SUPPORT\+\_\+64}}{{\ttfamily UNITY\+\_\+\+SUPPORT\+\_\+64}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md255}
+Unity will automatically include 64-\/bit support if it auto-\/detects it, or if your {\ttfamily int}, {\ttfamily long}, or pointer widths are greater than 32-\/bits. Define this to enable 64-\/bit support if none of the other options already did it for you. There can be a significant size and speed impact to enabling 64-\/bit support on small targets, so don\textquotesingle{}t define it if you don\textquotesingle{}t need it.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_SUPPORT\_64}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md256}{}\doxysubsection{\texorpdfstring{Floating Point Types}{Floating Point Types}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md256}
+In the embedded world, it\textquotesingle{}s not uncommon for targets to have no support for floating point operations at all or to have support that is limited to only single precision. We are able to guess integer sizes on the fly because integers are always available in at least one size. Floating point, on the other hand, is sometimes not available at all. Trying to include {\ttfamily float.\+h} on these platforms would result in an error. This leaves manual configuration as the only option.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md257}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+FLOAT}}{{\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+FLOAT}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md257}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md258}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+FLOAT}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+FLOAT}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md258}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md259}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+DOUBLE}}{{\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+DOUBLE}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md259}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md260}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+DOUBLE}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+DOUBLE}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md260}
+By default, Unity guesses that you will want single precision floating point support, but not double precision. It\textquotesingle{}s easy to change either of these using the include and exclude options here. You may include neither, either, or both, as suits your needs. For features that are enabled, the following floating point options also become available.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//what\ manner\ of\ strange\ processor\ is\ this?}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_EXCLUDE\_FLOAT}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_INCLUDE\_DOUBLE}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md261}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+FLOAT\+\_\+\+PRINT}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+FLOAT\+\_\+\+PRINT}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md261}
+Unity aims for as small of a footprint as possible and avoids most standard library calls (some embedded platforms don’t have a standard library!). Because of this, its routines for printing integer values are minimalist and hand-\/coded. Therefore, the display of floating point values during a failure are optional. By default, Unity will print the actual results of floating point assertion failure (e.\+g. ”\+Expected 4.\+56 Was 4.\+68”). To not include this extra support, you can use this define to instead respond to a failed assertion with a message like ”\+Values Not Within Delta”. If you would like verbose failure messages for floating point assertions, use these options to give more explicit failure messages.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_EXCLUDE\_FLOAT\_PRINT}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md262}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+FLOAT\+\_\+\+TYPE}}{{\ttfamily UNITY\+\_\+\+FLOAT\+\_\+\+TYPE}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md262}
+If enabled, Unity assumes you want your {\ttfamily FLOAT} asserts to compare standard C floats. If your compiler supports a specialty floating point type, you can always override this behavior by using this definition.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_FLOAT\_TYPE\ float16\_t}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md263}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+DOUBLE\+\_\+\+TYPE}}{{\ttfamily UNITY\+\_\+\+DOUBLE\+\_\+\+TYPE}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md263}
+If enabled, Unity assumes you want your {\ttfamily DOUBLE} asserts to compare standard C doubles. If you would like to change this, you can specify something else by using this option. For example, defining {\ttfamily UNITY\+\_\+\+DOUBLE\+\_\+\+TYPE} to {\ttfamily long double} could enable gargantuan floating point types on your 64-\/bit processor instead of the standard {\ttfamily double}.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_DOUBLE\_TYPE\ long\ double}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md264}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+FLOAT\+\_\+\+PRECISION}}{{\ttfamily UNITY\+\_\+\+FLOAT\+\_\+\+PRECISION}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md264}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md265}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+DOUBLE\+\_\+\+PRECISION}}{{\ttfamily UNITY\+\_\+\+DOUBLE\+\_\+\+PRECISION}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md265}
+If you look up {\ttfamily UNITY\+\_\+\+ASSERT\+\_\+\+EQUAL\+\_\+\+FLOAT} and {\ttfamily UNITY\+\_\+\+ASSERT\+\_\+\+EQUAL\+\_\+\+DOUBLE} as documented in the big daddy Unity Assertion Guide, you will learn that they are not really asserting that two values are equal but rather that two values are "{}close enough"{} to equal. "{}\+Close enough"{} is controlled by these precision configuration options. If you are working with 32-\/bit floats and/or 64-\/bit doubles (the normal on most processors), you should have no need to change these options. They are both set to give you approximately 1 significant bit in either direction. The float precision is 0.\+00001 while the double is 10-\/12. For further details on how this works, see the appendix of the Unity Assertion Guide.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_FLOAT\_PRECISION\ 0.001f}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md266}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+IS\+\_\+\+NAN} and {\ttfamily UNITY\+\_\+\+IS\+\_\+\+INF}}{{\ttfamily UNITY\+\_\+\+IS\+\_\+\+NAN} and {\ttfamily UNITY\+\_\+\+IS\+\_\+\+INF}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md266}
+If your toolchain defines {\ttfamily isnan} and {\ttfamily isinf} in {\ttfamily math.\+h} as macros, nothing needs to be done. If your toolchain doesn\textquotesingle{}t define these, Unity will create these macros itself. You may override either or both of these defines to specify how you want to evaluate if a number is NaN or Infinity.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_IS\_NAN(n)\ ((n\ !=\ n)\ ?\ 1\ :\ 0)}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md267}{}\doxysubsection{\texorpdfstring{Miscellaneous}{Miscellaneous}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md267}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md268}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+STDDEF\+\_\+H}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+STDDEF\+\_\+H}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md268}
+Unity uses the {\ttfamily NULL} macro, which defines the value of a null pointer constant, defined in {\ttfamily stddef.\+h} by default. If you want to provide your own macro for this, you should exclude the {\ttfamily stddef.\+h} header file by adding this define to your configuration.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_EXCLUDE\_STDDEF\_H}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md269}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+PRINT\+\_\+\+FORMATTED}}{{\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+PRINT\+\_\+\+FORMATTED}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md269}
+Unity provides a simple (and very basic) printf-\/like string output implementation, which is able to print a string modified by the following format string modifiers\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{d}} -\/ signed value (decimal)
+\item {\bfseries{i}} -\/ same as {\bfseries{d}}
+\item {\bfseries{u}} -\/ unsigned value (decimal)
+\item {\bfseries{f}} -\/ float/\+Double (if float support is activated)
+\item {\bfseries{g}} -\/ same as {\bfseries{f}}
+\item {\bfseries{b}} -\/ binary prefixed with "{}0b"{}
+\item {\bfseries{x}} -\/ hexadecimal (upper case) prefixed with "{}0x"{}
+\item {\bfseries{X}} -\/ same as {\bfseries{x}}
+\item {\bfseries{p}} -\/ pointer (same as {\bfseries{x}} or {\bfseries{X}})
+\item {\bfseries{c}} -\/ a single character
+\item {\bfseries{s}} -\/ a string (e.\+g. "{}string"{})
+\item {\bfseries{\%\%}} -\/ The "{}\%"{} symbol (escaped)
+\end{DoxyItemize}
+
+Length specifiers are also supported. If you are using long long types, make sure UNITY\+\_\+\+SUPPORT\+\_\+64 is true to ensure they are printed correctly.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{ld}} -\/ signed long value (decimal)
+\item {\bfseries{lld}} -\/ signed long long value (decimal)
+\item {\bfseries{lu}} -\/ unsigned long value (decimal)
+\item {\bfseries{llu}} -\/ unsigned long long value (decimal)
+\item {\bfseries{lx}} -\/ unsigned long value (hexadecimal)
+\item {\bfseries{llx}} -\/ unsigned long long value (hexadecimal)
+\end{DoxyItemize}
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_INCLUDE\_PRINT\_FORMATTED}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ a\ =\ 0xfab1;}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Decimal\ \ \ \%d\(\backslash\)n"{}},\ -\/7);}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Unsigned\ \ \%u\(\backslash\)n"{}},\ 987);}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Float\ \ \ \ \ \%f\(\backslash\)n"{}},\ 3.1415926535897932384);}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Binary\ \ \ \ \%b\(\backslash\)n"{}},\ 0xA);}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Hex\ \ \ \ \ \ \ \%X\(\backslash\)n"{}},\ 0xFAB);}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Pointer\ \ \ \%p\(\backslash\)n"{}},\ \&a);}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Character\ \%c\(\backslash\)n"{}},\ \textcolor{charliteral}{'F'});}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}String\ \ \ \ \%s\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}My\ string"{}});}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Percent\ \ \ \%\%\(\backslash\)n"{}});}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Unsigned\ long\ long\ \%llu\(\backslash\)n"{}},\ 922337203685477580);}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Color\ Red\ \(\backslash\)033[41mFAIL\(\backslash\)033[0m\(\backslash\)n"{}});}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{TEST\_PRINTF(\textcolor{stringliteral}{"{}Multiple\ (\%d)\ (\%i)\ (\%u)\ (\%x)\(\backslash\)n"{}},\ -\/100,\ 0,\ 200,\ 0x12345);}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md270}{}\doxysubsection{\texorpdfstring{Toolset Customization}{Toolset Customization}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md270}
+In addition to the options listed above, there are a number of other options which will come in handy to customize Unity\textquotesingle{}s behavior for your specific toolchain. It is possible that you may not need to touch any of these... but certain platforms, particularly those running in simulators, may need to jump through extra hoops to run properly. These macros will help in those situations.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md271}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+CHAR(a)}}{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+CHAR(a)}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md271}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md272}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+FLUSH()}}{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+FLUSH()}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md272}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md273}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+START()}}{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+START()}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md273}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md274}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+COMPLETE()}}{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+COMPLETE()}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md274}
+By default, Unity prints its results to {\ttfamily stdout} as it runs. This works perfectly fine in most situations where you are using a native compiler for testing. It works on some simulators as well so long as they have {\ttfamily stdout} routed back to the command line. There are times, however, where the simulator will lack support for dumping results or you will want to route results elsewhere for other reasons. In these cases, you should define the {\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+CHAR} macro. This macro accepts a single character at a time (as an {\ttfamily int}, since this is the parameter type of the standard C {\ttfamily putchar} function most commonly used). You may replace this with whatever function call you like.
+
+{\itshape Example\+:} Say you are forced to run your test suite on an embedded processor with no {\ttfamily stdout} option. You decide to route your test result output to a custom serial {\ttfamily RS232\+\_\+putc()} function you wrote like thus\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}RS232\_header.h"{}}}
+\DoxyCodeLine{...}
+\DoxyCodeLine{\#define\ \mbox{\hyperlink{unity__internals_8h_a7f32cab7edafc4634a8faa14b3e0042c}{UNITY\_OUTPUT\_CHAR}}(a)\ \ \ \ RS232\_putc(a)}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_OUTPUT\_START()\ \ \ \ RS232\_config(115200,1,8,0)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_OUTPUT\_FLUSH()\ \ \ \ RS232\_flush()}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_OUTPUT\_COMPLETE()\ RS232\_close()}}
+
+\end{DoxyCode}
+
+
+{\itshape Note\+:} {\ttfamily \doxylink{unity__internals_8h_a458886b9a590fda474d4467fa40a2367}{UNITY\+\_\+\+OUTPUT\+\_\+\+FLUSH()}} can be set to the standard out flush function simply by specifying {\ttfamily UNITY\+\_\+\+USE\+\_\+\+FLUSH\+\_\+\+STDOUT}. No other defines are required.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md275}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+\+ECLIPSE}}{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+\+ECLIPSE}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md275}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md276}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+\+IAR\+\_\+\+WORKBENCH}}{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+\+IAR\+\_\+\+WORKBENCH}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md276}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md277}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+\+QT\+\_\+\+CREATOR}}{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+\+QT\+\_\+\+CREATOR}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md277}
+When managing your own builds, it is often handy to have messages output in a format which is recognized by your IDE. These are some standard formats which can be supported. If you\textquotesingle{}re using Ceedling to manage your builds, it is better to stick with the standard format (leaving these all undefined) and allow Ceedling to use its own decorators.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md278}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+PTR\+\_\+\+ATTRIBUTE}}{{\ttfamily UNITY\+\_\+\+PTR\+\_\+\+ATTRIBUTE}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md278}
+Some compilers require a custom attribute to be assigned to pointers, like {\ttfamily near} or {\ttfamily far}. In these cases, you can give Unity a safe default for these by defining this option with the attribute you would like.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_PTR\_ATTRIBUTE\ \_\_attribute\_\_((far))}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_PTR\_ATTRIBUTE\ near}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md279}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+PRINT\+\_\+\+EOL}}{{\ttfamily UNITY\+\_\+\+PRINT\+\_\+\+EOL}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md279}
+By default, Unity outputs ~\newline
+ at the end of each line of output. This is easy to parse by the scripts, by Ceedling, etc, but it might not be ideal for YOUR system. Feel free to override this and to make it whatever you wish.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_PRINT\_EOL\ \{\ UNITY\_OUTPUT\_CHAR('\(\backslash\)r');\ UNITY\_OUTPUT\_CHAR('\(\backslash\)n');\ \}}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md280}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+DETAILS}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+DETAILS}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md280}
+This is an option for if you absolutely must squeeze every byte of memory out of your system. Unity stores a set of internal scratchpads which are used to pass extra detail information around. It\textquotesingle{}s used by systems like CMock in order to report which function or argument flagged an error. If you\textquotesingle{}re not using CMock and you\textquotesingle{}re not using these details for other things, then you can exclude them.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_EXCLUDE\_DETAILS}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md281}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+PRINT\+\_\+\+TEST\+\_\+\+CONTEXT}}{{\ttfamily UNITY\+\_\+\+PRINT\+\_\+\+TEST\+\_\+\+CONTEXT}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md281}
+This option allows you to specify your own function to print additional context as part of the error message when a test has failed. It can be useful if you want to output some specific information about the state of the test at the point of failure, and {\ttfamily UNITY\+\_\+\+SET\+\_\+\+DETAILS} isn\textquotesingle{}t flexible enough for your needs.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_PRINT\_TEST\_CONTEXT\ PrintIterationCount}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ iteration\_count;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ PrintIterationCount(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ UnityPrintFormatted(\textcolor{stringliteral}{"{}At\ iteration\ \#\%d:\ "{}},\ iteration\_count);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md282}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+SETJMP}}{{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+SETJMP}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md282}
+If your embedded system doesn\textquotesingle{}t support the standard library setjmp, you can exclude Unity\textquotesingle{}s reliance on this by using this define. This dropped dependence comes at a price, though. You will be unable to use custom helper functions for your tests, and you will be unable to use tools like CMock. Very likely, if your compiler doesn\textquotesingle{}t support setjmp, you wouldn\textquotesingle{}t have had the memory space for those things anyway, though... so this option exists for those situations.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_EXCLUDE\_SETJMP}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md283}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+TEST\+\_\+\+PROTECT}}{{\ttfamily UNITY\+\_\+\+TEST\+\_\+\+PROTECT}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md283}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md284}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+TEST\+\_\+\+ABORT}}{{\ttfamily UNITY\+\_\+\+TEST\+\_\+\+ABORT}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md284}
+Unity handles test failures via {\ttfamily setjmp}/{\ttfamily longjmp} pair by default. As mentioned above, you can disable this with {\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+SETJMP}. You can also customise what happens on every {\ttfamily TEST\+\_\+\+PROTECT} and {\ttfamily TEST\+\_\+\+ABORT} call. This can be accomplished by providing user-\/defined {\ttfamily UNITY\+\_\+\+TEST\+\_\+\+PROTECT} and {\ttfamily UNITY\+\_\+\+TEST\+\_\+\+ABORT} macros (and these may be defined independently).
+
+{\ttfamily UNITY\+\_\+\+TEST\+\_\+\+PROTECT} is used as an {\ttfamily if} statement expression, and has to evaluate to {\ttfamily true} on the first call (when saving stack environment with {\ttfamily setjmp}), and to {\ttfamily false} when it returns as a result of a {\ttfamily TEST\+\_\+\+ABORT} (when restoring the stack environment with {\ttfamily longjmp}).
+
+Whenever an assert macro fails, {\ttfamily TEST\+\_\+\+ABORT} is used to restore the stack environment previously set by {\ttfamily TEST\+\_\+\+PROTECT}. This part may be overriden with {\ttfamily UNITY\+\_\+\+TEST\+\_\+\+ABORT}, e.\+g. if custom failure handling is needed.
+
+{\itshape Example 1\+:}
+
+Calling {\ttfamily longjmp} on your target is possible, but has a platform-\/specific (or implementation-\/specific) set of prerequisites, e.\+g. privileged access level. You can extend the default behaviour of {\ttfamily TEST\+\_\+\+PROTECT} and {\ttfamily TEST\+\_\+\+ABORT} as\+:
+
+{\ttfamily \doxylink{unity__config_8h}{unity\+\_\+config.\+h}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}my\_custom\_test\_handlers.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_TEST\_PROTECT()\ custom\_test\_protect()}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_TEST\_ABORT()\ \ \ custom\_test\_abort()}}
+
+\end{DoxyCode}
+
+
+{\ttfamily my\+\_\+custom\+\_\+test\+\_\+handlers.\+c}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ custom\_test\_protect(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ platform\_specific\_code();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ setjmp(\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.AbortFrame)\ ==\ 0;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{unity__internals_8h_a5fb5bcd9afe9b5fc48eca6366c852a31}{UNITY\_NORETURN}}\ \textcolor{keywordtype}{void}\ custom\_test\_abort(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ more\_platform\_specific\_code();}
+\DoxyCodeLine{\ \ longjmp(\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.AbortFrame,\ 1);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\itshape Example 2\+:}
+
+Unity is used to provide the assertion macros only, and an external test harness/runner is used for test orchestration/reporting. In this case you can easily plug your code by overriding {\ttfamily TEST\+\_\+\+ABORT} as\+:
+
+{\ttfamily \doxylink{unity__config_8h}{unity\+\_\+config.\+h}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}my\_custom\_test\_handlers.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_TEST\_PROTECT()\ 1}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_TEST\_ABORT()\ \ \ custom\_test\_abort()}}
+
+\end{DoxyCode}
+
+
+{\ttfamily my\+\_\+custom\+\_\+test\+\_\+handlers.\+c}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ custom\_test\_abort(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestFailed\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ custom\_failed\_test\_handler();}
+\DoxyCodeLine{\ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{unity_8c_aad738f665f16eb2336b8bc33f432d0da}{Unity}}.CurrentTestIgnored\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ custom\_ignored\_test\_handler();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md285}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+COLOR}}{{\ttfamily UNITY\+\_\+\+OUTPUT\+\_\+\+COLOR}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md285}
+If you want to add color using ANSI escape codes you can use this define.
+
+{\itshape Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_OUTPUT\_COLOR}}
+
+\end{DoxyCode}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md286}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+EXEC\+\_\+\+TIME}}{{\ttfamily UNITY\+\_\+\+INCLUDE\+\_\+\+EXEC\+\_\+\+TIME}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md286}
+Define this to measure and report execution time for each test in the suite. When enabled, Unity will do it\textquotesingle{}s best to automatically find a way to determine the time in milliseconds. On most Windows, macos, or Linux environments, this is automatic. If not, you can give Unity more information.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md287}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+CLOCK\+\_\+\+MS}}{{\ttfamily UNITY\+\_\+\+CLOCK\+\_\+\+MS}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md287}
+If you\textquotesingle{}re working on a system (embedded or otherwise) which has an accessible millisecond timer. You can define {\ttfamily UNITY\+\_\+\+CLOCK\+\_\+\+MS} to be the name of the function which returns the millisecond timer. It will then attempt to use that function for timing purposes.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md288}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXEC\+\_\+\+TIME\+\_\+\+START}}{{\ttfamily UNITY\+\_\+\+EXEC\+\_\+\+TIME\+\_\+\+START}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md288}
+Define this hook to start a millisecond timer if necessary.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md289}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+EXEC\+\_\+\+TIME\+\_\+\+STOP}}{{\ttfamily UNITY\+\_\+\+EXEC\+\_\+\+TIME\+\_\+\+STOP}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md289}
+Define this hook to stop a millisecond timer if necessary.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md290}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+PRINT\+\_\+\+EXEC\+\_\+\+TIME}}{{\ttfamily UNITY\+\_\+\+PRINT\+\_\+\+EXEC\+\_\+\+TIME}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md290}
+Define this hook to print the current execution time. Used to report the milliseconds elapsed.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md291}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+TIME\+\_\+\+TYPE}}{{\ttfamily UNITY\+\_\+\+TIME\+\_\+\+TYPE}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md291}
+Finally, this can be set to the type which holds the millisecond timer.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md292}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+SHORTHAND\+\_\+\+AS\+\_\+\+INT}}{{\ttfamily UNITY\+\_\+\+SHORTHAND\+\_\+\+AS\+\_\+\+INT}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md292}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md293}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+SHORTHAND\+\_\+\+AS\+\_\+\+MEM}}{{\ttfamily UNITY\+\_\+\+SHORTHAND\+\_\+\+AS\+\_\+\+MEM}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md293}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md294}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+SHORTHAND\+\_\+\+AS\+\_\+\+RAW}}{{\ttfamily UNITY\+\_\+\+SHORTHAND\+\_\+\+AS\+\_\+\+RAW}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md294}
+\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md295}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+SHORTHAND\+\_\+\+AS\+\_\+\+NONE}}{{\ttfamily UNITY\+\_\+\+SHORTHAND\+\_\+\+AS\+\_\+\+NONE}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md295}
+These options give you control of the {\ttfamily TEST\+\_\+\+ASSERT\+\_\+\+EQUAL} and the {\ttfamily TEST\+\_\+\+ASSERT\+\_\+\+NOT\+\_\+\+EQUAL} shorthand assertions. Historically, Unity treated the former as an alias for an integer comparison. It treated the latter as a direct comparison using {\ttfamily !=}. This asymmetry was confusing, but there was much disagreement as to how best to treat this pair of assertions. These four options will allow you to specify how Unity will treat these assertions.
+
+
+\begin{DoxyItemize}
+\item AS INT -\/ the values will be cast to integers and directly compared. Arguments that don\textquotesingle{}t cast easily to integers will cause compiler errors.
+\item AS MEM -\/ the address of both values will be taken and the entire object\textquotesingle{}s memory footprint will be compared byte by byte. Directly placing constant numbers like {\ttfamily 456} as expected values will cause errors.
+\item AS\+\_\+\+RAW -\/ Unity assumes that you can compare the two values using {\ttfamily ==} and {\ttfamily !=} and will do so. No details are given about mismatches, because it doesn\textquotesingle{}t really know what type it\textquotesingle{}s dealing with.
+\item AS\+\_\+\+NONE -\/ Unity will disallow the use of these shorthand macros altogether, insisting that developers choose a more descriptive option.
+\end{DoxyItemize}\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md296}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+SUPPORT\+\_\+\+VARIADIC\+\_\+\+MACROS}}{{\ttfamily UNITY\+\_\+\+SUPPORT\+\_\+\+VARIADIC\+\_\+\+MACROS}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md296}
+This will force Unity to support variadic macros when using its own built-\/in RUN\+\_\+\+TEST macro. This will rarely be necessary. Most often, Unity will automatically detect if the compiler supports variadic macros by checking to see if it\textquotesingle{}s C99+ compatible. In the event that the compiler supports variadic macros, but is primarily C89 (ANSI), defining this option will allow you to use them. This option is also not necessary when using Ceedling or the test runner generator script.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md297}{}\doxysubsubsection{\texorpdfstring{{\ttfamily UNITY\+\_\+\+SUPPORT\+\_\+\+TEST\+\_\+\+CASES}}{{\ttfamily UNITY\+\_\+\+SUPPORT\+\_\+\+TEST\+\_\+\+CASES}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md297}
+Unity can automatically define all supported parameterized tests macros. That feature is disabled by default. To enable it, use the following example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UNITY\_SUPPORT\_TEST\_CASES}}
+
+\end{DoxyCode}
+
+
+You can manually provide required {\ttfamily TEST\+\_\+\+CASE}, {\ttfamily TEST\+\_\+\+RANGE} or {\ttfamily TEST\+\_\+\+MATRIX} macro definitions before including {\ttfamily \doxylink{unity_8h}{unity.\+h}}, and they won\textquotesingle{}t be redefined. If you provide one of the following macros, some of default definitions will not be defined\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ User defines macro   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Unity will {\itshape not} define following macro    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ User defines macro   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Unity will {\itshape not} define following macro    }\\\cline{1-2}
+\endhead
+{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+TEST\+\_\+\+CASE}   &{\ttfamily TEST\+\_\+\+CASE}    \\\cline{1-2}
+{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+TEST\+\_\+\+RANGE}   &{\ttfamily TEST\+\_\+\+RANGE}    \\\cline{1-2}
+{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+TEST\+\_\+\+MATRIX}   &{\ttfamily TEST\+\_\+\+MATRIX}    \\\cline{1-2}
+{\ttfamily TEST\+\_\+\+CASE}   &{\ttfamily TEST\+\_\+\+CASE}    \\\cline{1-2}
+{\ttfamily TEST\+\_\+\+RANGE}   &{\ttfamily TEST\+\_\+\+RANGE}    \\\cline{1-2}
+{\ttfamily TEST\+\_\+\+MATRIX}   &{\ttfamily TEST\+\_\+\+MATRIX}   \\\cline{1-2}
+\end{longtabu}
+
+
+{\ttfamily UNITY\+\_\+\+EXCLUDE\+\_\+\+TEST\+\_\+\texorpdfstring{$\ast$}{*}} defines is not processed by test runner generator script. If you exclude one of them from definition, you should provide your own definition for them or avoid using undefined {\ttfamily TEST\+\_\+\texorpdfstring{$\ast$}{*}} macro as a test generator. Otherwise, compiler cannot build source code file with provided call.
+
+{\itshape Note\+:} That feature requires variadic macro support by compiler. If required feature is not detected, it will not be enabled, even though preprocessor macro is defined.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md298}{}\doxysection{\texorpdfstring{Getting Into The Guts}{Getting Into The Guts}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md298}
+There will be cases where the options above aren\textquotesingle{}t quite going to get everything perfect. They are likely sufficient for any situation where you are compiling and executing your tests with a native toolchain (e.\+g. clang on Mac). These options may even get you through the majority of cases encountered in working with a target simulator run from your local command line. But especially if you must run your test suite on your target hardware, your Unity configuration will require special help. This special help will usually reside in one of two places\+: the {\ttfamily \doxylink{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}} function or the {\ttfamily RUN\+\_\+\+TEST} macro. Let\textquotesingle{}s look at how these work.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md299}{}\doxysubsection{\texorpdfstring{{\ttfamily main()}}{{\ttfamily main()}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md299}
+Each test module is compiled and run on its own, separate from the other test files in your project. Each test file, therefore, has a {\ttfamily main} function. This {\ttfamily main} function will need to contain whatever code is necessary to initialize your system to a workable state. This is particularly true for situations where you must set up a memory map or initialize a communication channel for the output of your test results.
+
+A simple main function looks something like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{unity__internals_8h_aaad15a5d10e50a412d0a6851d0e5091a}{UNITY\_BEGIN}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{example__1_2test_2test__runners_2_test_production_code2___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\_TEST}}(test\_TheFirst);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{example__1_2test_2test__runners_2_test_production_code2___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\_TEST}}(test\_TheSecond);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{example__1_2test_2test__runners_2_test_production_code2___runner_8c_af3a9b37ea192d5f498c7d699d65ad530}{RUN\_TEST}}(test\_TheThird);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{unity__internals_8h_aa519129d3af737eb796fc91720fae26a}{UNITY\_END}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+You can see that our main function doesn\textquotesingle{}t bother taking any arguments. For our most barebones case, we\textquotesingle{}ll never have arguments because we just run all the tests each time. Instead, we start by calling {\ttfamily UNITY\+\_\+\+BEGIN}. We run each test (in whatever order we wish). Finally, we call {\ttfamily UNITY\+\_\+\+END}, returning its return value (which is the total number of failures).
+
+It should be easy to see that you can add code before any test cases are run or after all the test cases have completed. This allows you to do any needed system-\/wide setup or teardown that might be required for your special circumstances.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md300}{}\doxysubsubsection{\texorpdfstring{{\ttfamily RUN\+\_\+\+TEST}}{{\ttfamily RUN\+\_\+\+TEST}}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md300}
+The {\ttfamily RUN\+\_\+\+TEST} macro is called with each test case function. Its job is to perform whatever setup and teardown is necessary for executing a single test case function. This includes catching failures, calling the test module\textquotesingle{}s {\ttfamily \doxylink{test__runner_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up()}} and {\ttfamily \doxylink{test__runner_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down()}} functions, and calling {\ttfamily \doxylink{unity_8c_a44f03f0124e59f6996da61946cc2a58e}{Unity\+Conclude\+Test()}}. If using CMock or test coverage, there will be additional stubs in use here. A simple minimalist RUN\+\_\+\+TEST macro looks something like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ RUN\_TEST(testfunc)\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ UNITY\_NEW\_TEST(\#testfunc)\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ if\ (TEST\_PROTECT())\ \{\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \ \ \ \ setUp();\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \ \ \ \ testfunc();\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ if\ (TEST\_PROTECT()\ \&\&\ (!TEST\_IS\_IGNORED))\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \ \ \ \ tearDown();\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ UnityConcludeTest();}}
+
+\end{DoxyCode}
+
+
+So that\textquotesingle{}s quite a macro, huh? It gives you a glimpse of what kind of stuff Unity has to deal with for every single test case. For each test case, we declare that it is a new test. Then we run {\ttfamily set\+Up} and our test function. These are run within a {\ttfamily TEST\+\_\+\+PROTECT} block, the function of which is to handle failures that occur during the test. Then, assuming our test is still running and hasn\textquotesingle{}t been ignored, we run {\ttfamily tear\+Down}. No matter what, our last step is to conclude this test before moving on to the next.
+
+Let\textquotesingle{}s say you need to add a call to {\ttfamily fsync} to force all of your output data to flush to a file after each test. You could easily insert this after your {\ttfamily Unity\+Conclude\+Test} call. Maybe you want to write an xml tag before and after each result set. Again, you could do this by adding lines to this macro. Updates to this macro are for the occasions when you need an action before or after every single test case throughout your entire suite of tests.\hypertarget{md__unity_2docs_2_unity_configuration_guide_autotoc_md301}{}\doxysection{\texorpdfstring{Happy Porting}{Happy Porting}}\label{md__unity_2docs_2_unity_configuration_guide_autotoc_md301}
+The defines and macros in this guide should help you port Unity to just about any C target we can imagine. If you run into a snag or two, don\textquotesingle{}t be afraid of asking for help on the forums. We love a good challenge!
+
+{\itshape Find The Latest of This And More at \href{https://throwtheswitch.org}{\texttt{ Throw\+The\+Switch.\+org}}} 

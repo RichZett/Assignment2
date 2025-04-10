@@ -1,0 +1,856 @@
+\doxysection{Unity/test/tests/test\+\_\+unity\+\_\+floats.c File Reference}
+\hypertarget{test__unity__floats_8c}{}\label{test__unity__floats_8c}\index{Unity/test/tests/test\_unity\_floats.c@{Unity/test/tests/test\_unity\_floats.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}self\+\_\+assessment\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__unity__floats_8c_a20aa6a97fd99eae615758650d209421b}{TEST\+\_\+\+INSTANCES}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a96253a9597bf2fcf3138a56d6525b517}{test\+Floats\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a1f9639aa302fb59e3d0a1b4dc4cc92c3}{test\+Floats\+Not\+Within\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_af5119e4d3deabdfa4f5f2db61687c2e6}{test\+Floats\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a4995c20a742185ad48d21cac6b6a0c51}{test\+Floats\+Not\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a5cdbd7d9564861e75506409fcb8b8a20}{test\+Floats\+Not\+Equal\+Negative1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_afbff3157162e0fef40ced3fdaa9c1811}{test\+Floats\+Not\+Equal\+Negative2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aa4db7564a17f2eb8be9c09ff95253f9f}{test\+Floats\+Not\+Equal\+Actual\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ab1b137e3ab1139dd2f70c54e26c95f92}{test\+Floats\+Not\+Equal\+Expected\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a1f711ab7608edb5ca0b908b03c0b39fe}{test\+Floats\+Equal\+Both\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a2dcff04297cc8aa314b42366414676f5}{test\+Floats\+Not\+Equal\+Inf\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a09de608d9aeb96a44b43eacadbeeb54a}{test\+Floats\+Not\+Equal\+Na\+NInf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a2ae70b5a4784c20fee370c506b8b63fb}{test\+Floats\+Not\+Equal\+Actual\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aa2bc1a1c91d2fc9aa2defc7f160aff7e}{test\+Floats\+Not\+Equal\+Expected\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a3166c566001b64ae7fa51bd5a0a8ec97}{test\+Floats\+Equal\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a1fbbc99a9ec70b41f9a4a19cc56d38fb}{test\+Floats\+Not\+Equal\+Plus\+Minus\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aad6e6ad660f70ffea2930b4f52dc51bd}{test\+Floats\+Greater\+Than}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ae52914be6144a43ba5913a0396168fcc}{test\+Floats\+Greater\+Than\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ae6474fbc0b48c9bc7ab5d23ddaf669e9}{test\+Floats\+Not\+Greater\+Than}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a434a045364dbf6d2751279ab3a6b2afe}{test\+Floats\+Not\+Greater\+Than\+Nan\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a1642662814516120d5c1fc32d7b75330}{test\+Floats\+Not\+Greater\+Than\+Nan\+Threshold}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_afba428c67b8c991d97c466761f9ceb99}{test\+Floats\+Not\+Greater\+Than\+Nan\+Both}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a0dfb56e462cce43551192cef0d93dd4e}{test\+Floats\+Not\+Greater\+Than\+Inf\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aed4c631b9dc7939a30cd2a922185064b}{test\+Floats\+Not\+Greater\+Than\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a0a2b314b6a1f6bf9b1bc37a958867186}{test\+Floats\+Not\+Greater\+Than\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_afd15d6e94425b758955751f7b1ddbbe0}{test\+Floats\+Not\+Greater\+Than\+Both\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a0d7e7c468d8bdf5b6c6ac18ce42aad2b}{test\+Floats\+Greater\+Or\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a2d8edc22575708ee9e74b66f54807b21}{test\+Floats\+Greater\+Or\+Equal\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a6da609e869b97c3507fed6500e5cb397}{test\+Floats\+Not\+Greater\+Or\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_acae5c7ed275a44bba54a5aaf0364a556}{test\+Floats\+Not\+Greater\+Or\+Equal\+Nan\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aa82039ab1aa7ea4b864e0c1aa28f1f8c}{test\+Floats\+Not\+Greater\+Or\+Equal\+Nan\+Threshold}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ae05def63917d77894ee38c6cad08722a}{test\+Floats\+Greater\+Or\+Equal\+Nan\+Both}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aec466b1a4fa6635dd3ebd21985f5f89e}{test\+Floats\+Not\+Greater\+Or\+Equal\+Inf\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aae89f4610b5201f6c302aed66da52ebd}{test\+Floats\+Not\+Greater\+Or\+Equal\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a66ed5bea15a38e8c946d886509fa98e6}{test\+Floats\+Greater\+Or\+Equal\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a3ca100800ede12392e1a936f92a17f80}{test\+Floats\+Greater\+Or\+Equal\+Both\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_afade78c29096340e9d259266ac28b6e6}{test\+Floats\+Less\+Than}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a4411200d456a326d8fbd77c25f299f0c}{test\+Floats\+Less\+Than\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ac8cbd87a2c7de3c6f1161c799a6bc706}{test\+Floats\+Not\+Less\+Than}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a1b8d9950b4addfdb41c7be01bd5bbe74}{test\+Floats\+Not\+Less\+Than\+Nan\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a15477d73e464591b7ace28949cc3029c}{test\+Floats\+Not\+Less\+Than\+Nan\+Threshold}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a6066c99f300db93ac293eceb02cea2c7}{test\+Floats\+Not\+Less\+Than\+Nan\+Both}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ab137896d8f44d0c47f5e45ec38b3e09e}{test\+Floats\+Not\+Less\+Than\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a7503f7dae827587f44d0f15d266543f5}{test\+Floats\+Not\+Less\+Than\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ac8857424a1e9bfa4cf668a7ffd0af34e}{test\+Floats\+Not\+Less\+Than\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a7e194ae0d08b76ddc7e3fb08ac979cf1}{test\+Floats\+Not\+Less\+Than\+Both\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a475bb04640f7bb66eee3b3df7d9fa8be}{test\+Floats\+Less\+Or\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a70c82f0d6372b816eecf750dc38f812b}{test\+Floats\+Less\+Or\+Equal\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a8f25dbb1c53b394c17987dd03df1bff5}{test\+Floats\+Not\+Less\+Or\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ac6e416cae45fb0a544b3e2e295a7e809}{test\+Floats\+Not\+Less\+Or\+Equal\+Nan\+Actual}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ad685be6551c839f8d5371cfcab3ce94c}{test\+Floats\+Not\+Less\+Or\+Equal\+Nan\+Threshold}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a603e6fb0113238ae23a3f956aaccaab3}{test\+Floats\+Less\+Or\+Equal\+Nan\+Both}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a00f0acf6085d2b6b66082e3a00f295c9}{test\+Floats\+Not\+Less\+Or\+Equal\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a5d955724a523bebc7ecbcc40c1c123ca}{test\+Floats\+Not\+Less\+Or\+Equal\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a972c269515604078cdd987d4735210aa}{test\+Floats\+Less\+Or\+Equal\+Both\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a1fb871b4af51ced0a1dbabe8ecf27cbd}{test\+Floats\+Less\+Or\+Equal\+Both\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a17c821f86d581f479f720c2135a115f2}{test\+Float\+Is\+Pos\+Inf1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ae17d75dc6c9ba0888a98e4aec7967088}{test\+Float\+Is\+Pos\+Inf2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ae3b51e0386ffd8f67f5a53637b8ef963}{test\+Float\+Is\+Neg\+Inf1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ad92bab8a094beb595388b535c3b12c40}{test\+Float\+Is\+Neg\+Inf2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ad51ab56d64462a76ce823bec3b4535ba}{test\+Float\+Is\+Not\+Pos\+Inf1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a56443e75f06af215ca2fa0be341fdb8b}{test\+Float\+Is\+Not\+Pos\+Inf2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a859f0618b56bec3ea9293b005155a18a}{test\+Float\+Is\+Not\+Neg\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a3e387e19da9e1403591c35c60f81df3d}{test\+Float\+Is\+Nan1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a92a263624692b85e6099ba4ad952fd9f}{test\+Float\+Is\+Nan2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a8025df2d05bc6673f673c9ec87bfbd77}{test\+Float\+Is\+Not\+Nan1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ae63f744fa22004aac3a99424eec08b4d}{test\+Float\+Is\+Not\+Nan2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a70a40a7198b493b950bde68d04b3a05f}{test\+Float\+Inf\+Is\+Not\+Nan}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a0cea338d4a0344a0657a68eaa3cf3f53}{test\+Float\+Nan\+Is\+Not\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a1a966f9cab9cc2516666d4a5dd36bc17}{test\+Float\+Is\+Determinate1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a109fa83ef2438848f0cc5d8a435fc30d}{test\+Float\+Is\+Determinate2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a956ceff6a28ff390bb32d5bd358ead5b}{test\+Float\+Is\+Not\+Determinate1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a3330ef1cdc2e22d93b216c832fd695b4}{test\+Float\+Is\+Not\+Determinate2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a26f32da873c413bd1eb503e01340faca}{test\+Float\+Trait\+Fails\+On\+Invalid\+Trait}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_af52996b79bea7167f92a2f5a09d94038}{test\+Equal\+Float\+Arrays}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ac070d92af4698dc0c70902af0ff5ca04}{test\+Not\+Equal\+Float\+Arrays\+Expected\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_af8625a55a3f66113c9baa83311756b71}{test\+Not\+Equal\+Float\+Arrays\+Actual\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a8965489b607b68f405b7c157953fbda0}{test\+Not\+Equal\+Float\+Arrays1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a6218dfff3e10feafdda9fa6fb91c57d4}{test\+Not\+Equal\+Float\+Arrays2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a887eb87bfffe0a55b95db49d80790828}{test\+Not\+Equal\+Float\+Arrays3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a733ba9b6bd4b0613f300ed73275b3f6b}{test\+Not\+Equal\+Float\+Arrays\+Negative1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a9aed3bc57c539c83b5cc8646486b4fe8}{test\+Not\+Equal\+Float\+Arrays\+Negative2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a291c99f96a4966226cf08240e16b1648}{test\+Not\+Equal\+Float\+Arrays\+Negative3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_af1f81ee3932dbce75e5b57f3c22d0885}{test\+Equal\+Float\+Arrays\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a554ee1696c2bc2666094dabd4691d54e}{test\+Equal\+Float\+Arrays\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_af10e0ee82b8e80180896c7320e5a483c}{test\+Not\+Equal\+Float\+Arrays\+Length\+Zero}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aa58a06511fcb577be2dfb106ff051d80}{test\+Float\+Arrays\+Within}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a6f459867b8f9c4ad2c9c8ef9dfc098c9}{test\+Float\+Arrays\+Within\+Unusual\+Delta}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_aba0a4c1e80b17c526bc044230ddf37ef}{test\+Equal\+Float\+Each\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a99dd408666f41b76e103008f40f5b32a}{test\+Not\+Equal\+Float\+Each\+Equal\+Actual\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ae0577505c43d50ddbd7fbdbf6af65b9c}{test\+Not\+Equal\+Float\+Each\+Equal1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a64ec18f10b13cfe9425390a42a37a910}{test\+Not\+Equal\+Float\+Each\+Equal2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_af09f5028c55d49f6ee94f64974e533bc}{test\+Not\+Equal\+Float\+Each\+Equal3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a755aff01086881ffadb2b1213b932d77}{test\+Not\+Equal\+Float\+Each\+Equal\+Negative1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a4e37291088dbf9cb97c042491e08525d}{test\+Not\+Equal\+Float\+Each\+Equal\+Negative2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a11fa753005302a6b26232435a1a5a2a4}{test\+Not\+Equal\+Float\+Each\+Equal\+Negative3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a829403a951244974020ed7e89252c917}{test\+Equal\+Float\+Each\+Equal\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a05c3a5c59c5601727fcb5ea8e552e236}{test\+Equal\+Float\+Each\+Equal\+Inf}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ae4f5d5698d5972084576b255618be3a6}{test\+Not\+Equal\+Float\+Each\+Equal\+Length\+Zero}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ad61033cc7533adec75dc1057f9e64764}{test\+Float\+Printing}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a64a33e1abe9a6171e8d662752b8dc09e}{test\+Float\+Printing\+Round\+Ties\+To\+Even}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_a9266d29820924d23e8c1fbfbd448bf43}{test\+Float\+Printing\+Infinity\+And\+NaN}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__floats_8c_ad702eadbf155935a07277eca34b84b52}{test\+Float\+Printing\+Random\+Samples}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test__unity__floats_8c_a20aa6a97fd99eae615758650d209421b}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!TEST\_INSTANCES@{TEST\_INSTANCES}}
+\index{TEST\_INSTANCES@{TEST\_INSTANCES}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_INSTANCES}{TEST\_INSTANCES}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a20aa6a97fd99eae615758650d209421b} 
+\#define TEST\+\_\+\+INSTANCES}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__unity__floats_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!setUp@{setUp}}
+\index{setUp@{setUp}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a9909011e5fea0c018842eec4d93d0662}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_af52996b79bea7167f92a2f5a09d94038}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testEqualFloatArrays@{testEqualFloatArrays}}
+\index{testEqualFloatArrays@{testEqualFloatArrays}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testEqualFloatArrays()}{testEqualFloatArrays()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_af52996b79bea7167f92a2f5a09d94038} 
+void test\+Equal\+Float\+Arrays (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a554ee1696c2bc2666094dabd4691d54e}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testEqualFloatArraysInf@{testEqualFloatArraysInf}}
+\index{testEqualFloatArraysInf@{testEqualFloatArraysInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testEqualFloatArraysInf()}{testEqualFloatArraysInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a554ee1696c2bc2666094dabd4691d54e} 
+void test\+Equal\+Float\+Arrays\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_af1f81ee3932dbce75e5b57f3c22d0885}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testEqualFloatArraysNaN@{testEqualFloatArraysNaN}}
+\index{testEqualFloatArraysNaN@{testEqualFloatArraysNaN}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testEqualFloatArraysNaN()}{testEqualFloatArraysNaN()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_af1f81ee3932dbce75e5b57f3c22d0885} 
+void test\+Equal\+Float\+Arrays\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aba0a4c1e80b17c526bc044230ddf37ef}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testEqualFloatEachEqual@{testEqualFloatEachEqual}}
+\index{testEqualFloatEachEqual@{testEqualFloatEachEqual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testEqualFloatEachEqual()}{testEqualFloatEachEqual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aba0a4c1e80b17c526bc044230ddf37ef} 
+void test\+Equal\+Float\+Each\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a05c3a5c59c5601727fcb5ea8e552e236}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testEqualFloatEachEqualInf@{testEqualFloatEachEqualInf}}
+\index{testEqualFloatEachEqualInf@{testEqualFloatEachEqualInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testEqualFloatEachEqualInf()}{testEqualFloatEachEqualInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a05c3a5c59c5601727fcb5ea8e552e236} 
+void test\+Equal\+Float\+Each\+Equal\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a829403a951244974020ed7e89252c917}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testEqualFloatEachEqualNaN@{testEqualFloatEachEqualNaN}}
+\index{testEqualFloatEachEqualNaN@{testEqualFloatEachEqualNaN}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testEqualFloatEachEqualNaN()}{testEqualFloatEachEqualNaN()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a829403a951244974020ed7e89252c917} 
+void test\+Equal\+Float\+Each\+Equal\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aa58a06511fcb577be2dfb106ff051d80}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatArraysWithin@{testFloatArraysWithin}}
+\index{testFloatArraysWithin@{testFloatArraysWithin}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatArraysWithin()}{testFloatArraysWithin()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aa58a06511fcb577be2dfb106ff051d80} 
+void test\+Float\+Arrays\+Within (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a6f459867b8f9c4ad2c9c8ef9dfc098c9}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatArraysWithinUnusualDelta@{testFloatArraysWithinUnusualDelta}}
+\index{testFloatArraysWithinUnusualDelta@{testFloatArraysWithinUnusualDelta}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatArraysWithinUnusualDelta()}{testFloatArraysWithinUnusualDelta()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a6f459867b8f9c4ad2c9c8ef9dfc098c9} 
+void test\+Float\+Arrays\+Within\+Unusual\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a70a40a7198b493b950bde68d04b3a05f}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatInfIsNotNan@{testFloatInfIsNotNan}}
+\index{testFloatInfIsNotNan@{testFloatInfIsNotNan}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatInfIsNotNan()}{testFloatInfIsNotNan()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a70a40a7198b493b950bde68d04b3a05f} 
+void test\+Float\+Inf\+Is\+Not\+Nan (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a1a966f9cab9cc2516666d4a5dd36bc17}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsDeterminate1@{testFloatIsDeterminate1}}
+\index{testFloatIsDeterminate1@{testFloatIsDeterminate1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsDeterminate1()}{testFloatIsDeterminate1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a1a966f9cab9cc2516666d4a5dd36bc17} 
+void test\+Float\+Is\+Determinate1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a109fa83ef2438848f0cc5d8a435fc30d}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsDeterminate2@{testFloatIsDeterminate2}}
+\index{testFloatIsDeterminate2@{testFloatIsDeterminate2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsDeterminate2()}{testFloatIsDeterminate2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a109fa83ef2438848f0cc5d8a435fc30d} 
+void test\+Float\+Is\+Determinate2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a3e387e19da9e1403591c35c60f81df3d}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNan1@{testFloatIsNan1}}
+\index{testFloatIsNan1@{testFloatIsNan1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNan1()}{testFloatIsNan1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a3e387e19da9e1403591c35c60f81df3d} 
+void test\+Float\+Is\+Nan1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a92a263624692b85e6099ba4ad952fd9f}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNan2@{testFloatIsNan2}}
+\index{testFloatIsNan2@{testFloatIsNan2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNan2()}{testFloatIsNan2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a92a263624692b85e6099ba4ad952fd9f} 
+void test\+Float\+Is\+Nan2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ae3b51e0386ffd8f67f5a53637b8ef963}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNegInf1@{testFloatIsNegInf1}}
+\index{testFloatIsNegInf1@{testFloatIsNegInf1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNegInf1()}{testFloatIsNegInf1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ae3b51e0386ffd8f67f5a53637b8ef963} 
+void test\+Float\+Is\+Neg\+Inf1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ad92bab8a094beb595388b535c3b12c40}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNegInf2@{testFloatIsNegInf2}}
+\index{testFloatIsNegInf2@{testFloatIsNegInf2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNegInf2()}{testFloatIsNegInf2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ad92bab8a094beb595388b535c3b12c40} 
+void test\+Float\+Is\+Neg\+Inf2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a956ceff6a28ff390bb32d5bd358ead5b}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNotDeterminate1@{testFloatIsNotDeterminate1}}
+\index{testFloatIsNotDeterminate1@{testFloatIsNotDeterminate1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNotDeterminate1()}{testFloatIsNotDeterminate1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a956ceff6a28ff390bb32d5bd358ead5b} 
+void test\+Float\+Is\+Not\+Determinate1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a3330ef1cdc2e22d93b216c832fd695b4}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNotDeterminate2@{testFloatIsNotDeterminate2}}
+\index{testFloatIsNotDeterminate2@{testFloatIsNotDeterminate2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNotDeterminate2()}{testFloatIsNotDeterminate2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a3330ef1cdc2e22d93b216c832fd695b4} 
+void test\+Float\+Is\+Not\+Determinate2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a8025df2d05bc6673f673c9ec87bfbd77}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNotNan1@{testFloatIsNotNan1}}
+\index{testFloatIsNotNan1@{testFloatIsNotNan1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNotNan1()}{testFloatIsNotNan1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a8025df2d05bc6673f673c9ec87bfbd77} 
+void test\+Float\+Is\+Not\+Nan1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ae63f744fa22004aac3a99424eec08b4d}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNotNan2@{testFloatIsNotNan2}}
+\index{testFloatIsNotNan2@{testFloatIsNotNan2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNotNan2()}{testFloatIsNotNan2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ae63f744fa22004aac3a99424eec08b4d} 
+void test\+Float\+Is\+Not\+Nan2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a859f0618b56bec3ea9293b005155a18a}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNotNegInf@{testFloatIsNotNegInf}}
+\index{testFloatIsNotNegInf@{testFloatIsNotNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNotNegInf()}{testFloatIsNotNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a859f0618b56bec3ea9293b005155a18a} 
+void test\+Float\+Is\+Not\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ad51ab56d64462a76ce823bec3b4535ba}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNotPosInf1@{testFloatIsNotPosInf1}}
+\index{testFloatIsNotPosInf1@{testFloatIsNotPosInf1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNotPosInf1()}{testFloatIsNotPosInf1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ad51ab56d64462a76ce823bec3b4535ba} 
+void test\+Float\+Is\+Not\+Pos\+Inf1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a56443e75f06af215ca2fa0be341fdb8b}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsNotPosInf2@{testFloatIsNotPosInf2}}
+\index{testFloatIsNotPosInf2@{testFloatIsNotPosInf2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsNotPosInf2()}{testFloatIsNotPosInf2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a56443e75f06af215ca2fa0be341fdb8b} 
+void test\+Float\+Is\+Not\+Pos\+Inf2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a17c821f86d581f479f720c2135a115f2}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsPosInf1@{testFloatIsPosInf1}}
+\index{testFloatIsPosInf1@{testFloatIsPosInf1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsPosInf1()}{testFloatIsPosInf1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a17c821f86d581f479f720c2135a115f2} 
+void test\+Float\+Is\+Pos\+Inf1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ae17d75dc6c9ba0888a98e4aec7967088}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatIsPosInf2@{testFloatIsPosInf2}}
+\index{testFloatIsPosInf2@{testFloatIsPosInf2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatIsPosInf2()}{testFloatIsPosInf2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ae17d75dc6c9ba0888a98e4aec7967088} 
+void test\+Float\+Is\+Pos\+Inf2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a0cea338d4a0344a0657a68eaa3cf3f53}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatNanIsNotInf@{testFloatNanIsNotInf}}
+\index{testFloatNanIsNotInf@{testFloatNanIsNotInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatNanIsNotInf()}{testFloatNanIsNotInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a0cea338d4a0344a0657a68eaa3cf3f53} 
+void test\+Float\+Nan\+Is\+Not\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ad61033cc7533adec75dc1057f9e64764}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatPrinting@{testFloatPrinting}}
+\index{testFloatPrinting@{testFloatPrinting}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatPrinting()}{testFloatPrinting()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ad61033cc7533adec75dc1057f9e64764} 
+void test\+Float\+Printing (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a9266d29820924d23e8c1fbfbd448bf43}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatPrintingInfinityAndNaN@{testFloatPrintingInfinityAndNaN}}
+\index{testFloatPrintingInfinityAndNaN@{testFloatPrintingInfinityAndNaN}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatPrintingInfinityAndNaN()}{testFloatPrintingInfinityAndNaN()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a9266d29820924d23e8c1fbfbd448bf43} 
+void test\+Float\+Printing\+Infinity\+And\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ad702eadbf155935a07277eca34b84b52}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatPrintingRandomSamples@{testFloatPrintingRandomSamples}}
+\index{testFloatPrintingRandomSamples@{testFloatPrintingRandomSamples}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatPrintingRandomSamples()}{testFloatPrintingRandomSamples()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ad702eadbf155935a07277eca34b84b52} 
+void test\+Float\+Printing\+Random\+Samples (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a64a33e1abe9a6171e8d662752b8dc09e}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatPrintingRoundTiesToEven@{testFloatPrintingRoundTiesToEven}}
+\index{testFloatPrintingRoundTiesToEven@{testFloatPrintingRoundTiesToEven}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatPrintingRoundTiesToEven()}{testFloatPrintingRoundTiesToEven()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a64a33e1abe9a6171e8d662752b8dc09e} 
+void test\+Float\+Printing\+Round\+Ties\+To\+Even (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_af5119e4d3deabdfa4f5f2db61687c2e6}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsEqual@{testFloatsEqual}}
+\index{testFloatsEqual@{testFloatsEqual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsEqual()}{testFloatsEqual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_af5119e4d3deabdfa4f5f2db61687c2e6} 
+void test\+Floats\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a3166c566001b64ae7fa51bd5a0a8ec97}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsEqualBothInf@{testFloatsEqualBothInf}}
+\index{testFloatsEqualBothInf@{testFloatsEqualBothInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsEqualBothInf()}{testFloatsEqualBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a3166c566001b64ae7fa51bd5a0a8ec97} 
+void test\+Floats\+Equal\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a1f711ab7608edb5ca0b908b03c0b39fe}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsEqualBothNaN@{testFloatsEqualBothNaN}}
+\index{testFloatsEqualBothNaN@{testFloatsEqualBothNaN}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsEqualBothNaN()}{testFloatsEqualBothNaN()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a1f711ab7608edb5ca0b908b03c0b39fe} 
+void test\+Floats\+Equal\+Both\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a0d7e7c468d8bdf5b6c6ac18ce42aad2b}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsGreaterOrEqual@{testFloatsGreaterOrEqual}}
+\index{testFloatsGreaterOrEqual@{testFloatsGreaterOrEqual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsGreaterOrEqual()}{testFloatsGreaterOrEqual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a0d7e7c468d8bdf5b6c6ac18ce42aad2b} 
+void test\+Floats\+Greater\+Or\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a66ed5bea15a38e8c946d886509fa98e6}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsGreaterOrEqualBothInf@{testFloatsGreaterOrEqualBothInf}}
+\index{testFloatsGreaterOrEqualBothInf@{testFloatsGreaterOrEqualBothInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsGreaterOrEqualBothInf()}{testFloatsGreaterOrEqualBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a66ed5bea15a38e8c946d886509fa98e6} 
+void test\+Floats\+Greater\+Or\+Equal\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a3ca100800ede12392e1a936f92a17f80}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsGreaterOrEqualBothNegInf@{testFloatsGreaterOrEqualBothNegInf}}
+\index{testFloatsGreaterOrEqualBothNegInf@{testFloatsGreaterOrEqualBothNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsGreaterOrEqualBothNegInf()}{testFloatsGreaterOrEqualBothNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a3ca100800ede12392e1a936f92a17f80} 
+void test\+Floats\+Greater\+Or\+Equal\+Both\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a2d8edc22575708ee9e74b66f54807b21}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsGreaterOrEqualInf@{testFloatsGreaterOrEqualInf}}
+\index{testFloatsGreaterOrEqualInf@{testFloatsGreaterOrEqualInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsGreaterOrEqualInf()}{testFloatsGreaterOrEqualInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a2d8edc22575708ee9e74b66f54807b21} 
+void test\+Floats\+Greater\+Or\+Equal\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ae05def63917d77894ee38c6cad08722a}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsGreaterOrEqualNanBoth@{testFloatsGreaterOrEqualNanBoth}}
+\index{testFloatsGreaterOrEqualNanBoth@{testFloatsGreaterOrEqualNanBoth}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsGreaterOrEqualNanBoth()}{testFloatsGreaterOrEqualNanBoth()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ae05def63917d77894ee38c6cad08722a} 
+void test\+Floats\+Greater\+Or\+Equal\+Nan\+Both (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aad6e6ad660f70ffea2930b4f52dc51bd}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsGreaterThan@{testFloatsGreaterThan}}
+\index{testFloatsGreaterThan@{testFloatsGreaterThan}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsGreaterThan()}{testFloatsGreaterThan()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aad6e6ad660f70ffea2930b4f52dc51bd} 
+void test\+Floats\+Greater\+Than (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ae52914be6144a43ba5913a0396168fcc}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsGreaterThanInf@{testFloatsGreaterThanInf}}
+\index{testFloatsGreaterThanInf@{testFloatsGreaterThanInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsGreaterThanInf()}{testFloatsGreaterThanInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ae52914be6144a43ba5913a0396168fcc} 
+void test\+Floats\+Greater\+Than\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a475bb04640f7bb66eee3b3df7d9fa8be}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsLessOrEqual@{testFloatsLessOrEqual}}
+\index{testFloatsLessOrEqual@{testFloatsLessOrEqual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsLessOrEqual()}{testFloatsLessOrEqual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a475bb04640f7bb66eee3b3df7d9fa8be} 
+void test\+Floats\+Less\+Or\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a972c269515604078cdd987d4735210aa}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsLessOrEqualBothInf@{testFloatsLessOrEqualBothInf}}
+\index{testFloatsLessOrEqualBothInf@{testFloatsLessOrEqualBothInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsLessOrEqualBothInf()}{testFloatsLessOrEqualBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a972c269515604078cdd987d4735210aa} 
+void test\+Floats\+Less\+Or\+Equal\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a1fb871b4af51ced0a1dbabe8ecf27cbd}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsLessOrEqualBothNegInf@{testFloatsLessOrEqualBothNegInf}}
+\index{testFloatsLessOrEqualBothNegInf@{testFloatsLessOrEqualBothNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsLessOrEqualBothNegInf()}{testFloatsLessOrEqualBothNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a1fb871b4af51ced0a1dbabe8ecf27cbd} 
+void test\+Floats\+Less\+Or\+Equal\+Both\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a70c82f0d6372b816eecf750dc38f812b}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsLessOrEqualInf@{testFloatsLessOrEqualInf}}
+\index{testFloatsLessOrEqualInf@{testFloatsLessOrEqualInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsLessOrEqualInf()}{testFloatsLessOrEqualInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a70c82f0d6372b816eecf750dc38f812b} 
+void test\+Floats\+Less\+Or\+Equal\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a603e6fb0113238ae23a3f956aaccaab3}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsLessOrEqualNanBoth@{testFloatsLessOrEqualNanBoth}}
+\index{testFloatsLessOrEqualNanBoth@{testFloatsLessOrEqualNanBoth}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsLessOrEqualNanBoth()}{testFloatsLessOrEqualNanBoth()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a603e6fb0113238ae23a3f956aaccaab3} 
+void test\+Floats\+Less\+Or\+Equal\+Nan\+Both (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_afade78c29096340e9d259266ac28b6e6}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsLessThan@{testFloatsLessThan}}
+\index{testFloatsLessThan@{testFloatsLessThan}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsLessThan()}{testFloatsLessThan()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_afade78c29096340e9d259266ac28b6e6} 
+void test\+Floats\+Less\+Than (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a4411200d456a326d8fbd77c25f299f0c}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsLessThanInf@{testFloatsLessThanInf}}
+\index{testFloatsLessThanInf@{testFloatsLessThanInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsLessThanInf()}{testFloatsLessThanInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a4411200d456a326d8fbd77c25f299f0c} 
+void test\+Floats\+Less\+Than\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a4995c20a742185ad48d21cac6b6a0c51}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqual@{testFloatsNotEqual}}
+\index{testFloatsNotEqual@{testFloatsNotEqual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqual()}{testFloatsNotEqual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a4995c20a742185ad48d21cac6b6a0c51} 
+void test\+Floats\+Not\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a2ae70b5a4784c20fee370c506b8b63fb}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualActualInf@{testFloatsNotEqualActualInf}}
+\index{testFloatsNotEqualActualInf@{testFloatsNotEqualActualInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualActualInf()}{testFloatsNotEqualActualInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a2ae70b5a4784c20fee370c506b8b63fb} 
+void test\+Floats\+Not\+Equal\+Actual\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aa4db7564a17f2eb8be9c09ff95253f9f}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualActualNaN@{testFloatsNotEqualActualNaN}}
+\index{testFloatsNotEqualActualNaN@{testFloatsNotEqualActualNaN}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualActualNaN()}{testFloatsNotEqualActualNaN()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aa4db7564a17f2eb8be9c09ff95253f9f} 
+void test\+Floats\+Not\+Equal\+Actual\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aa2bc1a1c91d2fc9aa2defc7f160aff7e}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualExpectedInf@{testFloatsNotEqualExpectedInf}}
+\index{testFloatsNotEqualExpectedInf@{testFloatsNotEqualExpectedInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualExpectedInf()}{testFloatsNotEqualExpectedInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aa2bc1a1c91d2fc9aa2defc7f160aff7e} 
+void test\+Floats\+Not\+Equal\+Expected\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ab1b137e3ab1139dd2f70c54e26c95f92}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualExpectedNaN@{testFloatsNotEqualExpectedNaN}}
+\index{testFloatsNotEqualExpectedNaN@{testFloatsNotEqualExpectedNaN}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualExpectedNaN()}{testFloatsNotEqualExpectedNaN()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ab1b137e3ab1139dd2f70c54e26c95f92} 
+void test\+Floats\+Not\+Equal\+Expected\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a2dcff04297cc8aa314b42366414676f5}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualInfNaN@{testFloatsNotEqualInfNaN}}
+\index{testFloatsNotEqualInfNaN@{testFloatsNotEqualInfNaN}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualInfNaN()}{testFloatsNotEqualInfNaN()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a2dcff04297cc8aa314b42366414676f5} 
+void test\+Floats\+Not\+Equal\+Inf\+NaN (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a09de608d9aeb96a44b43eacadbeeb54a}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualNaNInf@{testFloatsNotEqualNaNInf}}
+\index{testFloatsNotEqualNaNInf@{testFloatsNotEqualNaNInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualNaNInf()}{testFloatsNotEqualNaNInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a09de608d9aeb96a44b43eacadbeeb54a} 
+void test\+Floats\+Not\+Equal\+Na\+NInf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a5cdbd7d9564861e75506409fcb8b8a20}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualNegative1@{testFloatsNotEqualNegative1}}
+\index{testFloatsNotEqualNegative1@{testFloatsNotEqualNegative1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualNegative1()}{testFloatsNotEqualNegative1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a5cdbd7d9564861e75506409fcb8b8a20} 
+void test\+Floats\+Not\+Equal\+Negative1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_afbff3157162e0fef40ced3fdaa9c1811}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualNegative2@{testFloatsNotEqualNegative2}}
+\index{testFloatsNotEqualNegative2@{testFloatsNotEqualNegative2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualNegative2()}{testFloatsNotEqualNegative2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_afbff3157162e0fef40ced3fdaa9c1811} 
+void test\+Floats\+Not\+Equal\+Negative2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a1fbbc99a9ec70b41f9a4a19cc56d38fb}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotEqualPlusMinusInf@{testFloatsNotEqualPlusMinusInf}}
+\index{testFloatsNotEqualPlusMinusInf@{testFloatsNotEqualPlusMinusInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotEqualPlusMinusInf()}{testFloatsNotEqualPlusMinusInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a1fbbc99a9ec70b41f9a4a19cc56d38fb} 
+void test\+Floats\+Not\+Equal\+Plus\+Minus\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a6da609e869b97c3507fed6500e5cb397}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterOrEqual@{testFloatsNotGreaterOrEqual}}
+\index{testFloatsNotGreaterOrEqual@{testFloatsNotGreaterOrEqual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterOrEqual()}{testFloatsNotGreaterOrEqual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a6da609e869b97c3507fed6500e5cb397} 
+void test\+Floats\+Not\+Greater\+Or\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aec466b1a4fa6635dd3ebd21985f5f89e}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterOrEqualInfActual@{testFloatsNotGreaterOrEqualInfActual}}
+\index{testFloatsNotGreaterOrEqualInfActual@{testFloatsNotGreaterOrEqualInfActual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterOrEqualInfActual()}{testFloatsNotGreaterOrEqualInfActual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aec466b1a4fa6635dd3ebd21985f5f89e} 
+void test\+Floats\+Not\+Greater\+Or\+Equal\+Inf\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_acae5c7ed275a44bba54a5aaf0364a556}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterOrEqualNanActual@{testFloatsNotGreaterOrEqualNanActual}}
+\index{testFloatsNotGreaterOrEqualNanActual@{testFloatsNotGreaterOrEqualNanActual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterOrEqualNanActual()}{testFloatsNotGreaterOrEqualNanActual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_acae5c7ed275a44bba54a5aaf0364a556} 
+void test\+Floats\+Not\+Greater\+Or\+Equal\+Nan\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aa82039ab1aa7ea4b864e0c1aa28f1f8c}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterOrEqualNanThreshold@{testFloatsNotGreaterOrEqualNanThreshold}}
+\index{testFloatsNotGreaterOrEqualNanThreshold@{testFloatsNotGreaterOrEqualNanThreshold}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterOrEqualNanThreshold()}{testFloatsNotGreaterOrEqualNanThreshold()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aa82039ab1aa7ea4b864e0c1aa28f1f8c} 
+void test\+Floats\+Not\+Greater\+Or\+Equal\+Nan\+Threshold (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aae89f4610b5201f6c302aed66da52ebd}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterOrEqualNegInf@{testFloatsNotGreaterOrEqualNegInf}}
+\index{testFloatsNotGreaterOrEqualNegInf@{testFloatsNotGreaterOrEqualNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterOrEqualNegInf()}{testFloatsNotGreaterOrEqualNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aae89f4610b5201f6c302aed66da52ebd} 
+void test\+Floats\+Not\+Greater\+Or\+Equal\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ae6474fbc0b48c9bc7ab5d23ddaf669e9}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterThan@{testFloatsNotGreaterThan}}
+\index{testFloatsNotGreaterThan@{testFloatsNotGreaterThan}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterThan()}{testFloatsNotGreaterThan()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ae6474fbc0b48c9bc7ab5d23ddaf669e9} 
+void test\+Floats\+Not\+Greater\+Than (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a0a2b314b6a1f6bf9b1bc37a958867186}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterThanBothInf@{testFloatsNotGreaterThanBothInf}}
+\index{testFloatsNotGreaterThanBothInf@{testFloatsNotGreaterThanBothInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterThanBothInf()}{testFloatsNotGreaterThanBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a0a2b314b6a1f6bf9b1bc37a958867186} 
+void test\+Floats\+Not\+Greater\+Than\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_afd15d6e94425b758955751f7b1ddbbe0}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterThanBothNegInf@{testFloatsNotGreaterThanBothNegInf}}
+\index{testFloatsNotGreaterThanBothNegInf@{testFloatsNotGreaterThanBothNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterThanBothNegInf()}{testFloatsNotGreaterThanBothNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_afd15d6e94425b758955751f7b1ddbbe0} 
+void test\+Floats\+Not\+Greater\+Than\+Both\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a0dfb56e462cce43551192cef0d93dd4e}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterThanInfActual@{testFloatsNotGreaterThanInfActual}}
+\index{testFloatsNotGreaterThanInfActual@{testFloatsNotGreaterThanInfActual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterThanInfActual()}{testFloatsNotGreaterThanInfActual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a0dfb56e462cce43551192cef0d93dd4e} 
+void test\+Floats\+Not\+Greater\+Than\+Inf\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a434a045364dbf6d2751279ab3a6b2afe}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterThanNanActual@{testFloatsNotGreaterThanNanActual}}
+\index{testFloatsNotGreaterThanNanActual@{testFloatsNotGreaterThanNanActual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterThanNanActual()}{testFloatsNotGreaterThanNanActual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a434a045364dbf6d2751279ab3a6b2afe} 
+void test\+Floats\+Not\+Greater\+Than\+Nan\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_afba428c67b8c991d97c466761f9ceb99}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterThanNanBoth@{testFloatsNotGreaterThanNanBoth}}
+\index{testFloatsNotGreaterThanNanBoth@{testFloatsNotGreaterThanNanBoth}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterThanNanBoth()}{testFloatsNotGreaterThanNanBoth()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_afba428c67b8c991d97c466761f9ceb99} 
+void test\+Floats\+Not\+Greater\+Than\+Nan\+Both (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a1642662814516120d5c1fc32d7b75330}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterThanNanThreshold@{testFloatsNotGreaterThanNanThreshold}}
+\index{testFloatsNotGreaterThanNanThreshold@{testFloatsNotGreaterThanNanThreshold}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterThanNanThreshold()}{testFloatsNotGreaterThanNanThreshold()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a1642662814516120d5c1fc32d7b75330} 
+void test\+Floats\+Not\+Greater\+Than\+Nan\+Threshold (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_aed4c631b9dc7939a30cd2a922185064b}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotGreaterThanNegInf@{testFloatsNotGreaterThanNegInf}}
+\index{testFloatsNotGreaterThanNegInf@{testFloatsNotGreaterThanNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotGreaterThanNegInf()}{testFloatsNotGreaterThanNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_aed4c631b9dc7939a30cd2a922185064b} 
+void test\+Floats\+Not\+Greater\+Than\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a8f25dbb1c53b394c17987dd03df1bff5}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessOrEqual@{testFloatsNotLessOrEqual}}
+\index{testFloatsNotLessOrEqual@{testFloatsNotLessOrEqual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessOrEqual()}{testFloatsNotLessOrEqual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a8f25dbb1c53b394c17987dd03df1bff5} 
+void test\+Floats\+Not\+Less\+Or\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a00f0acf6085d2b6b66082e3a00f295c9}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessOrEqualInf@{testFloatsNotLessOrEqualInf}}
+\index{testFloatsNotLessOrEqualInf@{testFloatsNotLessOrEqualInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessOrEqualInf()}{testFloatsNotLessOrEqualInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a00f0acf6085d2b6b66082e3a00f295c9} 
+void test\+Floats\+Not\+Less\+Or\+Equal\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ac6e416cae45fb0a544b3e2e295a7e809}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessOrEqualNanActual@{testFloatsNotLessOrEqualNanActual}}
+\index{testFloatsNotLessOrEqualNanActual@{testFloatsNotLessOrEqualNanActual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessOrEqualNanActual()}{testFloatsNotLessOrEqualNanActual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ac6e416cae45fb0a544b3e2e295a7e809} 
+void test\+Floats\+Not\+Less\+Or\+Equal\+Nan\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ad685be6551c839f8d5371cfcab3ce94c}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessOrEqualNanThreshold@{testFloatsNotLessOrEqualNanThreshold}}
+\index{testFloatsNotLessOrEqualNanThreshold@{testFloatsNotLessOrEqualNanThreshold}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessOrEqualNanThreshold()}{testFloatsNotLessOrEqualNanThreshold()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ad685be6551c839f8d5371cfcab3ce94c} 
+void test\+Floats\+Not\+Less\+Or\+Equal\+Nan\+Threshold (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a5d955724a523bebc7ecbcc40c1c123ca}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessOrEqualNegInf@{testFloatsNotLessOrEqualNegInf}}
+\index{testFloatsNotLessOrEqualNegInf@{testFloatsNotLessOrEqualNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessOrEqualNegInf()}{testFloatsNotLessOrEqualNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a5d955724a523bebc7ecbcc40c1c123ca} 
+void test\+Floats\+Not\+Less\+Or\+Equal\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ac8cbd87a2c7de3c6f1161c799a6bc706}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessThan@{testFloatsNotLessThan}}
+\index{testFloatsNotLessThan@{testFloatsNotLessThan}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessThan()}{testFloatsNotLessThan()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ac8cbd87a2c7de3c6f1161c799a6bc706} 
+void test\+Floats\+Not\+Less\+Than (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ac8857424a1e9bfa4cf668a7ffd0af34e}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessThanBothInf@{testFloatsNotLessThanBothInf}}
+\index{testFloatsNotLessThanBothInf@{testFloatsNotLessThanBothInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessThanBothInf()}{testFloatsNotLessThanBothInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ac8857424a1e9bfa4cf668a7ffd0af34e} 
+void test\+Floats\+Not\+Less\+Than\+Both\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a7e194ae0d08b76ddc7e3fb08ac979cf1}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessThanBothNegInf@{testFloatsNotLessThanBothNegInf}}
+\index{testFloatsNotLessThanBothNegInf@{testFloatsNotLessThanBothNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessThanBothNegInf()}{testFloatsNotLessThanBothNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a7e194ae0d08b76ddc7e3fb08ac979cf1} 
+void test\+Floats\+Not\+Less\+Than\+Both\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ab137896d8f44d0c47f5e45ec38b3e09e}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessThanInf@{testFloatsNotLessThanInf}}
+\index{testFloatsNotLessThanInf@{testFloatsNotLessThanInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessThanInf()}{testFloatsNotLessThanInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ab137896d8f44d0c47f5e45ec38b3e09e} 
+void test\+Floats\+Not\+Less\+Than\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a1b8d9950b4addfdb41c7be01bd5bbe74}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessThanNanActual@{testFloatsNotLessThanNanActual}}
+\index{testFloatsNotLessThanNanActual@{testFloatsNotLessThanNanActual}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessThanNanActual()}{testFloatsNotLessThanNanActual()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a1b8d9950b4addfdb41c7be01bd5bbe74} 
+void test\+Floats\+Not\+Less\+Than\+Nan\+Actual (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a6066c99f300db93ac293eceb02cea2c7}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessThanNanBoth@{testFloatsNotLessThanNanBoth}}
+\index{testFloatsNotLessThanNanBoth@{testFloatsNotLessThanNanBoth}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessThanNanBoth()}{testFloatsNotLessThanNanBoth()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a6066c99f300db93ac293eceb02cea2c7} 
+void test\+Floats\+Not\+Less\+Than\+Nan\+Both (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a15477d73e464591b7ace28949cc3029c}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessThanNanThreshold@{testFloatsNotLessThanNanThreshold}}
+\index{testFloatsNotLessThanNanThreshold@{testFloatsNotLessThanNanThreshold}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessThanNanThreshold()}{testFloatsNotLessThanNanThreshold()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a15477d73e464591b7ace28949cc3029c} 
+void test\+Floats\+Not\+Less\+Than\+Nan\+Threshold (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a7503f7dae827587f44d0f15d266543f5}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotLessThanNegInf@{testFloatsNotLessThanNegInf}}
+\index{testFloatsNotLessThanNegInf@{testFloatsNotLessThanNegInf}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotLessThanNegInf()}{testFloatsNotLessThanNegInf()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a7503f7dae827587f44d0f15d266543f5} 
+void test\+Floats\+Not\+Less\+Than\+Neg\+Inf (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a1f9639aa302fb59e3d0a1b4dc4cc92c3}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsNotWithinDelta@{testFloatsNotWithinDelta}}
+\index{testFloatsNotWithinDelta@{testFloatsNotWithinDelta}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsNotWithinDelta()}{testFloatsNotWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a1f9639aa302fb59e3d0a1b4dc4cc92c3} 
+void test\+Floats\+Not\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a96253a9597bf2fcf3138a56d6525b517}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatsWithinDelta@{testFloatsWithinDelta}}
+\index{testFloatsWithinDelta@{testFloatsWithinDelta}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatsWithinDelta()}{testFloatsWithinDelta()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a96253a9597bf2fcf3138a56d6525b517} 
+void test\+Floats\+Within\+Delta (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a26f32da873c413bd1eb503e01340faca}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testFloatTraitFailsOnInvalidTrait@{testFloatTraitFailsOnInvalidTrait}}
+\index{testFloatTraitFailsOnInvalidTrait@{testFloatTraitFailsOnInvalidTrait}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testFloatTraitFailsOnInvalidTrait()}{testFloatTraitFailsOnInvalidTrait()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a26f32da873c413bd1eb503e01340faca} 
+void test\+Float\+Trait\+Fails\+On\+Invalid\+Trait (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a8965489b607b68f405b7c157953fbda0}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArrays1@{testNotEqualFloatArrays1}}
+\index{testNotEqualFloatArrays1@{testNotEqualFloatArrays1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArrays1()}{testNotEqualFloatArrays1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a8965489b607b68f405b7c157953fbda0} 
+void test\+Not\+Equal\+Float\+Arrays1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a6218dfff3e10feafdda9fa6fb91c57d4}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArrays2@{testNotEqualFloatArrays2}}
+\index{testNotEqualFloatArrays2@{testNotEqualFloatArrays2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArrays2()}{testNotEqualFloatArrays2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a6218dfff3e10feafdda9fa6fb91c57d4} 
+void test\+Not\+Equal\+Float\+Arrays2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a887eb87bfffe0a55b95db49d80790828}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArrays3@{testNotEqualFloatArrays3}}
+\index{testNotEqualFloatArrays3@{testNotEqualFloatArrays3}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArrays3()}{testNotEqualFloatArrays3()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a887eb87bfffe0a55b95db49d80790828} 
+void test\+Not\+Equal\+Float\+Arrays3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_af8625a55a3f66113c9baa83311756b71}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArraysActualNull@{testNotEqualFloatArraysActualNull}}
+\index{testNotEqualFloatArraysActualNull@{testNotEqualFloatArraysActualNull}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArraysActualNull()}{testNotEqualFloatArraysActualNull()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_af8625a55a3f66113c9baa83311756b71} 
+void test\+Not\+Equal\+Float\+Arrays\+Actual\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ac070d92af4698dc0c70902af0ff5ca04}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArraysExpectedNull@{testNotEqualFloatArraysExpectedNull}}
+\index{testNotEqualFloatArraysExpectedNull@{testNotEqualFloatArraysExpectedNull}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArraysExpectedNull()}{testNotEqualFloatArraysExpectedNull()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ac070d92af4698dc0c70902af0ff5ca04} 
+void test\+Not\+Equal\+Float\+Arrays\+Expected\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_af10e0ee82b8e80180896c7320e5a483c}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArraysLengthZero@{testNotEqualFloatArraysLengthZero}}
+\index{testNotEqualFloatArraysLengthZero@{testNotEqualFloatArraysLengthZero}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArraysLengthZero()}{testNotEqualFloatArraysLengthZero()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_af10e0ee82b8e80180896c7320e5a483c} 
+void test\+Not\+Equal\+Float\+Arrays\+Length\+Zero (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a733ba9b6bd4b0613f300ed73275b3f6b}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArraysNegative1@{testNotEqualFloatArraysNegative1}}
+\index{testNotEqualFloatArraysNegative1@{testNotEqualFloatArraysNegative1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArraysNegative1()}{testNotEqualFloatArraysNegative1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a733ba9b6bd4b0613f300ed73275b3f6b} 
+void test\+Not\+Equal\+Float\+Arrays\+Negative1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a9aed3bc57c539c83b5cc8646486b4fe8}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArraysNegative2@{testNotEqualFloatArraysNegative2}}
+\index{testNotEqualFloatArraysNegative2@{testNotEqualFloatArraysNegative2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArraysNegative2()}{testNotEqualFloatArraysNegative2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a9aed3bc57c539c83b5cc8646486b4fe8} 
+void test\+Not\+Equal\+Float\+Arrays\+Negative2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a291c99f96a4966226cf08240e16b1648}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatArraysNegative3@{testNotEqualFloatArraysNegative3}}
+\index{testNotEqualFloatArraysNegative3@{testNotEqualFloatArraysNegative3}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatArraysNegative3()}{testNotEqualFloatArraysNegative3()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a291c99f96a4966226cf08240e16b1648} 
+void test\+Not\+Equal\+Float\+Arrays\+Negative3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ae0577505c43d50ddbd7fbdbf6af65b9c}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatEachEqual1@{testNotEqualFloatEachEqual1}}
+\index{testNotEqualFloatEachEqual1@{testNotEqualFloatEachEqual1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatEachEqual1()}{testNotEqualFloatEachEqual1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ae0577505c43d50ddbd7fbdbf6af65b9c} 
+void test\+Not\+Equal\+Float\+Each\+Equal1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a64ec18f10b13cfe9425390a42a37a910}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatEachEqual2@{testNotEqualFloatEachEqual2}}
+\index{testNotEqualFloatEachEqual2@{testNotEqualFloatEachEqual2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatEachEqual2()}{testNotEqualFloatEachEqual2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a64ec18f10b13cfe9425390a42a37a910} 
+void test\+Not\+Equal\+Float\+Each\+Equal2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_af09f5028c55d49f6ee94f64974e533bc}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatEachEqual3@{testNotEqualFloatEachEqual3}}
+\index{testNotEqualFloatEachEqual3@{testNotEqualFloatEachEqual3}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatEachEqual3()}{testNotEqualFloatEachEqual3()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_af09f5028c55d49f6ee94f64974e533bc} 
+void test\+Not\+Equal\+Float\+Each\+Equal3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a99dd408666f41b76e103008f40f5b32a}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatEachEqualActualNull@{testNotEqualFloatEachEqualActualNull}}
+\index{testNotEqualFloatEachEqualActualNull@{testNotEqualFloatEachEqualActualNull}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatEachEqualActualNull()}{testNotEqualFloatEachEqualActualNull()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a99dd408666f41b76e103008f40f5b32a} 
+void test\+Not\+Equal\+Float\+Each\+Equal\+Actual\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_ae4f5d5698d5972084576b255618be3a6}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatEachEqualLengthZero@{testNotEqualFloatEachEqualLengthZero}}
+\index{testNotEqualFloatEachEqualLengthZero@{testNotEqualFloatEachEqualLengthZero}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatEachEqualLengthZero()}{testNotEqualFloatEachEqualLengthZero()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_ae4f5d5698d5972084576b255618be3a6} 
+void test\+Not\+Equal\+Float\+Each\+Equal\+Length\+Zero (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a755aff01086881ffadb2b1213b932d77}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatEachEqualNegative1@{testNotEqualFloatEachEqualNegative1}}
+\index{testNotEqualFloatEachEqualNegative1@{testNotEqualFloatEachEqualNegative1}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatEachEqualNegative1()}{testNotEqualFloatEachEqualNegative1()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a755aff01086881ffadb2b1213b932d77} 
+void test\+Not\+Equal\+Float\+Each\+Equal\+Negative1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a4e37291088dbf9cb97c042491e08525d}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatEachEqualNegative2@{testNotEqualFloatEachEqualNegative2}}
+\index{testNotEqualFloatEachEqualNegative2@{testNotEqualFloatEachEqualNegative2}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatEachEqualNegative2()}{testNotEqualFloatEachEqualNegative2()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a4e37291088dbf9cb97c042491e08525d} 
+void test\+Not\+Equal\+Float\+Each\+Equal\+Negative2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__floats_8c_a11fa753005302a6b26232435a1a5a2a4}\index{test\_unity\_floats.c@{test\_unity\_floats.c}!testNotEqualFloatEachEqualNegative3@{testNotEqualFloatEachEqualNegative3}}
+\index{testNotEqualFloatEachEqualNegative3@{testNotEqualFloatEachEqualNegative3}!test\_unity\_floats.c@{test\_unity\_floats.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualFloatEachEqualNegative3()}{testNotEqualFloatEachEqualNegative3()}}
+{\footnotesize\ttfamily \label{test__unity__floats_8c_a11fa753005302a6b26232435a1a5a2a4} 
+void test\+Not\+Equal\+Float\+Each\+Equal\+Negative3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+

@@ -1,0 +1,46 @@
+\doxysection{Unity/extras/bdd Directory Reference}
+\hypertarget{dir_3910c554cdba62e8277ca6868eb7ea50}{}\label{dir_3910c554cdba62e8277ca6868eb7ea50}\index{Unity/extras/bdd Directory Reference@{Unity/extras/bdd Directory Reference}}
+\doxysubsubsection*{Directories}
+\begin{DoxyCompactItemize}
+\item 
+directory \mbox{\hyperlink{dir_4726e423993a24f3e02aed585120e0be}{src}}
+\item 
+directory \mbox{\hyperlink{dir_a8b8756fe806386f86c2f999f4801e1b}{test}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unity\textquotesingle{}s Behavior-\/\+Driven Development (BDD) test feature. It allows developers to structure and describe various phases (Given, When, Then) of a test scenario in a BDD-\/style format.\hypertarget{readme.md_autotoc_md348}{}\doxysubsection{\texorpdfstring{Introduction}{Introduction}}\label{readme.md_autotoc_md348}
+This project is based on the Unity framework originally created by Mike Karlesky, Mark Vander\+Voord, and Greg Williams in 2007. The project extends Unity by providing macros to define BDD structures with descriptive elements. Feature added by Michael Gene Brockus (Dreamer).\hypertarget{readme.md_autotoc_md349}{}\doxysubsection{\texorpdfstring{License}{License}}\label{readme.md_autotoc_md349}
+This project is distributed under the MIT License. See the \href{license.txt}{\texttt{ license.\+txt}} file for more information.\hypertarget{readme.md_autotoc_md350}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{readme.md_autotoc_md350}
+\hypertarget{readme.md_autotoc_md351}{}\doxysubsubsection{\texorpdfstring{BDD Macros}{BDD Macros}}\label{readme.md_autotoc_md351}
+The provided BDD macros allow you to structure your test scenarios in a descriptive manner. These macros are for descriptive purposes only and do not have functional behavior.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{unity__bdd_8h_a3a0c74312a02b548eb3a0f7dd686e29b}{GIVEN(description)}}\+: Describes the "{}\+Given"{} phase of a test scenario.
+\item {\ttfamily \doxylink{unity__bdd_8h_a1a06fe7ded70b743ac407bcf132805b2}{WHEN(description)}}\+: Describes the "{}\+When"{} phase of a test scenario.
+\item {\ttfamily \doxylink{unity__bdd_8h_a11fe3eec2ba5b3ea854a883e7325888a}{THEN(description)}}\+: Describes the "{}\+Then"{} phase of a test scenario.
+\end{DoxyItemize}
+
+Example usage\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{unity__bdd_8h_a3a0c74312a02b548eb3a0f7dd686e29b}{GIVEN}}(\textcolor{stringliteral}{"{}a\ valid\ input"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Test\ setup\ and\ context}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{unity__bdd_8h_a1a06fe7ded70b743ac407bcf132805b2}{WHEN}}(\textcolor{stringliteral}{"{}the\ input\ is\ processed"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Perform\ the\ action}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{unity__bdd_8h_a11fe3eec2ba5b3ea854a883e7325888a}{THEN}}(\textcolor{stringliteral}{"{}the\ expected\ outcome\ occurs"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert\ the\ outcome}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

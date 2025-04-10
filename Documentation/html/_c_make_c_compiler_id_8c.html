@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment 2: /Users/richardzetterman/Documents/RealTime/Assignment1/build/CMakeFiles/3.31.6/CompilerIdC/CMakeCCompilerId.c File Reference</title>
+<title>Assignment 2: build/CMakeFiles/3.31.6/CompilerIdC/CMakeCCompilerId.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -125,9 +125,9 @@ Macros</h2></td></tr>
 <tr class="separator:adbc5372f40838899018fadbc89bd588b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba35d0d200deaeb06aee95ca297acb28" id="r_aba35d0d200deaeb06aee95ca297acb28"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba35d0d200deaeb06aee95ca297acb28">ARCHITECTURE_ID</a></td></tr>
 <tr class="separator:aba35d0d200deaeb06aee95ca297acb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1280362da42492bbc11aa78cbf776ad" id="r_ad1280362da42492bbc11aa78cbf776ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1280362da42492bbc11aa78cbf776ad">DEC</a>(n)</td></tr>
+<tr class="memitem:ad1280362da42492bbc11aa78cbf776ad" id="r_ad1280362da42492bbc11aa78cbf776ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1280362da42492bbc11aa78cbf776ad">DEC</a>(<a class="el" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)</td></tr>
 <tr class="separator:ad1280362da42492bbc11aa78cbf776ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d5d95daa1bef867bd0179594310ed5" id="r_a46d5d95daa1bef867bd0179594310ed5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d5d95daa1bef867bd0179594310ed5">HEX</a>(n)</td></tr>
+<tr class="memitem:a46d5d95daa1bef867bd0179594310ed5" id="r_a46d5d95daa1bef867bd0179594310ed5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d5d95daa1bef867bd0179594310ed5">HEX</a>(<a class="el" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)</td></tr>
 <tr class="separator:a46d5d95daa1bef867bd0179594310ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6079dc519dac099ee85a1df6ae5e5e8" id="r_af6079dc519dac099ee85a1df6ae5e5e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6079dc519dac099ee85a1df6ae5e5e8">C_STD_99</a>&#160;&#160;&#160;199901L</td></tr>
 <tr class="separator:af6079dc519dac099ee85a1df6ae5e5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -284,19 +284,20 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">#define DEC</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((n) / 10000000)%10)), \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((n) / 1000000)%10)),  \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((n) / 100000)%10)),   \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((n) / 10000)%10)),    \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((n) / 1000)%10)),     \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((n) / 100)%10)),      \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((n) / 10)%10)),       \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> +  ((n) % 10))</div>
+<b>Value:</b><div class="fragment"><div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>) / 10000000)%10)), \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>) / 1000000)%10)),  \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>) / 100000)%10)),   \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>) / 10000)%10)),    \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>) / 1000)%10)),     \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>) / 100)%10)),      \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + (((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>) / 10)%10)),       \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> +  ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>) % 10))</div>
+<div class="ttc" id="atest__unity__parameterized_8c_html_a7f72c6c4ce2ae87fa6fe5f6f22cd9d67"><div class="ttname"><a href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a></div><div class="ttdeci">float n</div><div class="ttdef"><b>Definition</b> test_unity_parameterized.c:278</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -309,19 +310,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">#define HEX</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((n)&gt;&gt;28 &amp; 0xF)), \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((n)&gt;&gt;24 &amp; 0xF)), \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((n)&gt;&gt;20 &amp; 0xF)), \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((n)&gt;&gt;16 &amp; 0xF)), \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((n)&gt;&gt;12 &amp; 0xF)), \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((n)&gt;&gt;8  &amp; 0xF)), \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((n)&gt;&gt;4  &amp; 0xF)), \</div>
-<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((n)     &amp; 0xF))</div>
+<b>Value:</b><div class="fragment"><div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)&gt;&gt;28 &amp; 0xF)), \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)&gt;&gt;24 &amp; 0xF)), \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)&gt;&gt;20 &amp; 0xF)), \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)&gt;&gt;16 &amp; 0xF)), \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)&gt;&gt;12 &amp; 0xF)), \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)&gt;&gt;8  &amp; 0xF)), \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)&gt;&gt;4  &amp; 0xF)), \</div>
+<div class="line">  (<span class="charliteral">&#39;0&#39;</span> + ((<a class="code hl_variable" href="test__unity__parameterized_8c.html#a7f72c6c4ce2ae87fa6fe5f6f22cd9d67">n</a>)     &amp; 0xF))</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -486,7 +487,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_03a547b060cb1abdcfd0afeb2a01b262.html">Assignment1</a></li><li class="navelem"><a class="el" href="dir_9fe30016b65ab90e88ab0bf4cd01ccc3.html">build</a></li><li class="navelem"><a class="el" href="dir_e316bd37bdc52ea100febcde3a81b2ef.html">CMakeFiles</a></li><li class="navelem"><a class="el" href="dir_b075b83a8940f598259c1deb4ba7ef17.html">3.31.6</a></li><li class="navelem"><a class="el" href="dir_f2fc2dbfbd882ecdfafa1783b39a73f2.html">CompilerIdC</a></li><li class="navelem"><a class="el" href="_c_make_c_compiler_id_8c.html">CMakeCCompilerId.c</a></li>
+    <li class="navelem"><a class="el" href="dir_4fef79e7177ba769987a8da36c892c5f.html">build</a></li><li class="navelem"><a class="el" href="dir_63772b626f2709090f0bdca0f40827b4.html">CMakeFiles</a></li><li class="navelem"><a class="el" href="dir_5cefb66a2b3927b099ebe0b9254f9408.html">3.31.6</a></li><li class="navelem"><a class="el" href="dir_45f5a25a9d29f3258a5dcd55de035dd5.html">CompilerIdC</a></li><li class="navelem"><a class="el" href="_c_make_c_compiler_id_8c.html">CMakeCCompilerId.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

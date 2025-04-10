@@ -1,4 +1,3 @@
-/Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/exec.dir
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/runTests.dir
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/test.dir
 /Users/richardzetterman/Documents/RealTime/Assignment2/build/CMakeFiles/edit_cache.dir

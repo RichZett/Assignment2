@@ -1,0 +1,148 @@
+\doxysection{src/tests/test\+\_\+runner.c File Reference}
+\hypertarget{test__runner_8c}{}\label{test__runner_8c}\index{src/tests/test\_runner.c@{src/tests/test\_runner.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}cmdproc.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__runner_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_a4c75c93c622c20ec7c43defc70d44313}{test\+\_\+is\+Empty}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_aa8e3960392299e8daa08a3e440969f18}{test\+\_\+cmd\+T\+\_\+valid}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_a0e34650844c48eec8327f44ea729ad32}{test\+\_\+cmd\+H\+\_\+valid}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_a38473a901a9966e048ab1b8352c56c21}{test\+\_\+invalid\+Case}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_ac31b27ca38cbeea5b00c2f54dc63b6ca}{test\+\_\+reset\+Rx\+Buffer\+\_\+valid}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_ac90f8680891e66ad9504a641219cbfbc}{test\+\_\+reset\+Tx\+Buffer\+\_\+valid}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_a835a764c03deb89f76547a02dab1613d}{test\+\_\+\+SOF\+\_\+missing}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_a18710f9616a96f27d6c58f5a737305d4}{test\+\_\+\+EOF\+\_\+missing}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_ac45069250bbc3c5541450426cd1fa839}{test\+\_\+\+EOF\+\_\+overflow}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_ae49de573360424c16decb24250b5095a}{test\+\_\+frame\+\_\+too\+\_\+short}} (void)
+\item 
+void \mbox{\hyperlink{test__runner_8c_aa3911409d83b51cbe726f35ea712fae2}{test\+\_\+frame\+\_\+too\+\_\+long}} (void)
+\item 
+int \mbox{\hyperlink{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main function of the program is to run different types of tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{test\_runner.c@{test\_runner.c}!main@{main}}
+\index{main@{main}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{test__runner_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Main function of the program is to run different types of tests. 
+
+\Hypertarget{test__runner_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{test\_runner.c@{test\_runner.c}!setUp@{setUp}}
+\index{setUp@{setUp}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{test__runner_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__runner_8c_a9909011e5fea0c018842eec4d93d0662}\index{test\_runner.c@{test\_runner.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{test__runner_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__runner_8c_a0e34650844c48eec8327f44ea729ad32}\index{test\_runner.c@{test\_runner.c}!test\_cmdH\_valid@{test\_cmdH\_valid}}
+\index{test\_cmdH\_valid@{test\_cmdH\_valid}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdH\_valid()}{test\_cmdH\_valid()}}
+{\footnotesize\ttfamily \label{test__runner_8c_a0e34650844c48eec8327f44ea729ad32} 
+void test\+\_\+cmd\+H\+\_\+valid (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000003}{Test}}]Checks that the humidity command \textquotesingle{}H\textquotesingle{} is correctly processed and correct response is transmitted. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_aa8e3960392299e8daa08a3e440969f18}\index{test\_runner.c@{test\_runner.c}!test\_cmdT\_valid@{test\_cmdT\_valid}}
+\index{test\_cmdT\_valid@{test\_cmdT\_valid}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdT\_valid()}{test\_cmdT\_valid()}}
+{\footnotesize\ttfamily \label{test__runner_8c_aa8e3960392299e8daa08a3e440969f18} 
+void test\+\_\+cmd\+T\+\_\+valid (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000002}{Test}}]Checks that the temperature command \textquotesingle{}T\textquotesingle{} is correctly processed and correct response is transmitted. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_a18710f9616a96f27d6c58f5a737305d4}\index{test\_runner.c@{test\_runner.c}!test\_EOF\_missing@{test\_EOF\_missing}}
+\index{test\_EOF\_missing@{test\_EOF\_missing}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_EOF\_missing()}{test\_EOF\_missing()}}
+{\footnotesize\ttfamily \label{test__runner_8c_a18710f9616a96f27d6c58f5a737305d4} 
+void test\+\_\+\+EOF\+\_\+missing (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000008}{Test}}]Check cmd\+Processor behaves as expected if no EOF is given in the input. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_ac45069250bbc3c5541450426cd1fa839}\index{test\_runner.c@{test\_runner.c}!test\_EOF\_overflow@{test\_EOF\_overflow}}
+\index{test\_EOF\_overflow@{test\_EOF\_overflow}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_EOF\_overflow()}{test\_EOF\_overflow()}}
+{\footnotesize\ttfamily \label{test__runner_8c_ac45069250bbc3c5541450426cd1fa839} 
+void test\+\_\+\+EOF\+\_\+overflow (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000009}{Test}}]Checks that \doxylink{cmdproc_8c_afbdfe0465dfd34a5f244fe41fa27c12a}{cmd\+Processor()} works correctly when there is data after EOF. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_aa3911409d83b51cbe726f35ea712fae2}\index{test\_runner.c@{test\_runner.c}!test\_frame\_too\_long@{test\_frame\_too\_long}}
+\index{test\_frame\_too\_long@{test\_frame\_too\_long}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_frame\_too\_long()}{test\_frame\_too\_long()}}
+{\footnotesize\ttfamily \label{test__runner_8c_aa3911409d83b51cbe726f35ea712fae2} 
+void test\+\_\+frame\+\_\+too\+\_\+long (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000011}{Test}}]Checks that cmd\+Processor works for longer frames. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_ae49de573360424c16decb24250b5095a}\index{test\_runner.c@{test\_runner.c}!test\_frame\_too\_short@{test\_frame\_too\_short}}
+\index{test\_frame\_too\_short@{test\_frame\_too\_short}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_frame\_too\_short()}{test\_frame\_too\_short()}}
+{\footnotesize\ttfamily \label{test__runner_8c_ae49de573360424c16decb24250b5095a} 
+void test\+\_\+frame\+\_\+too\+\_\+short (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000010}{Test}}]Checks that \doxylink{cmdproc_8c_afbdfe0465dfd34a5f244fe41fa27c12a}{cmd\+Processor()} handles too short frames correctly. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_a38473a901a9966e048ab1b8352c56c21}\index{test\_runner.c@{test\_runner.c}!test\_invalidCase@{test\_invalidCase}}
+\index{test\_invalidCase@{test\_invalidCase}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_invalidCase()}{test\_invalidCase()}}
+{\footnotesize\ttfamily \label{test__runner_8c_a38473a901a9966e048ab1b8352c56c21} 
+void test\+\_\+invalid\+Case (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000004}{Test}}]Checks that a wrong command \textquotesingle{}C\textquotesingle{} is correctly processed, returning -\/2. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_a4c75c93c622c20ec7c43defc70d44313}\index{test\_runner.c@{test\_runner.c}!test\_isEmpty@{test\_isEmpty}}
+\index{test\_isEmpty@{test\_isEmpty}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_isEmpty()}{test\_isEmpty()}}
+{\footnotesize\ttfamily \label{test__runner_8c_a4c75c93c622c20ec7c43defc70d44313} 
+void test\+\_\+is\+Empty (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000001}{Test}}]Checks if cmd\+Processor correctly detects an empty Rx\+Buffer \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_ac31b27ca38cbeea5b00c2f54dc63b6ca}\index{test\_runner.c@{test\_runner.c}!test\_resetRxBuffer\_valid@{test\_resetRxBuffer\_valid}}
+\index{test\_resetRxBuffer\_valid@{test\_resetRxBuffer\_valid}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_resetRxBuffer\_valid()}{test\_resetRxBuffer\_valid()}}
+{\footnotesize\ttfamily \label{test__runner_8c_ac31b27ca38cbeea5b00c2f54dc63b6ca} 
+void test\+\_\+reset\+Rx\+Buffer\+\_\+valid (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000005}{Test}}]Checks that the Rx\+Buffer gets cleared as intended and properly. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_ac90f8680891e66ad9504a641219cbfbc}\index{test\_runner.c@{test\_runner.c}!test\_resetTxBuffer\_valid@{test\_resetTxBuffer\_valid}}
+\index{test\_resetTxBuffer\_valid@{test\_resetTxBuffer\_valid}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_resetTxBuffer\_valid()}{test\_resetTxBuffer\_valid()}}
+{\footnotesize\ttfamily \label{test__runner_8c_ac90f8680891e66ad9504a641219cbfbc} 
+void test\+\_\+reset\+Tx\+Buffer\+\_\+valid (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000006}{Test}}]Checks that the Tx\+Buffer gets cleared as intended and properly. \end{DoxyRefDesc}
+\Hypertarget{test__runner_8c_a835a764c03deb89f76547a02dab1613d}\index{test\_runner.c@{test\_runner.c}!test\_SOF\_missing@{test\_SOF\_missing}}
+\index{test\_SOF\_missing@{test\_SOF\_missing}!test\_runner.c@{test\_runner.c}}
+\doxysubsubsection{\texorpdfstring{test\_SOF\_missing()}{test\_SOF\_missing()}}
+{\footnotesize\ttfamily \label{test__runner_8c_a835a764c03deb89f76547a02dab1613d} 
+void test\+\_\+\+SOF\+\_\+missing (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000007}{Test}}]Check cmd\+Processor behaves as expected if no SOF is given in the input. \end{DoxyRefDesc}

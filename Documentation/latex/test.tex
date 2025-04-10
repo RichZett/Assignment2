@@ -1,0 +1,49 @@
+\chapter{Test List}
+\hypertarget{test}{}\label{test}\index{Test List@{Test List}}
+
+\begin{DoxyRefList}
+\item[Global \doxylink{test__runner_8c_a0e34650844c48eec8327f44ea729ad32}{test\+\_\+cmd\+H\+\_\+valid} (void)]\hfill \\
+\label{test__test000003}%
+\Hypertarget{test__test000003}%
+Checks that the humidity command \textquotesingle{}H\textquotesingle{} is correctly processed and correct response is transmitted.  
+\item[Global \doxylink{test__runner_8c_aa8e3960392299e8daa08a3e440969f18}{test\+\_\+cmd\+T\+\_\+valid} (void)]\hfill \\
+\label{test__test000002}%
+\Hypertarget{test__test000002}%
+Checks that the temperature command \textquotesingle{}T\textquotesingle{} is correctly processed and correct response is transmitted.  
+\item[Global \doxylink{test__runner_8c_a18710f9616a96f27d6c58f5a737305d4}{test\+\_\+\+EOF\+\_\+missing} (void)]\hfill \\
+\label{test__test000008}%
+\Hypertarget{test__test000008}%
+Check cmd\+Processor behaves as expected if no EOF is given in the input.  
+\item[Global \doxylink{test__runner_8c_ac45069250bbc3c5541450426cd1fa839}{test\+\_\+\+EOF\+\_\+overflow} (void)]\hfill \\
+\label{test__test000009}%
+\Hypertarget{test__test000009}%
+Checks that \doxylink{cmdproc_8c_afbdfe0465dfd34a5f244fe41fa27c12a}{cmd\+Processor()} works correctly when there is data after EOF.  
+\item[Global \doxylink{test__runner_8c_aa3911409d83b51cbe726f35ea712fae2}{test\+\_\+frame\+\_\+too\+\_\+long} (void)]\hfill \\
+\label{test__test000011}%
+\Hypertarget{test__test000011}%
+Checks that cmd\+Processor works for longer frames.  
+\item[Global \doxylink{test__runner_8c_ae49de573360424c16decb24250b5095a}{test\+\_\+frame\+\_\+too\+\_\+short} (void)]\hfill \\
+\label{test__test000010}%
+\Hypertarget{test__test000010}%
+Checks that \doxylink{cmdproc_8c_afbdfe0465dfd34a5f244fe41fa27c12a}{cmd\+Processor()} handles too short frames correctly.  
+\item[Global \doxylink{test__runner_8c_a38473a901a9966e048ab1b8352c56c21}{test\+\_\+invalid\+Case} (void)]\hfill \\
+\label{test__test000004}%
+\Hypertarget{test__test000004}%
+Checks that a wrong command \textquotesingle{}C\textquotesingle{} is correctly processed, returning -\/2.  
+\item[Global \doxylink{test__runner_8c_a4c75c93c622c20ec7c43defc70d44313}{test\+\_\+is\+Empty} (void)]\hfill \\
+\label{test__test000001}%
+\Hypertarget{test__test000001}%
+Checks if cmd\+Processor correctly detects an empty Rx\+Buffer  
+\item[Global \doxylink{test__runner_8c_ac31b27ca38cbeea5b00c2f54dc63b6ca}{test\+\_\+reset\+Rx\+Buffer\+\_\+valid} (void)]\hfill \\
+\label{test__test000005}%
+\Hypertarget{test__test000005}%
+Checks that the Rx\+Buffer gets cleared as intended and properly.  
+\item[Global \doxylink{test__runner_8c_ac90f8680891e66ad9504a641219cbfbc}{test\+\_\+reset\+Tx\+Buffer\+\_\+valid} (void)]\hfill \\
+\label{test__test000006}%
+\Hypertarget{test__test000006}%
+Checks that the Tx\+Buffer gets cleared as intended and properly.  
+\item[Global \doxylink{test__runner_8c_a835a764c03deb89f76547a02dab1613d}{test\+\_\+\+SOF\+\_\+missing} (void)]\hfill \\
+\label{test__test000007}%
+\Hypertarget{test__test000007}%
+Check cmd\+Processor behaves as expected if no SOF is given in the input. 
+\end{DoxyRefList}

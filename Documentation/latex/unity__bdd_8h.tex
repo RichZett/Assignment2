@@ -1,0 +1,58 @@
+\doxysection{Unity/extras/bdd/src/unity\+\_\+bdd.h File Reference}
+\hypertarget{unity__bdd_8h}{}\label{unity__bdd_8h}\index{Unity/extras/bdd/src/unity\_bdd.h@{Unity/extras/bdd/src/unity\_bdd.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{unity__bdd_8h_a3a0c74312a02b548eb3a0f7dd686e29b}{GIVEN}}(description)
+\begin{DoxyCompactList}\small\item\em Macros for defining a Behavior-\/\+Driven Development (BDD) structure with descriptions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{unity__bdd_8h_a1a06fe7ded70b743ac407bcf132805b2}{WHEN}}(description)
+\item 
+\#define \mbox{\hyperlink{unity__bdd_8h_a11fe3eec2ba5b3ea854a883e7325888a}{THEN}}(description)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{unity__bdd_8h_a3a0c74312a02b548eb3a0f7dd686e29b}\index{unity\_bdd.h@{unity\_bdd.h}!GIVEN@{GIVEN}}
+\index{GIVEN@{GIVEN}!unity\_bdd.h@{unity\_bdd.h}}
+\doxysubsubsection{\texorpdfstring{GIVEN}{GIVEN}}
+{\footnotesize\ttfamily \label{unity__bdd_8h_a3a0c74312a02b548eb3a0f7dd686e29b} 
+\#define GIVEN(\begin{DoxyParamCaption}\item[{}]{description}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (0)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Given\ \%s\(\backslash\)n"{}},\ description);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}}
+
+\end{DoxyCode}
+
+
+Macros for defining a Behavior-\/\+Driven Development (BDD) structure with descriptions. 
+
+These macros provide a way to structure and describe different phases (Given, When, Then) of a test scenario in a BDD-\/style format. However, they don\textquotesingle{}t have functional behavior by themselves and are used for descriptive purposes. \Hypertarget{unity__bdd_8h_a11fe3eec2ba5b3ea854a883e7325888a}\index{unity\_bdd.h@{unity\_bdd.h}!THEN@{THEN}}
+\index{THEN@{THEN}!unity\_bdd.h@{unity\_bdd.h}}
+\doxysubsubsection{\texorpdfstring{THEN}{THEN}}
+{\footnotesize\ttfamily \label{unity__bdd_8h_a11fe3eec2ba5b3ea854a883e7325888a} 
+\#define THEN(\begin{DoxyParamCaption}\item[{}]{description}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (0)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Then\ \%s\(\backslash\)n"{}},\ description);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}}
+
+\end{DoxyCode}
+\Hypertarget{unity__bdd_8h_a1a06fe7ded70b743ac407bcf132805b2}\index{unity\_bdd.h@{unity\_bdd.h}!WHEN@{WHEN}}
+\index{WHEN@{WHEN}!unity\_bdd.h@{unity\_bdd.h}}
+\doxysubsubsection{\texorpdfstring{WHEN}{WHEN}}
+{\footnotesize\ttfamily \label{unity__bdd_8h_a1a06fe7ded70b743ac407bcf132805b2} 
+\#define WHEN(\begin{DoxyParamCaption}\item[{}]{description}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (0)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}When\ \%s\(\backslash\)n"{}},\ description);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}}
+
+\end{DoxyCode}

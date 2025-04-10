@@ -1,0 +1,312 @@
+\doxysection{Unity/test/tests/test\+\_\+unity\+\_\+strings.c File Reference}
+\hypertarget{test__unity__strings_8c}{}\label{test__unity__strings_8c}\index{Unity/test/tests/test\_unity\_strings.c@{Unity/test/tests/test\_unity\_strings.c}}
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}self\+\_\+assessment\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__unity__strings_8c_a20aa6a97fd99eae615758650d209421b}{TEST\+\_\+\+INSTANCES}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_ac821bc03fe87f23e32277bfcb13eed8e}{test\+Equal\+Strings}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_aa394b804caa4fc746e727a3453d86b1c}{test\+Equal\+Strings\+Len}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_ae1ebc8c7d28803774482177f146dbf3e}{test\+Equal\+Strings\+With\+Carriage\+Returns\+And\+Line\+Feeds}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a3e53cc7777b8b0a0491536c33a9a30d0}{test\+Not\+Equal\+String1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a633304dea7ecdb9d2fb17ac4f1e24184}{test\+Not\+Equal\+String\+Len1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_aaa21c4e7999b8115fe997f35f69097cf}{test\+Not\+Equal\+String2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a29328299266ffb79ff78761766ab2817}{test\+Not\+Equal\+String\+Len2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a27782d6270cb54a5111b499fa569741e}{test\+Not\+Equal\+String3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a69a7c01c1518b0c889ecf50545be971c}{test\+Not\+Equal\+String\+Len3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_add386f86c3e164eacc3f4175d4ba6d31}{test\+Not\+Equal\+String4}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a03bc72651d51200ca7f8d419fa8becb5}{test\+Not\+Equal\+String\+Len4}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a93d63eb0053a4b15fa1802eeee68ab32}{test\+Not\+Equal\+String5}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a3c6a5656046a86613354e5ca82a1508c}{test\+Not\+Equal\+String\+\_\+\+Expected\+String\+Is\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a92940c5f913ac1a2f1616d40ab9d3f0c}{test\+Not\+Equal\+String\+Len\+\_\+\+Expected\+String\+Is\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_acc9f3ce3661109d9a0b0637d24062b81}{test\+Not\+Equal\+String\+\_\+\+Actual\+String\+Is\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a01b2074c43cd35c122141bd2c53a5fc6}{test\+Not\+Equal\+String\+Len\+\_\+\+Actual\+String\+Is\+Null}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_ae7bdb30768011ac726c45c76611f91a4}{test\+Not\+Equal\+String\+\_\+\+Expected\+String\+Is\+Longer}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a01f2db6d96453a6f6ed503ddab1290e8}{test\+Not\+Equal\+String\+\_\+\+Actual\+String\+Is\+Longer}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a7b7cdfc94e5e95701ef7cf7c938f3f9d}{test\+Equal\+String\+Arrays}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_ab7f2d2ad396eca2d703e01519bd2a9f0}{test\+Not\+Equal\+String\+Array1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_af2034932f2a0684c4e51831b7818cbf7}{test\+Not\+Equal\+String\+Array2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_aeb29151258a69bea2d0618ebc7cb2524}{test\+Not\+Equal\+String\+Array3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_aab9d3b0e2ec7b124b0159959f3435cfc}{test\+Not\+Equal\+String\+Array4}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a6e81e93ff8516e3eb68996ea16e16c56}{test\+Not\+Equal\+String\+Array5}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_ab4cfb6faa7a5b68e71a522d00bc736ff}{test\+Not\+Equal\+String\+Array6}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a0dd6ddfb54e04156e869e92e5d0e3036}{test\+Equal\+String\+Array\+If\+Both\+Nulls}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a1f6593597319a31b71b3f54b7dc05df2}{test\+Not\+Equal\+String\+Array\+Length\+Zero}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a35e1d94e15a285656287c6e1c788f206}{test\+Equal\+String\+Each\+Equal}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a471399b69f3b89b3d4219af5745ce902}{test\+Not\+Equal\+String\+Each\+Equal1}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a3f24c8a9416ce1ef6047eba435c2e4aa}{test\+Not\+Equal\+String\+Each\+Equal2}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a723f97e573a1fd1ab73618d5b1ffc4dc}{test\+Not\+Equal\+String\+Each\+Equal3}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a643c3a8739194f7f8b7148c02d56ecb4}{test\+Not\+Equal\+String\+Each\+Equal4}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a56406f0fa2f6be540d1576e1589b19b4}{test\+Not\+Equal\+String\+Each\+Equal5}} (void)
+\item 
+void \mbox{\hyperlink{test__unity__strings_8c_a1b54066e714821af7ee4a70b3d31789a}{test\+Cstrings\+Escape\+Sequence}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test__unity__strings_8c_a20aa6a97fd99eae615758650d209421b}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!TEST\_INSTANCES@{TEST\_INSTANCES}}
+\index{TEST\_INSTANCES@{TEST\_INSTANCES}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_INSTANCES}{TEST\_INSTANCES}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a20aa6a97fd99eae615758650d209421b} 
+\#define TEST\+\_\+\+INSTANCES}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__unity__strings_8c_a95c834d6178047ce9e1bce7cbfea2836}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!setUp@{setUp}}
+\index{setUp@{setUp}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a95c834d6178047ce9e1bce7cbfea2836} 
+void set\+Up (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a9909011e5fea0c018842eec4d93d0662}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a9909011e5fea0c018842eec4d93d0662} 
+void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a1b54066e714821af7ee4a70b3d31789a}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testCstringsEscapeSequence@{testCstringsEscapeSequence}}
+\index{testCstringsEscapeSequence@{testCstringsEscapeSequence}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testCstringsEscapeSequence()}{testCstringsEscapeSequence()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a1b54066e714821af7ee4a70b3d31789a} 
+void test\+Cstrings\+Escape\+Sequence (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a0dd6ddfb54e04156e869e92e5d0e3036}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testEqualStringArrayIfBothNulls@{testEqualStringArrayIfBothNulls}}
+\index{testEqualStringArrayIfBothNulls@{testEqualStringArrayIfBothNulls}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testEqualStringArrayIfBothNulls()}{testEqualStringArrayIfBothNulls()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a0dd6ddfb54e04156e869e92e5d0e3036} 
+void test\+Equal\+String\+Array\+If\+Both\+Nulls (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a7b7cdfc94e5e95701ef7cf7c938f3f9d}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testEqualStringArrays@{testEqualStringArrays}}
+\index{testEqualStringArrays@{testEqualStringArrays}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testEqualStringArrays()}{testEqualStringArrays()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a7b7cdfc94e5e95701ef7cf7c938f3f9d} 
+void test\+Equal\+String\+Arrays (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a35e1d94e15a285656287c6e1c788f206}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testEqualStringEachEqual@{testEqualStringEachEqual}}
+\index{testEqualStringEachEqual@{testEqualStringEachEqual}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testEqualStringEachEqual()}{testEqualStringEachEqual()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a35e1d94e15a285656287c6e1c788f206} 
+void test\+Equal\+String\+Each\+Equal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_ac821bc03fe87f23e32277bfcb13eed8e}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testEqualStrings@{testEqualStrings}}
+\index{testEqualStrings@{testEqualStrings}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testEqualStrings()}{testEqualStrings()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_ac821bc03fe87f23e32277bfcb13eed8e} 
+void test\+Equal\+Strings (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_aa394b804caa4fc746e727a3453d86b1c}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testEqualStringsLen@{testEqualStringsLen}}
+\index{testEqualStringsLen@{testEqualStringsLen}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testEqualStringsLen()}{testEqualStringsLen()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_aa394b804caa4fc746e727a3453d86b1c} 
+void test\+Equal\+Strings\+Len (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_ae1ebc8c7d28803774482177f146dbf3e}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testEqualStringsWithCarriageReturnsAndLineFeeds@{testEqualStringsWithCarriageReturnsAndLineFeeds}}
+\index{testEqualStringsWithCarriageReturnsAndLineFeeds@{testEqualStringsWithCarriageReturnsAndLineFeeds}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testEqualStringsWithCarriageReturnsAndLineFeeds()}{testEqualStringsWithCarriageReturnsAndLineFeeds()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_ae1ebc8c7d28803774482177f146dbf3e} 
+void test\+Equal\+Strings\+With\+Carriage\+Returns\+And\+Line\+Feeds (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a3e53cc7777b8b0a0491536c33a9a30d0}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString1@{testNotEqualString1}}
+\index{testNotEqualString1@{testNotEqualString1}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString1()}{testNotEqualString1()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a3e53cc7777b8b0a0491536c33a9a30d0} 
+void test\+Not\+Equal\+String1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_aaa21c4e7999b8115fe997f35f69097cf}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString2@{testNotEqualString2}}
+\index{testNotEqualString2@{testNotEqualString2}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString2()}{testNotEqualString2()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_aaa21c4e7999b8115fe997f35f69097cf} 
+void test\+Not\+Equal\+String2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a27782d6270cb54a5111b499fa569741e}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString3@{testNotEqualString3}}
+\index{testNotEqualString3@{testNotEqualString3}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString3()}{testNotEqualString3()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a27782d6270cb54a5111b499fa569741e} 
+void test\+Not\+Equal\+String3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_add386f86c3e164eacc3f4175d4ba6d31}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString4@{testNotEqualString4}}
+\index{testNotEqualString4@{testNotEqualString4}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString4()}{testNotEqualString4()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_add386f86c3e164eacc3f4175d4ba6d31} 
+void test\+Not\+Equal\+String4 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a93d63eb0053a4b15fa1802eeee68ab32}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString5@{testNotEqualString5}}
+\index{testNotEqualString5@{testNotEqualString5}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString5()}{testNotEqualString5()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a93d63eb0053a4b15fa1802eeee68ab32} 
+void test\+Not\+Equal\+String5 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a01f2db6d96453a6f6ed503ddab1290e8}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString\_ActualStringIsLonger@{testNotEqualString\_ActualStringIsLonger}}
+\index{testNotEqualString\_ActualStringIsLonger@{testNotEqualString\_ActualStringIsLonger}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString\_ActualStringIsLonger()}{testNotEqualString\_ActualStringIsLonger()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a01f2db6d96453a6f6ed503ddab1290e8} 
+void test\+Not\+Equal\+String\+\_\+\+Actual\+String\+Is\+Longer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_acc9f3ce3661109d9a0b0637d24062b81}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString\_ActualStringIsNull@{testNotEqualString\_ActualStringIsNull}}
+\index{testNotEqualString\_ActualStringIsNull@{testNotEqualString\_ActualStringIsNull}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString\_ActualStringIsNull()}{testNotEqualString\_ActualStringIsNull()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_acc9f3ce3661109d9a0b0637d24062b81} 
+void test\+Not\+Equal\+String\+\_\+\+Actual\+String\+Is\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_ae7bdb30768011ac726c45c76611f91a4}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString\_ExpectedStringIsLonger@{testNotEqualString\_ExpectedStringIsLonger}}
+\index{testNotEqualString\_ExpectedStringIsLonger@{testNotEqualString\_ExpectedStringIsLonger}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString\_ExpectedStringIsLonger()}{testNotEqualString\_ExpectedStringIsLonger()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_ae7bdb30768011ac726c45c76611f91a4} 
+void test\+Not\+Equal\+String\+\_\+\+Expected\+String\+Is\+Longer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a3c6a5656046a86613354e5ca82a1508c}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualString\_ExpectedStringIsNull@{testNotEqualString\_ExpectedStringIsNull}}
+\index{testNotEqualString\_ExpectedStringIsNull@{testNotEqualString\_ExpectedStringIsNull}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualString\_ExpectedStringIsNull()}{testNotEqualString\_ExpectedStringIsNull()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a3c6a5656046a86613354e5ca82a1508c} 
+void test\+Not\+Equal\+String\+\_\+\+Expected\+String\+Is\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_ab7f2d2ad396eca2d703e01519bd2a9f0}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringArray1@{testNotEqualStringArray1}}
+\index{testNotEqualStringArray1@{testNotEqualStringArray1}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringArray1()}{testNotEqualStringArray1()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_ab7f2d2ad396eca2d703e01519bd2a9f0} 
+void test\+Not\+Equal\+String\+Array1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_af2034932f2a0684c4e51831b7818cbf7}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringArray2@{testNotEqualStringArray2}}
+\index{testNotEqualStringArray2@{testNotEqualStringArray2}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringArray2()}{testNotEqualStringArray2()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_af2034932f2a0684c4e51831b7818cbf7} 
+void test\+Not\+Equal\+String\+Array2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_aeb29151258a69bea2d0618ebc7cb2524}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringArray3@{testNotEqualStringArray3}}
+\index{testNotEqualStringArray3@{testNotEqualStringArray3}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringArray3()}{testNotEqualStringArray3()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_aeb29151258a69bea2d0618ebc7cb2524} 
+void test\+Not\+Equal\+String\+Array3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_aab9d3b0e2ec7b124b0159959f3435cfc}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringArray4@{testNotEqualStringArray4}}
+\index{testNotEqualStringArray4@{testNotEqualStringArray4}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringArray4()}{testNotEqualStringArray4()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_aab9d3b0e2ec7b124b0159959f3435cfc} 
+void test\+Not\+Equal\+String\+Array4 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a6e81e93ff8516e3eb68996ea16e16c56}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringArray5@{testNotEqualStringArray5}}
+\index{testNotEqualStringArray5@{testNotEqualStringArray5}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringArray5()}{testNotEqualStringArray5()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a6e81e93ff8516e3eb68996ea16e16c56} 
+void test\+Not\+Equal\+String\+Array5 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_ab4cfb6faa7a5b68e71a522d00bc736ff}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringArray6@{testNotEqualStringArray6}}
+\index{testNotEqualStringArray6@{testNotEqualStringArray6}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringArray6()}{testNotEqualStringArray6()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_ab4cfb6faa7a5b68e71a522d00bc736ff} 
+void test\+Not\+Equal\+String\+Array6 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a1f6593597319a31b71b3f54b7dc05df2}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringArrayLengthZero@{testNotEqualStringArrayLengthZero}}
+\index{testNotEqualStringArrayLengthZero@{testNotEqualStringArrayLengthZero}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringArrayLengthZero()}{testNotEqualStringArrayLengthZero()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a1f6593597319a31b71b3f54b7dc05df2} 
+void test\+Not\+Equal\+String\+Array\+Length\+Zero (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a471399b69f3b89b3d4219af5745ce902}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringEachEqual1@{testNotEqualStringEachEqual1}}
+\index{testNotEqualStringEachEqual1@{testNotEqualStringEachEqual1}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringEachEqual1()}{testNotEqualStringEachEqual1()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a471399b69f3b89b3d4219af5745ce902} 
+void test\+Not\+Equal\+String\+Each\+Equal1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a3f24c8a9416ce1ef6047eba435c2e4aa}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringEachEqual2@{testNotEqualStringEachEqual2}}
+\index{testNotEqualStringEachEqual2@{testNotEqualStringEachEqual2}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringEachEqual2()}{testNotEqualStringEachEqual2()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a3f24c8a9416ce1ef6047eba435c2e4aa} 
+void test\+Not\+Equal\+String\+Each\+Equal2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a723f97e573a1fd1ab73618d5b1ffc4dc}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringEachEqual3@{testNotEqualStringEachEqual3}}
+\index{testNotEqualStringEachEqual3@{testNotEqualStringEachEqual3}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringEachEqual3()}{testNotEqualStringEachEqual3()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a723f97e573a1fd1ab73618d5b1ffc4dc} 
+void test\+Not\+Equal\+String\+Each\+Equal3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a643c3a8739194f7f8b7148c02d56ecb4}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringEachEqual4@{testNotEqualStringEachEqual4}}
+\index{testNotEqualStringEachEqual4@{testNotEqualStringEachEqual4}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringEachEqual4()}{testNotEqualStringEachEqual4()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a643c3a8739194f7f8b7148c02d56ecb4} 
+void test\+Not\+Equal\+String\+Each\+Equal4 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a56406f0fa2f6be540d1576e1589b19b4}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringEachEqual5@{testNotEqualStringEachEqual5}}
+\index{testNotEqualStringEachEqual5@{testNotEqualStringEachEqual5}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringEachEqual5()}{testNotEqualStringEachEqual5()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a56406f0fa2f6be540d1576e1589b19b4} 
+void test\+Not\+Equal\+String\+Each\+Equal5 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a633304dea7ecdb9d2fb17ac4f1e24184}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringLen1@{testNotEqualStringLen1}}
+\index{testNotEqualStringLen1@{testNotEqualStringLen1}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringLen1()}{testNotEqualStringLen1()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a633304dea7ecdb9d2fb17ac4f1e24184} 
+void test\+Not\+Equal\+String\+Len1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a29328299266ffb79ff78761766ab2817}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringLen2@{testNotEqualStringLen2}}
+\index{testNotEqualStringLen2@{testNotEqualStringLen2}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringLen2()}{testNotEqualStringLen2()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a29328299266ffb79ff78761766ab2817} 
+void test\+Not\+Equal\+String\+Len2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a69a7c01c1518b0c889ecf50545be971c}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringLen3@{testNotEqualStringLen3}}
+\index{testNotEqualStringLen3@{testNotEqualStringLen3}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringLen3()}{testNotEqualStringLen3()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a69a7c01c1518b0c889ecf50545be971c} 
+void test\+Not\+Equal\+String\+Len3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a03bc72651d51200ca7f8d419fa8becb5}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringLen4@{testNotEqualStringLen4}}
+\index{testNotEqualStringLen4@{testNotEqualStringLen4}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringLen4()}{testNotEqualStringLen4()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a03bc72651d51200ca7f8d419fa8becb5} 
+void test\+Not\+Equal\+String\+Len4 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a01b2074c43cd35c122141bd2c53a5fc6}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringLen\_ActualStringIsNull@{testNotEqualStringLen\_ActualStringIsNull}}
+\index{testNotEqualStringLen\_ActualStringIsNull@{testNotEqualStringLen\_ActualStringIsNull}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringLen\_ActualStringIsNull()}{testNotEqualStringLen\_ActualStringIsNull()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a01b2074c43cd35c122141bd2c53a5fc6} 
+void test\+Not\+Equal\+String\+Len\+\_\+\+Actual\+String\+Is\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__unity__strings_8c_a92940c5f913ac1a2f1616d40ab9d3f0c}\index{test\_unity\_strings.c@{test\_unity\_strings.c}!testNotEqualStringLen\_ExpectedStringIsNull@{testNotEqualStringLen\_ExpectedStringIsNull}}
+\index{testNotEqualStringLen\_ExpectedStringIsNull@{testNotEqualStringLen\_ExpectedStringIsNull}!test\_unity\_strings.c@{test\_unity\_strings.c}}
+\doxysubsubsection{\texorpdfstring{testNotEqualStringLen\_ExpectedStringIsNull()}{testNotEqualStringLen\_ExpectedStringIsNull()}}
+{\footnotesize\ttfamily \label{test__unity__strings_8c_a92940c5f913ac1a2f1616d40ab9d3f0c} 
+void test\+Not\+Equal\+String\+Len\+\_\+\+Expected\+String\+Is\+Null (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+

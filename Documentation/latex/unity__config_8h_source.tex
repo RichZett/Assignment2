@@ -1,0 +1,257 @@
+\doxysection{unity\+\_\+config.\+h}
+\hypertarget{unity__config_8h_source}{}\label{unity__config_8h_source}\index{Unity/examples/unity\_config.h@{Unity/examples/unity\_config.h}}
+\mbox{\hyperlink{unity__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ =========================================================================}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Unity\ -\/\ A\ Test\ Framework\ for\ C}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ \ ThrowTheSwitch.org}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ Copyright\ (c)\ 2007-\/25\ Mike\ Karlesky,\ Mark\ VanderVoord,\ \&\ Greg\ Williams}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ SPDX-\/License-\/Identifier:\ MIT}}
+\DoxyCodeLine{00006\ \textcolor{comment}{=========================================================================\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ Unity\ Configuration}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ As\ of\ May\ 11th,\ 2016\ at\ ThrowTheSwitch/Unity\ commit\ 837c529}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Update:\ December\ 29th,\ 2016}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ See\ Also:\ Unity/docs/UnityConfigurationGuide.pdf}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Unity\ is\ designed\ to\ run\ on\ almost\ anything\ that\ is\ targeted\ by\ a\ C\ compiler.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ It\ would\ be\ awesome\ if\ this\ could\ be\ done\ with\ zero\ configuration.\ While}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ there\ are\ some\ targets\ that\ come\ close\ to\ this\ dream,\ it\ is\ sadly\ not}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ universal.\ It\ is\ likely\ that\ you\ are\ going\ to\ need\ at\ least\ a\ couple\ of\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ configuration\ options\ described\ in\ this\ document.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ All\ of\ Unity's\ configuration\ options\ are\ \`{}\#defines`.\ Most\ of\ these\ are\ simple}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ definitions.\ A\ couple\ are\ macros\ with\ arguments.\ They\ live\ inside\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ unity\_internals.h\ header\ file.\ We\ don't\ necessarily\ recommend\ opening\ that}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ file\ unless\ you\ really\ need\ to.\ That\ file\ is\ proof\ that\ a\ cross-\/platform}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ library\ is\ challenging\ to\ build.\ From\ a\ more\ positive\ perspective,\ it\ is\ also}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ proof\ that\ a\ great\ deal\ of\ complexity\ can\ be\ centralized\ primarily\ to\ one}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ place\ in\ order\ to\ provide\ a\ more\ consistent\ and\ simple\ experience\ elsewhere.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ Using\ These\ Options}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ It\ doesn't\ matter\ if\ you're\ using\ a\ target-\/specific\ compiler\ and\ a\ simulator}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ or\ a\ native\ compiler.\ In\ either\ case,\ you've\ got\ a\ couple\ choices\ for}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ configuring\ these\ options:}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ \ 1.\ Because\ these\ options\ are\ specified\ via\ C\ defines,\ you\ can\ pass\ most\ of}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ \ \ \ \ these\ options\ to\ your\ compiler\ through\ command\ line\ compiler\ flags.\ Even}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ \ \ \ \ if\ you're\ using\ an\ embedded\ target\ that\ forces\ you\ to\ use\ their}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ \ \ \ \ overbearing\ IDE\ for\ all\ configuration,\ there\ will\ be\ a\ place\ somewhere\ in}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ \ \ \ \ your\ project\ to\ configure\ defines\ for\ your\ compiler.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ \ 2.\ You\ can\ create\ a\ custom\ \`{}unity\_config.h`\ configuration\ file\ (present\ in}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ \ \ \ \ your\ toolchain's\ search\ paths).\ In\ this\ file,\ you\ will\ list\ definitions}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ \ \ \ \ and\ macros\ specific\ to\ your\ target.\ All\ you\ must\ do\ is\ define}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ \ \ \ \ \`{}UNITY\_INCLUDE\_CONFIG\_H`\ and\ Unity\ will\ rely\ on\ \`{}unity\_config.h`\ for\ any}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ \ \ \ \ further\ definitions\ it\ may\ need.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifndef\ UNITY\_CONFIG\_H}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ UNITY\_CONFIG\_H}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/*\ *************************\ AUTOMATIC\ INTEGER\ TYPES\ ***************************}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ *\ C's\ concept\ of\ an\ integer\ varies\ from\ target\ to\ target.\ The\ C\ Standard\ has}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ rules\ about\ the\ \`{}int`\ matching\ the\ register\ size\ of\ the\ target}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *\ microprocessor.\ It\ has\ rules\ about\ the\ \`{}int`\ and\ how\ its\ size\ relates\ to}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *\ other\ integer\ types.\ An\ \`{}int`\ on\ one\ target\ might\ be\ 16\ bits\ while\ on\ another}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ target\ it\ might\ be\ 64.\ There\ are\ more\ specific\ types\ in\ compilers\ compliant}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ with\ C99\ or\ later,\ but\ that's\ certainly\ not\ every\ compiler\ you\ are\ likely\ to}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ encounter.\ Therefore,\ Unity\ has\ a\ number\ of\ features\ for\ helping\ to\ adjust}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ itself\ to\ match\ your\ required\ integer\ sizes.\ It\ starts\ off\ by\ trying\ to\ do\ it}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ automatically.}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ ****************************************************************************\ */}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/*\ The\ first\ attempt\ to\ guess\ your\ types\ is\ to\ check\ \`{}limits.h`.\ Some\ compilers}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ *\ that\ don't\ support\ \`{}stdint.h`\ could\ include\ \`{}limits.h`.\ If\ you\ don't}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ *\ want\ Unity\ to\ check\ this\ file,\ define\ this\ to\ make\ it\ skip\ the\ inclusion.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ *\ Unity\ looks\ at\ UINT\_MAX\ \&\ ULONG\_MAX,\ which\ were\ available\ since\ C89.}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00064\ \textcolor{comment}{/*\ \#define\ UNITY\_EXCLUDE\_LIMITS\_H\ */}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ The\ second\ thing\ that\ Unity\ does\ to\ guess\ your\ types\ is\ check\ \`{}stdint.h`.}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *\ This\ file\ defines\ \`{}UINTPTR\_MAX`,\ since\ C99,\ that\ Unity\ can\ make\ use\ of\ to}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ *\ learn\ about\ your\ system.\ It's\ possible\ you\ don't\ want\ it\ to\ do\ this\ or\ it's}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ *\ possible\ that\ your\ system\ doesn't\ support\ \`{}stdint.h`.\ If\ that's\ the\ case,}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ *\ you're\ going\ to\ want\ to\ define\ this.\ That\ way,\ Unity\ will\ know\ to\ skip\ the}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *\ inclusion\ of\ this\ file\ and\ you\ won't\ be\ left\ with\ a\ compiler\ error.}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00073\ \textcolor{comment}{/*\ \#define\ UNITY\_EXCLUDE\_STDINT\_H\ */}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/*\ **********************\ MANUAL\ INTEGER\ TYPE\ DEFINITION\ ***********************}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *\ If\ you've\ disabled\ all\ of\ the\ automatic\ options\ above,\ you're\ going\ to\ have}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ *\ to\ do\ the\ configuration\ yourself.\ There\ are\ just\ a\ handful\ of\ defines\ that}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ you\ are\ going\ to\ specify\ if\ you\ don't\ like\ the\ defaults.}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ ****************************************************************************\ */}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \textcolor{comment}{/*\ Define\ this\ to\ be\ the\ number\ of\ bits\ an\ \`{}int`\ takes\ up\ on\ your\ system.\ The}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ *\ default,\ if\ not\ auto-\/detected,\ is\ 32\ bits.}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00086\ \textcolor{comment}{/*\ \#define\ UNITY\_INT\_WIDTH\ 16\ */}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{/*\ Define\ this\ to\ be\ the\ number\ of\ bits\ a\ \`{}long`\ takes\ up\ on\ your\ system.\ The}}
+\DoxyCodeLine{00089\ \textcolor{comment}{\ *\ default,\ if\ not\ autodetected,\ is\ 32\ bits.\ This\ is\ used\ to\ figure\ out\ what}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ *\ kind\ of\ 64-\/bit\ support\ your\ system\ can\ handle.\ \ Does\ it\ need\ to\ specify\ a}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ *\ \`{}long`\ or\ a\ \`{}long\ long`\ to\ get\ a\ 64-\/bit\ value.\ On\ 16-\/bit\ systems,\ this\ option}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ *\ is\ going\ to\ be\ ignored.}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00096\ \textcolor{comment}{/*\ \#define\ UNITY\_LONG\_WIDTH\ 16\ */}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{/*\ Define\ this\ to\ be\ the\ number\ of\ bits\ a\ pointer\ takes\ up\ on\ your\ system.\ The}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ *\ default,\ if\ not\ autodetected,\ is\ 32-\/bits.\ If\ you're\ getting\ ugly\ compiler}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ *\ warnings\ about\ casting\ from\ pointers,\ this\ is\ the\ one\ to\ look\ at.}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00104\ \textcolor{comment}{/*\ \#define\ UNITY\_POINTER\_WIDTH\ 64\ */}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{comment}{/*\ Unity\ will\ automatically\ include\ 64-\/bit\ support\ if\ it\ auto-\/detects\ it,\ or\ if}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ *\ your\ \`{}int`,\ \`{}long`,\ or\ pointer\ widths\ are\ greater\ than\ 32-\/bits.\ Define\ this}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ *\ to\ enable\ 64-\/bit\ support\ if\ none\ of\ the\ other\ options\ already\ did\ it\ for\ you.}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ *\ There\ can\ be\ a\ significant\ size\ and\ speed\ impact\ to\ enabling\ 64-\/bit\ support}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ on\ small\ targets,\ so\ don't\ define\ it\ if\ you\ don't\ need\ it.}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00112\ \textcolor{comment}{/*\ \#define\ UNITY\_SUPPORT\_64\ */}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{comment}{/*\ ***************************\ FLOATING\ POINT\ TYPES\ ****************************}}
+\DoxyCodeLine{00116\ \textcolor{comment}{\ *\ In\ the\ embedded\ world,\ it's\ not\ uncommon\ for\ targets\ to\ have\ no\ support\ for}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ *\ floating\ point\ operations\ at\ all\ or\ to\ have\ support\ that\ is\ limited\ to\ only}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ *\ single\ precision.\ We\ are\ able\ to\ guess\ integer\ sizes\ on\ the\ fly\ because}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ *\ integers\ are\ always\ available\ in\ at\ least\ one\ size.\ Floating\ point,\ on\ the}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ *\ other\ hand,\ is\ sometimes\ not\ available\ at\ all.\ Trying\ to\ include\ \`{}float.h`\ on}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ *\ these\ platforms\ would\ result\ in\ an\ error.\ This\ leaves\ manual\ configuration\ as}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ *\ the\ only\ option.}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ ****************************************************************************\ */}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \textcolor{comment}{/*\ By\ default,\ Unity\ guesses\ that\ you\ will\ want\ single\ precision\ floating\ point}}
+\DoxyCodeLine{00126\ \textcolor{comment}{\ \ *\ support,\ but\ not\ double\ precision.\ It's\ easy\ to\ change\ either\ of\ these\ using}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ \ *\ the\ include\ and\ exclude\ options\ here.\ You\ may\ include\ neither,\ just\ float,}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ *\ or\ both,\ as\ suits\ your\ needs.}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00130\ \textcolor{comment}{/*\ \#define\ UNITY\_EXCLUDE\_FLOAT\ \ */}}
+\DoxyCodeLine{00131\ \textcolor{comment}{/*\ \#define\ UNITY\_INCLUDE\_DOUBLE\ */}}
+\DoxyCodeLine{00132\ \textcolor{comment}{/*\ \#define\ UNITY\_EXCLUDE\_DOUBLE\ */}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{/*\ For\ features\ that\ are\ enabled,\ the\ following\ floating\ point\ options\ also}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ *\ become\ available.}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{comment}{/*\ Unity\ aims\ for\ as\ small\ of\ a\ footprint\ as\ possible\ and\ avoids\ most\ standard}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ *\ library\ calls\ (some\ embedded\ platforms\ don't\ have\ a\ standard\ library!).}}
+\DoxyCodeLine{00140\ \textcolor{comment}{\ *\ Because\ of\ this,\ its\ routines\ for\ printing\ integer\ values\ are\ minimalist\ and}}
+\DoxyCodeLine{00141\ \textcolor{comment}{\ *\ hand-\/coded.\ To\ keep\ Unity\ universal,\ though,\ we\ eventually\ chose\ to\ develop}}
+\DoxyCodeLine{00142\ \textcolor{comment}{\ *\ our\ own\ floating\ point\ print\ routines.\ Still,\ the\ display\ of\ floating\ point}}
+\DoxyCodeLine{00143\ \textcolor{comment}{\ *\ values\ during\ a\ failure\ are\ optional.\ By\ default,\ Unity\ will\ print\ the}}
+\DoxyCodeLine{00144\ \textcolor{comment}{\ *\ actual\ results\ of\ floating\ point\ assertion\ failures.\ So\ a\ failed\ assertion}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ *\ will\ produce\ a\ message\ like\ "{}Expected\ 4.0\ Was\ 4.25"{}.\ If\ you\ would\ like\ less}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ *\ verbose\ failure\ messages\ for\ floating\ point\ assertions,\ use\ this\ option\ to}}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ *\ give\ a\ failure\ message\ \`{}"{}Values\ Not\ Within\ Delta"{}`\ and\ trim\ the\ binary\ size.}}
+\DoxyCodeLine{00148\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ \#define\ UNITY\_EXCLUDE\_FLOAT\_PRINT\ */}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ If\ enabled,\ Unity\ assumes\ you\ want\ your\ \`{}FLOAT`\ asserts\ to\ compare\ standard\ C}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ *\ floats.\ If\ your\ compiler\ supports\ a\ specialty\ floating\ point\ type,\ you\ can}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ *\ always\ override\ this\ behavior\ by\ using\ this\ definition.}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00157\ \textcolor{comment}{/*\ \#define\ UNITY\_FLOAT\_TYPE\ float16\_t\ */}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{comment}{/*\ If\ enabled,\ Unity\ assumes\ you\ want\ your\ \`{}DOUBLE`\ asserts\ to\ compare\ standard}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\ *\ C\ doubles.\ If\ you\ would\ like\ to\ change\ this,\ you\ can\ specify\ something\ else}}
+\DoxyCodeLine{00161\ \textcolor{comment}{\ *\ by\ using\ this\ option.\ For\ example,\ defining\ \`{}UNITY\_DOUBLE\_TYPE`\ to\ \`{}long}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\ *\ double`\ could\ enable\ gargantuan\ floating\ point\ types\ on\ your\ 64-\/bit\ processor}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ *\ instead\ of\ the\ standard\ \`{}double`.}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00165\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00166\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00167\ \textcolor{comment}{/*\ \#define\ UNITY\_DOUBLE\_TYPE\ long\ double\ */}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{comment}{/*\ If\ you\ look\ up\ \`{}UNITY\_ASSERT\_EQUAL\_FLOAT`\ and\ \`{}UNITY\_ASSERT\_EQUAL\_DOUBLE`\ as}}
+\DoxyCodeLine{00170\ \textcolor{comment}{\ *\ documented\ in\ the\ Unity\ Assertion\ Guide,\ you\ will\ learn\ that\ they\ are\ not}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ *\ really\ asserting\ that\ two\ values\ are\ equal\ but\ rather\ that\ two\ values\ are}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ *\ "{}close\ enough"{}\ to\ equal.\ "{}Close\ enough"{}\ is\ controlled\ by\ these\ precision}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ *\ configuration\ options.\ If\ you\ are\ working\ with\ 32-\/bit\ floats\ and/or\ 64-\/bit}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ *\ doubles\ (the\ normal\ on\ most\ processors),\ you\ should\ have\ no\ need\ to\ change}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ *\ these\ options.\ They\ are\ both\ set\ to\ give\ you\ approximately\ 1\ significant\ bit}}
+\DoxyCodeLine{00176\ \textcolor{comment}{\ *\ in\ either\ direction.\ The\ float\ precision\ is\ 0.00001\ while\ the\ double\ is}}
+\DoxyCodeLine{00177\ \textcolor{comment}{\ *\ 10\string^-\/12.\ For\ further\ details\ on\ how\ this\ works,\ see\ the\ appendix\ of\ the\ Unity}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ *\ Assertion\ Guide.}}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00180\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00181\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00182\ \textcolor{comment}{/*\ \#define\ UNITY\_FLOAT\_PRECISION\ 0.001f\ \ */}}
+\DoxyCodeLine{00183\ \textcolor{comment}{/*\ \#define\ UNITY\_DOUBLE\_PRECISION\ 0.001f\ */}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{comment}{/*\ ***************************\ MISCELLANEOUS\ ***********************************}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ *\ Miscellaneous\ configuration\ options\ for\ Unity}}
+\DoxyCodeLine{00188\ \textcolor{comment}{\ ****************************************************************************\ */}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{comment}{/*\ Unity\ uses\ the\ stddef.h\ header\ included\ in\ the\ C\ standard\ library\ for\ the}}
+\DoxyCodeLine{00191\ \textcolor{comment}{\ *\ "{}NULL"{}\ macro.\ Define\ this\ in\ order\ to\ disable\ the\ include\ of\ stddef.h.\ If\ you}}
+\DoxyCodeLine{00192\ \textcolor{comment}{\ *\ do\ this,\ you\ have\ to\ make\ sure\ to\ provide\ your\ own\ "{}NULL"{}\ definition.}}
+\DoxyCodeLine{00193\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00194\ \textcolor{comment}{/*\ \#define\ UNITY\_EXCLUDE\_STDDEF\_H\ */}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{comment}{/*\ Define\ this\ to\ enable\ the\ unity\ formatted\ print\ macro:}}
+\DoxyCodeLine{00197\ \textcolor{comment}{\ *\ "{}TEST\_PRINTF"{}}}
+\DoxyCodeLine{00198\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00199\ \textcolor{comment}{/*\ \#define\ UNITY\_INCLUDE\_PRINT\_FORMATTED\ */}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{comment}{/*\ ***************************\ TOOLSET\ CUSTOMIZATION\ ***************************}}
+\DoxyCodeLine{00203\ \textcolor{comment}{\ *\ In\ addition\ to\ the\ options\ listed\ above,\ there\ are\ a\ number\ of\ other\ options}}
+\DoxyCodeLine{00204\ \textcolor{comment}{\ *\ which\ will\ come\ in\ handy\ to\ customize\ Unity's\ behavior\ for\ your\ specific}}
+\DoxyCodeLine{00205\ \textcolor{comment}{\ *\ toolchain.\ It\ is\ possible\ that\ you\ may\ not\ need\ to\ touch\ any\ of\ these\ but}}
+\DoxyCodeLine{00206\ \textcolor{comment}{\ *\ certain\ platforms,\ particularly\ those\ running\ in\ simulators,\ may\ need\ to\ jump}}
+\DoxyCodeLine{00207\ \textcolor{comment}{\ *\ through\ extra\ hoops\ to\ operate\ properly.\ These\ macros\ will\ help\ in\ those}}
+\DoxyCodeLine{00208\ \textcolor{comment}{\ *\ situations.}}
+\DoxyCodeLine{00209\ \textcolor{comment}{\ ****************************************************************************\ */}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \textcolor{comment}{/*\ By\ default,\ Unity\ prints\ its\ results\ to\ \`{}stdout`\ as\ it\ runs.\ This\ works}}
+\DoxyCodeLine{00212\ \textcolor{comment}{\ *\ perfectly\ fine\ in\ most\ situations\ where\ you\ are\ using\ a\ native\ compiler\ for}}
+\DoxyCodeLine{00213\ \textcolor{comment}{\ *\ testing.\ It\ works\ on\ some\ simulators\ as\ well\ so\ long\ as\ they\ have\ \`{}stdout`}}
+\DoxyCodeLine{00214\ \textcolor{comment}{\ *\ routed\ back\ to\ the\ command\ line.\ There\ are\ times,\ however,\ where\ the}}
+\DoxyCodeLine{00215\ \textcolor{comment}{\ *\ simulator\ will\ lack\ support\ for\ dumping\ results\ or\ you\ will\ want\ to\ route}}
+\DoxyCodeLine{00216\ \textcolor{comment}{\ *\ results\ elsewhere\ for\ other\ reasons.\ In\ these\ cases,\ you\ should\ define\ the}}
+\DoxyCodeLine{00217\ \textcolor{comment}{\ *\ \`{}UNITY\_OUTPUT\_CHAR`\ macro.\ This\ macro\ accepts\ a\ single\ character\ at\ a\ time}}
+\DoxyCodeLine{00218\ \textcolor{comment}{\ *\ (as\ an\ \`{}int`,\ since\ this\ is\ the\ parameter\ type\ of\ the\ standard\ C\ \`{}putchar`}}
+\DoxyCodeLine{00219\ \textcolor{comment}{\ *\ function\ most\ commonly\ used).\ You\ may\ replace\ this\ with\ whatever\ function}}
+\DoxyCodeLine{00220\ \textcolor{comment}{\ *\ call\ you\ like.}}
+\DoxyCodeLine{00221\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00222\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00223\ \textcolor{comment}{\ *\ Say\ you\ are\ forced\ to\ run\ your\ test\ suite\ on\ an\ embedded\ processor\ with\ no}}
+\DoxyCodeLine{00224\ \textcolor{comment}{\ *\ \`{}stdout`\ option.\ You\ decide\ to\ route\ your\ test\ result\ output\ to\ a\ custom}}
+\DoxyCodeLine{00225\ \textcolor{comment}{\ *\ serial\ \`{}RS232\_putc()`\ function\ you\ wrote\ like\ thus:}}
+\DoxyCodeLine{00226\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00227\ \textcolor{comment}{/*\ \#define\ UNITY\_OUTPUT\_CHAR(a)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RS232\_putc(a)\ */}}
+\DoxyCodeLine{00228\ \textcolor{comment}{/*\ \#define\ UNITY\_OUTPUT\_CHAR\_HEADER\_DECLARATION\ \ \ \ RS232\_putc(int)\ */}}
+\DoxyCodeLine{00229\ \textcolor{comment}{/*\ \#define\ UNITY\_OUTPUT\_FLUSH()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RS232\_flush()\ */}}
+\DoxyCodeLine{00230\ \textcolor{comment}{/*\ \#define\ UNITY\_OUTPUT\_FLUSH\_HEADER\_DECLARATION\ \ \ RS232\_flush(void)\ */}}
+\DoxyCodeLine{00231\ \textcolor{comment}{/*\ \#define\ UNITY\_OUTPUT\_START()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RS232\_config(115200,1,8,0)\ */}}
+\DoxyCodeLine{00232\ \textcolor{comment}{/*\ \#define\ UNITY\_OUTPUT\_COMPLETE()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RS232\_close()\ */}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{comment}{/*\ Some\ compilers\ require\ a\ custom\ attribute\ to\ be\ assigned\ to\ pointers,\ like}}
+\DoxyCodeLine{00235\ \textcolor{comment}{\ *\ \`{}near`\ or\ \`{}far`.\ In\ these\ cases,\ you\ can\ give\ Unity\ a\ safe\ default\ for\ these}}
+\DoxyCodeLine{00236\ \textcolor{comment}{\ *\ by\ defining\ this\ option\ with\ the\ attribute\ you\ would\ like.}}
+\DoxyCodeLine{00237\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00238\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00239\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00240\ \textcolor{comment}{/*\ \#define\ UNITY\_PTR\_ATTRIBUTE\ \_\_attribute\_\_((far))\ */}}
+\DoxyCodeLine{00241\ \textcolor{comment}{/*\ \#define\ UNITY\_PTR\_ATTRIBUTE\ near\ */}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \textcolor{comment}{/*\ Print\ execution\ time\ of\ each\ test\ when\ executed\ in\ verbose\ mode}}
+\DoxyCodeLine{00244\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00245\ \textcolor{comment}{\ *\ Example:}}
+\DoxyCodeLine{00246\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00247\ \textcolor{comment}{\ *\ TEST\ -\/\ PASS\ (10\ ms)}}
+\DoxyCodeLine{00248\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00249\ \textcolor{comment}{/*\ \#define\ UNITY\_INCLUDE\_EXEC\_TIME\ */}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ UNITY\_CONFIG\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
